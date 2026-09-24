@@ -12,3 +12,14 @@
 .articles{border-top:1px solid var(--line)}.articles>p:last-child{max-width:720px;color:var(--muted);font-size:1.05rem}.connect{border-top:1px solid var(--line)}.connect-links{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:50px}.connect-links a{flex:1;min-width:150px;padding:25px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600}.connect-links span{float:right;margin-right:15px;color:var(--accent)}
 footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-family:"DM Mono",monospace;font-size:.65rem;letter-spacing:.02em}
 @media(max-width:800px){.hero-grid,.cv{grid-template-columns:1fr}.hero-mark{justify-self:start;text-align:left;margin-top:35px}.profile-frame{width:220px;height:220px}.hero{min-height:auto}.nav-links{display:none}.section{padding-top:75px;padding-bottom:75px}.expertise-grid{grid-template-columns:1fr}.expertise-grid article:nth-child(odd){border-right:0;padding-right:0}.expertise-grid article:nth-child(even){padding-left:0}.work-item{grid-template-columns:45px 1fr 25px}.work-item small{grid-column:2}.work-item b{grid-column:3;grid-row:1}.cv-card{margin-top:10px}footer{flex-direction:column}}
+
+.articles-intro{max-width:720px;margin:0 0 36px;color:var(--muted);font-size:1.05rem;line-height:1.8}
+.article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.article-card{display:flex;flex-direction:column;min-height:230px;padding:28px;border:1px solid var(--line);background:var(--paper);text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease}
+.article-card:hover{transform:translateY(-3px);border-color:var(--ink)}
+.article-card span{font-size:.72rem;letter-spacing:.12em;color:var(--muted);margin-bottom:18px}
+.article-card h3{font-size:1.35rem;line-height:1.25;margin:0 0 14px}
+.article-card small{font-size:.92rem;line-height:1.65;color:var(--muted);flex:1}
+.article-card b{font-size:.85rem;margin-top:24px}
+.articles-link{display:inline-block;margin-top:28px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px}
+@media (max-width:700px){.article-grid{grid-template-columns:1fr}}
