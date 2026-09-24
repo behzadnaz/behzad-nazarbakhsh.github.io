@@ -180,7 +180,7 @@
           </article>
         </div>
         <a class="articles-link" href="https://scholar.google.com/citations?user=PfzbthcAAAAJ&hl=en" target="_blank" rel="noopener">View Google Scholar profile ↗</a>
-      </div>      </div>
+      </div>
     </section>
     <section id="connect" class="section connect">
       <p class="section-label">06 / CONNECT</p><h2>Let's talk about software, products and organizations.</h2>
@@ -196,21 +196,29 @@ document.addEventListener('DOMContentLoaded', function () {
   const domains = document.querySelectorAll('.article-filtered-view .article-domain');
 
   function show(selected) {
-    filters.forEach(function (f) {
-      const active = f.dataset.filter === selected;
-      f.classList.toggle('active', active);
-      f.setAttribute('aria-selected', active ? 'true' : 'false');
+    filters.forEach(function (filter) {
+      const active = filter.dataset.filter === selected;
+      filter.classList.toggle('active', active);
+      filter.setAttribute('aria-selected', active ? 'true' : 'false');
     });
-    const all = selected === 'all';
-    allGrid.hidden = !all;
-    filteredView.hidden = all;
-    domains.forEach(function (domain) {
-      domain.hidden = domain.dataset.domain !== selected;
-    });
+    if (selected === 'all') {
+      allGrid.hidden = false;
+      filteredView.hidden = true;
+    } else {
+      allGrid.hidden = true;
+      filteredView.hidden = false;
+      domains.forEach(function (domain) {
+        domain.hidden = domain.dataset.domain !== selected;
+      });
+    }
   }
+
   filters.forEach(function (filter) {
-    filter.addEventListener('click', function () { show(this.dataset.filter); });
+    filter.addEventListener('click', function () {
+      show(this.dataset.filter);
+    });
   });
+
   show('all');
 });
 </script>
