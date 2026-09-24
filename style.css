@@ -233,3 +233,44 @@ footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justi
 .article-more[hidden]{display:none}
 .article-more a{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:5px;transition:border-color .2s ease,transform .2s ease}
 .article-more a:hover{border-color:var(--ink)}
+
+.article-filter-wrap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2.25rem 0 0.5rem;
+}
+.article-filter-wrap .article-filters {
+  margin: 0;
+  min-width: 0;
+}
+.article-filter-nav {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease, opacity .2s ease;
+}
+.article-filter-nav:hover:not(:disabled) {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+.article-filter-nav:disabled {
+  opacity: .3;
+  cursor: default;
+}
+@media (max-width:700px) {
+  .article-filter-wrap { gap: .35rem; }
+  .article-filter-nav { width: 1.8rem; height: 1.8rem; }
+}
