@@ -444,3 +444,11 @@ button, a {
 .career-metaphor-card .career-metaphor-mini{margin:0 0 6px}
 .career-metaphor-card strong{display:block!important;margin:0 0 4px!important;font-family:"Playfair Display",Georgia,serif;font-size:1rem!important;font-weight:600}
 .career-metaphor-card small{display:block;color:var(--muted);font-size:.78rem;line-height:1.5}
+
+.career-metaphor-card{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center}
+.career-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:14px;background:#fff}
+.career-icon svg{width:31px;height:31px;fill:none;stroke:var(--accent-dark);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.career-metaphor-copy{min-width:0}
+.career-metaphor-card .career-metaphor-mini{margin:0 0 4px}
+.career-metaphor-card strong{display:block!important;margin:0 0 3px!important;font-family:"Playfair Display",Georgia,serif;font-size:1rem!important;font-weight:600}
+.career-metaphor-card small{display:block;color:var(--muted);font-size:.78rem;line-height:1.5}
