@@ -1,5 +1,34 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Organization Change Management | Behzad Nazarbakhsh</title><link rel="stylesheet" href="style.css"></head>
-<body><nav class="nav"><a class="brand" href="index.html">BN</a><div class="nav-links"><a href="index.html#home">Home</a><a href="reports.html">Reports</a><a href="index.html#contact">Contact</a></div></nav>
-<main class="report-page"><a class="report-back" href="reports.html">← Back to Reports</a><header class="report-intro"><p class="section-label">SELECTED WORK · ORGANIZATION CHANGE MANAGEMENT</p><h1>Organization Change Management</h1><p>Turning organizational change into successful adoption, sustainable outcomes, and measurable business value across IT and the business.</p></header>
-<section class="report-grid" style="grid-template-columns:1fr"><div class="report-card" style="min-height:auto"><span class="report-number">1 APRIL 2024 — 1 MARCH 2025</span><h2>Report to the CIO</h2><p>This report documents Organization Change Management work focused on connecting organizational change with adoption, stakeholder engagement, business value, and sustainable outcomes.</p><p style="margin-top:18px">The work includes stakeholder recognition, business value and benefits realization, communication strategy and execution, key- and end-user profile management, and project business objectives clarification.</p><p style="margin-top:18px">The report demonstrates how change management activities were connected to broader IT and business objectives rather than treated as a separate communication activity.</p><a class="report-link" href="reports.html">← Return to Reports</a></div></section></main></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organization Change Management</title>
+</head>
+<body>
+<div id="status" style="font:14px Arial,sans-serif;padding:24px;color:#555">Loading Organization Change Management report…</div>
+<script>
+(async function(){
+  const chunks=["report-parts/00.html","report-parts/01.html","report-parts/02.html","report-parts/03.html","report-parts/04.html","report-parts/05.html","report-parts/06.html","report-parts/07.html","report-parts/08.html","report-parts/09.html","report-parts/10.html","report-parts/11.html","report-parts/12.html","report-parts/13.html","report-parts/14.html","report-parts/15.html","report-parts/16.html","report-parts/17.html","report-parts/18.html","report-parts/19.html","report-parts/20.html","report-parts/21.html","report-parts/22.html","report-parts/23.html","report-parts/24.html","report-parts/25.html","report-parts/26.html","report-parts/27.html","report-parts/28.html"];
+  try{
+    const html=(await Promise.all(chunks.map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error("Failed to load "+u);return r.text()})))).join("");
+    const doc=new DOMParser().parseFromString(html,"text/html");
+    const ocm=doc.querySelector("#view-ocm");
+    if(!ocm) throw new Error("Organization Change Management report content was not found");
+    const ppm=doc.querySelector("#view-ppm");
+    if(ppm) ppm.remove();
+    doc.querySelectorAll(".rtabs").forEach(e=>e.remove());
+    doc.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+    ocm.classList.add("active");
+    doc.title="Organization Change Management";
+    const out="<!DOCTYPE html>\n"+doc.documentElement.outerHTML;
+    document.open();
+    document.write(out);
+    document.close();
+  }catch(e){
+    document.getElementById("status").textContent="Unable to load the report: "+e.message;
+  }
+})();
+</script>
+</body>
+</html>
