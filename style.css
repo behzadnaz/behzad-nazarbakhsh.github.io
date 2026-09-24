@@ -191,32 +191,28 @@ footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justi
 .article-resource-links .articles-link{margin-top:28px}
 
 
-/* Subtle source identity for article cards */
-.article-card{position:relative;overflow:hidden}
-.source-metaphor{position:absolute;top:24px;right:26px;width:38px;height:38px;opacity:.72;transition:transform .25s ease,opacity .25s ease}
-.article-card:hover .source-metaphor{transform:translateY(-2px);opacity:1}
 
-/* LinkedIn: three connected conversation nodes */
+/* Source metaphors */
+.article-card{position:relative;overflow:hidden}
+.source-metaphor{position:absolute;top:24px;right:26px;width:42px;height:42px;z-index:2;opacity:.95;transition:transform .25s ease}
+.article-card:hover .source-metaphor{transform:translateY(-2px)}
+
+/* LinkedIn: connected conversation nodes */
 .linkedin-card{background:#fbf6f1;border-color:#eaded4}
 .linkedin-card:hover{border-color:#c97845}
-.linkedin-card .article-card{}
-.linkedin-metaphor{display:grid;place-items:center}
-.linkedin-metaphor:before,.linkedin-metaphor:after{content:"";position:absolute;border:1.5px solid #c97845;border-radius:50%;width:8px;height:8px;background:#fbf6f1}
-.linkedin-metaphor:before{left:2px;top:8px}
-.linkedin-metaphor:after{right:2px;bottom:7px}
-.linkedin-metaphor span{position:absolute;width:7px;height:7px;border:1.5px solid #c97845;border-radius:50%;background:#fbf6f1;left:15px;top:15px}
-.linkedin-metaphor span:nth-child(1):after,.linkedin-metaphor span:nth-child(2):after{content:"";position:absolute;height:1.5px;background:#c97845;width:14px;transform-origin:left center}
-.linkedin-metaphor span:nth-child(1):after{left:-1px;top:4px;transform:rotate(27deg)}
-.linkedin-metaphor span:nth-child(2):after{left:5px;top:5px;transform:rotate(42deg)}
+.linkedin-metaphor{border:1px solid #e0b99f;border-radius:50%;background:#fffaf6}
+.linkedin-metaphor:before,.linkedin-metaphor:after{content:"";position:absolute;border:2px solid #c97845;border-radius:50%;background:#fffaf6;width:10px;height:10px}
+.linkedin-metaphor:before{left:6px;top:8px}
+.linkedin-metaphor:after{right:6px;bottom:8px}
+.linkedin-metaphor span{position:absolute;width:10px;height:10px;border:2px solid #c97845;border-radius:50%;background:#fffaf6;left:15px;top:15px}
+.linkedin-metaphor span:nth-child(1):after,.linkedin-metaphor span:nth-child(2):after{content:"";position:absolute;height:2px;background:#c97845;width:13px;transform-origin:left center}
+.linkedin-metaphor span:nth-child(1):after{left:7px;top:4px;transform:rotate(30deg)}
+.linkedin-metaphor span:nth-child(2):after{left:5px;top:7px;transform:rotate(45deg)}
 
-/* Google Scholar: minimal research paper metaphor */
+/* Google Scholar: research paper */
 .academic-card{background:#f2f7f3;border-color:#d7e3d9}
 .academic-card:hover{border-color:#71917a}
-.scholar-metaphor{border:1.5px solid #71917a;border-radius:2px;width:30px;height:38px;right:30px;top:23px;background:#f2f7f3}
-.scholar-metaphor:before{content:"";position:absolute;left:6px;right:6px;top:10px;height:1.5px;background:#71917a;box-shadow:0 6px 0 #71917a,0 12px 0 #71917a}
-.scholar-metaphor:after{content:"";position:absolute;right:-1.5px;top:-1.5px;border-top:8px solid #f2f7f3;border-left:8px solid transparent;width:0;height:0}
-.scholar-metaphor i{display:none}
-
-@media (max-width:700px){
-  .source-metaphor{top:20px;right:22px}
-}
+.scholar-metaphor{width:34px;height:40px;right:30px;top:22px;border:2px solid #71917a;border-radius:3px;background:#f8fbf8}
+.scholar-metaphor:before{content:"";position:absolute;left:6px;right:6px;top:10px;height:2px;background:#71917a;box-shadow:0 7px 0 #71917a,0 14px 0 #71917a}
+.scholar-metaphor:after{content:"";position:absolute;right:-2px;top:-2px;width:10px;height:10px;background:#f2f7f3;border-left:2px solid #71917a;border-bottom:2px solid #71917a}
+@media (max-width:700px){.source-metaphor{top:20px;right:22px}}
