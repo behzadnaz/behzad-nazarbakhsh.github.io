@@ -64,17 +64,21 @@
       <div class="section-head"><p class="section-label">05 / ARTICLES</p><h2>Writing and perspectives</h2></div>
       <p class="articles-intro">Explore my writing by professional domain. Select a topic to focus on the ideas most relevant to you.</p>
 
-      <div class="article-filters" role="tablist" aria-label="Filter writing by professional domain">
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="product">Product Management <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="change">Organizational Change <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="people">People <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="agile-teams">Creating Agile Teams <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="engineering">Engineering <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="ai">AI <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="stakeholder">Stakeholder Management <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="governance">Governance <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="qa">Quality Assurance <span>0</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="lean">Lean Startup <span>0</span></button>
+      <div class="article-filter-wrap">
+        <button class="article-filter-nav article-filter-prev" type="button" aria-label="Scroll article categories left">←</button>
+        <div class="article-filters" role="tablist" aria-label="Filter writing by professional domain">
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="product">Product Management <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="change">Organizational Change <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="people">People <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="agile-teams">Creating Agile Teams <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="engineering">Engineering <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="ai">AI <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="stakeholder">Stakeholder Management <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="governance">Governance <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="qa">Quality Assurance <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="lean">Lean Startup <span>0</span></button>
+        </div>
+        <button class="article-filter-nav article-filter-next" type="button" aria-label="Scroll article categories right">→</button>
       </div>
 
       <div class="article-selected-domain" aria-live="polite"></div>
@@ -306,6 +310,31 @@
   <footer><span>© 2026 Behzad Nazarbakhsh</span><span>Software Craftsmanship · Product Coach · Agile Expert</span></footer>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  var filterScroller = document.querySelector('.article-filters');
+  var prevFilter = document.querySelector('.article-filter-prev');
+  var nextFilter = document.querySelector('.article-filter-next');
+
+  function updateFilterNav() {
+    if (!filterScroller || !prevFilter || !nextFilter) return;
+    var maxScroll = filterScroller.scrollWidth - filterScroller.clientWidth;
+    prevFilter.disabled = filterScroller.scrollLeft <= 2;
+    nextFilter.disabled = filterScroller.scrollLeft >= maxScroll - 2;
+  }
+
+  function scrollFilters(direction) {
+    if (!filterScroller) return;
+    filterScroller.scrollBy({ left: direction * Math.max(220, filterScroller.clientWidth * 0.65), behavior: 'smooth' });
+  }
+
+  if (prevFilter) prevFilter.addEventListener('click', function () { scrollFilters(-1); });
+  if (nextFilter) nextFilter.addEventListener('click', function () { scrollFilters(1); });
+  if (filterScroller) {
+    filterScroller.addEventListener('scroll', updateFilterNav, { passive: true });
+    window.addEventListener('resize', updateFilterNav);
+    setTimeout(updateFilterNav, 50);
+  }
+
+
   var filters = document.querySelectorAll('.article-filter');
   var grid = document.querySelector('.article-all-grid');
   var cards = grid ? grid.querySelectorAll('.article-card') : [];
