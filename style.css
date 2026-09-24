@@ -439,3 +439,8 @@ button, a {
 @media(max-width:800px){.career-story{gap:24px}.career-metaphor{padding:22px 18px}}
 
 .career-metaphor-mini{display:inline-block;margin:0 0 8px 10px;padding:3px 8px;border:1px solid var(--line);border-radius:999px;color:var(--accent-dark);font:10px "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;background:#fff}
+
+.career-metaphor-card{margin:10px 0 18px;padding:13px 15px;border-left:3px solid var(--accent);background:rgba(247,248,244,.75);border-radius:0 10px 10px 0}
+.career-metaphor-card .career-metaphor-mini{margin:0 0 6px}
+.career-metaphor-card strong{display:block!important;margin:0 0 4px!important;font-family:"Playfair Display",Georgia,serif;font-size:1rem!important;font-weight:600}
+.career-metaphor-card small{display:block;color:var(--muted);font-size:.78rem;line-height:1.5}
