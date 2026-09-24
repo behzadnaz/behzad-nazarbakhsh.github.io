@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --ink: #17211b;
+  --muted: #667169;
+  --paper: #f7f8f4;
+  --card: #ffffff;
+  --line: #dfe5df;
+  --accent: #c97845;
+  --accent-dark: #9e5830;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.7;
+}
+a { color: inherit; }
+.hero {
+  min-height: 78vh;
+  padding: 28px 7vw 80px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f7f8f4 0%, #edf1eb 100%);
+}
+.nav {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink);
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: .88rem;
+}
+.nav-links a { text-decoration: none; }
+.hero-content {
+  width: 100%;
+  max-width: 1180px;
+  margin: auto;
+  padding-top: 70px;
+}
+.eyebrow, .section-label {
+  margin: 0 0 16px;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+.eyebrow { color: var(--accent-dark); }
+h1, h2, h3 { line-height: 1.15; }
+h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  letter-spacing: -.04em;
+}
+.hero h2 {
+  max-width: 800px;
+  margin: 22px 0;
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  font-weight: 500;
+}
+.intro {
+  max-width: 680px;
+  margin: 0 0 34px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+}
+.button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 100px 7vw;
+}
+.section-label { color: var(--accent-dark); }
+.section h2 {
+  max-width: 780px;
+  margin: 0 0 22px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+.section > p:not(.section-label) {
+  max-width: 760px;
+  color: var(--muted);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 42px;
+}
+.card {
+  min-height: 230px;
+  padding: 30px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+.card span {
+  color: var(--accent-dark);
+  font-size: .8rem;
+  font-weight: 700;
+}
+.card h3 { margin: 26px 0 10px; font-size: 1.25rem; }
+.card p { margin: 0; color: var(--muted); }
+.split {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 70px;
+  align-items: center;
+}
+.placeholder {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  border: 1px dashed #b9c3ba;
+  background: #eef1ec;
+}
+.placeholder strong { font-family: "Playfair Display", Georgia, serif; font-size: 4rem; }
+.placeholder span { color: var(--muted); }
+.contact { border-top: 1px solid var(--line); }
+footer {
+  padding: 35px 7vw 45px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: .8rem;
+}
+footer p { margin: 0; }
+
+@media (max-width: 700px) {
+  .hero { padding-top: 20px; }
+  .nav-links { display: none; }
+  .hero-content { padding-top: 50px; }
+  .cards, .split { grid-template-columns: 1fr; }
+  .section { padding-top: 70px; padding-bottom: 70px; }
+  footer { flex-direction: column; }
+}
