@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Organization Change Management</title>
+<style>
+html,body{margin:0;width:100%;min-height:100%;background:#fff}
+#status{font:14px Arial,sans-serif;padding:24px;color:#555}
+</style>
 </head>
 <body>
-<div id="status" style="font:14px Arial,sans-serif;padding:24px;color:#555">Loading Organization Change Management report…</div>
+<div id="status">Loading Organization Change Management report…</div>
 <script>
 (async function(){
-  const chunks=["report-parts/00.html","report-parts/01.html","report-parts/02.html","report-parts/03.html","report-parts/04.html","report-parts/05.html","report-parts/06.html","report-parts/07.html","report-parts/08.html","report-parts/09.html","report-parts/10.html","report-parts/11.html","report-parts/12.html","report-parts/13.html","report-parts/14.html","report-parts/15.html","report-parts/16.html","report-parts/17.html","report-parts/18.html","report-parts/19.html","report-parts/20.html","report-parts/21.html","report-parts/22.html","report-parts/23.html","report-parts/24.html","report-parts/25.html","report-parts/26.html","report-parts/27.html","report-parts/28.html"];
+  const chunks=["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28"].map(n=>"report-parts/"+n+".html");
   try{
     const html=(await Promise.all(chunks.map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error("Failed to load "+u);return r.text()})))).join("");
     const doc=new DOMParser().parseFromString(html,"text/html");
     const ocm=doc.querySelector("#view-ocm");
     if(!ocm) throw new Error("Organization Change Management report content was not found");
-    const ppm=doc.querySelector("#view-ppm");
-    if(ppm) ppm.remove();
+    doc.querySelectorAll(".view").forEach(v=>{if(v!==ocm)v.remove()});
     doc.querySelectorAll(".rtabs").forEach(e=>e.remove());
-    doc.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
     ocm.classList.add("active");
+    ocm.removeAttribute("data-title");
     doc.title="Organization Change Management";
-    const out="<!DOCTYPE html>\n"+doc.documentElement.outerHTML;
     document.open();
-    document.write(out);
+    document.write("<!DOCTYPE html>\n"+doc.documentElement.outerHTML);
     document.close();
   }catch(e){
     document.getElementById("status").textContent="Unable to load the report: "+e.message;
