@@ -161,3 +161,11 @@ footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justi
 .article-all-grid .article-card[hidden] { display: none !important; }
 .article-selected-domain { margin: 1.5rem 0 1.25rem; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.04em; }
 .article-selected-domain[hidden] { display: none; }
+
+
+/* Article subsections */
+.article-subsection-title{display:flex;align-items:baseline;gap:12px;margin:3.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--line)}
+.article-subsection-title span{font-family:"DM Mono",monospace;font-size:.72rem;color:var(--accent-dark);letter-spacing:.08em}
+.article-subsection-title h3{margin:0;font-size:1.35rem}
+.academic-publications{margin-top:4.5rem;padding-top:1rem;border-top:1px solid var(--line)}
+.academic-publications .section-head{max-width:760px}
