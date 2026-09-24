@@ -1,0 +1,125 @@
+t/Project Managers create an OCM roadmap aligned with the project lifecycle.</p></div>
+    <div class="step"><b>Targeted OCM Interventions</b><p>OCM Manager responds to Product/Project Manager requests with focused OCM interventions that address root causes and immediate project needs.</p></div>
+    <div class="step"><b>Post-Project OCM Support</b><p>OCM Manager works with customers after delivery to reinforce adoption and address remaining gaps.</p></div>
+    <div class="step"><b>Biweekly Review &amp; Adaptation</b><p>OCM Champions and OCM manager review progress and risks biweekly through an iterative approach.</p></div>
+    <div class="step"><b>OCM Jira Visibility</b><p>Integrate OCM activities into Jira Product Increment items to ensure visibility, traceability, and progress tracking while delivering project/product.</p></div>
+  </div>
+
+  <h3 class="sub reveal">Challenges</h3>
+  <p class="reveal" style="margin-top:0">The following are the main challenges identified:</p>
+  <div class="grid3 reveal">
+    <div class="ocard"><div class="oq">Challenge 1</div><h4>Weak OCM Integration</h4><p>OCM is not consistently embedded in project decision-making and delivery.</p></div>
+    <div class="ocard t2"><div class="oq">Challenge 2</div><h4>Unclear Roles &amp; Accountability</h4><p>OCM responsibilities, ownership, and governance are not consistently applied.</p></div>
+    <div class="ocard t3"><div class="oq">Challenge 3</div><h4>Limited OCM Capacity &amp; Focus</h4><p>High workload and competing priorities reduce OCM's ability to deliver maximum value.</p></div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap"><b>Prepared by IT Portfolio Management — PO Team.</b> Reporting period 1 April 2024 – 1 March 2025</div>
+</footer>
+
+</div>
+<!-- /view-ocm -->
+
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><span class="x">&times;</span><img id="lbimg" src="" alt=""></div>
+
+<script>
+/* ── lightbox ── */
+function lb(id){var s=document.getElementById(id);if(!s)return;var l=document.getElementById('lb');document.getElementById('lbimg').src=s.src;l.classList.add('on');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').classList.remove('on');});
+
+/* ── scroll reveal (shared observer, re-armed per view) ── */
+var ro=new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px'});
+function initReveals(root){
+  if(!root)return;
+  var els=[].slice.call(root.querySelectorAll('.reveal'));
+  els.forEach(function(el,i){if(el.classList.contains('in'))return;el.style.transitionDelay=((i%5)*40)+'ms';ro.observe(el);});
+  /* fallback for anything already inside the viewport when the view is shown */
+  setTimeout(function(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<(window.innerHeight||0)&&r.bottom>0)el.classList.add('in');});},50);
+}
+
+/* safety sweep: guarantees nothing stays invisible if lazy-loaded images
+   shift the layout past an element before the observer sees it */
+function sweep(){
+  var v=document.querySelector('.view.active');if(!v)return;
+  var vh=window.innerHeight||document.documentElement.clientHeight;
+  var els=v.querySelectorAll('.reveal');
+  for(var i=0;i<els.length;i++){
+    if(els[i].classList.contains('in'))continue;
+    if(els[i].getBoundingClientRect().top < vh*0.94)els[i].classList.add('in');
+  }
+}
+var ticking=false;
+function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){sweep();ticking=false;});}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',onScroll);
+window.addEventListener('load',function(){setTimeout(sweep,150);});
+document.addEventListener('load',function(e){if(e.target&&e.target.tagName==='IMG')onScroll();},true);
+
+/* ── scrollspy, scoped to each view's own nav ── */
+function initSpy(view){
+  var secs=[].slice.call(view.querySelectorAll('section')),
+      links=[].slice.call(view.querySelectorAll('nav.sticky a'));
+  if(!secs.length||!links.length)return;
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id);});}
+  });},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){so.observe(s);});
+}
+
+/* ── report switcher ── */
+var views=[].slice.call(document.querySelectorAll('.view')),
+    allTabs=[].slice.call(document.querySelectorAll('.rtab'));
+
+function showView(id,fromClick){
+  var target=document.getElementById(id);
+  if(!target||!target.classList.contains('view'))return;
+  views.forEach(function(v){v.classList.toggle('active',v===target);});
+  allTabs.forEach(function(b){
+    var on=b.getAttribute('data-view')===id;
+    b.classList.toggle('active',on);
+    b.setAttribute('aria-selected',on?'true':'false');
+    b.tabIndex=on?0:-1;
+  });
+  if(target.getAttribute('data-title'))document.title=target.getAttribute('data-title');
+  if(fromClick){
+    window.scrollTo(0,0);
+    if(history.replaceState)history.replaceState(null,'','#'+id);
+  }
+  initReveals(target);
+  setTimeout(sweep,80);
+}
+
+allTabs.forEach(function(b){
+  b.addEventListener('click',function(){showView(b.getAttribute('data-view'),true);});
+  b.addEventListener('keydown',function(e){
+    if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft'&&e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;
+    e.preventDefault();
+    var row=[].slice.call(b.parentNode.querySelectorAll('.rtab')),
+        i=row.indexOf(b),
+        n=(e.key==='ArrowRight'||e.key==='ArrowDown')?i+1:i-1;
+    n=(n+row.length)%row.length;
+    showView(row[n].getAttribute('data-view'),true);
+    var nb=document.querySelector('.view.active .rtab.active');if(nb)nb.focus();
+  });
+});
+
+/* ── init ── */
+views.forEach(initSpy);
+
+(function(){
+  var h=(location.hash||'').slice(1),start=null,scrollTo=null;
+  if(h){
+    var el=document.getElementById(h);
+    if(el&&el.classList.contains('view')){start=h;}
+    else if(el){var pv=el.closest?el.closest('.view'):null;if(pv){start=pv.id;if(pv.id!=='view-ppm')scrollTo=el;}}
+  }
+  if(start&&start!=='view-ppm'){
+    showView(start,false);
+    if(scrollTo)setTimeout(function(){scrollTo.scrollIntoView();},60);
+  }
+  initReveals(document.querySelector('.view.active'));
+})();
+</script>
