@@ -174,10 +174,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function filterName(domain) {
     for (var i = 0; i < filters.length; i++) {
       if (filters[i].getAttribute('data-filter') === domain) {
-        return filters[i].textContent.replace(/\\d+/g, '').trim();
+        return filters[i].textContent.replace(/\\s*\\d+\\s*$/, '').trim();
       }
     }
     return names[domain] || 'articles';
+  }
+
+  function moreText(domain) {
+    var remaining = countFor(domain) - 4;
+    var name = filterName(domain);
+    return 'View ' + remaining + ' more ' + name + ' article' + (remaining === 1 ? '' : 's') + ' →';
   }
 
   function updateCounts() {
@@ -206,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!matches) {
         cards[j].hidden = true;
       } else {
-        cards[j].hidden = domain !== 'all' && visibleIndex >= 4;
+        cards[j].hidden = visibleIndex >= 4;
         visibleIndex++;
       }
     }
@@ -215,9 +221,9 @@ document.addEventListener('DOMContentLoaded', function () {
     title.hidden = domain === 'all';
 
     if (more) {
-      more.hidden = domain === 'all' || total <= 4;
+      more.hidden = total <= 4;
       if (!more.hidden) {
-        moreLink.textContent = 'See ' + (total - 4) + ' more article' + (total - 4 === 1 ? '' : 's') + ' →';
+        moreLink.textContent = moreText(domain);
       }
     }
   }
@@ -225,19 +231,18 @@ document.addEventListener('DOMContentLoaded', function () {
   if (moreLink) {
     moreLink.addEventListener('click', function (event) {
       event.preventDefault();
-      if (current === 'all') return;
-
       expanded = !expanded;
       var shown = 0;
 
       for (var i = 0; i < cards.length; i++) {
-        if (cards[i].getAttribute('data-domain') === current) {
+        var matches = current === 'all' || cards[i].getAttribute('data-domain') === current;
+        if (matches) {
           cards[i].hidden = !expanded && shown >= 4;
           shown++;
         }
       }
 
-      moreLink.textContent = expanded ? 'Show less ↑' : 'See ' + (countFor(current) - 4) + ' more article' + (countFor(current) - 4 === 1 ? '' : 's') + ' →';
+      moreLink.textContent = expanded ? 'Show less ↑' : moreText(current);
     });
   }
 
