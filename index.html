@@ -147,36 +147,40 @@
   <footer><span>© 2026 Behzad Nazarbakhsh</span><span>Software Craftsmanship · Product Coach · Agile Expert</span></footer>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const filters = document.querySelectorAll('.article-filter');
-  const cards = document.querySelectorAll('.article-all-grid .article-card');
-  const title = document.querySelector('.article-selected-domain');
-  const names = {
-    all: '',
-    product: 'Product & Business Value',
-    agile: 'Agile & Organizational Design',
-    governance: 'IT Governance',
-    engineering: 'Software Engineering & Quality',
-    ai: 'AI & Software Teams'
-  };
+  var filters = document.querySelectorAll('.article-filter');
+  var cards = document.querySelectorAll('.article-all-grid > .article-card');
+  var title = document.querySelector('.article-selected-domain');
 
   function show(selected) {
     filters.forEach(function (filter) {
-      const active = filter.dataset.filter === selected;
+      var active = filter.getAttribute('data-filter') === selected;
       filter.classList.toggle('active', active);
       filter.setAttribute('aria-selected', active ? 'true' : 'false');
     });
+
     cards.forEach(function (card) {
-      card.hidden = selected !== 'all' && card.dataset.domain !== selected;
+      var visible = selected === 'all' || card.getAttribute('data-domain') === selected;
+      card.style.display = visible ? 'flex' : 'none';
     });
-    title.textContent = names[selected];
-    title.hidden = selected === 'all';
+
+    var names = {
+      product: 'Product & Business Value',
+      agile: 'Agile & Organizational Design',
+      governance: 'IT Governance',
+      engineering: 'Software Engineering & Quality',
+      ai: 'AI & Software Teams'
+    };
+
+    title.textContent = selected === 'all' ? '' : names[selected];
+    title.style.display = selected === 'all' ? 'none' : 'block';
   }
 
   filters.forEach(function (filter) {
     filter.addEventListener('click', function () {
-      show(this.dataset.filter);
+      show(this.getAttribute('data-filter'));
     });
   });
+
   show('all');
 });
 </script>
