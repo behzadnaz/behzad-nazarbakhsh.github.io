@@ -101,6 +101,22 @@ footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justi
 .article-domains {
   margin-top: 1rem;
 }
+.article-domains.all-view {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.article-domains.all-view .article-domain {
+  margin-top: 0;
+}
+.article-domains.all-view .article-grid {
+  grid-template-columns: 1fr;
+}
+@media (max-width:700px) {
+  .article-domains.all-view {
+    grid-template-columns: 1fr;
+  }
+}
 .article-domain {
   margin-top: 3.5rem;
   animation: articleReveal 0.35s ease both;
