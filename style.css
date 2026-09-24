@@ -428,11 +428,14 @@ button, a {
 .career-story .career-snapshot{margin:0}
 .career-journey{
   position:relative;
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content:space-between;
   gap:0;
+  width:100%;
   margin-top:36px;
-  padding:0 0 4px
+  padding:0 0 4px;
 }
 .journey-line{
   position:absolute;
@@ -441,16 +444,17 @@ button, a {
   top:24px;
   height:1px;
   background:var(--line);
-  z-index:0
+  z-index:0;
 }
 .journey-stage{
   position:relative;
   z-index:1;
+  flex:1 1 25%;
+  min-width:0;
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
-  min-width:0
 }
 .journey-icon{
   width:48px;
@@ -461,7 +465,7 @@ button, a {
   border:1px solid var(--line);
   border-radius:50%;
   background:var(--paper);
-  box-shadow:0 0 0 8px var(--paper)
+  box-shadow:0 0 0 8px var(--paper);
 }
 .journey-icon svg{
   width:28px;
@@ -470,53 +474,39 @@ button, a {
   stroke:#17211b;
   stroke-width:2.2;
   stroke-linecap:round;
-  stroke-linejoin:round
+  stroke-linejoin:round;
 }
 .journey-stage strong{
   margin-top:15px;
   font-family:"Playfair Display",Georgia,serif;
   font-size:1.08rem;
   font-weight:600;
-  color:var(--ink)
+  color:var(--ink);
 }
 .journey-stage small{
   margin-top:2px;
   color:var(--muted);
-  font-size:.72rem
+  font-size:.72rem;
 }
 .journey-caption{
-  grid-column:1/-1;
   margin:28px 0 0;
   padding-top:18px;
   border-top:1px solid var(--line);
   text-align:center;
   color:var(--muted);
   font-size:.82rem;
-  line-height:1.55
+  line-height:1.55;
 }
 @media(max-width:700px){
   .career-journey{
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    justify-content:flex-start;
     gap:10px;
-    margin-top:28px;
-    padding:0;
-    overflow-x:auto
+    overflow-x:auto;
+    padding:0 8px 8px;
   }
-  .journey-line{
-    left:8%;
-    right:8%;
-    top:24px;
-    bottom:auto;
-    width:auto;
-    height:1px
-  }
-  .journey-stage{
-    min-width:120px
-  }
-  .journey-caption{
-    grid-column:1/-1;
-    text-align:left
-  }
+  .journey-stage{flex:0 0 120px}
+  .journey-line{left:8%;right:8%;top:24px}
+  .journey-caption{text-align:left}
 }
 .career-metaphor-mini{display:inline-block;margin:0 0 8px 10px;padding:3px 8px;border:1px solid var(--line);border-radius:999px;color:var(--accent-dark);font:10px "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;background:#fff}
 
