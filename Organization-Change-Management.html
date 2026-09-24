@@ -23,6 +23,10 @@ html,body{margin:0;width:100%;min-height:100%;background:#fff}
     doc.querySelectorAll(".rtabs").forEach(e=>e.remove());
     ocm.classList.add("active");
     ocm.removeAttribute("data-title");
+    const theme=document.createElement("style");
+    theme.id="main-site-theme";
+    theme.textContent=":root{--blue:#c97845;--blue-600:#b8663a;--blue-400:#d99a73;--blue-200:#ead4c5;--cream:#f7f8f4;--paper:#f7f8f4;--ink:#17211b;--muted:#68736c;--line:#dce3dc;--card:#fff;--teal:#718b78;--amber:#b88755;--coral:#b86b5b;--green:#6f8b76;--violet:#80786f;--shadow:0 1px 3px rgba(23,33,27,.06),0 8px 24px rgba(23,33,27,.05);--radius:0px;--orange:#c97845;--slate:#68736c}body{font-family:Inter,Arial,sans-serif!important;background:var(--paper)!important;color:var(--ink)!important}.hero{color:var(--ink)!important;background:radial-gradient(circle at 82% 40%,#e6ece5 0,transparent 30%),linear-gradient(135deg,#f8f9f6,#edf1eb)!important}.hero h1,.sec-head h2,h2,h3.sub{font-family:\"Playfair Display\",Georgia,serif!important;color:var(--ink)!important}.hero-badge{color:var(--accent-dark)!important;border-color:#c7cec8!important}.hero-cap,.eyebrow{color:var(--accent-dark)!important}.card,.ocard,.step,.fig{background:#fff!important;border-color:var(--line)!important;box-shadow:0 1px 3px rgba(23,33,27,.06),0 8px 24px rgba(23,33,27,.05)!important}.ocard{border-top-color:var(--accent)!important}.callout{background:#202820!important;color:#f5f7f3!important}.callout.teal{background:linear-gradient(135deg,#4e6657,#718b78)!important}.dlink{color:var(--accent-dark)!important;background:#f4ebe5!important}.tbl th{color:var(--muted)!important;border-color:var(--line)!important}.tbl td{color:#3f4a43!important;border-color:var(--line)!important}.tbl td b{color:var(--accent-dark)!important}.pill{background:#f4ebe5!important;color:var(--accent-dark)!important}.step::before,.eyebrow .num{background:var(--accent)!important;color:#fff!important}.checks li::before{background:#e7eee9!important;color:#4e6657!important}.checks.arrow li::before{background:#f4ebe5!important;color:var(--accent-dark)!important}footer{border-color:var(--line)!important;color:var(--muted)!important}.rtab{color:var(--ink)!important;background:rgba(255,255,255,.55)!important;border-color:#c7cec8!important}.rtab.active{background:#202820!important;color:#f5f7f3!important;border-color:#202820!important}.hero-kpis .hk{background:rgba(255,255,255,.58)!important;border-color:#d0d8d1!important;color:var(--ink)!important}.hero-kpis .hk.accent{background:rgba(201,120,69,.12)!important;border-color:rgba(201,120,69,.3)!important}.donut{background:conic-gradient(var(--accent) 0 40%,#718b78 40% 60%,#b88755 60% 90%,#b86b5b 90% 95%,#80786f 95% 100%)!important}.donut.ocm{background:conic-gradient(var(--accent) 0 10%,#d99a73 10% 25%,#80786f 25% 30%,#718b78 30% 50%,#6f8b76 50% 60%,#b88755 60% 70%,#c97845 70% 85%,#b86b5b 85% 95%,#68736c 95% 100%)!important}";
+    doc.head.appendChild(theme);
     doc.title="Organization Change Management";
     document.open();
     document.write("<!DOCTYPE html>\n"+doc.documentElement.outerHTML);
@@ -32,53 +36,5 @@ html,body{margin:0;width:100%;min-height:100%;background:#fff}
   }
 })();
 </script>
-<style id="main-site-theme">
-:root{
- --blue:#c97845;--blue-600:#b8663a;--blue-400:#d99a73;--blue-200:#ead4c5;
- --cream:#f7f8f4;--paper:#f7f8f4;--ink:#17211b;--muted:#68736c;--line:#dce3dc;--card:#fff;
- --teal:#718b78;--amber:#b88755;--coral:#b86b5b;--green:#6f8b76;--violet:#80786f;
- --shadow:0 1px 3px rgba(23,33,27,.06),0 8px 24px rgba(23,33,27,.05);
- --radius:0px;--orange:#c97845;--slate:#68736c
-}
-body{font-family:Inter,Arial,sans-serif;background:var(--paper);color:var(--ink)}
-.hero{color:var(--ink)!important;background:radial-gradient(circle at 82% 40%,#e6ece5 0,transparent 30%),linear-gradient(135deg,#f8f9f6,#edf1eb)!important}
-.hero h1,.sec-head h2,h2,h3.sub{font-family:"Playfair Display",Georgia,serif!important;color:var(--ink)}
-.hero h1{font-weight:600!important;letter-spacing:-.055em!important}
-.hero .sub{color:var(--muted)!important}
-.hero-badge{color:var(--accent-dark);border-color:#c7cec8!important}
-.brandmark{color:var(--ink)}
-.brandmark .bx{background:rgba(23,33,27,.05)!important;border-color:#aeb8b0!important}
-.brandmark .bx svg rect{fill:var(--accent)!important}
-.hero-meta{color:var(--muted)}
-.hero-meta b{color:var(--ink)}
-.hero-cap,.eyebrow{color:var(--accent-dark)!important}
-nav.sticky{background:rgba(247,248,244,.94)!important;border-color:var(--line)!important}
-nav.sticky a{color:var(--muted)}
-nav.sticky a:hover{color:var(--ink);background:#fff}
-nav.sticky a.active{color:#fff;background:#202820}
-.card,.ocard,.step,.fig{background:#fff;border-color:var(--line);box-shadow:0 1px 3px rgba(23,33,27,.06),0 8px 24px rgba(23,33,27,.05)}
-.ocard{border-top-color:var(--accent)}
-.ocard.t2{border-top-color:#718b78}.ocard.t3{border-top-color:#b88755}.ocard.t4{border-top-color:#b86b5b}
-.callout{background:#202820!important;color:#f5f7f3}
-.callout.teal{background:linear-gradient(135deg,#4e6657,#718b78)!important}
-.dlink{color:var(--accent-dark);background:#f4ebe5}
-.dlink:hover{background:var(--accent);color:#fff}
-.tbl th{color:var(--muted);border-color:var(--line)}
-.tbl td{color:#3f4a43;border-color:var(--line)}
-.tbl td b{color:var(--accent-dark)}
-.pill{background:#f4ebe5;color:var(--accent-dark)}
-.step::before,.eyebrow .num{background:var(--accent);color:#fff}
-.checks li::before{background:#e7eee9;color:#4e6657}
-.checks.arrow li::before{background:#f4ebe5;color:var(--accent-dark)}
-footer{border-color:var(--line);color:var(--muted)}
-footer b{color:var(--ink)}
-.donut{background:conic-gradient(var(--accent) 0 40%,#718b78 40% 60%,#b88755 60% 90%,#b86b5b 90% 95%,#80786f 95% 100%)}
-.donut.ocm{background:conic-gradient(var(--accent) 0 10%,#d99a73 10% 25%,#80786f 25% 30%,#718b78 30% 50%,#6f8b76 50% 60%,#b88755 60% 70%,#c97845 70% 85%,#b86b5b 85% 95%,#68736c 95% 100%)}
-.donut .dh b{color:var(--accent-dark)}
-.rtab{color:var(--ink);background:rgba(255,255,255,.55);border-color:#c7cec8}
-.rtab.active{background:#202820;color:#f5f7f3;border-color:#202820}
-.hero-kpis .hk{background:rgba(255,255,255,.58);border-color:#d0d8d1;color:var(--ink)}
-.hero-kpis .hk span{color:var(--muted)}
-.hero-kpis .hk.accent{background:rgba(201,120,69,.12);border-color:rgba(201,120,69,.3)}
-</style></body>
+</body>
 </html>
