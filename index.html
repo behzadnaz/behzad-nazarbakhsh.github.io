@@ -138,5 +138,35 @@
     </section>
   </main>
   <footer><span>© 2026 Behzad Nazarbakhsh</span><span>Software Craftsmanship · Product Coach · Agile Expert</span></footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var filters = document.querySelectorAll('.article-filter');
+  var domains = document.querySelectorAll('.article-domain');
+
+  filters.forEach(function (filter) {
+    filter.addEventListener('click', function () {
+      var selected = this.getAttribute('data-filter');
+
+      filters.forEach(function (item) {
+        item.classList.remove('active');
+        item.setAttribute('aria-selected', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+
+      domains.forEach(function (domain) {
+        var domainName = domain.getAttribute('data-domain');
+        if (selected === 'all' || domainName === selected) {
+          domain.style.display = '';
+          domain.classList.remove('is-hidden');
+        } else {
+          domain.style.display = 'none';
+          domain.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+});
+</script>
 </body>
 </html>
