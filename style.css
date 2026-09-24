@@ -447,6 +447,9 @@ button, a {
 }
 .journey-stage{
   position:relative;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-user-drag:none;
   z-index:1;
   flex:0 0 25%;
   min-width:0;
