@@ -10,7 +10,15 @@
 <!-- GitHub Pages deployment refresh: 2026-09-24-2 -->
     <!-- GitHub Pages deployment refresh: 2026-09-24-3 -->
       <!-- Original CIO report integrated with deep-linked PPM and OCM tabs -->
-  </head>
+  <script>
+(function(){
+  if ('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('pageshow',function(){
+    if (!location.hash) window.scrollTo(0,0);
+  });
+})();
+</script>
+</head>
 <body>
   <header id="home" class="hero">
     <nav class="nav">
