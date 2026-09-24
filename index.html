@@ -140,32 +140,29 @@
   <footer><span>© 2026 Behzad Nazarbakhsh</span><span>Software Craftsmanship · Product Coach · Agile Expert</span></footer>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var filters = document.querySelectorAll('.article-filter');
-  var domains = document.querySelectorAll('.article-domain');
+  const filters = document.querySelectorAll('.article-filter');
+  const domains = document.querySelectorAll('.article-domain');
+
+  function showDomain(selected) {
+    filters.forEach(function (filter) {
+      const active = filter.dataset.filter === selected;
+      filter.classList.toggle('active', active);
+      filter.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+
+    domains.forEach(function (domain) {
+      const show = selected === 'all' || domain.dataset.domain === selected;
+      domain.hidden = !show;
+    });
+  }
 
   filters.forEach(function (filter) {
     filter.addEventListener('click', function () {
-      var selected = this.getAttribute('data-filter');
-
-      filters.forEach(function (item) {
-        item.classList.remove('active');
-        item.setAttribute('aria-selected', 'false');
-      });
-      this.classList.add('active');
-      this.setAttribute('aria-selected', 'true');
-
-      domains.forEach(function (domain) {
-        var domainName = domain.getAttribute('data-domain');
-        if (selected === 'all' || domainName === selected) {
-          domain.style.display = '';
-          domain.classList.remove('is-hidden');
-        } else {
-          domain.style.display = 'none';
-          domain.classList.add('is-hidden');
-        }
-      });
+      showDomain(this.dataset.filter);
     });
   });
+
+  showDomain('all');
 });
 </script>
 </body>
