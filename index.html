@@ -151,14 +151,15 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var filters = document.querySelectorAll('.article-filter');
-  var articleGrid = document.querySelector('.article-all-grid');
-  var cards = Array.from(articleGrid.querySelectorAll(':scope > .article-card'));
+  var grid = document.querySelector('.article-all-grid');
+  var cards = grid ? grid.querySelectorAll('.article-card') : [];
   var title = document.querySelector('.article-selected-domain');
   var more = document.querySelector('.article-more');
-  var moreLink = more.querySelector('a');
+  var moreLink = more ? more.querySelector('a') : null;
+  var current = 'all';
+  var expanded = false;
 
   var names = {
-    all: '',
     product: 'Product & Business Value',
     agile: 'Agile & Organizational Design',
     governance: 'IT Governance',
@@ -166,83 +167,82 @@ document.addEventListener('DOMContentLoaded', function () {
     ai: 'AI & Software Teams'
   };
 
-  function updateCounts() {
-    filters.forEach(function (filter) {
-      var selected = filter.dataset.filter;
-      var count = selected === 'all'
-        ? cards.length
-        : cards.filter(function (card) {
-            return card.dataset.domain === selected;
-          }).length;
-      var countElement = filter.querySelector('span');
-      if (countElement) countElement.textContent = count;
-    });
+  function countFor(domain) {
+    var count = 0;
+    for (var i = 0; i < cards.length; i++) {
+      if (domain === 'all' || cards[i].getAttribute('data-domain') === domain) count++;
+    }
+    return count;
   }
 
-  function show(selected) {
-    filters.forEach(function (filter) {
-      var active = filter.dataset.filter === selected;
-      filter.classList.toggle('active', active);
-      filter.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
+  function updateCounts() {
+    for (var i = 0; i < filters.length; i++) {
+      var domain = filters[i].getAttribute('data-filter');
+      var number = filters[i].querySelector('span');
+      if (number) number.textContent = countFor(domain);
+    }
+  }
 
-    var matching = selected === 'all'
-      ? cards
-      : cards.filter(function (card) {
-          return card.dataset.domain === selected;
-        });
+  function show(domain) {
+    current = domain;
+    expanded = false;
 
-    cards.forEach(function (card) {
-      card.hidden = matching.indexOf(card) === -1;
-    });
-
-    more.hidden = true;
-    moreLink.textContent = '';
-    moreLink.dataset.expanded = 'false';
-
-    if (selected !== 'all' && matching.length > 4) {
-      matching.slice(4).forEach(function (card) {
-        card.hidden = true;
-      });
-      more.hidden = false;
-      moreLink.textContent = 'View ' + (matching.length - 4) + ' more ' + names[selected] + ' article' + (matching.length - 4 === 1 ? '' : 's') + ' →';
-      moreLink.dataset.expanded = 'false';
+    for (var i = 0; i < filters.length; i++) {
+      var active = filters[i].getAttribute('data-filter') === domain;
+      filters[i].classList.toggle('active', active);
+      filters[i].setAttribute('aria-selected', active ? 'true' : 'false');
     }
 
-    articleGrid.classList.toggle('filtered', selected !== 'all');
-    title.textContent = names[selected];
-    title.hidden = selected === 'all';
+    var visibleIndex = 0;
+    var total = countFor(domain);
+
+    for (var j = 0; j < cards.length; j++) {
+      var matches = domain === 'all' || cards[j].getAttribute('data-domain') === domain;
+      if (!matches) {
+        cards[j].hidden = true;
+      } else {
+        cards[j].hidden = domain !== 'all' && visibleIndex >= 4;
+        visibleIndex++;
+      }
+    }
+
+    title.textContent = names[domain] || '';
+    title.hidden = domain === 'all';
+
+    if (more) {
+      more.hidden = domain === 'all' || total <= 4;
+      if (!more.hidden) {
+        moreLink.textContent = 'See ' + (total - 4) + ' more article' + (total - 4 === 1 ? '' : 's') + ' →';
+      }
+    }
   }
 
-  moreLink.addEventListener('click', function (event) {
-    event.preventDefault();
-    var selectedFilter = document.querySelector('.article-filter.active');
-    if (!selectedFilter || selectedFilter.dataset.filter === 'all') return;
+  if (moreLink) {
+    moreLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (current === 'all') return;
 
-    var selected = selectedFilter.dataset.filter;
-    var matching = cards.filter(function (card) {
-      return card.dataset.domain === selected;
+      expanded = !expanded;
+      var shown = 0;
+
+      for (var i = 0; i < cards.length; i++) {
+        if (cards[i].getAttribute('data-domain') === current) {
+          cards[i].hidden = !expanded && shown >= 4;
+          shown++;
+        }
+      }
+
+      moreLink.textContent = expanded ? 'Show less ↑' : 'See ' + (countFor(current) - 4) + ' more article' + (countFor(current) - 4 === 1 ? '' : 's') + ' →';
     });
-    var expanded = moreLink.dataset.expanded === 'true';
+  }
 
-    matching.forEach(function (card, index) {
-      card.hidden = !expanded ? false : index >= 4;
+  for (var i = 0; i < filters.length; i++) {
+    filters[i].addEventListener('click', function () {
+      show(this.getAttribute('data-filter'));
     });
-
-    moreLink.dataset.expanded = expanded ? 'false' : 'true';
-    moreLink.textContent = expanded
-      ? 'View ' + (matching.length - 4) + ' more ' + names[selected] + ' article' + (matching.length - 4 === 1 ? '' : 's') + ' →'
-      : 'Show less ↑';
-  });
+  }
 
   updateCounts();
-
-  filters.forEach(function (filter) {
-    filter.addEventListener('click', function () {
-      show(filter.dataset.filter);
-    });
-  });
-
   show('all');
 });
 </script>
