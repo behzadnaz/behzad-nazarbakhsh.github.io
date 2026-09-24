@@ -74,6 +74,7 @@
       </div>
 
       <div class="article-selected-domain" aria-live="polite"></div>
+      <div class="article-more" hidden><a href="#" target="_blank" rel="noopener">View all articles →</a></div>
       <div class="article-grid article-all-grid">
 
         <article class="article-card linkedin-card" data-source="linkedin" data-domain="product"><div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -150,8 +151,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   var filters = document.querySelectorAll('.article-filter');
   var articleGrid = document.querySelector('.article-all-grid');
-  var cards = articleGrid.querySelectorAll(':scope > .article-card');
+  var cards = Array.from(articleGrid.querySelectorAll(':scope > .article-card'));
   var title = document.querySelector('.article-selected-domain');
+  var more = document.querySelector('.article-more');
+  var moreLink = more.querySelector('a');
 
   var names = {
     all: '',
@@ -162,12 +165,21 @@ document.addEventListener('DOMContentLoaded', function () {
     ai: 'AI & Software Teams'
   };
 
+  var archives = {
+    all: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
+    product: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
+    agile: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
+    governance: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
+    engineering: 'https://scholar.google.com/citations?user=PfzbthcAAAAJ&hl=en',
+    ai: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/'
+  };
+
   function updateCounts() {
     filters.forEach(function (filter) {
       var selected = filter.dataset.filter;
       var count = selected === 'all'
         ? cards.length
-        : Array.from(cards).filter(function (card) {
+        : cards.filter(function (card) {
             return card.dataset.domain === selected;
           }).length;
       var countElement = filter.querySelector('span');
@@ -182,9 +194,26 @@ document.addEventListener('DOMContentLoaded', function () {
       filter.setAttribute('aria-selected', active ? 'true' : 'false');
     });
 
+    var matching = selected === 'all'
+      ? cards
+      : cards.filter(function (card) {
+          return card.dataset.domain === selected;
+        });
+
     cards.forEach(function (card) {
-      card.hidden = selected !== 'all' && card.dataset.domain !== selected;
+      card.hidden = matching.indexOf(card) === -1;
     });
+
+    if (selected !== 'all' && matching.length > 4) {
+      matching.slice(4).forEach(function (card) {
+        card.hidden = true;
+      });
+      more.hidden = false;
+      moreLink.href = archives[selected];
+      moreLink.textContent = 'View all ' + names[selected] + ' articles →';
+    } else {
+      more.hidden = true;
+    }
 
     articleGrid.classList.toggle('filtered', selected !== 'all');
     title.textContent = names[selected];
@@ -195,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   filters.forEach(function (filter) {
     filter.addEventListener('click', function () {
-      show(this.dataset.filter);
+      show(filter.dataset.filter);
     });
   });
 
