@@ -162,6 +162,19 @@ document.addEventListener('DOMContentLoaded', function () {
     ai: 'AI & Software Teams'
   };
 
+  function updateCounts() {
+    filters.forEach(function (filter) {
+      var selected = filter.dataset.filter;
+      var count = selected === 'all'
+        ? cards.length
+        : Array.from(cards).filter(function (card) {
+            return card.dataset.domain === selected;
+          }).length;
+      var countElement = filter.querySelector('span');
+      if (countElement) countElement.textContent = count;
+    });
+  }
+
   function show(selected) {
     filters.forEach(function (filter) {
       var active = filter.dataset.filter === selected;
@@ -170,19 +183,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     cards.forEach(function (card) {
-      var source = card.dataset.source;
-      var domain = card.dataset.domain;
-      var shouldShow =
-        selected === 'all' ||
-        selected === source ||
-        selected === domain;
-      card.hidden = !shouldShow;
+      card.hidden = selected !== 'all' && card.dataset.domain !== selected;
     });
 
     articleGrid.classList.toggle('filtered', selected !== 'all');
     title.textContent = names[selected];
     title.hidden = selected === 'all';
   }
+
+  updateCounts();
 
   filters.forEach(function (filter) {
     filter.addEventListener('click', function () {
