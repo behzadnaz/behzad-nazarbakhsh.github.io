@@ -165,15 +165,6 @@ document.addEventListener('DOMContentLoaded', function () {
     ai: 'AI & Software Teams'
   };
 
-  var archives = {
-    all: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
-    product: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
-    agile: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
-    governance: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/',
-    engineering: 'https://scholar.google.com/citations?user=PfzbthcAAAAJ&hl=en',
-    ai: 'https://www.linkedin.com/in/behzad-nazarbakhsh/recent-activity/articles/'
-  };
-
   function updateCounts() {
     filters.forEach(function (filter) {
       var selected = filter.dataset.filter;
@@ -204,21 +195,44 @@ document.addEventListener('DOMContentLoaded', function () {
       card.hidden = matching.indexOf(card) === -1;
     });
 
+    more.hidden = true;
+    moreLink.textContent = '';
+    moreLink.dataset.expanded = 'false';
+
     if (selected !== 'all' && matching.length > 4) {
       matching.slice(4).forEach(function (card) {
         card.hidden = true;
       });
       more.hidden = false;
-      moreLink.href = archives[selected];
-      moreLink.textContent = 'View all ' + names[selected] + ' articles →';
-    } else {
-      more.hidden = true;
+      moreLink.textContent = 'View ' + (matching.length - 4) + ' more ' + names[selected] + ' article' + (matching.length - 4 === 1 ? '' : 's') + ' →';
+      moreLink.dataset.expanded = 'false';
     }
 
     articleGrid.classList.toggle('filtered', selected !== 'all');
     title.textContent = names[selected];
     title.hidden = selected === 'all';
   }
+
+  moreLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    var selectedFilter = document.querySelector('.article-filter.active');
+    if (!selectedFilter || selectedFilter.dataset.filter === 'all') return;
+
+    var selected = selectedFilter.dataset.filter;
+    var matching = cards.filter(function (card) {
+      return card.dataset.domain === selected;
+    });
+    var expanded = moreLink.dataset.expanded === 'true';
+
+    matching.forEach(function (card, index) {
+      card.hidden = !expanded ? false : index >= 4;
+    });
+
+    moreLink.dataset.expanded = expanded ? 'false' : 'true';
+    moreLink.textContent = expanded
+      ? 'View ' + (matching.length - 4) + ' more ' + names[selected] + ' article' + (matching.length - 4 === 1 ? '' : 's') + ' →'
+      : 'Show less ↑';
+  });
 
   updateCounts();
 
