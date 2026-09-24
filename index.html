@@ -171,6 +171,15 @@ document.addEventListener('DOMContentLoaded', function () {
     return count;
   }
 
+  function filterName(domain) {
+    for (var i = 0; i < filters.length; i++) {
+      if (filters[i].getAttribute('data-filter') === domain) {
+        return filters[i].textContent.replace(/\\d+/g, '').trim();
+      }
+    }
+    return names[domain] || 'articles';
+  }
+
   function updateCounts() {
     for (var i = 0; i < filters.length; i++) {
       var domain = filters[i].getAttribute('data-filter');
