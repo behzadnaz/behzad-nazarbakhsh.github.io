@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Selected reports by Behzad Nazarbakhsh.">
+<title>Reports | Behzad Nazarbakhsh</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.report-page{padding:150px 7vw 90px;max-width:1180px;margin:0 auto}
+.report-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:55px;color:var(--muted);text-decoration:none;font-family:"DM Mono",monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.report-back:hover{color:var(--ink)}
+.report-intro{max-width:760px;margin-bottom:55px}
+.report-intro .section-label{margin-bottom:14px}
+.report-intro h1{margin:0 0 20px;font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.8rem,6vw,5.2rem);line-height:1;letter-spacing:-.03em}
+.report-intro p{color:var(--muted);font-size:1.05rem;line-height:1.8;max-width:680px}
+.report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.report-card{display:flex;flex-direction:column;min-height:390px;padding:34px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease}
+.report-card:hover{transform:translateY(-4px);border-color:var(--ink)}
+.report-number{font-family:"DM Mono",monospace;color:var(--accent);font-size:.75rem;letter-spacing:.08em;margin-bottom:55px}
+.report-card h2{font-family:"Playfair Display",Georgia,serif;font-size:2rem;line-height:1.1;margin:0 0 14px}
+.report-date{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.05em;color:var(--muted);margin-bottom:25px}
+.report-card p{color:var(--muted);line-height:1.7;margin:0}
+.report-link{margin-top:auto;padding-top:35px;font-family:"DM Mono",monospace;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.report-note{margin-top:35px;color:var(--muted);font-size:.85rem;line-height:1.6}
+@media(max-width:800px){.report-page{padding:120px 6vw 70px}.report-grid{grid-template-columns:1fr}.report-card{min-height:330px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="index.html">BN</a>
+  <div class="nav-links">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#work">Selected Work</a>
+    <a href="index.html#articles">Articles</a>
+    <a href="index.html#new">New</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#about">About</a>
+  </div>
+</nav>
+<main class="report-page">
+  <a class="report-back" href="index.html#work">← Back to Selected Work</a>
+  <header class="report-intro">
+    <p class="section-label">SELECTED WORK · REPORTS</p>
+    <h1>Reports</h1>
+    <p>Selected professional reports documenting work across IT Portfolio Management and Organization Change Management.</p>
+  </header>
+  <section class="report-grid">
+    <a class="report-card" href="IT-Portfolio-Management.html">
+      <span class="report-number">01 / IT PORTFOLIO MANAGEMENT</span>
+      <h2>IT Portfolio Management</h2>
+      <div class="report-date">20 FEBRUARY 2026 — 19 AUGUST 2026</div>
+      <p>Turning IT strategy into transparent, prioritized, and value-driven execution across IT and the business.</p>
+      <span class="report-link">View Report ↗</span>
+    </a>
+    <a class="report-card" href="Organization-Change-Management.html">
+      <span class="report-number">02 / ORGANIZATION CHANGE MANAGEMENT</span>
+      <h2>Organization Change Management</h2>
+      <div class="report-date">1 APRIL 2024 — 1 MARCH 2025</div>
+      <p>Turning organizational change into successful adoption, sustainable outcomes, and measurable business value across IT and the business.</p>
+      <span class="report-link">View Report ↗</span>
+    </a>
+  </section>
+  <p class="report-note">The reports are presented as separate professional work artifacts so each can be explored independently.</p>
+</main>
+</body>
+</html>
