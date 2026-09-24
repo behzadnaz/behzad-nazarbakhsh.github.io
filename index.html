@@ -65,8 +65,7 @@
       <p class="articles-intro">Explore my writing by professional domain. Select a topic to focus on the ideas most relevant to you.</p>
 
       <div class="article-filters" role="tablist" aria-label="Filter writing by source and domain">
-        <button class="article-filter active" type="button" role="tab" aria-selected="true" data-filter="all">All <span>9</span></button>
-        <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="product">Product <span>1</span></button>
+        <button class="article-filter active" type="button" role="tab" aria-selected="true" data-filter="product">Product <span>1</span></button>
         <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="agile">Agile <span>1</span></button>
         <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="governance">Governance <span>1</span></button>
         <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="engineering">Engineering <span>5</span></button>
@@ -152,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var title = document.querySelector('.article-selected-domain');
   var more = document.querySelector('.article-more');
   var moreLink = more ? more.querySelector('a') : null;
-  var current = 'all';
+  var current = 'product';
   var expanded = false;
 
   var names = {
@@ -253,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   updateCounts();
-  show('all');
+  show('product');
 });
 </script>
 </body>
