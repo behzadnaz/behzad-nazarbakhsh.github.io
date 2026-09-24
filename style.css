@@ -155,3 +155,9 @@ footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justi
     min-height: 44px;
   }
 }
+
+
+/* Filtered article cards */
+.article-all-grid .article-card[hidden] { display: none !important; }
+.article-selected-domain { margin: 1.5rem 0 1.25rem; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.04em; }
+.article-selected-domain[hidden] { display: none; }
