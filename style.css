@@ -216,3 +216,10 @@ footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justi
 .scholar-metaphor:before{content:"";position:absolute;left:6px;right:6px;top:10px;height:2px;background:#71917a;box-shadow:0 7px 0 #71917a,0 14px 0 #71917a}
 .scholar-metaphor:after{content:"";position:absolute;right:-2px;top:-2px;width:10px;height:10px;background:#f2f7f3;border-left:2px solid #71917a;border-bottom:2px solid #71917a}
 @media (max-width:700px){.source-metaphor{top:20px;right:22px}}
+
+
+/* Article archive link */
+.article-more{text-align:center;margin:28px 0 4px}
+.article-more[hidden]{display:none}
+.article-more a{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:5px;transition:border-color .2s ease,transform .2s ease}
+.article-more a:hover{border-color:var(--ink)}
