@@ -323,7 +323,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function scrollFilters(direction) {
     if (!filterScroller) return;
-    filterScroller.scrollBy({ left: direction * Math.max(220, filterScroller.clientWidth * 0.65), behavior: 'smooth' });
+    filterScroller.scrollBy({ left: direction * Math.max(260, filterScroller.clientWidth * 0.8), behavior: 'smooth' });
+  }
+
+  function centerFilter(button) {
+    if (!filterScroller || !button) return;
+    var targetLeft = button.offsetLeft - (filterScroller.clientWidth - button.offsetWidth) / 2;
+    filterScroller.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
   }
 
   if (prevFilter) prevFilter.addEventListener('click', function () { scrollFilters(-1); });
@@ -436,6 +442,8 @@ document.addEventListener('DOMContentLoaded', function () {
   for (var i = 0; i < filters.length; i++) {
     filters[i].addEventListener('click', function () {
       show(this.getAttribute('data-filter'));
+      centerFilter(this);
+      setTimeout(updateFilterNav, 300);
     });
   }
 
