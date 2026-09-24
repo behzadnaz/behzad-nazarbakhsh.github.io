@@ -148,36 +148,41 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var filters = document.querySelectorAll('.article-filter');
-  var cards = document.querySelectorAll('.article-all-grid > .article-card');
+  var articleGrid = document.querySelector('.article-all-grid');
+  var cards = articleGrid.querySelectorAll(':scope > .article-card');
   var title = document.querySelector('.article-selected-domain');
+
+  var names = {
+    all: '',
+    product: 'Product & Business Value',
+    agile: 'Agile & Organizational Design',
+    governance: 'IT Governance',
+    engineering: 'Software Engineering & Quality',
+    ai: 'AI & Software Teams'
+  };
 
   function show(selected) {
     filters.forEach(function (filter) {
-      var active = filter.getAttribute('data-filter') === selected;
+      var active = filter.dataset.filter === selected;
       filter.classList.toggle('active', active);
       filter.setAttribute('aria-selected', active ? 'true' : 'false');
     });
 
     cards.forEach(function (card) {
-      var visible = selected === 'all' || card.getAttribute('data-domain') === selected;
-      card.style.display = visible ? 'flex' : 'none';
+      var domain = card.dataset.domain;
+      var shouldShow = selected === 'all' || domain === selected;
+      card.hidden = !shouldShow;
     });
 
-    var names = {
-      product: 'Product & Business Value',
-      agile: 'Agile & Organizational Design',
-      governance: 'IT Governance',
-      engineering: 'Software Engineering & Quality',
-      ai: 'AI & Software Teams'
-    };
+    articleGrid.classList.toggle('filtered', selected !== 'all');
 
-    title.textContent = selected === 'all' ? '' : names[selected];
-    title.style.display = selected === 'all' ? 'none' : 'block';
+    title.textContent = names[selected];
+    title.hidden = selected === 'all';
   }
 
   filters.forEach(function (filter) {
     filter.addEventListener('click', function () {
-      show(this.getAttribute('data-filter'));
+      show(this.dataset.filter);
     });
   });
 
