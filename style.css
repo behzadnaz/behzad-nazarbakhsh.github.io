@@ -46,3 +46,19 @@ footer{padding:30px 7vw 40px;border-top:1px solid var(--line);display:flex;justi
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
+
+/* Article domains */
+.article-domain {
+  margin-top: 3.5rem;
+}
+.domain-title {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(0,0,0,0.14);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.article-domain .article-grid {
+  margin-top: 0;
+}
