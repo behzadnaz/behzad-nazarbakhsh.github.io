@@ -452,3 +452,5 @@ button, a {
 .career-metaphor-card .career-metaphor-mini{margin:0 0 4px}
 .career-metaphor-card strong{display:block!important;margin:0 0 3px!important;font-family:"Playfair Display",Georgia,serif;font-size:1rem!important;font-weight:600}
 .career-metaphor-card small{display:block;color:var(--muted);font-size:.78rem;line-height:1.5}
+
+.career-title-row{display:flex;align-items:center;gap:14px}.career-title-row .career-icon{flex:0 0 48px}.career-title-row strong{margin:0!important}.career-item-content>p{margin-top:10px}
