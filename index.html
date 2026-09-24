@@ -142,8 +142,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const filters = document.querySelectorAll('.article-filter');
   const domains = document.querySelectorAll('.article-domain');
+  const domainContainer = document.querySelector('.article-domains');
 
   function showDomain(selected) {
+    domainContainer.classList.toggle('all-view', selected === 'all');
     filters.forEach(function (filter) {
       const active = filter.dataset.filter === selected;
       filter.classList.toggle('active', active);
@@ -153,6 +155,8 @@ document.addEventListener('DOMContentLoaded', function () {
     domains.forEach(function (domain) {
       const show = selected === 'all' || domain.dataset.domain === selected;
       domain.hidden = !show;
+      const title = domain.querySelector('.domain-title');
+      if (title) title.hidden = selected === 'all';
     });
   }
 
