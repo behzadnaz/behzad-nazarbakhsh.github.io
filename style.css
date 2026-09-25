@@ -1205,3 +1205,34 @@ footer{border-color:var(--line)}
  .satellite-software{right:-15px!important}.satellite-lean{left:-15px!important}.satellite-agile{right:3%!important}.satellite-stakeholder{left:0!important}
  .satellite-orbit-software{width:105px!important;height:42px!important}.satellite-orbit-lean{width:95px!important;height:40px!important}.satellite-orbit-agile{width:100px!important;height:40px!important}.satellite-orbit-stakeholder{width:115px!important;height:40px!important}
 }
+
+
+/* Readability pass for orbital map */
+.thinking-ring .thinking-node span:last-child{font-size:.72rem!important;letter-spacing:-.01em!important}
+.thinking-ring .thinking-node{width:118px!important}
+.thinking-icon{width:48px!important;height:48px!important}
+.thinking-icon svg{width:24px!important;height:24px!important}
+.thinking-business .thinking-icon{width:54px!important;height:54px!important}
+.thinking-business .thinking-icon svg{width:28px!important;height:28px!important}
+.thinking-core.thinking-photo{width:132px!important;height:132px!important;padding:6px!important}
+.thinking-satellite{font-size:.60rem!important;font-weight:700!important}
+.satellite-icon{width:34px!important;flex-basis:34px!important;height:24px!important}
+.satellite-icon svg{width:31px!important;height:18px!important}
+.satellite-orbit-software{width:124px!important;height:48px!important}
+.satellite-orbit-lean{width:108px!important;height:46px!important}
+.satellite-orbit-agile{width:112px!important;height:48px!important}
+.satellite-orbit-stakeholder{width:132px!important;height:48px!important}
+.thinking-map-caption{display:none!important}
+
+@media(max-width:800px){
+ .thinking-ring .thinking-node span:last-child{font-size:.52rem!important}
+ .thinking-ring .thinking-node{width:88px!important}
+ .thinking-core.thinking-photo{width:110px!important;height:110px!important}
+ .thinking-satellite{font-size:.46rem!important}
+}
+@media(max-width:560px){
+ .thinking-ring .thinking-node span:last-child{font-size:.40rem!important}
+ .thinking-ring .thinking-node{width:66px!important}
+ .thinking-core.thinking-photo{width:94px!important;height:94px!important}
+ .thinking-satellite{font-size:.34rem!important}
+}
