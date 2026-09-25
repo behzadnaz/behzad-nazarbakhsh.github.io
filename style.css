@@ -1050,3 +1050,21 @@ footer{border-color:var(--line)}
  .thinking-organization{bottom:5px!important}.thinking-product{top:57px!important;right:1px!important}.thinking-engineering{bottom:57px!important;right:1px!important}
  .thinking-people{bottom:57px!important;left:1px!important}.thinking-ai{top:57px!important;left:1px!important}
 }
+
+/* Professional domain satellites */
+.thinking-satellite{position:absolute!important;z-index:4!important;display:flex!important;align-items:center!important;gap:6px!important;padding:4px 7px!important;border:0!important;background:rgba(255,255,255,.82)!important;border-radius:20px!important;box-shadow:0 4px 14px rgba(15,23,42,.06)!important;white-space:nowrap!important;font:600 .55rem/1.1 "IBM Plex Mono","DM Mono",monospace!important;color:#64748b!important}
+.satellite-dot{display:flex!important;align-items:center!important;justify-content:center!important;width:18px!important;height:18px!important;border:1px solid #c4d2e2!important;border-radius:50%!important;color:var(--accent)!important;font-size:.72rem!important;background:#fff!important}
+.satellite-software{right:4px!important;top:42%!important}
+.satellite-agile{right:19%!important;bottom:4%!important}
+.satellite-stakeholder{left:17%!important;bottom:4%!important}
+.satellite-lean{left:4%!important;top:42%!important}
+.satellite-software:before,.satellite-agile:before,.satellite-stakeholder:before,.satellite-lean:before{content:"";position:absolute;width:4px;height:4px;border-radius:50%;background:#9db5d3;opacity:.8}
+.satellite-software:before{left:-9px}.satellite-lean:before{right:-9px}.satellite-agile:before{top:-8px;left:50%}.satellite-stakeholder:before{top:-8px;left:50%}
+@media(max-width:1100px){
+ .thinking-satellite{font-size:.48rem!important;padding:3px 5px!important}.satellite-dot{width:15px!important;height:15px!important;font-size:.6rem!important}
+ .satellite-software{right:0!important;top:41%}.satellite-lean{left:0!important;top:41%}.satellite-agile{right:12%!important;bottom:1%}.satellite-stakeholder{left:10%!important;bottom:1%}
+}
+@media(max-width:560px){
+ .thinking-satellite{font-size:.36rem!important;padding:2px 3px!important;gap:3px!important}.satellite-dot{width:12px!important;height:12px!important;font-size:.45rem!important}
+ .satellite-software{right:-4px!important;top:39%}.satellite-lean{left:-4px!important;top:39%}.satellite-agile{right:6%!important;bottom:-2px}.satellite-stakeholder{left:4%!important;bottom:-2px}
+}
