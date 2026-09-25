@@ -1073,3 +1073,51 @@ footer{border-color:var(--line)}
 .thinking-satellite .satellite-dot{flex:0 0 auto}
 .thinking-satellite .satellite-dot svg{width:11px!important;height:11px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
 .satellite-software-icon{color:#2563eb!important}.satellite-agile-icon{color:#0f766e!important}.satellite-stakeholder-icon{color:#7c3aed!important}.satellite-lean-icon{color:#b45309!important}
+
+/* Rebuilt orbital ecosystem */
+.hero-thinking-map{width:650px!important;max-width:100%!important}
+.thinking-ring{position:relative!important;width:620px!important;height:620px!important;border:0!important;background:radial-gradient(circle,rgba(37,99,235,.055) 0 15%,transparent 32%)!important;overflow:visible!important}
+.thinking-ring .orbit{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;border:1px solid #d5dfeb!important;border-radius:50%!important;pointer-events:none!important}
+.orbit-outer{width:560px!important;height:560px!important;opacity:.55!important}
+.orbit-middle{width:420px!important;height:420px!important;opacity:.7!important}
+.orbit-inner{width:280px!important;height:280px!important;opacity:.85!important}
+.thinking-ring .thinking-node{position:absolute!important;z-index:4!important;width:105px!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:6px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;white-space:nowrap!important}
+.thinking-ring .thinking-node span:last-child{font:700 .67rem/1.2 "IBM Plex Mono","DM Mono",monospace!important;color:#334155!important;text-align:center!important}
+.thinking-icon{display:flex!important;align-items:center!important;justify-content:center!important;width:54px!important;height:54px!important;border:1px solid #b7c8dc!important;border-radius:50%!important;background:linear-gradient(145deg,#fff,#edf4fa)!important;color:var(--accent)!important;box-shadow:0 8px 20px rgba(15,23,42,.09)!important}
+.thinking-icon svg{width:27px!important;height:27px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.thinking-business{top:7px!important;left:50%!important;transform:translateX(-50%)!important}
+.thinking-product{top:112px!important;right:42px!important}
+.thinking-engineering{bottom:112px!important;right:42px!important}
+.thinking-organization{bottom:7px!important;left:50%!important;transform:translateX(-50%)!important}
+.thinking-people{bottom:112px!important;left:42px!important}
+.thinking-ai{top:112px!important;left:42px!important}
+.thinking-business .thinking-icon{width:60px!important;height:60px!important}
+.thinking-business .thinking-icon svg{width:31px!important;height:31px!important}
+.thinking-business span:last-child{color:var(--accent)!important}
+.thinking-core.thinking-photo{position:absolute!important;z-index:7!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;width:158px!important;height:158px!important;padding:7px!important;border:2px solid #9eb6d4!important;border-radius:50%!important;background:#fff!important;box-shadow:0 20px 44px rgba(15,23,42,.16),0 0 0 9px rgba(255,255,255,.94),0 0 0 10px #dbe5f0!important}
+.thinking-core.thinking-photo:after{content:""!important;position:absolute!important;inset:-15px!important;border:1px solid rgba(37,99,235,.13)!important;border-radius:50%!important}
+.thinking-satellite{position:absolute!important;z-index:6!important;display:flex!important;align-items:center!important;gap:6px!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;white-space:nowrap!important;font:600 .57rem/1.2 "IBM Plex Mono","DM Mono",monospace!important;color:#526277!important}
+.satellite-icon{display:flex!important;align-items:center!important;justify-content:center!important;width:30px!important;height:30px!important;border:1px solid #c0cfdf!important;border-radius:50%!important;background:#fff!important;color:var(--accent)!important;box-shadow:0 5px 14px rgba(15,23,42,.08)!important}
+.satellite-icon svg{width:16px!important;height:16px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.satellite-software{right:-2px!important;top:40%!important}.satellite-software .satellite-icon{color:#2563eb!important}
+.satellite-lean{left:-2px!important;top:40%!important}.satellite-lean .satellite-icon{color:#b45309!important}
+.satellite-agile{right:16%!important;bottom:3%!important}.satellite-agile .satellite-icon{color:#0f766e!important}
+.satellite-stakeholder{left:16%!important;bottom:3%!important}.satellite-stakeholder .satellite-icon{color:#7c3aed!important}
+.thinking-map-caption{margin-top:0!important}
+@media(max-width:1100px){
+ .hero-thinking-map{width:540px!important}.thinking-ring{width:510px!important;height:510px!important}
+ .orbit-outer{width:460px!important;height:460px!important}.orbit-middle{width:350px!important;height:350px!important}.orbit-inner{width:235px!important;height:235px!important}
+ .thinking-photo{width:140px!important;height:140px!important}
+ .thinking-business{top:4px!important}.thinking-organization{bottom:4px!important}.thinking-product{top:88px!important;right:23px!important}.thinking-engineering{bottom:88px!important;right:23px!important}.thinking-people{bottom:88px!important;left:23px!important}.thinking-ai{top:88px!important;left:23px!important}
+ .thinking-satellite{font-size:.49rem!important}.satellite-icon{width:25px!important;height:25px!important}.satellite-icon svg{width:13px!important;height:13px!important}
+}
+@media(max-width:560px){
+ .hero-thinking-map{width:350px!important}.thinking-ring{width:340px!important;height:340px!important}
+ .orbit-outer{width:310px!important;height:310px!important}.orbit-middle{width:235px!important;height:235px!important}.orbit-inner{width:160px!important;height:160px!important}
+ .thinking-photo{width:104px!important;height:104px!important;padding:5px!important}
+ .thinking-ring .thinking-node{width:72px!important;gap:3px!important}.thinking-ring .thinking-node span:last-child{font-size:.43rem!important}
+ .thinking-icon{width:34px!important;height:34px!important}.thinking-icon svg{width:19px!important;height:19px!important}
+ .thinking-business{top:2px!important}.thinking-organization{bottom:2px!important}.thinking-product{top:58px!important;right:-3px!important}.thinking-engineering{bottom:58px!important;right:-3px!important}.thinking-people{bottom:58px!important;left:-3px!important}.thinking-ai{top:58px!important;left:-3px!important}
+ .thinking-satellite{font-size:.34rem!important;gap:3px!important}.satellite-icon{width:20px!important;height:20px!important}.satellite-icon svg{width:10px!important;height:10px!important}
+ .satellite-software{right:-8px!important;top:38%!important}.satellite-lean{left:-8px!important;top:38%!important}.satellite-agile{right:4%!important;bottom:-2px!important}.satellite-stakeholder{left:4%!important;bottom:-2px!important}
+}
