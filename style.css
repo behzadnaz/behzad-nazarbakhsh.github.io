@@ -729,4 +729,7 @@ footer{border-color:var(--line)}
 @media(max-width:700px){.hero-thinking-map{width:min(290px,100%)}.thinking-ring{width:245px;height:245px}.thinking-ring:before{height:190px}.thinking-ring:after{width:190px}.thinking-photo{width:94px;height:94px}.thinking-business{top:7px}.thinking-organization{bottom:7px}.thinking-product{right:5px;top:47px}.thinking-engineering{right:5px;bottom:47px}.thinking-people{left:5px;bottom:47px}.thinking-ai{left:5px;top:47px}.thinking-ring .thinking-node span:last-child{font-size:.49rem}}
 
 /* Keep the hero photo contained within the map */
-.hero-mark,.hero-thinking-map,.thinking-ring{overflow:hidden}
+.hero-mark{overflow:hidden}
+.hero-thinking-map{overflow:hidden}
+.thinking-ring{overflow:hidden}
+.thinking-photo{overflow:hidden}
