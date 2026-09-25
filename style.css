@@ -2200,3 +2200,8 @@ footer{font-size:11px;line-height:1.5}
 /* Academic topic label: explicitly pin it to the card's left edge */
 .academic-card .topic-metaphor{align-self:flex-start!important;justify-self:start!important;text-align:left!important;margin-left:0!important;margin-right:auto!important;width:auto!important}
 .academic-card .topic-metaphor > span:last-child{display:inline-block!important;text-align:left!important}
+
+/* Academic topic rows are always anchored to the left */
+.article-card.academic-card .topic-metaphor,
+.article-card.academic-card .topic-metaphor > span{float:none!important;position:static!important;text-align:left!important}
+.article-card.academic-card .topic-metaphor{display:flex!important;align-self:flex-start!important;align-items:center!important;justify-content:flex-start!important;margin:0 0 18px 0!important;padding:0!important;width:max-content!important}
