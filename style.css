@@ -1531,3 +1531,12 @@ footer{border-color:var(--line)}
  .satellite-software{right:4px!important}
  .satellite-lean{left:4px!important}
 }
+
+/* Product closer to the central profile */
+.thinking-product{top:205px!important;right:180px!important}
+@media(max-width:800px){
+ .thinking-product{top:145px!important;right:105px!important}
+}
+@media(max-width:560px){
+ .thinking-product{top:96px!important;right:64px!important}
+}
