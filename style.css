@@ -2130,7 +2130,3 @@ footer{border-color:var(--line)}
   .thinking-ring .thinking-satellite.satellite-business{top:290px!important;left:145px!important}
 }
 
-/* Move Ways of Thinking lower in the hero */
-.hero-proof{margin-top:82px}
-@media(max-width:900px){.hero-proof{margin-top:62px}}
-@media(max-width:600px){.hero-proof{margin-top:48px}}
