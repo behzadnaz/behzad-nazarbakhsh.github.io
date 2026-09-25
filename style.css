@@ -2054,3 +2054,20 @@ footer{border-color:var(--line)}
   .thinking-ring .satellite-product{top:59px!important;left:276px!important}
   .thinking-ring .satellite-business{top:307px!important;left:307px!important}
 }
+/* Final satellite cleanup — no background, panel, or shadow */
+.thinking-ring .thinking-satellite.satellite-product,
+.thinking-ring .thinking-satellite.satellite-business{
+  background:none!important;
+  background-color:transparent!important;
+  box-shadow:none!important;
+  border:0!important;
+  padding:0!important;
+  border-radius:0!important;
+}
+.thinking-ring .thinking-satellite.satellite-product .thinking-icon,
+.thinking-ring .thinking-satellite.satellite-business .thinking-icon,
+.thinking-ring .thinking-satellite.satellite-product > span:last-child,
+.thinking-ring .thinking-satellite.satellite-business > span:last-child{
+  background:none!important;
+  background-color:transparent!important;
+}
