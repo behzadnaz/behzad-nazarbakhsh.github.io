@@ -2023,10 +2023,9 @@ footer{border-color:var(--line)}
 .thinking-ring .satellite-product .thinking-icon svg,.thinking-ring .satellite-business .thinking-icon svg{
   width:26px!important;height:18px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.35!important;stroke-linecap:round!important;stroke-linejoin:round!important;
 }
-/* Product on orbit 2, upper-right */
-.thinking-ring .satellite-product{top:81px!important;left:478px!important;transform:translate(-50%,-50%)!important}
-/* Business Value on orbit 3, lower-right */
-.thinking-ring .satellite-business{top:478px!important;left:478px!important;transform:translate(-50%,-50%)!important}
+/* Directional satellites — separated across different orbital zones */
+.thinking-ring .satellite-product{top:280px!important;left:0!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .satellite-business{top:280px!important;left:560px!important;transform:translate(-50%,-50%)!important}
 
 @media(max-width:800px){
   .thinking-ring .thinking-node{width:82px!important;font-size:.50rem!important}
@@ -2038,8 +2037,8 @@ footer{border-color:var(--line)}
   .thinking-ring .thinking-agile{top:284px!important;left:284px!important}
   .thinking-ring .thinking-software{top:58px!important;left:353px!important}
   .thinking-ring .thinking-lean{top:393px!important;left:23px!important}
-  .thinking-ring .satellite-product{top:74px!important;left:353px!important}
-  .thinking-ring .satellite-business{top:393px!important;left:393px!important}
+  .thinking-ring .satellite-product{top:188px!important;left:0!important}
+  .thinking-ring .satellite-business{top:326px!important;left:376px!important}
 }
 @media(max-width:560px){
   .thinking-ring .thinking-node{width:68px!important;font-size:.44rem!important}
@@ -2051,8 +2050,8 @@ footer{border-color:var(--line)}
   .thinking-ring .thinking-agile{top:218px!important;left:218px!important}
   .thinking-ring .thinking-software{top:46px!important;left:276px!important}
   .thinking-ring .thinking-lean{top:307px!important;left:0!important}
-  .thinking-ring .satellite-product{top:59px!important;left:276px!important}
-  .thinking-ring .satellite-business{top:307px!important;left:307px!important}
+  .thinking-ring .satellite-product{top:145px!important;left:0!important}
+  .thinking-ring .satellite-business{top:265px!important;left:290px!important}
 }
 /* Final satellite cleanup — no background, panel, or shadow */
 .thinking-ring .thinking-satellite.satellite-product,
