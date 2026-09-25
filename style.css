@@ -2191,3 +2191,8 @@ footer{font-size:11px;line-height:1.5}
   .section h2{font-size:clamp(1.9rem,9vw,2.5rem)}
   .article-card h3{font-size:1.15rem}
 }
+
+/* Academic cards: keep the topic label on the left; no source badge */
+.academic-card .topic-metaphor{justify-content:flex-start;color:var(--accent)}
+.academic-card .topic-metaphor > span:last-child{color:var(--accent)}
+.academic-card .scholar-metaphor{display:none!important}
