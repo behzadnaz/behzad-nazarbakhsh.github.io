@@ -675,3 +675,19 @@ footer{border-color:var(--line)}
 .thinking-core{width:76px;height:76px}
 @media(max-width:800px){.profile-frame{width:220px;height:220px}.hero-mark{margin-top:25px}}
 @media(max-width:700px){.hero-thinking-map{width:min(260px,100%);margin-top:14px}.thinking-ring{width:180px;height:180px}}
+
+/* Home hero: portrait at the center of the professional map */
+.hero-thinking-map{width:300px;margin:8px auto 0;display:flex;flex-direction:column;align-items:center}
+.thinking-ring{width:260px;height:260px;border:1px solid #cbd5e1;border-radius:50%;position:relative;background:rgba(255,255,255,.34);box-shadow:inset 0 0 0 14px rgba(255,255,255,.22)}
+.thinking-ring .thinking-node{position:absolute;display:flex;align-items:center;gap:7px;z-index:2}
+.thinking-ring .thinking-node b{width:18px;height:18px;border:1px solid #93a4ba;border-radius:50%;background:var(--paper);display:grid;place-items:center;color:var(--accent);font:500 .44rem "IBM Plex Mono","DM Mono",monospace}
+.thinking-ring .thinking-node span{font:600 .58rem "IBM Plex Mono","DM Mono",monospace;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);white-space:nowrap}
+.thinking-product{top:20px;left:50%;transform:translateX(-50%);flex-direction:column!important}
+.thinking-engineering{right:12px;top:50%;transform:translateY(-50%)}
+.thinking-people{bottom:20px;left:50%;transform:translateX(-50%);flex-direction:column!important}
+.thinking-ai{left:12px;top:50%;transform:translateY(-50%)}
+.thinking-photo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:104px;height:104px;border:1px solid #8ea8cf;border-radius:50%;background:#fff;padding:6px;box-shadow:0 10px 28px rgba(15,23,42,.12);display:block}
+.thinking-photo img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}
+.thinking-map-caption{margin-top:14px;color:var(--muted);font:500 .58rem "IBM Plex Mono","DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.thinking-map-caption b{color:var(--accent);font-weight:600}
+@media(max-width:700px){.hero-thinking-map{width:min(280px,100%);margin-top:10px}.thinking-ring{width:235px;height:235px}.thinking-photo{width:92px;height:92px}.thinking-product{top:16px}.thinking-people{bottom:16px}.thinking-engineering{right:4px}.thinking-ai{left:4px}}
