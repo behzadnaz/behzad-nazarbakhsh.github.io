@@ -1718,3 +1718,45 @@ footer{border-color:var(--line)}
   fill:none!important;
   stroke-width:1.5!important;
 }
+
+
+/* Business Value and Product are satellites, not planets */
+.thinking-ring .thinking-business,
+.thinking-ring .thinking-product{
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  text-align:left!important;
+  color:var(--accent)!important;
+  z-index:9!important;
+}
+.thinking-ring .thinking-business .thinking-icon,
+.thinking-ring .thinking-product .thinking-icon{
+  width:28px!important;
+  height:18px!important;
+  margin:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.thinking-ring .thinking-business .thinking-icon svg,
+.thinking-ring .thinking-product .thinking-icon svg{
+  width:28px!important;
+  height:18px!important;
+  stroke:currentColor!important;
+  fill:none!important;
+  stroke-width:1.35!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+@media(max-width:560px){
+  .thinking-ring .thinking-business .thinking-icon,
+  .thinking-ring .thinking-product .thinking-icon{width:25px!important;height:17px!important}
+  .thinking-ring .thinking-business .thinking-icon svg,
+  .thinking-ring .thinking-product .thinking-icon svg{width:25px!important;height:17px!important}
+}
