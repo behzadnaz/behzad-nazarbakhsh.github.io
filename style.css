@@ -1895,3 +1895,43 @@ footer{border-color:var(--line)}
   .thinking-ring .satellite-business{right:-26px!important;bottom:-8px!important}
   .thinking-ring .satellite-lean{left:-26px!important;bottom:-8px!important}
 }
+
+
+/* Satellites follow only the three visible orbital tracks */
+/* Orbit 1: Agile */
+.thinking-ring .satellite-agile{
+  top:50%!important; left:calc(50% + 140px)!important; right:auto!important; bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+}
+/* Orbit 2: Product + Software */
+.thinking-ring .satellite-product{
+  top:calc(50% - 148px)!important; left:calc(50% + 148px)!important; right:auto!important; bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+}
+.thinking-ring .satellite-software{
+  top:calc(50% - 148px)!important; left:calc(50% - 148px)!important; right:auto!important; bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+}
+/* Orbit 3: Business Value + Lean */
+.thinking-ring .satellite-business{
+  top:calc(50% + 198px)!important; left:calc(50% + 198px)!important; right:auto!important; bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+}
+.thinking-ring .satellite-lean{
+  top:calc(50% + 198px)!important; left:calc(50% - 198px)!important; right:auto!important; bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+}
+@media(max-width:800px){
+  .thinking-ring .satellite-agile{left:calc(50% + 132px)!important}
+  .thinking-ring .satellite-product{top:calc(50% - 140px)!important;left:calc(50% + 140px)!important}
+  .thinking-ring .satellite-software{top:calc(50% - 140px)!important;left:calc(50% - 140px)!important}
+  .thinking-ring .satellite-business{top:calc(50% + 188px)!important;left:calc(50% + 188px)!important}
+  .thinking-ring .satellite-lean{top:calc(50% + 188px)!important;left:calc(50% - 188px)!important}
+}
+@media(max-width:560px){
+  .thinking-ring .satellite-agile{left:calc(50% + 118px)!important}
+  .thinking-ring .satellite-product{top:calc(50% - 128px)!important;left:calc(50% + 128px)!important}
+  .thinking-ring .satellite-software{top:calc(50% - 128px)!important;left:calc(50% - 128px)!important}
+  .thinking-ring .satellite-business{top:calc(50% + 168px)!important;left:calc(50% + 168px)!important}
+  .thinking-ring .satellite-lean{top:calc(50% + 168px)!important;left:calc(50% - 168px)!important}
+}
