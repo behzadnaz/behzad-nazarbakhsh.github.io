@@ -84,6 +84,48 @@
   .hero-mark{margin-top:12px}
 }
 </style>
+<style>/* Final homepage typography balance */
+.hero-copy h1{
+  font-size:clamp(3.45rem,5.25vw,5.35rem);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  max-width:650px;
+}
+.hero-identity{
+  margin-bottom:24px;
+  font-size:.76rem;
+  letter-spacing:.10em;
+}
+.hero-identity span{
+  margin-top:7px;
+  font-size:.72rem;
+  letter-spacing:.02em;
+}
+.hero-copy .intro{
+  max-width:560px;
+  margin-top:24px;
+  margin-bottom:27px;
+  font-size:1rem;
+  line-height:1.7;
+}
+.hero-copy .button{
+  padding:10px 17px;
+  font-size:.76rem;
+}
+@media(max-width:1050px){
+  .hero-copy h1{font-size:clamp(3.2rem,5.6vw,4.7rem)}
+}
+@media(max-width:800px){
+  .hero-copy h1{font-size:clamp(2.9rem,9.5vw,4.3rem)}
+  .hero-copy .intro{font-size:.98rem}
+}
+@media(max-width:560px){
+  .hero-copy h1{font-size:clamp(2.55rem,11vw,3.5rem)}
+  .hero-identity{font-size:.68rem}
+  .hero-identity span{font-size:.66rem}
+  .hero-copy .intro{font-size:.94rem}
+}
+</style>
 </head>
 <body>
   <header id="home" class="hero">
@@ -117,352 +159,3 @@
     <div class="thinking-satellite satellite-business">
       <span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 32 20"><path d="M3 6h10v8H3zM19 6h10v8H19z" fill="currentColor" opacity=".22"/><path d="M13 10h6M16 3v14M5 4v12M27 4v12"/></svg></span><span>Business Value</span>
     </div>
-
-    <!-- Professional capabilities: planets -->
-    <div class="thinking-node thinking-ai">
-      <span class="thinking-icon"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4M10 10h4v4h-4z"/></svg></span><span>AI Engineering</span>
-    </div>
-    <div class="thinking-node thinking-organization">
-      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="M5 18V8m0 0 4 4m-4-4 4-4M19 6v10m0 0-4-4m4 4-4 4M8 18h8M8 6h8"/></svg></span><span>Organizational Change</span>
-    </div>
-    <div class="thinking-node thinking-software">
-      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span><span>Software Engineering</span>
-    </div>
-    <div class="thinking-node thinking-agile">
-      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="M6 7h8a4 4 0 1 1-4 4H6M18 17h-8a4 4 0 1 1 4-4h4"/></svg></span><span>Agile</span>
-    </div>
-    <div class="thinking-node thinking-lean">
-      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16M7 10h10M10 15h4M12 15v5"/></svg></span><span>Lean</span>
-    </div>
-    <div class="thinking-node thinking-stakeholder">
-      <span class="thinking-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/><path d="M12 7v5M12 12 6 15M12 12l6 3"/></svg></span><span>Stakeholders</span>
-    </div>
-
-    <div class="thinking-core thinking-photo"><img src="https://github.com/user-attachments/assets/7e5f0cd4-5647-442e-8af4-11ac255010eb" alt="Behzad Nazarbakhsh"></div>
-  </div>
-</div>
-  </header>
-  <main>
-    <section id="services" class="section">
-      <div class="section-head"><p class="section-label">05 / SERVICES</p><h2>Ways I can help</h2></div>
-      <div class="expertise-grid">
-        <article><span>01</span><h3>Agile Development</h3><p>Agile ways of working, team design, product thinking, OKRs and value-focused delivery.</p></article>
-        <article><span>02</span><h3>Software Engineering</h3><p>Software craftsmanship, engineering practices, quality assurance and continuous improvement.</p></article>
-        <article><span>03</span><h3>Product Development</h3><p>Connecting product strategy, customer needs, business value, domains and investment decisions.</p></article>
-        <article><span>04</span><h3>Organizational Improvement</h3><p>Governance, PPM, organizational change and delivery systems that improve business outcomes.</p></article>
-      </div>
-    </section>
-    <section id="work" class="section work">
-      <div class="section-head"><p class="section-label">02 / CONTRIBUTION</p><h2>Contributions Across Teams & Organizations</h2></div>
-      <div class="work-list">
-        <a class="work-item" href="IT-Portfolio-Management.html"><span>01</span><strong>IT Portfolio Management</strong><small>Portfolio governance, prioritization, value and stakeholder visibility</small><b>↗</b></a>
-        <a class="work-item" href="Organization-Change-Management.html"><span>02</span><strong>Organizational Change Management</strong><small>Adoption, stakeholder engagement and measurable business value</small><b>↗</b></a>
-      </div>
-    </section>
-    <section id="articles" class="section articles">
-      <div class="section-head"><p class="section-label">03 / KNOWLEDGE BASE</p><h2>Writing and perspectives</h2></div>
-      <p class="articles-intro">Explore my writing by professional domain. Select a topic to focus on the ideas most relevant to you.</p>
-
-      <div class="article-filter-wrap">
-        <button class="article-filter-nav article-filter-prev" type="button" aria-label="Scroll article categories left">←</button>
-        <div class="article-filters" role="tablist" aria-label="Filter writing by professional domain">
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="ai">AI Software Engineering <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="change">Organizational Change <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="product">Product Management <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="engineering">Software Engineering <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="agile-teams">Agile Teams <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="stakeholder">Stakeholder Management <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="lean">Lean <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
-        </div>
-        <button class="article-filter-nav article-filter-next" type="button" aria-label="Scroll article categories right">→</button>
-      </div>
-
-      <div class="article-selected-domain" aria-live="polite"></div>
-      <div class="article-grid article-all-grid">
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="product">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · PRODUCT MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/visualizing-path-smarter-product-development-strategy-nazarbakhsh-sellf/" target="_blank" rel="noopener">Visualizing the Path to Smarter Product Development Strategy <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="change">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon change-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18V8m0 0 4 4m-4-4 4-4M19 6v10m0 0-4-4m4 4-4 4M8 18h8M8 6h8"/></svg></span><span>ORGANIZATIONAL CHANGE</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/how-make-change-matters-behzad-nazarbakhsh-fa9mf/" target="_blank" rel="noopener">How to Make Change That Matters <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="change">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>PEOPLE · ORGANIZATIONAL CHANGE</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/overcoming-cognitive-limitations-software-development-nazarbakhsh-cfgof/" target="_blank" rel="noopener">Overcoming Cognitive Limitations <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · AGILE TEAMS</span>
-          <h3><a href="https://www.linkedin.com/pulse/why-ignoring-psychological-safety-sabotages-team-behzad-nazarbakhsh-inxse/" target="_blank" rel="noopener">Why Ignoring Psychological Safety Sabotages Team Productivity <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="change">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>PEOPLE · ORGANIZATIONAL CHANGE</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/people-first-dimension-organizational-health-behzad-nazarbakhsh-75vzf/" target="_blank" rel="noopener">Putting People First to Build a Healthy Software Organization <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="engineering">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · SOFTWARE ENGINEERING</span>
-          <h3><a href="https://www.linkedin.com/pulse/building-software-gets-better-over-time-behzad-nazarbakhsh-md29f/" target="_blank" rel="noopener">Building Software That Gets Better Over Time <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="product">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · PRODUCT MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/embedding-lovability-software-governance-behzad-nazarbakhsh-xxcyf/" target="_blank" rel="noopener">Embedding Lovability in Software Governance <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="ai">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · AI</span>
-          <h3><a href="https://www.linkedin.com/pulse/rethinking-software-engineering-age-ai-behzad-nazarbakhsh-bir0e/" target="_blank" rel="noopener">Rethinking Software Engineering in the Age of AI <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · STAKEHOLDER MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/how-plan-stakeholder-engamenet-behzad-nazarbakhsh--uylkf/" target="_blank" rel="noopener">How to Plan Stakeholder Engagement <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · STAKEHOLDER MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/engaging-stakeholders-communication-collaboration-nazarbakhsh--yuzcf/" target="_blank" rel="noopener">Engaging Stakeholders: Communication and Collaboration Before, During, and After Engagement <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · STAKEHOLDER MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/ineffective-stakeholder-engagement-serious-danger-nazarbakhsh--r6l7f/" target="_blank" rel="noopener">Ineffective Stakeholder Engagement: A Serious Danger for Agility <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="product">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · PRODUCT MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/requirement-modeling-language-agile-development-nazarbakhsh--2d80f/" target="_blank" rel="noopener">Requirement Modeling Language in Agile Development <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · AGILE TEAMS</span>
-          <h3><a href="https://www.linkedin.com/pulse/agility-modern-software-organizations-behzad-nazarbakhsh-si3gf/" target="_blank" rel="noopener">How Team Design Drives Real Agility <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="change">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon governance-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M12 7.2v4M12 11.2 6 15.8M12 11.2l6 4.6"/></svg></span><span>GOVERNANCE · ORGANIZATIONAL CHANGE</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/visibility-behzad-nazarbakhsh-ytcof/" target="_blank" rel="noopener">Building True Visibility Through Governance <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · AGILE TEAMS</span>
-          <h3><a href="https://www.linkedin.com/pulse/stop-measuring-software-development-team-productivity-nazarbakhsh-yx5of/" target="_blank" rel="noopener">Stop Measuring Software Development Team Productivity <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="ai">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · AI</span>
-          <h3><a href="https://www.linkedin.com/pulse/human-collaboration-age-ai-driven-development-behzad-nazarbakhsh-k9xwf/" target="_blank" rel="noopener">Human Collaboration in the Age of AI-Driven Development <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="engineering">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>QUALITY ASSURANCE · ENGINEERING</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/streamlining-atdd-essential-practices-clearer-test-case-nazarbakhsh-9mzfe/" target="_blank" rel="noopener">Streamlining ATDD: Essential Practices for Clearer Test Case Structuring <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="engineering">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>QUALITY ASSURANCE · ENGINEERING</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/enhancing-software-testing-through-proactive-behzad-nazarbakhsh--qaggf/" target="_blank" rel="noopener">Enhancing Software Testing Through Proactive Practices <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="engineering">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>QUALITY ASSURANCE · ENGINEERING</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/evolving-approach-software-quality-assurance-modern-behzad-oncbf/" target="_blank" rel="noopener">The Evolving Approach to Software Quality Assurance in Modern Development <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="product">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · PRODUCT MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/enhancing-user-stories-through-business-data-diagrams-behzad-i7qof/" target="_blank" rel="noopener">Enhancing User Stories Through Business Data Diagrams: A Guide for Bridging Business and Technical Needs <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="lean">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · LEAN STARTUP</span>
-          <h3><a href="https://www.linkedin.com/pulse/usingcustomer-development-startups-behzad-nazarbakhsh/" target="_blank" rel="noopener">Using Customer Development Methodology for Startups <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="engineering">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>QUALITY ASSURANCE · ENGINEERING</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/spreading-work-evenly-across-scrumsprint-behzad-nazarbakhsh/" target="_blank" rel="noopener">How Early-Stage Scrum Teams Can Avoid Last-Minute Testing Bottlenecks <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · STAKEHOLDER MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/learn-scrum-from-subway-behzad-nazarbakhsh/" target="_blank" rel="noopener">How to Manage Stakeholder Expectations: Lesson from a Subway Sandwich <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · AGILE TEAMS</span>
-          <h3><a href="https://www.linkedin.com/pulse/scrum-master-influence-without-authority-behzad-nazarbakhsh/" target="_blank" rel="noopener">The Role of the Scrum Master: A Guide to Effective Agile Leadership <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="product">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · PRODUCT MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/how-map-your-software-domain-profit-behzad-nazarbakhsh-acije/" target="_blank" rel="noopener">Connecting Product Decisions to Profitability <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="engineering">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>QUALITY ASSURANCE · ENGINEERING</span></div>
-          <h3><a href="https://www.linkedin.com/pulse/designing-effective-test-cases-five-key-methods-behzad-nazarbakhsh-euybf/" target="_blank" rel="noopener">Five Key Techniques for Designing Effective Test Cases in ATDD <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
-          <div class="source-metaphor linkedin-metaphor" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>LINKEDIN · STAKEHOLDER MANAGEMENT</span>
-          <h3><a href="https://www.linkedin.com/pulse/reviewing-stakeholder-engagement-behzad-nazarbakhsh--6rgmf/" target="_blank" rel="noopener">Reviewing Stakeholder Engagement <i aria-hidden="true">↗</i></a></h3>
-          <small>Read the full article on LinkedIn.</small>
-        </article>
-
-        <article class="article-card academic-card" data-source="academic" data-domain="engineering"><div class="source-metaphor scholar-metaphor" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span>GOOGLE SCHOLAR · 2014 · 5 CITATIONS</span>
-          <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener">Image Pre-processing Techniques for Enhancing the Performance of Real-Time Face Recognition System Using PCA <i aria-hidden="true">↗</i></a></h3>
-          <small><strong>B. Nazarbakhsh, A. A. Manaf</strong><br>Bio-inspiring Cyber Security and Cloud Services: Trends and Innovations, pp. 383–422</small>
-          <p class="academic-description">Research on image preprocessing techniques for improving the performance of real-time face recognition systems using Principal Component Analysis (PCA).</p>
-        </article>
-        <article class="article-card academic-card" data-source="academic" data-domain="engineering"><div class="source-metaphor scholar-metaphor" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span>GOOGLE SCHOLAR · 2011 · 4 CITATIONS</span>
-          <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">Ubiquitous Computing for Security Enhancement of Vehicles <i aria-hidden="true">↗</i></a></h3>
-          <small><strong>NAB Abd Rahman, M. Bafandehkar, B. Nazarbakhsh, NHB Mohtar</strong><br>Proceedings of the 2011 IEEE International Conference on Vehicular Electronics and Safety</small>
-          <p class="academic-description">Explores how ubiquitous computing can be applied to enhance vehicle security through connected and context-aware technologies.</p>
-        </article>
-        <article class="article-card academic-card" data-source="academic" data-domain="engineering"><div class="source-metaphor scholar-metaphor" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span>GOOGLE SCHOLAR · 2017 · 1 CITATION</span>
-          <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:9yKSN-GCB0IC" target="_blank" rel="noopener">What Techniques Can Be Used for GUI Risk-based Testing? <i aria-hidden="true">↗</i></a></h3>
-          <small><strong>B. Nazarbakhsh, D. Pfahl</strong><br>Proceedings of the 12th International Conference on Software Technologies</small>
-          <p class="academic-description">Examines techniques for identifying and addressing risks in graphical user interface testing, with a focus on risk-based testing approaches.</p>
-        </article>
-        <article class="article-card academic-card" data-source="academic" data-domain="engineering"><div class="source-metaphor scholar-metaphor" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span>GOOGLE SCHOLAR · 2011 · 1 CITATION</span>
-          <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener">Ubiquitous Computing for Security Enhancement of Vehicles <i aria-hidden="true">↗</i></a></h3>
-          <small><strong>NABA Rahman, M. Bafandehkar, B. Nazarbakhsh, NHB Mohtar</strong><br>Proceedings of the 2011 IEEE International Conference on Vehicular Electronics and Safety</small>
-          <p class="academic-description">A related publication record on applying ubiquitous computing concepts to vehicle security and connected-vehicle environments.</p>
-        </article>
-      </div>
-
-      <div class="article-more" hidden><a href="#">See more in Knowledge Base →</a></div>
-    </section>
-
-    <section id="about-contact" class="section about">
-      <div class="section-head">
-        <p class="section-label">06 / ABOUT</p>
-        <h2>Connecting strategy, product, engineering, and organizational change.</h2>
-      </div>
-      <div class="section-body">
-        <p>I help software organizations turn strategic goals into products, delivery systems, and organizational capabilities that create measurable business value.</p>
-        <p>I work at the intersection of <strong>software engineering, product management, Agile ways of working, IT portfolio management, and organizational change</strong>. I help leaders and teams clarify priorities, improve how work flows from strategy to delivery, and build systems that support sustainable performance.</p>
-        <p>My approach combines <strong>software craftsmanship and product thinking</strong> with practical management and organizational practices. The goal is not simply to deliver software faster, but to create clearer decisions, stronger execution, and better outcomes for the organization.</p>
-      </div>
-      <div class="about-details">
-        <div class="about-block" id="cv">
-          <p class="section-label">CURRICULUM VITAE</p>
-          <h3>Selected Experience &amp; Achievements</h3>
-          <div class="career-story">
-            <div class="career-journey" aria-label="Career progression from software engineering to organizational change">
-              <div class="journey-line" aria-hidden="true"></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M38 10l16 16-8 8-16-16z"/><path d="M31 17L12 36l-3 14 14-3 19-19"/><path d="M19 45l-8 8"/></svg></span><strong>Build</strong><small>Software Engineering</small></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><path d="M42 22L35 37l-15 7 7-15z"/><circle cx="32" cy="32" r="3"/></svg></span><strong>Connect</strong><small>Product &amp; Agile</small></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M25 54V22h14v32"/><path d="M20 22h24l-4-8H24z"/><path d="M18 54h28"/><path d="M29 29h6M29 37h6M29 45h6"/><path d="M32 14V7M45 16l7-7M19 16l-7-7"/></svg></span><strong>Shape</strong><small>IT Management &amp; Portfolio</small></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 46h46"/><path d="M14 46V31c0-13 8-20 18-20s18 7 18 20v15"/><path d="M23 46V32c0-7 4-11 9-11s9 4 9 11v14"/><path d="M9 54h46"/></svg></span><strong>Transform</strong><small>Organizational Change</small></div>
-              <p class="journey-caption">From building individual systems to shaping the systems around them.</p>
-            </div>
-            <div class="career-snapshot">
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M38 10l16 16-8 8-16-16z"/><path d="M31 17L12 36l-3 14 14-3 19-19"/><path d="M19 45l-8 8"/></svg></span><strong>Software Engineering</strong></div><p>Built and improved software systems while developing a foundation in software craftsmanship and engineering practices.</p></div></div>
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><path d="M42 22L35 37l-15 7 7-15z"/><circle cx="32" cy="32" r="3"/></svg></span><strong>Product &amp; Agile</strong></div><p>Connected product goals, Agile ways of working, delivery, and measurable business value.</p></div></div>
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M25 54V22h14v32"/><path d="M20 22h24l-4-8H24z"/><path d="M18 54h28"/><path d="M29 29h6M29 37h6M29 45h6"/><path d="M32 14V7M45 16l7-7M19 16l-7-7"/></svg></span><strong>IT Management &amp; Portfolio</strong></div><p>Established and improved portfolio management practices, governance, prioritization, reporting, and stakeholder visibility.</p></div></div>
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 46h46"/><path d="M14 46V31c0-13 8-20 18-20s18 7 18 20v15"/><path d="M23 46V32c0-7 4-11 9-11s9 4 9 11v14"/><path d="M9 54h46"/></svg></span><strong>Organizational Change</strong></div><p>Supported change initiatives focused on business value, stakeholder experience, communication, and sustainable performance.</p></div></div>
-            </div>
-          </div>
-          <a class="cv-card" href="CV-2025.pdf" target="_blank" rel="noopener"><span>CV</span><strong>View / Download full CV</strong><small>Detailed roles · organizations · projects · achievements</small><b>↗</b></a>
-        </div>
-        <div class="about-block contact-block">
-          <p class="section-label">CONTACT</p><h3>Let's connect.</h3>
-          <p>Interested in software organizations, product development, Agile, IT management, or organizational improvement? I'd be happy to connect and discuss ideas, opportunities, or potential collaboration.</p>
-          <div class="connect-links">
-            <a href="https://www.linkedin.com/in/behzad-nazarbakhsh/" target="_blank" rel="noopener"><span class="connect-icon connect-icon-linkedin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><span class="connect-name">LinkedIn</span><span class="connect-arrow">↗</span></a>
-            <a href="https://github.com/behzadnaz" target="_blank" rel="noopener"><span class="connect-icon connect-icon-github" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8a9.2 9.2 0 0 0-2.91 17.93c.46.09.63-.2.63-.44v-1.55c-2.56.56-3.1-1.1-3.1-1.1-.42-1.07-1.02-1.35-1.02-1.35-.84-.57.06-.56.06-.56.93.07 1.42.96 1.42.96.83 1.42 2.17 1.01 2.7.77.08-.6.32-1.01.59-1.24-2.05-.23-4.2-1.03-4.2-4.58 0-1.01.36-1.83.95-2.47-.1-.23-.41-1.17.09-2.44 0 0 .77-.25 2.52.94a8.7 8.7 0 0 1 4.59 0c1.75-1.19 2.52-.94 2.52-.94.5 1.27.19 2.21.09 2.44.33.29.63.86.63 1.73v2.57c0 .25.17.53.64.44A9.2 9.2 0 0 0 12 2.8Z"/></svg></span><span class="connect-name">GitHub</span><span class="connect-arrow">↗</span></a>
-            <a href="mailto:bmbvm5@gmail.com,bmbvm5@live.com.my"><span class="connect-icon connect-icon-email" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5.5h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1Zm1 2v.51l8 5.33 8-5.33V7.5H4Zm16 9V9.4l-7.45 4.97a1 1 0 0 1-1.1 0L4 9.4v7.1h16Z"/></svg></span><span class="connect-name">Email</span><span class="connect-arrow">↗</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer><span>© 2026 Behzad Nazarbakhsh</span><span>Software Craftsmanship · Product Coach · Agile Expert</span></footer>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var filterScroller = document.querySelector('.article-filters');
-  var prevFilter = document.querySelector('.article-filter-prev');
-  var nextFilter = document.querySelector('.article-filter-next');
-  function updateFilterNav(){if(!filterScroller||!prevFilter||!nextFilter)return;var maxScroll=filterScroller.scrollWidth-filterScroller.clientWidth;prevFilter.disabled=filterScroller.scrollLeft<=2;nextFilter.disabled=filterScroller.scrollLeft>=maxScroll-2}
-  function scrollFilters(direction){if(!filterScroller)return;filterScroller.scrollBy({left:direction*Math.max(260,filterScroller.clientWidth*.8),behavior:'smooth'})}
-  function centerFilter(button){if(!filterScroller||!button)return;var targetLeft=button.offsetLeft-(filterScroller.clientWidth-button.offsetWidth)/2;filterScroller.scrollTo({left:Math.max(0,targetLeft),behavior:'smooth'})}
-  if(prevFilter)prevFilter.addEventListener('click',function(){scrollFilters(-1)});if(nextFilter)nextFilter.addEventListener('click',function(){scrollFilters(1)});
-  if(filterScroller){filterScroller.addEventListener('scroll',updateFilterNav,{passive:true});window.addEventListener('resize',updateFilterNav);setTimeout(updateFilterNav,50)}
-  var filters=document.querySelectorAll('.article-filter'),grid=document.querySelector('.article-all-grid'),cards=grid?grid.querySelectorAll('.article-card'):[],title=document.querySelector('.article-selected-domain'),more=document.querySelector('.article-more'),moreLink=more?more.querySelector('a'):null,current='product',expanded=false;
-  var names={"product":"Product Management","change":"Organizational Change","agile-teams":"Agile Teams","engineering":"Software Engineering","ai":"AI Engineering","stakeholder":"Stakeholder Management","lean":"Lean"};
-  function countFor(domain){var count=0;for(var i=0;i<cards.length;i++)if(cards[i].getAttribute('data-domain')===domain)count++;return count}
-  function filterName(domain){return names[domain]||'articles'}
-  function moreText(domain){var remaining=countFor(domain)-4;var name=filterName(domain);return 'View '+remaining+' more '+name+' article'+(remaining===1?'':'s')+' →'}
-  function updateCounts(){for(var i=0;i<filters.length;i++){var domain=filters[i].getAttribute('data-filter'),number=filters[i].querySelector('.article-count b');if(number)number.textContent=countFor(domain)}}
-  function show(domain){current=domain;expanded=false;for(var i=0;i<filters.length;i++){var active=filters[i].getAttribute('data-filter')===domain;filters[i].classList.toggle('active',active);filters[i].setAttribute('aria-selected',active?'true':'false')}var visibleIndex=0,total=countFor(domain);for(var j=0;j<cards.length;j++){var matches=cards[j].getAttribute('data-domain')===domain;if(!matches)cards[j].hidden=true;else{cards[j].hidden=visibleIndex>=4;visibleIndex++}}title.textContent=names[domain]||'';title.hidden=false;if(more){more.hidden=total<=4;if(!more.hidden)moreLink.textContent=moreText(domain)}}
-  if(moreLink)moreLink.addEventListener('click',function(event){event.preventDefault();expanded=!expanded;var shown=0;for(var i=0;i<cards.length;i++){var matches=cards[i].getAttribute('data-domain')===current;if(matches){cards[i].hidden=!expanded&&shown>=4;shown++}}moreLink.textContent=expanded?'Show less ↑':moreText(current)});
-  for(var i=0;i<filters.length;i++)filters[i].addEventListener('click',function(){show(this.getAttribute('data-filter'));centerFilter(this);setTimeout(updateFilterNav,300)});
-  updateCounts();show('product');
-});
-</script>
-</body>
-</html>
