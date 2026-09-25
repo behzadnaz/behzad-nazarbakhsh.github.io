@@ -1652,3 +1652,7 @@ footer{border-color:var(--line)}
 @media(max-width:560px){
  .thinking-ring .thinking-stakeholder{left:6%!important;top:40%!important}
 }
+
+
+/* Remove the former Stakeholder satellite orbit */
+.satellite-orbit-stakeholder{display:none!important}
