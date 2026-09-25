@@ -1455,3 +1455,16 @@ footer{border-color:var(--line)}
  .thinking-satellite{font-size:.31rem!important}
  .thinking-satellite .satellite-icon{width:22px!important;flex-basis:22px!important}
 }
+
+/* Remove card-like white rectangles from orbital domains */
+.thinking-ring .thinking-node{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.thinking-ring .thinking-node .thinking-icon{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
