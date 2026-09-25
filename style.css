@@ -1997,16 +1997,16 @@ footer{border-color:var(--line)}
 .thinking-ring .thinking-node .thinking-icon svg{width:18px!important;height:18px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
 
 /* ORBIT 1 — closest capability planets */
-.thinking-ring .thinking-ai{top:82px!important;left:230px!important;transform:none!important}
-.thinking-ring .thinking-stakeholder{top:190px!important;left:122px!important;transform:none!important}
-.thinking-ring .thinking-agile{top:190px!important;left:338px!important;transform:none!important}
+.thinking-ring .thinking-ai{top:140px!important;left:280px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .thinking-stakeholder{top:210px!important;left:158px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .thinking-agile{top:210px!important;left:402px!important;transform:translate(-50%,-50%)!important}
 
 /* ORBIT 2 — capability planets */
-.thinking-ring .thinking-organization{top:292px!important;left:112px!important;transform:none!important}
-.thinking-ring .thinking-software{top:292px!important;left:348px!important;transform:none!important}
+.thinking-ring .thinking-organization{top:132px!important;left:132px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .thinking-software{top:132px!important;left:428px!important;transform:translate(-50%,-50%)!important}
 
 /* ORBIT 3 — directional satellite */
-.thinking-ring .thinking-lean{top:424px!important;left:230px!important;transform:none!important}
+.thinking-ring .thinking-lean{top:478px!important;left:82px!important;transform:translate(-50%,-50%)!important}
 
 /* Directional satellites */
 .thinking-ring .satellite-product,
@@ -2024,7 +2024,7 @@ footer{border-color:var(--line)}
   width:26px!important;height:18px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.35!important;stroke-linecap:round!important;stroke-linejoin:round!important;
 }
 /* Product on orbit 2, upper-right */
-.thinking-ring .satellite-product{top:88px!important;left:430px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .satellite-product{top:81px!important;left:478px!important;transform:translate(-50%,-50%)!important}
 /* Business Value on orbit 3, lower-right */
 .thinking-ring .satellite-business{top:478px!important;left:478px!important;transform:translate(-50%,-50%)!important}
 
