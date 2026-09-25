@@ -1856,3 +1856,42 @@ footer{border-color:var(--line)}
   .thinking-ring .satellite-business{bottom:18px!important}
   .thinking-ring .satellite-product{right:calc(50% - 125px)!important}
 }
+
+
+/* Orbital spacing: keep planets and satellites on clearly separated tracks */
+.thinking-ring .thinking-ai{top:-8px!important;left:18px!important}
+.thinking-ring .thinking-organization{bottom:-8px!important;left:50%!important;transform:translateX(-50%)!important}
+.thinking-ring .thinking-people{bottom:30px!important;left:-4px!important}
+.thinking-ring .thinking-stakeholder{top:50%!important;left:-24px!important;transform:translateY(-50%)!important}
+.thinking-ring .thinking-product{top:24px!important;right:-8px!important;left:auto!important;bottom:auto!important;transform:none!important}
+
+/* Orbit 1 — Agile stays close to the profile */
+.thinking-ring .satellite-agile{top:50%!important;left:calc(50% + 88px)!important;right:auto!important;bottom:auto!important;transform:translateY(-50%)!important}
+/* Orbit 2 — Product */
+.thinking-ring .satellite-product{top:24px!important;right:-8px!important;left:auto!important;bottom:auto!important;transform:none!important}
+/* Orbit 2 — Software */
+.thinking-ring .satellite-software{top:18px!important;right:auto!important;left:calc(50% + 108px)!important;transform:none!important}
+/* Orbit 3 — Business Value and Lean, kept away from the planets */
+.thinking-ring .satellite-business{top:auto!important;right:-58px!important;left:auto!important;bottom:-18px!important;transform:none!important}
+.thinking-ring .satellite-lean{top:auto!important;left:-58px!important;right:auto!important;bottom:-18px!important;transform:none!important}
+
+@media(max-width:800px){
+  .thinking-ring .thinking-ai{left:8px!important}
+  .thinking-ring .thinking-people{left:-14px!important}
+  .thinking-ring .thinking-stakeholder{left:-34px!important}
+  .thinking-ring .thinking-product{right:-18px!important}
+  .thinking-ring .satellite-agile{left:calc(50% + 70px)!important}
+  .thinking-ring .satellite-software{left:calc(50% + 88px)!important}
+  .thinking-ring .satellite-business{right:-42px!important;bottom:-12px!important}
+  .thinking-ring .satellite-lean{left:-42px!important;bottom:-12px!important}
+}
+@media(max-width:560px){
+  .thinking-ring .thinking-ai{left:0!important}
+  .thinking-ring .thinking-people{left:-22px!important}
+  .thinking-ring .thinking-stakeholder{left:-42px!important}
+  .thinking-ring .thinking-product{right:-28px!important}
+  .thinking-ring .satellite-agile{left:calc(50% + 52px)!important}
+  .thinking-ring .satellite-software{left:calc(50% + 66px)!important}
+  .thinking-ring .satellite-business{right:-26px!important;bottom:-8px!important}
+  .thinking-ring .satellite-lean{left:-26px!important;bottom:-8px!important}
+}
