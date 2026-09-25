@@ -1548,3 +1548,41 @@ footer{border-color:var(--line)}
 @media(max-width:560px){
   .thinking-ring .thinking-product{right:52px!important;bottom:70px!important;}
 }
+
+
+/* Business Value and Product use the same compact satellite treatment */
+.thinking-ring .thinking-business,
+.thinking-ring .thinking-product{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  color:var(--accent)!important;
+  font-size:.72rem!important;
+  font-weight:600!important;
+  white-space:nowrap!important;
+}
+.thinking-ring .thinking-business .thinking-icon,
+.thinking-ring .thinking-product .thinking-icon{
+  width:20px!important;
+  height:20px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:rgba(37,99,235,.08)!important;
+  border:1px solid rgba(37,99,235,.28)!important;
+  border-radius:50%!important;
+  box-shadow:none!important;
+  flex:0 0 20px!important;
+}
+.thinking-ring .thinking-business .thinking-icon svg,
+.thinking-ring .thinking-product .thinking-icon svg{
+  width:12px!important;
+  height:12px!important;
+  stroke:currentColor!important;
+  fill:none!important;
+  stroke-width:1.5!important;
+}
