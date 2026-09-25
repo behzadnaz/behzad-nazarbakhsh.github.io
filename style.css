@@ -599,3 +599,11 @@ h1{font-size:clamp(3.6rem,7vw,6.8rem);line-height:.98}
 .connect-arrow{color:var(--accent)}
 footer{border-color:var(--line)}
 @media(max-width:700px){.hero{background-size:28px 28px,28px 28px,auto,auto}.hero h1{font-size:clamp(2.6rem,13vw,4.4rem)}}
+
+/* Knowledge Base article count metaphor */
+.article-filter .article-count{display:inline-flex;align-items:center;gap:7px;margin-left:7px;vertical-align:middle;font-weight:400;color:var(--muted)}
+.article-filter .article-count b{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border:1px solid currentColor;border-radius:50%;font-size:.72rem;font-weight:700;line-height:1}
+.article-filter .article-count-icon{position:relative;display:inline-block;width:13px;height:15px;border:1.5px solid currentColor;border-radius:2px;opacity:.72}
+.article-filter .article-count-icon:before{content:"";position:absolute;left:3px;right:2px;top:4px;height:1px;background:currentColor;box-shadow:0 3px 0 currentColor}
+.article-filter .article-count-icon:after{content:"";position:absolute;left:3px;right:5px;top:10px;height:1px;background:currentColor}
+.article-filter.active .article-count{color:var(--accent)}
