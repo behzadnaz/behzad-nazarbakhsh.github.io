@@ -2070,3 +2070,38 @@ footer{border-color:var(--line)}
   background:none!important;
   background-color:transparent!important;
 }
+
+/* Satellites — planet-sized and placed on outer orbits */
+.thinking-ring .thinking-satellite.satellite-product,
+.thinking-ring .thinking-satellite.satellite-business{
+  width:96px!important;height:auto!important;min-height:54px!important;
+  padding:0!important;display:flex!important;flex-direction:column!important;
+  align-items:center!important;justify-content:flex-start!important;gap:5px!important;
+  font:600 .56rem/1.15 "IBM Plex Mono","DM Mono",monospace!important;
+  color:var(--accent)!important;text-align:center!important;white-space:normal!important;
+}
+.thinking-ring .thinking-satellite.satellite-product .thinking-icon,
+.thinking-ring .thinking-satellite.satellite-business .thinking-icon{
+  width:42px!important;height:42px!important;flex:0 0 42px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  border-radius:50%!important;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.96),rgba(219,234,254,.78) 30%,rgba(37,99,235,.24) 70%,rgba(15,23,42,.18))!important;
+  border:1px solid rgba(37,99,235,.38)!important;
+  box-shadow:inset -8px -8px 13px rgba(15,23,42,.17),inset 6px 6px 10px rgba(255,255,255,.8),0 4px 10px rgba(15,23,42,.12)!important;
+}
+.thinking-ring .thinking-satellite.satellite-product .thinking-icon svg,
+.thinking-ring .thinking-satellite.satellite-business .thinking-icon svg{
+  width:20px!important;height:20px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+}
+/* Orbit 2 / Orbit 3 positions */
+.thinking-ring .thinking-satellite.satellite-product{top:132px!important;left:428px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .thinking-satellite.satellite-business{top:478px!important;left:82px!important;transform:translate(-50%,-50%)!important}
+@media(max-width:800px){
+  .thinking-ring .thinking-satellite.satellite-product{width:82px!important;top:96px!important;left:284px!important}
+  .thinking-ring .thinking-satellite.satellite-business{width:82px!important;top:393px!important;left:23px!important}
+  .thinking-ring .thinking-satellite.satellite-product .thinking-icon,.thinking-ring .thinking-satellite.satellite-business .thinking-icon{width:36px!important;height:36px!important;flex-basis:36px!important}
+}
+@media(max-width:560px){
+  .thinking-ring .thinking-satellite.satellite-product{width:68px!important;top:72px!important;left:220px!important}
+  .thinking-ring .thinking-satellite.satellite-business{width:68px!important;top:307px!important;left:0!important}
+  .thinking-ring .thinking-satellite.satellite-product .thinking-icon,.thinking-ring .thinking-satellite.satellite-business .thinking-icon{width:31px!important;height:31px!important;flex-basis:31px!important}
+}
