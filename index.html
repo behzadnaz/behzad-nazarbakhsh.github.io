@@ -169,6 +169,24 @@
   .hero-copy .intro{font-size:.92rem}
 }
 </style>
+<style>
+/* Hero headline — reduce scale for a more refined balance */
+.hero-copy h1{
+  font-size:clamp(2.55rem,3.55vw,3.9rem);
+  line-height:1.06;
+  letter-spacing:-.032em;
+  max-width:570px;
+}
+@media(max-width:1050px){
+  .hero-copy h1{font-size:clamp(2.45rem,4vw,3.55rem)}
+}
+@media(max-width:800px){
+  .hero-copy h1{font-size:clamp(2.35rem,8vw,3.35rem)}
+}
+@media(max-width:560px){
+  .hero-copy h1{font-size:clamp(2.2rem,9.5vw,3rem)}
+}
+</style>
 </head>
 <body>
   <header id="home" class="hero">
@@ -178,27 +196,3 @@
         <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Contribution</a><a href="#articles">Knowledge Base</a><a href="#about-contact">About</a>
       </div>
     </nav>
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="hero-identity">BEHZAD NAZARBAKHSH <span>Software Craftsmanship · Product · Agile · IT Management</span></p>
-        <h1>Turning<br><em>Technology into Business Value.</em></h1>
-        <p class="intro">I help software organizations make better decisions across technology, product, people, and organizational change — turning complexity into measurable business value.</p>
-        <div class="actions">
-          <a class="button primary" href="#work">Explore My Work <span>↗</span></a>
-          <a class="button" href="#articles">Read My Ideas</a>
-        </div>
-      </div>
-      <div class="hero-mark">
-        <div class="hero-thinking-map" aria-label="Professional ecosystem map">
-  <div class="thinking-ring">
-    <div class="orbit orbit-outer" aria-hidden="true"></div>
-    <div class="orbit orbit-middle" aria-hidden="true"></div>
-    <div class="orbit orbit-inner" aria-hidden="true"></div>
-
-    <!-- Business direction: satellites -->
-    <div class="thinking-satellite satellite-product">
-      <span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 32 20"><path d="M3 6h10v8H3zM19 6h10v8H19z" fill="currentColor" opacity=".22"/><path d="M13 10h6M16 3v14M5 4v12M27 4v12"/></svg></span><span>Product</span>
-    </div>
-    <div class="thinking-satellite satellite-business">
-      <span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 32 20"><path d="M3 6h10v8H3zM19 6h10v8H19z" fill="currentColor" opacity=".22"/><path d="M13 10h6M16 3v14M5 4v12M27 4v12"/></svg></span><span>Business Value</span>
-    </div>
