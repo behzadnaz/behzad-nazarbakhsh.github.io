@@ -2196,3 +2196,7 @@ footer{font-size:11px;line-height:1.5}
 .academic-card .topic-metaphor{justify-content:flex-start;color:var(--accent)}
 .academic-card .topic-metaphor > span:last-child{color:var(--accent)}
 .academic-card .scholar-metaphor{display:none!important}
+
+/* Academic topic label: explicitly pin it to the card's left edge */
+.academic-card .topic-metaphor{align-self:flex-start!important;justify-self:start!important;text-align:left!important;margin-left:0!important;margin-right:auto!important;width:auto!important}
+.academic-card .topic-metaphor > span:last-child{display:inline-block!important;text-align:left!important}
