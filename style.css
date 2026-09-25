@@ -1831,3 +1831,28 @@ footer{border-color:var(--line)}
   .thinking-ring .satellite-business{left:calc(50% - 104px)!important}
   .thinking-ring .satellite-product{left:calc(50% + 78px)!important}
 }
+
+
+/* Refine satellite placement: Business Value on orbit 3, Product on orbit 2 */
+.thinking-ring .satellite-business{
+  top:auto!important;
+  left:50%!important;
+  right:auto!important;
+  bottom:30px!important;
+  transform:translateX(-50%)!important;
+}
+.thinking-ring .satellite-product{
+  top:50%!important;
+  left:auto!important;
+  right:calc(50% - 205px)!important;
+  bottom:auto!important;
+  transform:translateY(-50%)!important;
+}
+@media(max-width:800px){
+  .thinking-ring .satellite-business{bottom:24px!important}
+  .thinking-ring .satellite-product{right:calc(50% - 165px)!important}
+}
+@media(max-width:560px){
+  .thinking-ring .satellite-business{bottom:18px!important}
+  .thinking-ring .satellite-product{right:calc(50% - 125px)!important}
+}
