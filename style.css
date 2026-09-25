@@ -1935,3 +1935,40 @@ footer{border-color:var(--line)}
   .thinking-ring .satellite-business{top:calc(50% + 168px)!important;left:calc(50% + 168px)!important}
   .thinking-ring .satellite-lean{top:calc(50% + 168px)!important;left:calc(50% - 168px)!important}
 }
+
+
+/* Final orbital layout: the three orbit rings are real, visible tracks */
+.hero-thinking-map{width:560px!important;max-width:560px!important}
+.thinking-ring{width:560px!important;height:560px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+/* Keep the three visible tracks centered on the profile */
+.orbit-inner{width:280px!important;height:280px!important}
+.orbit-middle{width:420px!important;height:420px!important}
+.orbit-outer{width:560px!important;height:560px!important}
+/* Central profile */
+.thinking-ring .thinking-core.thinking-photo{left:50%!important;top:50%!important}
+/* Primary planets — inner orbit */
+.thinking-ring .thinking-ai{top:88px!important;left:50%!important;transform:translateX(-50%)!important}
+.thinking-ring .thinking-stakeholder{top:50%!important;left:92px!important;transform:translateY(-50%)!important}
+.thinking-ring .thinking-people{top:auto!important;left:104px!important;bottom:88px!important;transform:none!important}
+.thinking-ring .thinking-organization{top:auto!important;left:50%!important;bottom:70px!important;transform:translateX(-50%)!important}
+/* Orbit 1 */
+.thinking-ring .satellite-agile{top:50%!important;left:420px!important;transform:translate(-50%,-50%)!important}
+/* Orbit 2 */
+.thinking-ring .satellite-product{top:70px!important;left:430px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .satellite-software{top:70px!important;left:130px!important;transform:translate(-50%,-50%)!important}
+/* Orbit 3 */
+.thinking-ring .satellite-business{top:478px!important;left:478px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .satellite-lean{top:478px!important;left:82px!important;transform:translate(-50%,-50%)!important}
+@media(max-width:800px){
+  .hero-thinking-map{width:460px!important;max-width:460px!important}
+  .thinking-ring{width:460px!important;height:460px!important}
+  .orbit-inner{width:230px!important;height:230px!important}.orbit-middle{width:345px!important;height:345px!important}.orbit-outer{width:460px!important;height:460px!important}
+  .thinking-ring .thinking-ai{top:75px!important}.thinking-ring .thinking-stakeholder{left:76px!important}.thinking-ring .thinking-people{left:86px!important;bottom:74px!important}.thinking-ring .thinking-organization{bottom:58px!important}
+  .thinking-ring .satellite-agile{left:345px!important}.thinking-ring .satellite-product{top:58px!important;left:353px!important}.thinking-ring .satellite-software{top:58px!important;left:107px!important}.thinking-ring .satellite-business{top:393px!important;left:393px!important}.thinking-ring .satellite-lean{top:393px!important;left:67px!important}
+}
+@media(max-width:560px){
+  .hero-thinking-map{width:360px!important;max-width:360px!important}.thinking-ring{width:360px!important;height:360px!important}
+  .orbit-inner{width:180px!important;height:180px!important}.orbit-middle{width:270px!important;height:270px!important}.orbit-outer{width:360px!important;height:360px!important}
+  .thinking-ring .thinking-ai{top:58px!important}.thinking-ring .thinking-stakeholder{left:58px!important}.thinking-ring .thinking-people{left:66px!important;bottom:58px!important}.thinking-ring .thinking-organization{bottom:46px!important}
+  .thinking-ring .satellite-agile{left:270px!important}.thinking-ring .satellite-product{top:46px!important;left:276px!important}.thinking-ring .satellite-software{top:46px!important;left:84px!important}.thinking-ring .satellite-business{top:307px!important;left:307px!important}.thinking-ring .satellite-lean{top:307px!important;left:53px!important}
+}
