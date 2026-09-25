@@ -1760,3 +1760,28 @@ footer{border-color:var(--line)}
   .thinking-ring .thinking-business .thinking-icon svg,
   .thinking-ring .thinking-product .thinking-icon svg{width:25px!important;height:17px!important}
 }
+
+
+/* Business Value and Product: match the Agile satellite exactly */
+.thinking-ring .thinking-business,
+.thinking-ring .thinking-product{
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  text-align:left!important;
+  color:var(--accent)!important;
+  z-index:9!important;
+}
+.thinking-ring .thinking-business .thinking-icon,
+.thinking-ring .thinking-product .thinking-icon{
+  width:28px!important;height:18px!important;margin:0!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  flex:0 0 28px!important;
+}
+.thinking-ring .thinking-business .thinking-icon svg,
+.thinking-ring .thinking-product .thinking-icon svg{
+  width:28px!important;height:18px!important;fill:none!important;stroke:currentColor!important;
+  stroke-width:1.35!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+}
