@@ -733,3 +733,36 @@ footer{border-color:var(--line)}
 .hero-thinking-map{overflow:hidden}
 .thinking-ring{overflow:hidden}
 .thinking-photo{overflow:hidden}
+
+/* Final hero map sizing: one contained portrait, readable surrounding domains */
+.hero-mark{width:100%;justify-self:center;transform:none}
+.hero-thinking-map{width:390px;max-width:100%;margin:auto;overflow:visible}
+.thinking-ring{width:360px;height:360px;margin:auto;overflow:hidden;border:1px solid #b9c7d8;background:rgba(255,255,255,.38)}
+.thinking-ring:before{height:285px}.thinking-ring:after{width:285px}
+.thinking-ring .thinking-node{gap:8px}
+.thinking-ring .thinking-node span:last-child{font-size:.63rem;letter-spacing:.045em}
+.thinking-icon{width:19px;height:19px}.thinking-icon svg{width:15px;height:15px;stroke-width:1.55}
+.thinking-business{top:13px}
+.thinking-organization{bottom:13px}
+.thinking-product{right:24px;top:78px}
+.thinking-engineering{right:24px;bottom:78px}
+.thinking-people{left:24px;bottom:78px}
+.thinking-ai{left:24px;top:78px}
+.thinking-photo{width:126px;height:126px;padding:5px;overflow:hidden}
+.thinking-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.thinking-map-caption{margin-top:17px;font-size:.64rem}
+.thinking-map-caption small{font-size:.52rem}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-mark{order:2}
+}
+@media(max-width:700px){
+  .hero-thinking-map{width:300px}
+  .thinking-ring{width:280px;height:280px}
+  .thinking-ring:before{height:220px}.thinking-ring:after{width:220px}
+  .thinking-photo{width:98px;height:98px}
+  .thinking-ring .thinking-node span:last-child{font-size:.5rem}
+  .thinking-icon{width:16px;height:16px}.thinking-icon svg{width:13px;height:13px}
+  .thinking-product{right:7px;top:58px}.thinking-engineering{right:7px;bottom:58px}
+  .thinking-people{left:7px;bottom:58px}.thinking-ai{left:7px;top:58px}
+}
