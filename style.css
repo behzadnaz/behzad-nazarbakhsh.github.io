@@ -1532,18 +1532,19 @@ footer{border-color:var(--line)}
  .satellite-lean{left:4px!important}
 }
 
-/* Product closer to the central profile — final */
+/* Product takes the former Engineering position */
 .thinking-ring .thinking-product{
   position:absolute!important;
-  top:50%!important;
-  right:auto!important;
-  left:calc(50% + 155px)!important;
-  transform:translateY(-50%)!important;
+  top:auto!important;
+  right:128px!important;
+  left:auto!important;
+  bottom:128px!important;
+  transform:none!important;
   z-index:7!important;
 }
 @media(max-width:800px){
-  .thinking-ring .thinking-product{left:calc(50% + 105px)!important;}
+  .thinking-ring .thinking-product{right:88px!important;bottom:92px!important;}
 }
 @media(max-width:560px){
-  .thinking-ring .thinking-product{left:calc(50% + 72px)!important;}
+  .thinking-ring .thinking-product{right:52px!important;bottom:70px!important;}
 }
