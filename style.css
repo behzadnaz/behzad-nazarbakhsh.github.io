@@ -862,3 +862,27 @@ footer{border-color:var(--line)}
   .thinking-organization{bottom:9px}
   .thinking-photo{width:112px;height:112px;padding:5px;box-shadow:0 12px 30px rgba(15,23,42,.14),0 0 0 9px rgba(255,255,255,.75),0 0 0 10px #dce6f3}
 }
+
+/* Hero map: readable labels with metaphor icons, no boxes */
+.hero-thinking-map{width:560px}
+.thinking-ring{width:540px;height:540px;border:0;background:radial-gradient(circle at center,rgba(37,99,235,.06),transparent 43%),radial-gradient(circle at center,rgba(255,255,255,.95),rgba(239,244,250,.42));box-shadow:none}
+.thinking-ring:before,.thinking-ring:after{display:none}
+.thinking-connectors{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible}
+.thinking-connectors circle{fill:none;stroke:#cbd7e6;stroke-width:1}
+.thinking-connectors path{fill:none;stroke:#b9c9dc;stroke-width:1.4;stroke-linecap:round;stroke-dasharray:3 5}
+.thinking-ring .thinking-node{z-index:2;padding:0;min-height:0;border:0;border-radius:0;background:transparent;box-shadow:none;display:flex;align-items:center;gap:8px}
+.thinking-ring .thinking-node span:last-child{font:700 .82rem "IBM Plex Mono","DM Mono",monospace;letter-spacing:.045em;color:#334155;text-shadow:0 1px 0 #fff}
+.thinking-icon{width:34px;height:34px;display:grid;place-items:center;border:1px solid #aebfd4;border-radius:50%;background:rgba(255,255,255,.92);color:var(--accent);box-shadow:0 5px 14px rgba(15,23,42,.08)}
+.thinking-icon svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.thinking-business{top:47px;left:50%;transform:translateX(-50%)}
+.thinking-business .thinking-icon{width:42px;height:42px;background:#eff5ff;border-color:#8fb0df}
+.thinking-business span:last-child{font-size:.9rem;color:var(--accent)}
+.thinking-product{right:29px;top:148px}
+.thinking-engineering{right:20px;bottom:148px}
+.thinking-organization{bottom:47px;left:50%;transform:translateX(-50%)}
+.thinking-people{left:20px;bottom:148px}
+.thinking-ai{left:29px;top:148px}
+.thinking-photo{z-index:3;width:158px;height:158px;padding:7px;border:2px solid #91afd5;border-radius:50%;background:#fff;box-shadow:0 18px 42px rgba(15,23,42,.15),0 0 0 11px rgba(255,255,255,.82),0 0 0 12px #dce6f3}
+.thinking-map-caption{margin-top:12px;font-size:.68rem}
+@media(max-width:1100px){.hero-thinking-map{width:500px}.thinking-ring{width:480px;height:480px}.thinking-photo{width:145px;height:145px}.thinking-product{right:18px;top:130px}.thinking-engineering{right:12px;bottom:130px}.thinking-people{left:12px;bottom:130px}.thinking-ai{left:18px;top:130px}}
+@media(max-width:560px){.hero-thinking-map{width:350px}.thinking-ring{width:340px;height:340px}.thinking-ring .thinking-node span:last-child{font-size:.52rem}.thinking-icon{width:25px;height:25px}.thinking-icon svg{width:14px;height:14px}.thinking-business .thinking-icon{width:31px;height:31px}.thinking-business span:last-child{font-size:.58rem}.thinking-business{top:25px}.thinking-product{right:1px;top:86px}.thinking-engineering{right:0;bottom:86px}.thinking-people{left:0;bottom:86px}.thinking-ai{left:1px;top:86px}.thinking-organization{bottom:25px}.thinking-photo{width:108px;height:108px;padding:5px}}
