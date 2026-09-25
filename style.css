@@ -1996,16 +1996,16 @@ footer{border-color:var(--line)}
 }
 .thinking-ring .thinking-node .thinking-icon svg{width:18px!important;height:18px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
 
-/* ORBIT 1 — closest capability planets */
+/* ORBIT 1 — two planets with clear separation */
 .thinking-ring .thinking-ai{top:140px!important;left:280px!important;transform:translate(-50%,-50%)!important}
-.thinking-ring .thinking-stakeholder{top:210px!important;left:158px!important;transform:translate(-50%,-50%)!important}
-.thinking-ring .thinking-agile{top:210px!important;left:402px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .thinking-stakeholder{top:420px!important;left:280px!important;transform:translate(-50%,-50%)!important}
 
-/* ORBIT 2 — capability planets */
+/* ORBIT 2 — two planets on opposite sides */
 .thinking-ring .thinking-organization{top:132px!important;left:132px!important;transform:translate(-50%,-50%)!important}
-.thinking-ring .thinking-software{top:132px!important;left:428px!important;transform:translate(-50%,-50%)!important}
+.thinking-ring .thinking-agile{top:428px!important;left:428px!important;transform:translate(-50%,-50%)!important}
 
-/* ORBIT 3 — directional satellite */
+/* ORBIT 3 — two planets on opposite sides */
+.thinking-ring .thinking-software{top:82px!important;left:478px!important;transform:translate(-50%,-50%)!important}
 .thinking-ring .thinking-lean{top:478px!important;left:82px!important;transform:translate(-50%,-50%)!important}
 
 /* Directional satellites */
@@ -2033,11 +2033,11 @@ footer{border-color:var(--line)}
   .thinking-ring .thinking-node .thinking-icon{width:36px!important;height:36px!important;flex-basis:36px!important}
   .thinking-ring .thinking-node .thinking-icon svg{width:15px!important;height:15px!important}
   .thinking-ring .thinking-ai{top:70px!important;left:188px!important}
-  .thinking-ring .thinking-stakeholder{top:155px!important;left:100px!important}
-  .thinking-ring .thinking-agile{top:155px!important;left:276px!important}
-  .thinking-ring .thinking-organization{top:238px!important;left:92px!important}
-  .thinking-ring .thinking-software{top:238px!important;left:284px!important}
-  .thinking-ring .thinking-lean{top:348px!important;left:188px!important}
+  .thinking-ring .thinking-stakeholder{top:326px!important;left:188px!important}
+  .thinking-ring .thinking-organization{top:96px!important;left:96px!important}
+  .thinking-ring .thinking-agile{top:284px!important;left:284px!important}
+  .thinking-ring .thinking-software{top:58px!important;left:353px!important}
+  .thinking-ring .thinking-lean{top:393px!important;left:23px!important}
   .thinking-ring .satellite-product{top:74px!important;left:353px!important}
   .thinking-ring .satellite-business{top:393px!important;left:393px!important}
 }
@@ -2046,11 +2046,11 @@ footer{border-color:var(--line)}
   .thinking-ring .thinking-node .thinking-icon{width:31px!important;height:31px!important;flex-basis:31px!important}
   .thinking-ring .thinking-node .thinking-icon svg{width:13px!important;height:13px!important}
   .thinking-ring .thinking-ai{top:55px!important;left:145px!important}
-  .thinking-ring .thinking-stakeholder{top:122px!important;left:77px!important}
-  .thinking-ring .thinking-agile{top:122px!important;left:213px!important}
-  .thinking-ring .thinking-organization{top:187px!important;left:72px!important}
-  .thinking-ring .thinking-software{top:187px!important;left:220px!important}
-  .thinking-ring .thinking-lean{top:273px!important;left:145px!important}
+  .thinking-ring .thinking-stakeholder{top:265px!important;left:145px!important}
+  .thinking-ring .thinking-organization{top:72px!important;left:72px!important}
+  .thinking-ring .thinking-agile{top:218px!important;left:218px!important}
+  .thinking-ring .thinking-software{top:46px!important;left:276px!important}
+  .thinking-ring .thinking-lean{top:307px!important;left:0!important}
   .thinking-ring .satellite-product{top:59px!important;left:276px!important}
   .thinking-ring .satellite-business{top:307px!important;left:307px!important}
 }
