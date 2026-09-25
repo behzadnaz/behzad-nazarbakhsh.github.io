@@ -1674,3 +1674,47 @@ footer{border-color:var(--line)}
 @media(max-width:560px){
   .thinking-ring .satellite-agile{left:calc(50% + 52px)!important}
 }
+
+
+/* Primary planets: metaphor icon sits inside the 3D planet circle */
+.thinking-ring .thinking-node.thinking-business,
+.thinking-ring .thinking-node.thinking-product,
+.thinking-ring .thinking-node.thinking-organization,
+.thinking-ring .thinking-node.thinking-people,
+.thinking-ring .thinking-node.thinking-ai,
+.thinking-ring .thinking-node.thinking-stakeholder{
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  text-align:center!important;
+}
+.thinking-ring .thinking-node.thinking-business .thinking-icon,
+.thinking-ring .thinking-node.thinking-product .thinking-icon,
+.thinking-ring .thinking-node.thinking-organization .thinking-icon,
+.thinking-ring .thinking-node.thinking-people .thinking-icon,
+.thinking-ring .thinking-node.thinking-ai .thinking-icon,
+.thinking-ring .thinking-node.thinking-stakeholder .thinking-icon{
+  width:42px!important;
+  height:42px!important;
+  margin:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95) 0%,rgba(219,234,254,.72) 28%,rgba(37,99,235,.22) 68%,rgba(15,23,42,.16) 100%)!important;
+  border:1px solid rgba(37,99,235,.38)!important;
+  box-shadow:inset -7px -7px 12px rgba(15,23,42,.16), inset 5px 5px 9px rgba(255,255,255,.75),0 4px 10px rgba(15,23,42,.12)!important;
+}
+.thinking-ring .thinking-node.thinking-business .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-product .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-organization .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-people .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-ai .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-stakeholder .thinking-icon svg{
+  width:18px!important;
+  height:18px!important;
+  stroke:currentColor!important;
+  fill:none!important;
+  stroke-width:1.5!important;
+}
