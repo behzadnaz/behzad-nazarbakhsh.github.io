@@ -618,3 +618,7 @@ footer{border-color:var(--line)}
 /* Knowledge Base QA metaphor */
 .qa-metaphor{color:var(--accent)}
 .qa-metaphor svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* Knowledge Base Governance metaphor */
+.governance-metaphor{color:var(--accent)}
+.governance-metaphor svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
