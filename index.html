@@ -71,16 +71,16 @@
       <div class="article-filter-wrap">
         <button class="article-filter-nav article-filter-prev" type="button" aria-label="Scroll article categories left">←</button>
         <div class="article-filters" role="tablist" aria-label="Filter writing by professional domain">
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="product">Product Management <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="change">Organizational Change <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="people">People <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="agile-teams">Creating Agile Teams <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="engineering">Engineering <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="ai">AI <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="stakeholder">Stakeholder Management <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="governance">Governance <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="qa">Quality Assurance <span>0</span></button>
-          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="lean">Lean Startup <span>0</span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="product">Product Management <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="change">Organizational Change <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="people">People <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="agile-teams">Creating Agile Teams <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="engineering">Engineering <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="ai">AI <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="stakeholder">Stakeholder Management <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="governance">Governance <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="qa">Quality Assurance <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="lean">Lean Startup <span class="article-count"><b>0</b><i class="article-count-icon" aria-hidden="true"></i></span></button>
         </div>
         <button class="article-filter-nav article-filter-next" type="button" aria-label="Scroll article categories right">→</button>
       </div>
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateCounts() {
     for (var i = 0; i < filters.length; i++) {
       var domain = filters[i].getAttribute('data-filter');
-      var number = filters[i].querySelector('span');
+      var number = filters[i].querySelector('.article-count b');
       if (number) number.textContent = countFor(domain);
     }
   }
