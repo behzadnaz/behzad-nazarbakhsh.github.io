@@ -924,3 +924,17 @@ footer{border-color:var(--line)}
  .thinking-people{left:0!important;bottom:83px!important}.thinking-ai{left:0!important;top:83px!important}
  .thinking-photo{width:108px!important;height:108px!important;padding:5px!important}
 }
+
+/* Corrected strategic map geometry */
+.thinking-ring{position:relative!important;width:560px!important;height:560px!important}
+.thinking-connectors{position:absolute!important;inset:0!important;width:560px!important;height:560px!important;z-index:0!important}
+.thinking-connectors path{fill:none!important;stroke:#b7c7da!important;stroke-width:1.2!important;stroke-linecap:round!important;stroke-dasharray:2 6!important}
+.thinking-business{top:42px!important;left:50%!important;transform:translateX(-50%)!important}
+.thinking-product{top:160px!important;right:26px!important}
+.thinking-engineering{bottom:160px!important;right:18px!important}
+.thinking-organization{bottom:42px!important;left:50%!important;transform:translateX(-50%)!important}
+.thinking-people{bottom:160px!important;left:18px!important}
+.thinking-ai{top:160px!important;left:26px!important}
+.thinking-photo{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important}
+@media(max-width:1100px){.thinking-ring{width:500px!important;height:500px!important}.thinking-connectors{width:500px!important;height:500px!important}.thinking-business{top:32px!important}.thinking-product{top:140px!important;right:10px!important}.thinking-engineering{bottom:140px!important;right:5px!important}.thinking-organization{bottom:32px!important}.thinking-people{bottom:140px!important;left:5px!important}.thinking-ai{top:140px!important;left:10px!important}}
+@media(max-width:560px){.thinking-ring{width:340px!important;height:340px!important}.thinking-connectors{width:340px!important;height:340px!important}.thinking-business{top:20px!important}.thinking-product{top:88px!important;right:0!important}.thinking-engineering{bottom:88px!important;right:0!important}.thinking-organization{bottom:20px!important}.thinking-people{bottom:88px!important;left:0!important}.thinking-ai{top:88px!important;left:0!important}}
