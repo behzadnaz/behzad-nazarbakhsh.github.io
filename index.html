@@ -7,6 +7,83 @@
   <title>Behzad Nazarbakhsh | Professional Hub</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+<style>
+/* Homepage hero refinement */
+.hero{
+  min-height:94vh;
+  padding-top:96px;
+  padding-bottom:70px;
+  background:
+    radial-gradient(circle at 82% 42%,rgba(218,228,220,.72) 0,transparent 31%),
+    linear-gradient(135deg,#fafbf8 0%,#eef2ed 100%);
+}
+.hero-grid{
+  grid-template-columns:minmax(0,1fr) minmax(500px,.9fr);
+  gap:34px;
+  min-height:76vh;
+  align-items:center;
+}
+.hero-copy{max-width:690px;padding-bottom:10px}
+.hero-identity{
+  margin:0 0 30px;
+  font-family:"DM Mono",monospace;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.12em;
+  color:var(--ink);
+  text-transform:uppercase;
+}
+.hero-identity span{
+  display:block;
+  margin-top:9px;
+  color:var(--muted);
+  font-size:.67rem;
+  letter-spacing:.05em;
+  text-transform:none;
+}
+.hero-copy h1{
+  max-width:700px;
+  font-size:clamp(3.8rem,6.3vw,6.5rem);
+  line-height:.98;
+}
+.hero-copy h1 em{display:inline-block;color:var(--ink)}
+.hero-copy .intro{
+  max-width:610px;
+  margin-top:30px;
+  margin-bottom:30px;
+  font-size:1.02rem;
+  line-height:1.75;
+}
+.hero-copy .actions{margin-top:4px}
+.hero-copy .button{padding:11px 18px}
+.hero-mark{
+  justify-self:center;
+  width:100%;
+  transform:translateY(0);
+}
+.hero-thinking-map{margin:auto}
+@media(max-width:1050px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(430px,.85fr);gap:12px}
+  .hero-copy h1{font-size:clamp(3.4rem,6.5vw,5.4rem)}
+}
+@media(max-width:800px){
+  .hero{min-height:auto;padding-top:90px;padding-bottom:65px}
+  .hero-grid{grid-template-columns:1fr;gap:15px;min-height:auto}
+  .hero-copy{max-width:700px}
+  .hero-identity{margin-bottom:24px}
+  .hero-copy h1{font-size:clamp(3.2rem,12vw,5rem)}
+  .hero-copy .intro{font-size:1rem}
+  .hero-mark{justify-self:center;margin-top:24px}
+}
+@media(max-width:560px){
+  .hero{padding-top:82px}
+  .hero-copy h1{font-size:clamp(2.8rem,13vw,4rem)}
+  .hero-identity{font-size:.62rem;letter-spacing:.09em}
+  .hero-identity span{font-size:.61rem}
+  .hero-copy .intro{font-size:.94rem}
+  .hero-mark{margin-top:12px}
+}
+</style>
 </head>
 <body>
   <header id="home" class="hero">
