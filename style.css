@@ -2205,3 +2205,9 @@ footer{font-size:11px;line-height:1.5}
 .article-card.academic-card .topic-metaphor,
 .article-card.academic-card .topic-metaphor > span{float:none!important;position:static!important;text-align:left!important}
 .article-card.academic-card .topic-metaphor{display:flex!important;align-self:flex-start!important;align-items:center!important;justify-content:flex-start!important;margin:0 0 18px 0!important;padding:0!important;width:max-content!important}
+
+/* Academic cards: pin the blue topic label to the card's left padding edge */
+.article-card.academic-card{position:relative!important;text-align:left!important}
+.article-card.academic-card .topic-metaphor{position:static!important;display:flex!important;align-self:flex-start!important;justify-content:flex-start!important;align-items:center!important;text-align:left!important;width:max-content!important;margin:0 0 18px 0!important;transform:none!important}
+.article-card.academic-card .topic-metaphor > span:last-child{display:inline-block!important;text-align:left!important}
+.article-card.academic-card h3,.article-card.academic-card h3 a,.article-card.academic-card .article-summary{text-align:left!important}
