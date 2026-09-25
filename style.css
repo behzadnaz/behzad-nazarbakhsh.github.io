@@ -1068,3 +1068,8 @@ footer{border-color:var(--line)}
  .thinking-satellite{font-size:.36rem!important;padding:2px 3px!important;gap:3px!important}.satellite-dot{width:12px!important;height:12px!important;font-size:.45rem!important}
  .satellite-software{right:-4px!important;top:39%}.satellite-lean{left:-4px!important;top:39%}.satellite-agile{right:6%!important;bottom:-2px}.satellite-stakeholder{left:4%!important;bottom:-2px}
 }
+
+/* Satellite metaphor icons */
+.thinking-satellite .satellite-dot{flex:0 0 auto}
+.thinking-satellite .satellite-dot svg{width:11px!important;height:11px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.satellite-software-icon{color:#2563eb!important}.satellite-agile-icon{color:#0f766e!important}.satellite-stakeholder-icon{color:#7c3aed!important}.satellite-lean-icon{color:#b45309!important}
