@@ -2120,13 +2120,13 @@ footer{border-color:var(--line)}
 
 /* Final orbital separation — satellites occupy open sectors, not planet positions */
 .thinking-ring .thinking-satellite.satellite-product{top:280px!important;left:490px!important}
-.thinking-ring .thinking-satellite.satellite-business{top:560px!important;left:280px!important}
+.thinking-ring .thinking-satellite.satellite-business{top:500px!important;left:280px!important}
 @media(max-width:800px){
   .thinking-ring .thinking-satellite.satellite-product{top:188px!important;left:376px!important}
-  .thinking-ring .thinking-satellite.satellite-business{top:376px!important;left:188px!important}
+  .thinking-ring .thinking-satellite.satellite-business{top:352px!important;left:188px!important}
 }
 @media(max-width:560px){
   .thinking-ring .thinking-satellite.satellite-product{top:145px!important;left:245px!important}
-  .thinking-ring .thinking-satellite.satellite-business{top:290px!important;left:145px!important}
+  .thinking-ring .thinking-satellite.satellite-business{top:274px!important;left:145px!important}
 }
 
