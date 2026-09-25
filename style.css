@@ -1332,3 +1332,27 @@ footer{border-color:var(--line)}
  .thinking-satellite .satellite-icon{width:23px!important;flex-basis:23px!important}
  .thinking-satellite .satellite-icon svg{width:22px!important;height:14px!important}
 }
+
+/* Bring core professional domains closer to the photo */
+.thinking-business{top:72px!important}
+.thinking-product{top:122px!important;right:108px!important}
+.thinking-ai{top:122px!important;left:108px!important}
+.thinking-organization{bottom:72px!important}
+.thinking-people{bottom:122px!important;left:108px!important}
+.thinking-engineering{bottom:122px!important;right:108px!important}
+@media(max-width:800px){
+ .thinking-business{top:54px!important}
+ .thinking-product{top:92px!important;right:76px!important}
+ .thinking-ai{top:92px!important;left:76px!important}
+ .thinking-organization{bottom:54px!important}
+ .thinking-people{bottom:92px!important;left:76px!important}
+ .thinking-engineering{bottom:92px!important;right:76px!important}
+}
+@media(max-width:560px){
+ .thinking-business{top:38px!important}
+ .thinking-product{top:62px!important;right:52px!important}
+ .thinking-ai{top:62px!important;left:52px!important}
+ .thinking-organization{bottom:38px!important}
+ .thinking-people{bottom:62px!important;left:52px!important}
+ .thinking-engineering{bottom:62px!important;right:52px!important}
+}
