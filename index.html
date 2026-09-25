@@ -165,7 +165,30 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 .nav-links .nav-metaphor svg{width:14px;height:14px;display:block;flex:0 0 14px;margin:0;padding:0;color:currentColor}
 .nav-links .nav-metaphor.nav-knowledge-base svg{width:14px;height:14px;flex:0 0 14px}
 </style>
-</head>
+<style id="services-section-v3">
+.services-intro{max-width:780px;margin:18px 0 0;color:var(--muted)}
+.services-career-story{margin-top:42px}
+.services-journey-explanation{margin-top:34px}
+.services-journey-explanation .career-item p{margin:8px 0 0}
+.services-offerings{margin-top:58px}
+.services-offerings-head{margin-bottom:22px}
+.services-offerings-head .section-label{margin-bottom:10px}
+.services-offerings-head h3{margin:0}
+.services-table-wrap{overflow-x:auto}
+.services-table{width:100%;border-collapse:collapse;text-align:left}
+.services-table th,.services-table td{padding:17px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.services-table th{font-family:"DM Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.services-table td:first-child{width:31%;color:var(--ink)}
+.services-table td:last-child{color:var(--muted)}
+.services-cta{margin-top:54px;padding:30px 0;border-top:1px solid var(--line)}
+.services-cta h3{margin:0 0 8px}
+.services-cta p{max-width:720px;margin:0 0 20px;color:var(--muted)}
+@media(max-width:700px){
+ .services-table th,.services-table td{padding:14px 10px}
+ .services-table td:first-child{width:38%}
+ .services-career-story{margin-top:30px}
+}
+</style></head>
 <body>
   <header id="home" class="hero">
     <nav class="nav">
@@ -225,40 +248,94 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   </header>
   <main>
     <section id="services" class="section">
-      <div class="section-head"><p class="section-label section-label-icon services-label"><span class="section-label-icon-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 4.5h5.6l1 2.1 2.2.8.2 2.3 1.7 1.5-1.1 2 1.1 2-1.7 1.5-.2 2.3-2.2.8-1 2.1H9.2l-1-2.1-2.2-.8-.2-2.3-1.7-1.5 1.1-2-1.1-2 1.7-1.5.2-2.3 2.2-.8 1-2.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>SERVICES</p><h2>Ways I can help</h2></div>
-      <div class="services-journey">
-        <div class="about-block" id="cv">
-          <p class="section-label">CURRICULUM VITAE</p>
-          <h3>Selected Experience &amp; Achievements</h3>
-          <div class="career-story">
-            <div class="career-journey" aria-label="Career progression from software engineering to organizational change">
-              <div class="journey-line" aria-hidden="true"></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M38 10l16 16-8 8-16-16z"/><path d="M31 17L12 36l-3 14 14-3 19-19"/><path d="M19 45l-8 8"/></svg></span><strong>Build</strong><small>Software Engineering</small></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><path d="M42 22L35 37l-15 7 7-15z"/><circle cx="32" cy="32" r="3"/></svg></span><strong>Connect</strong><small>Product &amp; Agile</small></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M25 54V22h14v32"/><path d="M20 22h24l-4-8H24z"/><path d="M18 54h28"/><path d="M29 29h6M29 37h6M29 45h6"/><path d="M32 14V7M45 16l7-7M19 16l-7-7"/></svg></span><strong>Shape</strong><small>IT Management &amp; Portfolio</small></div>
-              <div class="journey-stage"><span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 46h46"/><path d="M14 46V31c0-13 8-20 18-20s18 7 18 20v15"/><path d="M23 46V32c0-7 4-11 9-11s9 4 9 11v14"/><path d="M9 54h46"/></svg></span><strong>Transform</strong><small>Organizational Change</small></div>
-              <p class="journey-caption">From building individual systems to shaping the systems around them.</p>
-            </div>
-            <div class="career-snapshot">
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M38 10l16 16-8 8-16-16z"/><path d="M31 17L12 36l-3 14 14-3 19-19"/><path d="M19 45l-8 8"/></svg></span><strong>Software Engineering</strong></div><p>Built and improved software systems while developing a foundation in software craftsmanship and engineering practices.</p></div></div>
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><path d="M42 22L35 37l-15 7 7-15z"/><circle cx="32" cy="32" r="3"/></svg></span><strong>Product &amp; Agile</strong></div><p>Connected product goals, Agile ways of working, delivery, and measurable business value.</p></div></div>
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M25 54V22h14v32"/><path d="M20 22h24l-4-8H24z"/><path d="M18 54h28"/><path d="M29 29h6M29 37h6M29 45h6"/><path d="M32 14V7M45 16l7-7M19 16l-7-7"/></svg></span><strong>IT Management &amp; Portfolio</strong></div><p>Established and improved portfolio management practices, governance, prioritization, reporting, and stakeholder visibility.</p></div></div>
-              <div class="career-item"><span class="career-marker"></span><div class="career-item-content"><div class="career-title-row"><span class="career-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 46h46"/><path d="M14 46V31c0-13 8-20 18-20s18 7 18 20v15"/><path d="M23 46V32c0-7 4-11 9-11s9 4 9 11v14"/><path d="M9 54h46"/></svg></span><strong>Organizational Change</strong></div><p>Supported change initiatives focused on business value, stakeholder experience, communication, and sustainable performance.</p></div></div>
-            </div>
+      <div class="section-head">
+        <p class="section-label section-label-icon services-label">
+          <span class="section-label-icon-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 4.5h5.6l1 2.1 2.2.8.2 2.3 1.7 1.5-1.1 2 1.1 2-1.7 1.5-.2 2.3-2.2.8-1 2.1H9.2l-1-2.1-2.2-.8-.2-2.3-1.7-1.5 1.1-2-1.1-2 1.7-1.5.2-2.3 2.2-.8 1-2.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          SERVICES
+        </p>
+        <h2>How I can help organizations</h2>
+        <p class="services-intro">Organizations can engage me when they need practical help improving the way they work, developing people and capabilities, strengthening technology and product practices, or navigating organizational change.</p>
+      </div>
+
+      <div class="career-story services-career-story">
+        <div class="career-journey" aria-label="Career journey from software engineering to organizational change">
+          <div class="journey-line" aria-hidden="true"></div>
+
+          <div class="journey-stage">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M38 10l16 16-8 8-16-16z"/><path d="M31 17L12 36l-3 14 14-3 19-19"/><path d="M19 45l-8 8"/></svg></span>
+            <strong>Build</strong><small>Software Engineering</small>
+          </div>
+
+          <div class="journey-stage">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><path d="M42 22L35 37l-15 7 7-15z"/><circle cx="32" cy="32" r="3"/></svg></span>
+            <strong>Connect</strong><small>Product &amp; Agile</small>
+          </div>
+
+          <div class="journey-stage">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M25 54V22h14v32"/><path d="M20 22h24l-4-8H24z"/><path d="M18 54h28"/><path d="M29 29h6M29 37h6M29 45h6"/><path d="M32 14V7M45 16l7-7M19 16l-7-7"/></svg></span>
+            <strong>Shape</strong><small>IT Management &amp; Portfolio</small>
+          </div>
+
+          <div class="journey-stage">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 46h46"/><path d="M14 46V31c0-13 8-20 18-20s18 7 18 20v15"/><path d="M23 46V32c0-7 4-11 9-11s9 4 9 11v14"/><path d="M9 54h46"/></svg></span>
+            <strong>Transform</strong><small>Organizational Change</small>
+          </div>
+
+          <p class="journey-caption">From building individual systems to shaping the systems around them.</p>
+        </div>
+
+        <div class="career-snapshot services-journey-explanation">
+          <div class="career-item">
+            <strong>Build</strong>
+            <p>My foundation in software engineering gave me technical depth, software craftsmanship, and a practical understanding of how software is built, tested, and improved.</p>
+          </div>
+          <div class="career-item">
+            <strong>Connect</strong>
+            <p>I expanded from technology into product and Agile, connecting engineering with customers, teams, business outcomes, and better ways of working.</p>
+          </div>
+          <div class="career-item">
+            <strong>Shape</strong>
+            <p>I moved from individual products and teams to IT management and portfolio thinking, focusing on priorities, governance, decisions, and business value.</p>
+          </div>
+          <div class="career-item">
+            <strong>Transform</strong>
+            <p>I brought these perspectives together in organizational change, working with people, leadership, communication, behavior, and sustainable transformation.</p>
           </div>
         </div>
       </div>
 
-      <div class="expertise-grid">
-        <article><span>01</span><h3>Agile Development</h3><p>Agile ways of working, team design, product thinking, OKRs and value-focused delivery.</p></article>
-        <article><span>02</span><h3>Software Engineering</h3><p>Software craftsmanship, engineering practices, quality assurance and continuous improvement.</p></article>
-        <article><span>03</span><h3>Product Development</h3><p>Connecting product strategy, customer needs, business value, domains and investment decisions.</p></article>
-        <article><span>04</span><h3>Organizational Improvement</h3><p>Governance, PPM, organizational change and delivery systems that improve business outcomes.</p></article>
+      <div class="services-offerings">
+        <div class="services-offerings-head">
+          <p class="section-label">SERVICES</p>
+          <h3>What organizations can engage me for</h3>
+        </div>
+        <div class="services-table-wrap">
+          <table class="services-table">
+            <thead>
+              <tr><th>Service</th><th>How I can help</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Ways of Working</strong></td><td>Improve Lean and Agile practices, flow, delivery, collaboration, and continuous improvement.</td></tr>
+              <tr><td><strong>Coaching &amp; Mentoring</strong></td><td>Coach individuals, teams, managers, and leaders through practical professional and organizational challenges.</td></tr>
+              <tr><td><strong>Teaching &amp; Workshops</strong></td><td>Design and deliver practical training, workshops, and capability-building programs tailored to your organization.</td></tr>
+              <tr><td><strong>Facilitation &amp; Alignment</strong></td><td>Facilitate discovery, planning, decision-making, strategy, retrospectives, and stakeholder alignment.</td></tr>
+              <tr><td><strong>Software Engineering Excellence</strong></td><td>Strengthen software craftsmanship, engineering practices, quality, architecture, and technical decision-making.</td></tr>
+              <tr><td><strong>Product &amp; Business Value</strong></td><td>Connect product strategy, customer needs, technology decisions, and measurable business outcomes.</td></tr>
+              <tr><td><strong>Organizational Transformation</strong></td><td>Help organizations understand, design, and navigate complex change and turn it into sustainable improvement.</td></tr>
+              <tr><td><strong>People &amp; Influence</strong></td><td>Strengthen leadership, collaboration, stakeholder relationships, communication, and influence.</td></tr>
+              <tr><td><strong>Mindset &amp; Behavioral Change</strong></td><td>Help teams and leaders develop the thinking and behaviors needed for sustainable improvement.</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    
 
-</section>
-    <section id="work" class="section work">
+      <div class="services-cta">
+        <h3>Have a specific challenge?</h3>
+        <p>If you are looking for a workshop, coaching, teaching, facilitation, advisory support, or help with a broader transformation, let's talk.</p>
+        <a class="button primary" href="#about-contact">Let's talk <span>↗</span></a>
+      </div>
+    </section>
+<section id="work" class="section work">
       <div class="section-head"><p class="section-label section-label-icon contribution-label"><span class="section-label-icon-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M4 12h16M10 12v2h4v-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>CONTRIBUTION</p><h2>Contributions Across Teams & Organizations</h2></div>
       <div class="work-list">
         <a class="work-item" href="IT-Portfolio-Management.html"><span>01</span><strong>IT Portfolio Management</strong><small>Portfolio governance, prioritization, value and stakeholder visibility</small><b>↗</b></a>
