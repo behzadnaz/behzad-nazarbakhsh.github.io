@@ -614,3 +614,7 @@ footer{border-color:var(--line)}
 .topic-icon svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .people-metaphor{color:var(--accent)}
 .change-metaphor{color:var(--accent)}
+
+/* Knowledge Base QA metaphor */
+.qa-metaphor{color:var(--accent)}
+.qa-metaphor svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
