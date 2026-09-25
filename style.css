@@ -1496,3 +1496,38 @@ footer{border-color:var(--line)}
  .thinking-organization{bottom:27px!important}
  .thinking-ring .thinking-node span:last-child{font-size:.41rem!important}
 }
+
+/* Readability-first orbital positioning */
+.thinking-ring .thinking-core.thinking-photo{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;z-index:8!important}
+.thinking-business{top:92px!important;left:50%!important;transform:translateX(-50%)!important}
+.thinking-ai{top:175px!important;left:128px!important}
+.thinking-product{top:175px!important;right:128px!important}
+.thinking-people{bottom:128px!important;left:128px!important}
+.thinking-engineering{bottom:128px!important;right:128px!important}
+.thinking-organization{bottom:54px!important;left:50%!important;transform:translateX(-50%)!important}
+
+/* Keep supporting labels close enough to their visual context */
+.satellite-software{right:48px!important;top:40%!important}
+.satellite-lean{left:48px!important;top:40%!important}
+.satellite-agile{right:23%!important;bottom:32px!important}
+.satellite-stakeholder{left:18%!important;bottom:32px!important}
+@media(max-width:800px){
+ .thinking-business{top:58px!important}
+ .thinking-ai{top:125px!important;left:82px!important}
+ .thinking-product{top:125px!important;right:82px!important}
+ .thinking-people{bottom:92px!important;left:78px!important}
+ .thinking-engineering{bottom:92px!important;right:78px!important}
+ .thinking-organization{bottom:36px!important}
+ .satellite-software{right:18px!important}
+ .satellite-lean{left:18px!important}
+}
+@media(max-width:560px){
+ .thinking-business{top:35px!important}
+ .thinking-ai{top:84px!important;left:50px!important}
+ .thinking-product{top:84px!important;right:50px!important}
+ .thinking-people{bottom:64px!important;left:46px!important}
+ .thinking-engineering{bottom:64px!important;right:46px!important}
+ .thinking-organization{bottom:22px!important}
+ .satellite-software{right:4px!important}
+ .satellite-lean{left:4px!important}
+}
