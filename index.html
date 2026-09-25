@@ -188,6 +188,16 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
  .services-table td:first-child{width:38%}
  .services-career-story{margin-top:30px}
 }
+<style id="services-career-layout">
+.services-career-story{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:34px 44px;align-items:center}
+.services-career-story .career-journey{min-width:0}
+.services-career-story .journey-evolution{min-width:0;margin:0}
+.services-career-story .services-journey-explanation{grid-column:1 / -1}
+@media(max-width:900px){
+  .services-career-story{grid-template-columns:1fr;gap:30px}
+  .services-career-story .services-journey-explanation{grid-column:auto}
+}
+</style>
 <style id="journey-evolution-visual">
 .journey-evolution{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:28px;margin:34px 0 0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .journey-evolution-item{min-width:0;text-align:center;display:flex;flex-direction:column;align-items:center}
