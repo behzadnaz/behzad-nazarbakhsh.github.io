@@ -1121,3 +1121,87 @@ footer{border-color:var(--line)}
  .thinking-satellite{font-size:.34rem!important;gap:3px!important}.satellite-icon{width:20px!important;height:20px!important}.satellite-icon svg{width:10px!important;height:10px!important}
  .satellite-software{right:-8px!important;top:38%!important}.satellite-lean{left:-8px!important;top:38%!important}.satellite-agile{right:4%!important;bottom:-2px!important}.satellite-stakeholder{left:4%!important;bottom:-2px!important}
 }
+
+
+/* Final orbital-map correction: give the map enough room and make satellites read as spacecraft */
+.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)!important;gap:45px!important}
+.hero-mark{justify-self:center!important;width:100%!important}
+.hero-thinking-map{width:620px!important;max-width:100%!important}
+.thinking-ring{width:600px!important;height:600px!important;margin:0 auto!important}
+.thinking-ring .orbit{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;border:1px solid #d3deeb!important;border-radius:50%!important;background:none!important}
+.orbit-outer{width:540px!important;height:540px!important;opacity:.52!important}
+.orbit-middle{width:390px!important;height:390px!important;opacity:.68!important}
+.orbit-inner{width:255px!important;height:255px!important;opacity:.82!important}
+
+/* Major domains sit clearly outside the central photo */
+.thinking-ring .thinking-node{width:112px!important}
+.thinking-business{top:4px!important}
+.thinking-ai{top:98px!important;left:28px!important}
+.thinking-product{top:98px!important;right:28px!important}
+.thinking-people{bottom:98px!important;left:28px!important}
+.thinking-engineering{bottom:98px!important;right:28px!important}
+.thinking-organization{bottom:4px!important}
+.thinking-core.thinking-photo{width:150px!important;height:150px!important}
+
+/* Small orbital paths around the four satellites */
+.satellite-orbit{position:absolute!important;z-index:1!important;border:1px solid rgba(37,99,235,.20)!important;border-radius:50%!important;pointer-events:none!important}
+.satellite-orbit-software{width:132px!important;height:52px!important;right:-4px!important;top:45%!important;transform:rotate(-18deg)!important}
+.satellite-orbit-lean{width:112px!important;height:48px!important;left:-3px!important;top:45%!important;transform:rotate(18deg)!important}
+.satellite-orbit-agile{width:120px!important;height:52px!important;right:18%!important;bottom:0!important;transform:rotate(8deg)!important}
+.satellite-orbit-stakeholder{width:150px!important;height:52px!important;left:12%!important;bottom:0!important;transform:rotate(-8deg)!important}
+
+/* Actual spacecraft silhouette, not a generic circular icon */
+.thinking-satellite{z-index:7!important;display:flex!important;align-items:center!important;gap:7px!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:600 .56rem/1.15 "IBM Plex Mono","DM Mono",monospace!important;color:#526277!important}
+.satellite-icon{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;width:38px!important;height:26px!important;border:0!important;border-radius:0!important;background:transparent!important;color:#2563eb!important;box-shadow:none!important;flex:0 0 38px!important}
+.satellite-icon:before,.satellite-icon:after{content:""!important;position:absolute!important;top:7px!important;width:7px!important;height:12px!important;border:1px solid currentColor!important;background:rgba(37,99,235,.13)!important}
+.satellite-icon:before{left:0!important}.satellite-icon:after{right:0!important}
+.satellite-icon svg{width:34px!important;height:20px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.35!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.satellite-software{right:-8px!important;top:43%!important}
+.satellite-lean{left:-8px!important;top:43%!important}
+.satellite-agile{right:14%!important;bottom:2%!important}
+.satellite-stakeholder{left:10%!important;bottom:2%!important}
+.satellite-software .satellite-icon,.satellite-lean .satellite-icon,.satellite-agile .satellite-icon,.satellite-stakeholder .satellite-icon{color:#2563eb!important}
+.satellite-software .satellite-icon:before,.satellite-software .satellite-icon:after,.satellite-lean .satellite-icon:before,.satellite-lean .satellite-icon:after,.satellite-agile .satellite-icon:before,.satellite-agile .satellite-icon:after,.satellite-stakeholder .satellite-icon:before,.satellite-stakeholder .satellite-icon:after{background:rgba(37,99,235,.13)!important}
+
+/* Keep the map coherent on narrower screens */
+@media(max-width:1100px){
+ .hero-grid{grid-template-columns:1fr 1fr!important;gap:20px!important}
+ .hero-thinking-map{width:500px!important}
+ .thinking-ring{width:480px!important;height:480px!important}
+ .orbit-outer{width:430px!important;height:430px!important}.orbit-middle{width:330px!important;height:330px!important}.orbit-inner{width:220px!important;height:220px!important}
+ .thinking-core.thinking-photo{width:126px!important;height:126px!important}
+ .thinking-business{top:2px!important}.thinking-organization{bottom:2px!important}
+ .thinking-ai{top:78px!important;left:8px!important}.thinking-product{top:78px!important;right:8px!important}
+ .thinking-people{bottom:78px!important;left:8px!important}.thinking-engineering{bottom:78px!important;right:8px!important}
+ .satellite-orbit-software{right:-2px!important}.satellite-orbit-lean{left:-2px!important}
+ .thinking-satellite{font-size:.48rem!important}.satellite-icon{width:32px!important;flex-basis:32px!important}.satellite-icon svg{width:29px!important}
+}
+@media(max-width:800px){
+ .hero-grid{grid-template-columns:1fr!important;gap:30px!important}
+ .hero-mark{justify-self:center!important}
+ .hero-thinking-map{width:430px!important}
+ .thinking-ring{width:410px!important;height:410px!important}
+ .orbit-outer{width:370px!important;height:370px!important}.orbit-middle{width:280px!important;height:280px!important}.orbit-inner{width:190px!important;height:190px!important}
+ .thinking-core.thinking-photo{width:112px!important;height:112px!important}
+ .thinking-ring .thinking-node{width:82px!important}.thinking-ring .thinking-node span:last-child{font-size:.49rem!important}
+ .thinking-icon{width:40px!important;height:40px!important}.thinking-icon svg{width:21px!important;height:21px!important}
+ .thinking-business{top:0!important}.thinking-organization{bottom:0!important}
+ .thinking-ai{top:68px!important;left:0!important}.thinking-product{top:68px!important;right:0!important}
+ .thinking-people{bottom:68px!important;left:0!important}.thinking-engineering{bottom:68px!important;right:0!important}
+ .thinking-satellite{font-size:.42rem!important}
+ .satellite-software{right:-10px!important}.satellite-lean{left:-10px!important}.satellite-agile{right:10%!important}.satellite-stakeholder{left:6%!important}
+}
+@media(max-width:560px){
+ .hero-thinking-map{width:350px!important}.thinking-ring{width:340px!important;height:340px!important}
+ .orbit-outer{width:310px!important;height:310px!important}.orbit-middle{width:235px!important;height:235px!important}.orbit-inner{width:160px!important;height:160px!important}
+ .thinking-core.thinking-photo{width:96px!important;height:96px!important}
+ .thinking-ring .thinking-node{width:62px!important;gap:2px!important}.thinking-ring .thinking-node span:last-child{font-size:.39rem!important}
+ .thinking-icon{width:31px!important;height:31px!important}.thinking-icon svg{width:17px!important;height:17px!important}
+ .thinking-ai{top:54px!important;left:-2px!important}.thinking-product{top:54px!important;right:-2px!important}
+ .thinking-people{bottom:54px!important;left:-2px!important}.thinking-engineering{bottom:54px!important;right:-2px!important}
+ .thinking-business{top:0!important}.thinking-organization{bottom:0!important}
+ .thinking-satellite{font-size:.34rem!important}
+ .satellite-icon{width:28px!important;flex-basis:28px!important;height:22px!important}.satellite-icon svg{width:25px!important;height:17px!important}
+ .satellite-software{right:-15px!important}.satellite-lean{left:-15px!important}.satellite-agile{right:3%!important}.satellite-stakeholder{left:0!important}
+ .satellite-orbit-software{width:105px!important;height:42px!important}.satellite-orbit-lean{width:95px!important;height:40px!important}.satellite-orbit-agile{width:100px!important;height:40px!important}.satellite-orbit-stakeholder{width:115px!important;height:40px!important}
+}
