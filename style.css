@@ -607,3 +607,10 @@ footer{border-color:var(--line)}
 .article-filter .article-count-icon:before{content:"";position:absolute;left:3px;right:2px;top:4px;height:1px;background:currentColor;box-shadow:0 3px 0 currentColor}
 .article-filter .article-count-icon:after{content:"";position:absolute;left:3px;right:5px;top:10px;height:1px;background:currentColor}
 .article-filter.active .article-count{color:var(--accent)}
+
+/* Knowledge Base topic metaphors */
+.topic-metaphor{display:inline-flex;align-items:center;gap:7px;margin-top:2px;color:var(--muted);font-size:.66rem;font-weight:700;letter-spacing:.08em}
+.topic-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid currentColor;border-radius:50%;opacity:.82}
+.topic-icon svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.people-metaphor{color:var(--accent)}
+.change-metaphor{color:var(--accent)}
