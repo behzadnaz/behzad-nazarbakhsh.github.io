@@ -1656,3 +1656,21 @@ footer{border-color:var(--line)}
 
 /* Remove the former Stakeholder satellite orbit */
 .satellite-orbit-stakeholder{display:none!important}
+
+
+/* Agile satellite: first orbit, close to the central profile */
+.thinking-ring .satellite-agile{
+  position:absolute!important;
+  top:50%!important;
+  right:auto!important;
+  left:calc(50% + 88px)!important;
+  bottom:auto!important;
+  transform:translateY(-50%)!important;
+  z-index:9!important;
+}
+@media(max-width:800px){
+  .thinking-ring .satellite-agile{left:calc(50% + 70px)!important}
+}
+@media(max-width:560px){
+  .thinking-ring .satellite-agile{left:calc(50% + 52px)!important}
+}
