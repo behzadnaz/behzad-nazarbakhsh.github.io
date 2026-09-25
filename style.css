@@ -1972,3 +1972,184 @@ footer{border-color:var(--line)}
   .thinking-ring .thinking-ai{top:58px!important}.thinking-ring .thinking-stakeholder{left:58px!important}.thinking-ring .thinking-people{left:66px!important;bottom:58px!important}.thinking-ring .thinking-organization{bottom:46px!important}
   .thinking-ring .satellite-agile{left:270px!important}.thinking-ring .satellite-product{top:46px!important;left:276px!important}.thinking-ring .satellite-software{top:46px!important;left:84px!important}.thinking-ring .satellite-business{top:307px!important;left:307px!important}.thinking-ring .satellite-lean{top:307px!important;left:53px!important}
 }
+
+
+/* HERO MAP — final metaphor
+   Planets = professional capabilities and practices.
+   Satellites = business direction and outcomes. */
+.thinking-ring .thinking-node.thinking-ai,
+.thinking-ring .thinking-node.thinking-organization,
+.thinking-ring .thinking-node.thinking-software,
+.thinking-ring .thinking-node.thinking-agile,
+.thinking-ring .thinking-node.thinking-lean,
+.thinking-ring .thinking-node.thinking-stakeholder{
+  position:absolute!important;
+  z-index:8!important;
+  width:100px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  text-align:center!important;
+  color:var(--accent)!important;
+  font:600 .58rem/1.15 "IBM Plex Mono","DM Mono",monospace!important;
+  white-space:normal!important;
+}
+.thinking-ring .thinking-node.thinking-ai .thinking-icon,
+.thinking-ring .thinking-node.thinking-organization .thinking-icon,
+.thinking-ring .thinking-node.thinking-software .thinking-icon,
+.thinking-ring .thinking-node.thinking-agile .thinking-icon,
+.thinking-ring .thinking-node.thinking-lean .thinking-icon,
+.thinking-ring .thinking-node.thinking-stakeholder .thinking-icon{
+  width:44px!important;
+  height:44px!important;
+  margin:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.96) 0%,rgba(219,234,254,.76) 28%,rgba(37,99,235,.24) 68%,rgba(15,23,42,.18) 100%)!important;
+  border:1px solid rgba(37,99,235,.38)!important;
+  box-shadow:inset -8px -8px 13px rgba(15,23,42,.17),inset 6px 6px 10px rgba(255,255,255,.8),0 4px 10px rgba(15,23,42,.12)!important;
+  flex:0 0 44px!important;
+}
+.thinking-ring .thinking-node.thinking-ai .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-organization .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-software .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-agile .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-lean .thinking-icon svg,
+.thinking-ring .thinking-node.thinking-stakeholder .thinking-icon svg{
+  width:19px!important;
+  height:19px!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.55!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+/* Inner orbit — six capability planets */
+.thinking-ring .thinking-ai{top:96px!important;left:230px!important;transform:none!important}
+.thinking-ring .thinking-organization{top:138px!important;left:350px!important;transform:none!important}
+.thinking-ring .thinking-software{top:292px!important;left:355px!important;transform:none!important}
+.thinking-ring .thinking-agile{top:392px!important;left:230px!important;transform:none!important}
+.thinking-ring .thinking-lean{top:292px!important;left:105px!important;transform:none!important}
+.thinking-ring .thinking-stakeholder{top:138px!important;left:100px!important;transform:none!important}
+
+/* Satellites remain directional, not capability planets */
+.thinking-ring .satellite-product,
+.thinking-ring .satellite-business{
+  position:absolute!important;
+  z-index:10!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  padding:4px 7px!important;
+  border:0!important;
+  background:rgba(255,255,255,.86)!important;
+  border-radius:20px!important;
+  box-shadow:0 4px 14px rgba(15,23,42,.06)!important;
+  color:var(--accent)!important;
+  font:600 .58rem/1.1 "IBM Plex Mono","DM Mono",monospace!important;
+  white-space:nowrap!important;
+}
+.thinking-ring .satellite-product .thinking-icon,
+.thinking-ring .satellite-business .thinking-icon{
+  width:28px!important;height:18px!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  margin:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  flex:0 0 28px!important;
+}
+.thinking-ring .satellite-product .thinking-icon svg,
+.thinking-ring .satellite-business .thinking-icon svg{
+  width:28px!important;height:18px!important;fill:none!important;stroke:currentColor!important;
+  stroke-width:1.35!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+}
+/* Product = orbit 2 */
+.thinking-ring .satellite-product{
+  top:132px!important;
+  left:428px!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+}
+/* Business Value = orbit 3 */
+.thinking-ring .satellite-business{
+  top:478px!important;
+  left:478px!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+}
+
+@media(max-width:800px){
+  .thinking-ring .thinking-node.thinking-ai,
+  .thinking-ring .thinking-node.thinking-organization,
+  .thinking-ring .thinking-node.thinking-software,
+  .thinking-ring .thinking-node.thinking-agile,
+  .thinking-ring .thinking-node.thinking-lean,
+  .thinking-ring .thinking-node.thinking-stakeholder{
+    width:84px!important;
+    font-size:.52rem!important;
+  }
+  .thinking-ring .thinking-node.thinking-ai .thinking-icon,
+  .thinking-ring .thinking-node.thinking-organization .thinking-icon,
+  .thinking-ring .thinking-node.thinking-software .thinking-icon,
+  .thinking-ring .thinking-node.thinking-agile .thinking-icon,
+  .thinking-ring .thinking-node.thinking-lean .thinking-icon,
+  .thinking-ring .thinking-node.thinking-stakeholder .thinking-icon{
+    width:38px!important;height:38px!important;flex-basis:38px!important;
+  }
+  .thinking-ring .thinking-node.thinking-ai .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-organization .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-software .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-agile .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-lean .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-stakeholder .thinking-icon svg{
+    width:16px!important;height:16px!important;
+  }
+  .thinking-ring .thinking-ai{top:82px!important;left:188px!important}
+  .thinking-ring .thinking-organization{top:112px!important;left:288px!important}
+  .thinking-ring .thinking-software{top:238px!important;left:292px!important}
+  .thinking-ring .thinking-agile{top:320px!important;left:188px!important}
+  .thinking-ring .thinking-lean{top:238px!important;left:84px!important}
+  .thinking-ring .thinking-stakeholder{top:112px!important;left:80px!important}
+  .thinking-ring .satellite-product{top:108px!important;left:353px!important}
+  .thinking-ring .satellite-business{top:393px!important;left:393px!important}
+}
+@media(max-width:560px){
+  .thinking-ring .thinking-node.thinking-ai,
+  .thinking-ring .thinking-node.thinking-organization,
+  .thinking-ring .thinking-node.thinking-software,
+  .thinking-ring .thinking-node.thinking-agile,
+  .thinking-ring .thinking-node.thinking-lean,
+  .thinking-ring .thinking-node.thinking-stakeholder{
+    width:70px!important;
+    font-size:.46rem!important;
+  }
+  .thinking-ring .thinking-node.thinking-ai .thinking-icon,
+  .thinking-ring .thinking-node.thinking-organization .thinking-icon,
+  .thinking-ring .thinking-node.thinking-software .thinking-icon,
+  .thinking-ring .thinking-node.thinking-agile .thinking-icon,
+  .thinking-ring .thinking-node.thinking-lean .thinking-icon,
+  .thinking-ring .thinking-node.thinking-stakeholder .thinking-icon{
+    width:34px!important;height:34px!important;flex-basis:34px!important;
+  }
+  .thinking-ring .thinking-node.thinking-ai .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-organization .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-software .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-agile .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-lean .thinking-icon svg,
+  .thinking-ring .thinking-node.thinking-stakeholder .thinking-icon svg{
+    width:14px!important;height:14px!important;
+  }
+  .thinking-ring .thinking-ai{top:64px!important;left:145px!important}
+  .thinking-ring .thinking-organization{top:86px!important;left:222px!important}
+  .thinking-ring .thinking-software{top:186px!important;left:225px!important}
+  .thinking-ring .thinking-agile{top:260px!important;left:145px!important}
+  .thinking-ring .thinking-lean{top:186px!important;left:65px!important}
+  .thinking-ring .thinking-stakeholder{top:86px!important;left:62px!important}
+  .thinking-ring .satellite-product{top:86px!important;left:276px!important}
+  .thinking-ring .satellite-business{top:307px!important;left:307px!important}
+}
