@@ -277,8 +277,7 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 .engagement-node-dot{display:block;width:11px;height:11px;margin:13px auto 15px;border:2px solid var(--line);border-radius:50%;background:var(--paper);transition:transform .2s ease,background .2s ease,border-color .2s ease}
 .engagement-node-duration{display:block;font-family:"DM Mono",monospace;font-size:10px;line-height:1.35;letter-spacing:.1em;font-weight:600}
 .engagement-node:hover .engagement-node-dot,.engagement-node:focus-visible .engagement-node-dot{border-color:#2563eb;transform:scale(1.18)}
-.engagement-node.is-active{color:var(--ink)}
-.engagement-node.is-active .engagement-node-dot{border-color:#2563eb;background:#2563eb;transform:scale(1.2)}
+
 .engagement-node.is-active{color:var(--ink)}
 .engagement-details{margin-top:28px}
 .engagement-detail[hidden]{display:none!important}
@@ -791,7 +790,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function select(id, moveFocus){
     nodes.forEach(node=>{
       const active=node.dataset.engagement===id;
-      node.classList.toggle('is-active',active);
+      node.classList.remove('is-active');
       node.setAttribute('aria-selected',String(active));
       if(active && moveFocus) node.focus({preventScroll:true});
     });
@@ -826,11 +825,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if(station){
       select(String(station.stage+1),false);
-      nodes.forEach(n=>n.classList.remove('is-active'));
+      
     train.classList.toggle('is-stopped',!!station);
     }else{
       if(train) train.classList.remove('is-stopped');
-      nodes.forEach(n=>n.classList.remove('is-active'));
+      
       let stage=0;
       for(let i=stageTimes.length-1;i>=0;i--){
         if(elapsed>=stageTimes[i]){stage=i;break;}
@@ -882,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function () {
     train.classList.add('is-stopped');
     root.dataset.manualStop='1';
     nodes.forEach(n=>n.blur());
-    node.classList.add('is-active');
+    
     train.style.animation='none';
 
     const trackRect=track.getBoundingClientRect();
@@ -915,7 +914,7 @@ document.addEventListener('DOMContentLoaded', function () {
         manualTrainHold=false;
         train.classList.remove('is-stopped');
         root.dataset.manualStop='0';
-        nodes.forEach(n=>n.classList.remove('is-active'));
+        
         startTrainSync(false);
       }else if(!reducedMotion.matches){
         startTrainSync(false);
