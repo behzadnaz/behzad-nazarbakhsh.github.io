@@ -804,7 +804,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function syncWithTrain(now){
-    if(reducedMotion.matches) return;
+    if(reducedMotion.matches || manualTrainHold) return;
     const elapsed=(now-autoStart)%12000;
     let stage=0;
     for(let i=stageTimes.length-1;i>=0;i--){
@@ -852,7 +852,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const train=document.querySelector('.engagement-train');
     if(!train)return;
     manualTrainHold=true;
-    nodes.forEach(n=>n.classList.remove('is-active'));
+    nodes.forEach(n=>{n.classList.remove('is-active');n.blur();});
     train.style.animation='none';
     if(window.matchMedia('(max-width:700px)').matches){
       train.style.left='6px';
