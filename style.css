@@ -2370,3 +2370,12 @@ footer{font-size:11px;line-height:1.5}
 .engagement-spaceship:after{width:34px!important;height:8px!important}
 @media(max-width:700px){.engagement-spaceship{width:92px!important;height:55px!important}.engagement-spaceship svg{width:92px!important;height:55px!important}.engagement-spaceship:after{width:28px!important;height:7px!important}}
 @media(max-width:480px){.engagement-spaceship{width:82px!important;height:49px!important}.engagement-spaceship svg{width:82px!important;height:49px!important}.engagement-spaceship:after{width:24px!important;height:6px!important}}
+
+/* Final spaceship presentation — larger, clearer, more cinematic */
+.engagement-spaceship{width:168px!important;height:100px!important;transform:translateY(-6px) rotate(-2deg)!important;filter:drop-shadow(0 8px 14px rgba(15,23,42,.14))!important;z-index:5!important}
+.engagement-spaceship svg{width:168px!important;height:100px!important;filter:drop-shadow(0 0 14px rgba(37,99,235,.24))!important}
+.engagement-spaceship .ufo-body{animation:rocketFloat 2.8s ease-in-out infinite}
+.engagement-spaceship .ufo-beam{animation:ufoBeam 1.8s ease-in-out infinite alternate;transform-origin:110px 94px}
+@keyframes ufoBeam{from{opacity:.10;transform:scaleY(.86)}to{opacity:.28;transform:scaleY(1.06)}}
+@media(max-width:700px){.engagement-spaceship{width:132px!important;height:79px!important}.engagement-spaceship svg{width:132px!important;height:79px!important}}
+@media(max-width:480px){.engagement-spaceship{width:112px!important;height:67px!important}.engagement-spaceship svg{width:112px!important;height:67px!important}}
