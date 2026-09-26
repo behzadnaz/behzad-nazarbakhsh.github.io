@@ -2309,83 +2309,18 @@ footer{font-size:11px;line-height:1.5}
 }
 
 
-
 /* Knowledge Base — reconstructed topic selector */
 .article-filter{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:flex-start!important;
-  gap:9px!important;
-  flex:0 0 auto!important;
-  min-height:42px!important;
-  padding:7px 4px 8px!important;
-  border:0!important;
-  border-bottom:1px solid transparent!important;
-  background:transparent!important;
-  color:var(--muted)!important;
-  white-space:nowrap!important;
-  cursor:pointer!important;
+  display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;
+  gap:9px!important;flex:0 0 auto!important;min-height:42px!important;padding:7px 4px 8px!important;
+  border:0!important;border-bottom:1px solid transparent!important;background:transparent!important;
+  color:var(--muted)!important;white-space:nowrap!important;cursor:pointer!important;
 }
 .article-filter:hover{color:var(--ink)!important}
 .article-filter.active{color:var(--ink)!important;border-bottom-color:var(--accent)!important}
-.article-filter-icon{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  width:18px!important;
-  height:18px!important;
-  flex:0 0 18px!important;
-  margin:0!important;
-  color:currentColor!important;
-  opacity:.78!important;
-}
-.article-filter-icon svg{
-  display:block!important;
-  width:17px!important;
-  height:17px!important;
-  fill:none!important;
-  stroke:currentColor!important;
-  stroke-width:1.55!important;
-  stroke-linecap:round!important;
-  stroke-linejoin:round!important;
-}
-.article-filter-title{
-  display:inline-block!important;
-  margin:0!important;
-  padding:0!important;
-  opacity:1!important;
-  font:inherit!important;
-  line-height:1.25!important;
-  color:currentColor!important;
-}
-.article-filter .article-count{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  width:27px!important;
-  height:27px!important;
-  flex:0 0 27px!important;
-  margin:0 0 0 1px!important;
-  padding:0!important;
-  opacity:1!important;
-}
-.article-filter .article-count b{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  width:27px!important;
-  height:27px!important;
-  margin:0!important;
-  padding:0!important;
-  border:1px solid currentColor!important;
-  border-radius:50%!important;
-  font-size:.72rem!important;
-  font-weight:700!important;
-  line-height:1!important;
-  color:currentColor!important;
-}
-@media(max-width:700px){
-  .article-filter{gap:8px!important;min-height:40px!important}
-  .article-filter-icon{width:17px!important;height:17px!important;flex-basis:17px!important}
-  .article-filter-icon svg{width:16px!important;height:16px!important}
-}
+.article-filter-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:18px!important;height:18px!important;flex:0 0 18px!important;margin:0!important;color:currentColor!important;opacity:.78!important}
+.article-filter-icon svg{display:block!important;width:17px!important;height:17px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-filter-title{display:inline-block!important;margin:0!important;padding:0!important;opacity:1!important;font:inherit!important;line-height:1.25!important;color:currentColor!important}
+.article-filter .article-count{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:27px!important;height:27px!important;flex:0 0 27px!important;margin:0 0 0 1px!important;padding:0!important;opacity:1!important}
+.article-filter .article-count b{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:27px!important;height:27px!important;margin:0!important;padding:0!important;border:1px solid currentColor!important;border-radius:50%!important;font-size:.72rem!important;font-weight:700!important;line-height:1!important;color:currentColor!important}
+@media(max-width:700px){.article-filter{gap:8px!important;min-height:40px!important}.article-filter-icon{width:17px!important;height:17px!important;flex-basis:17px!important}.article-filter-icon svg{width:16px!important;height:16px!important}}
