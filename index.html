@@ -848,19 +848,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let manualTrainHold=false;
   function holdTrainAtStage(id){
-    const stagePositions={1:5,2:27.5,3:50,4:72.5,5:95};
     const train=document.querySelector('.engagement-train');
-    if(!train)return;
+    const track=document.querySelector('.engagement-track');
+    const node=nodes.find(n=>n.dataset.engagement===id);
+    const dot=node?.querySelector('.engagement-node-dot');
+    if(!train||!track||!dot)return;
     manualTrainHold=true;
-    nodes.forEach(n=>{n.classList.remove('is-active');n.blur();});
+    nodes.forEach(n=>n.blur());
+    node.classList.add('is-active');
     train.style.animation='none';
-    if(window.matchMedia('(max-width:700px)').matches){
-      train.style.left='6px';
-      train.style.top=(({1:0,2:25,3:50,4:75,5:100})[id]||0)+'%';
-    }else{
-      train.style.left=(stagePositions[id]||5)+'%';
-      train.style.top='3px';
-    }
+
+    const trackRect=track.getBoundingClientRect();
+    const dotRect=dot.getBoundingClientRect();
+    train.style.left=(dotRect.left+dotRect.width/2-trackRect.left)+'px';
+    train.style.top=(dotRect.top+dotRect.height/2-trackRect.top)+'px';
+    train.style.transform='translate(-50%,-50%)';
     train.style.opacity='1';
   }
   nodes.forEach(node=>{
