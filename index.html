@@ -881,6 +881,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if(!train||!track||!dot)return;
     manualTrainHold=true;
     train.classList.add('is-stopped');
+    root.dataset.manualStop='1';
     nodes.forEach(n=>n.blur());
     node.classList.add('is-active');
     train.style.animation='none';
@@ -914,6 +915,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if(manualTrainHold){
         manualTrainHold=false;
         train.classList.remove('is-stopped');
+        root.dataset.manualStop='0';
         nodes.forEach(n=>n.classList.remove('is-active'));
         startTrainSync(false);
       }else if(!reducedMotion.matches){
