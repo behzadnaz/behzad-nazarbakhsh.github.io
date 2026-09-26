@@ -912,9 +912,16 @@ document.addEventListener('DOMContentLoaded', function () {
       root.classList.remove('is-paused');
       if(manualTrainHold){
         manualTrainHold=false;
-        train.classList.remove('is-stopped');
         root.dataset.manualStop='0';
-        
+        if(train){
+          train.classList.remove('is-stopped');
+          train.style.animation='';
+          train.style.left='';
+          train.style.top='';
+          train.style.transform='';
+          train.style.opacity='';
+        }
+        autoStart=performance.now();
         startTrainSync(false);
       }else if(!reducedMotion.matches){
         startTrainSync(false);
