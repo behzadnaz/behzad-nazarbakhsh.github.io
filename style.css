@@ -2395,3 +2395,9 @@ footer{font-size:11px;line-height:1.5}
 .engagement-spaceship .ufo-beam{animation:ufoBeam 1.6s ease-in-out infinite alternate;transform-origin:130px 124px}
 @media(max-width:700px){.engagement-spaceship{width:190px!important;height:110px!important}.engagement-spaceship svg{width:190px!important;height:110px!important}}
 @media(max-width:480px){.engagement-spaceship{width:155px!important;height:90px!important}.engagement-spaceship svg{width:155px!important;height:90px!important}}
+
+/* Final engagement spaceship — use the provided graphic at a compact scale */
+.engagement-spaceship{width:118px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:center!important;transform:translateY(-8px) rotate(-2deg)!important}
+.engagement-spaceship img{display:block!important;width:118px!important;height:auto!important;max-width:none!important;animation:rocketFloat 3s ease-in-out infinite}
+@media(max-width:700px){.engagement-spaceship{width:92px!important}.engagement-spaceship img{width:92px!important}}
+@media(max-width:480px){.engagement-spaceship{width:76px!important}.engagement-spaceship img{width:76px!important}}
