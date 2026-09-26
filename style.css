@@ -2241,3 +2241,10 @@ footer{font-size:11px;line-height:1.5}
 
 /* Contact text — align with full-width section text */
 .contact-block>p:not(.section-label){max-width:none!important}
+
+/* Contact typography — match the main section structure */
+.contact-block{width:100%;}
+.contact-block .section-label{display:block;margin-bottom:0;}
+.contact-block h3{margin:0 0 25px!important;font-family:"Playfair Display",Georgia,serif!important;font-size:clamp(2.3rem,4.5vw,4rem)!important;line-height:1.1!important;letter-spacing:-.025em!important;font-weight:600!important;color:var(--ink)!important;}
+.contact-block>p:not(.section-label){max-width:none!important;margin:0;color:var(--muted);font-size:1rem;line-height:1.75;}
+.contact-block .connect-links{margin-top:38px!important;}
