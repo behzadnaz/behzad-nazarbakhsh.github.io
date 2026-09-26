@@ -2346,7 +2346,7 @@ footer{font-size:11px;line-height:1.5}
 @media(max-width:800px){.about-details .contact-block{grid-column:auto}}
 
 /* Engagement journey — larger, clearer spaceship */
-.engagement-spaceship{width:96px!important;height:62px!important;display:flex!important;align-items:center!important;justify-content:center!important;z-index:4!important;filter:drop-shadow(0 6px 10px rgba(15,23,42,.14))}
-.engagement-spaceship svg{width:96px!important;height:62px!important;display:block!important;overflow:visible!important;filter:drop-shadow(0 0 5px rgba(37,99,235,.12))}
-.engagement-spaceship:after{content:"";position:absolute;left:7px;bottom:6px;width:30px;height:8px;border-radius:50%;background:linear-gradient(90deg,rgba(37,99,235,.42),rgba(37,99,235,0));filter:blur(5px);transform:rotate(-10deg);pointer-events:none}
-@media(max-width:700px){.engagement-spaceship{width:78px!important;height:50px!important}.engagement-spaceship svg{width:78px!important;height:50px!important}.engagement-spaceship:after{left:4px;bottom:4px;width:23px}}
+.engagement-spaceship{width:128px!important;height:82px!important;display:flex!important;align-items:center!important;justify-content:center!important;z-index:4!important;filter:drop-shadow(0 6px 10px rgba(15,23,42,.14))}
+.engagement-spaceship svg{width:128px!important;height:82px!important;display:block!important;overflow:visible!important;filter:drop-shadow(0 0 5px rgba(37,99,235,.12))}
+.engagement-spaceship:after{content:"";position:absolute;left:8px;bottom:7px;width:40px;height:10px;border-radius:50%;background:linear-gradient(90deg,rgba(37,99,235,.42),rgba(37,99,235,0));filter:blur(5px);transform:rotate(-10deg);pointer-events:none}
+@media(max-width:700px){.engagement-spaceship{width:104px!important;height:66px!important}.engagement-spaceship svg{width:104px!important;height:66px!important}.engagement-spaceship:after{left:5px;bottom:5px;width:30px}}
