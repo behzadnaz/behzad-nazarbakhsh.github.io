@@ -2307,3 +2307,41 @@ footer{font-size:11px;line-height:1.5}
   position:relative!important;
   top:-1px!important;
 }
+
+
+/* Knowledge-base filter icon alignment */
+.article-filter{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:8px!important;
+}
+.article-filter .article-count-icon{
+  display:inline-block!important;
+  position:relative!important;
+  width:13px!important;
+  height:15px!important;
+  flex:0 0 13px!important;
+  margin:0!important;
+  opacity:.72!important;
+  vertical-align:middle!important;
+}
+.article-filter .article-filter-title{
+  display:inline-block!important;
+  margin:0!important;
+  opacity:1!important;
+  line-height:1.2!important;
+}
+.article-filter .article-count{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0 0 0 2px!important;
+  opacity:1!important;
+}
+.article-filter .article-count b{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0!important;
+}
