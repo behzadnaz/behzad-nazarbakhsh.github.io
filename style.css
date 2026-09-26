@@ -2248,3 +2248,19 @@ footer{font-size:11px;line-height:1.5}
 .contact-block h3{margin:0 0 25px!important;font-family:"Playfair Display",Georgia,serif!important;font-size:clamp(2.3rem,4.5vw,4rem)!important;line-height:1.1!important;letter-spacing:-.025em!important;font-weight:600!important;color:var(--ink)!important;}
 .contact-block>p:not(.section-label){max-width:none!important;margin:0;color:var(--muted);font-size:1rem;line-height:1.75;}
 .contact-block .connect-links{margin-top:38px!important;}
+
+/* Contact links — refined platform-style navigation */
+.connect-links{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;margin-top:42px!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;}
+.connect-links a,.connect-links a:nth-child(2),.connect-links a:nth-child(3),.connect-links a:last-child{height:88px!important;padding:0 20px!important;border:0!important;border-right:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;display:flex!important;align-items:center!important;gap:14px!important;transition:background .2s ease,color .2s ease!important;}
+.connect-links a:first-child{padding-left:0!important}
+.connect-links a:last-child{border-right:0!important;padding-right:0!important}
+.connect-icon{width:40px!important;height:40px!important;flex:0 0 40px!important;border:0!important;background:var(--paper)!important;color:var(--ink)!important;display:grid!important;place-items:center!important}
+.connect-icon svg{width:21px!important;height:21px!important;display:block!important;fill:currentColor!important}
+.connect-icon-email svg,.connect-icon-calendly svg{fill:none!important}
+.connect-name{font-family:Inter,Arial,sans-serif!important;font-size:14px!important;font-weight:600!important;line-height:1.3!important;letter-spacing:-.01em!important;color:var(--ink)!important;flex:1!important;min-width:0!important}
+.connect-arrow{width:24px!important;height:24px!important;flex:0 0 24px!important;border:0!important;background:transparent!important;color:var(--muted)!important;display:grid!important;place-items:center!important}
+.connect-arrow svg{width:16px!important;height:16px!important}
+.connect-links a:hover{background:rgba(37,99,235,.035)!important;color:var(--ink)!important}
+.connect-links a:hover .connect-icon,.connect-links a:hover .connect-arrow{color:var(--accent)!important}
+@media(max-width:900px){.connect-links{grid-template-columns:repeat(2,minmax(0,1fr))!important}.connect-links a,.connect-links a:nth-child(2),.connect-links a:nth-child(3),.connect-links a:last-child{padding:0 16px!important}.connect-links a:nth-child(2),.connect-links a:nth-child(4){border-right:0!important}.connect-links a:nth-child(3),.connect-links a:nth-child(4){border-top:1px solid var(--line)!important}.connect-links a:nth-child(3){padding-left:0!important}}
+@media(max-width:560px){.connect-links{grid-template-columns:1fr!important}.connect-links a,.connect-links a:nth-child(2),.connect-links a:nth-child(3),.connect-links a:last-child{height:68px!important;padding:0!important;border-right:0!important;border-top:1px solid var(--line)!important}.connect-links a:first-child{border-top:0!important}}
