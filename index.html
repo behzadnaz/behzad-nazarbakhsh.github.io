@@ -811,6 +811,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if(elapsed>=stageTimes[i]){stage=i;break;}
     }
     select(String(stage+1),false);
+    nodes.forEach(n=>n.classList.remove('is-active'));
+    const activeNode=nodes[stage];
+    if(activeNode && elapsed>=stageTimes[stage] && (stage===4 || elapsed<stageTimes[stage]+700)){
+      activeNode.classList.add('is-active');
+    }
   }
 
   function startTrainSync(){
