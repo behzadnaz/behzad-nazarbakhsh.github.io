@@ -2218,3 +2218,5 @@ footer{font-size:11px;line-height:1.5}
 .article-card.academic-card .topic-metaphor > span:last-child{display:inline-block!important;text-align:left!important;color:var(--accent)!important}
 .article-card.academic-card h3{margin-top:34px!important;text-align:left!important}
 @media(max-width:700px){.article-card.academic-card{height:auto!important;min-height:230px!important}.article-card.academic-card .topic-metaphor{left:22px!important;top:22px!important}.article-card.academic-card h3{margin-top:34px!important}}
+
+.about .section-body{max-width:none;margin-left:0}
