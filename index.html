@@ -846,6 +846,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  let manualTrainHold=false;
+  function holdTrainAtStage(id){
+    const stagePositions={1:5,2:27.5,3:50,4:72.5,5:95};
+    const train=document.querySelector('.engagement-train');
+    if(!train)return;
+    manualTrainHold=true;
+    train.style.animation='none';
+    train.style.left=(stagePositions[id]||5)+'%';
+    train.style.opacity='1';
+  }
+  nodes.forEach(node=>{
+    node.addEventListener('click',function(){
+      holdTrainAtStage(this.dataset.engagement);
+    });
+  });
+
   select('1',false);
   startTrainSync();
   reducedMotion.addEventListener?.('change',function(){
