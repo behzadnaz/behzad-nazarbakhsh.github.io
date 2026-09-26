@@ -911,7 +911,14 @@ document.addEventListener('DOMContentLoaded', function () {
         journeyPauseStarted=null;
       }
       root.classList.remove('is-paused');
-      if(!reducedMotion.matches && !manualTrainHold) startTrainSync(false);
+      if(manualTrainHold){
+        manualTrainHold=false;
+        train.classList.remove('is-stopped');
+        nodes.forEach(n=>n.classList.remove('is-active'));
+        startTrainSync(false);
+      }else if(!reducedMotion.matches){
+        startTrainSync(false);
+      }
     }else{
       journeyPauseStarted=performance.now();
       root.classList.add('is-paused');
