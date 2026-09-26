@@ -2339,3 +2339,8 @@ footer{font-size:11px;line-height:1.5}
 .connect-arrow{width:20px!important;flex:0 0 20px!important;color:var(--muted)!important;font-size:1rem!important;line-height:1!important;text-align:center!important}.connect-item:hover .connect-icon,.connect-item:hover .connect-arrow{color:#2563eb!important}
 @media(max-width:900px){.contact-heading{grid-template-columns:1fr;gap:12px}.connect-links{grid-template-columns:repeat(2,minmax(0,1fr))!important}.connect-item:nth-child(2){border-right:0!important}.connect-item:nth-child(3),.connect-item:nth-child(4){border-top:1px solid var(--line)!important}.connect-item:nth-child(3){padding-left:0!important}}
 @media(max-width:560px){.connect-links{grid-template-columns:1fr!important}.connect-item,.connect-item:not(:first-child){min-height:78px!important;padding:17px 0!important;border-right:0!important;border-top:1px solid var(--line)!important}.connect-item:first-child{border-top:0!important}}
+
+/* Contact section uses the full About content width */
+.about-details .contact-block{grid-column:1 / -1;width:100%}
+.about-details .contact-block>p:not(.section-label){max-width:760px}
+@media(max-width:800px){.about-details .contact-block{grid-column:auto}}
