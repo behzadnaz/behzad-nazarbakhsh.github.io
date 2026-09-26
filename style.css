@@ -2344,3 +2344,8 @@ footer{font-size:11px;line-height:1.5}
 .about-details .contact-block{grid-column:1 / -1;width:100%}
 .about-details .contact-block>p:not(.section-label){max-width:760px}
 @media(max-width:800px){.about-details .contact-block{grid-column:auto}}
+
+/* Engagement journey — make the spaceship unmistakable and prominent */
+.engagement-spaceship{width:88px!important;height:56px!important;display:flex!important;align-items:center!important;justify-content:center!important;z-index:4!important}
+.engagement-spaceship svg{width:88px!important;height:56px!important;display:block!important;overflow:visible!important;filter:drop-shadow(0 4px 7px rgba(15,23,42,.12))}
+@media(max-width:700px){.engagement-spaceship{width:72px!important;height:46px!important}.engagement-spaceship svg{width:72px!important;height:46px!important}}
