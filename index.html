@@ -24,52 +24,6 @@
 @media(max-width:1050px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(430px,.85fr);gap:12px}.hero-copy h1{font-size:clamp(2.45rem,4vw,3.55rem)}}
 @media(max-width:800px){.hero{min-height:auto;padding-top:90px;padding-bottom:65px}.hero-grid{grid-template-columns:1fr;gap:15px;min-height:auto}.hero-copy{max-width:700px}.hero-copy h1{font-size:clamp(2.35rem,8vw,3.35rem)}.hero-copy .intro{font-size:.95rem}.hero-mark{justify-self:center;margin-top:24px}}
 @media(max-width:560px){.hero{padding-top:82px}.hero-copy h1{font-size:clamp(2.2rem,9.5vw,3rem)}.hero-identity{font-size:.65rem}.hero-identity span{font-size:.63rem}.hero-copy .intro{font-size:.92rem}.hero-mark{margin-top:12px}}
-
-<style id="engagement-map-visual">
-.engagement-map{margin:30px 0 0;border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden}
-.engagement-map-row{display:grid;grid-template-columns:90px 1fr;align-items:center;min-height:58px;border-bottom:1px solid var(--line)}
-.engagement-map-row:last-child{border-bottom:0}
-.engagement-map-label{padding-left:18px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.13em;font-weight:700;color:var(--muted)}
-.engagement-map-flow{display:flex;align-items:center;gap:13px;padding:12px 18px;font-size:14px}
-.engagement-map-flow span{white-space:nowrap}
-.engagement-map-point{border:0;background:transparent;padding:7px 0;color:var(--muted);font:inherit;cursor:pointer;border-bottom:1px solid transparent}
-.engagement-map-point:hover,.engagement-map-point:focus-visible{color:var(--ink)}
-.engagement-map-point.is-active{color:var(--ink);font-weight:650;border-bottom-color:#2563eb}
-.engagement-map-arrow{color:var(--line-strong,var(--muted));font-size:12px}
-.engagement-map-connector{height:28px;display:flex;justify-content:center;position:relative}
-.engagement-map-connector:before{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
-.engagement-map-connector span{position:relative;z-index:1;width:7px;height:7px;margin-top:10px;border-radius:50%;background:#2563eb}
-.engagement-options{border-top:1px solid var(--line);padding:22px 0 0}
-.engagement-options-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-.engagement-scope-label{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.09em;color:var(--muted)}
-.engagement-option-list{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.engagement-option{border:0;border-right:1px solid var(--line);background:transparent;padding:14px 10px 15px;text-align:left;cursor:pointer;color:var(--muted);font:inherit;min-width:0}
-.engagement-option:last-child{border-right:0}
-.engagement-option:hover,.engagement-option:focus-visible{background:var(--soft)}
-.engagement-option.is-active{background:var(--soft);color:var(--ink);box-shadow:inset 0 -2px #2563eb}
-.engagement-option-duration{display:block;font-family:"DM Mono",monospace;font-size:8px;line-height:1.35;letter-spacing:.08em;margin-bottom:6px}
-.engagement-option-title{display:block;font-size:12px;line-height:1.35;font-weight:600}
-.engagement-option-detail{padding:23px 0 5px}
-.engagement-option-detail h4{margin:0 0 8px;font-size:20px;line-height:1.25}
-.engagement-option-detail p{margin:0;max-width:760px;color:var(--muted);font-size:14px;line-height:1.65}
-.engagement-option-detail .engagement-example{margin-top:16px}
-@media(max-width:700px){
-  .engagement-map-row{grid-template-columns:70px 1fr}
-  .engagement-map-flow{gap:8px;padding:11px 12px;font-size:12px}
-  .engagement-map-label{padding-left:12px}
-  .engagement-options-head{display:block}
-  .engagement-scope-label{display:block;margin-top:7px}
-  .engagement-option-list{grid-template-columns:1fr 1fr}
-  .engagement-option:nth-child(2),.engagement-option:nth-child(4){border-right:0}
-  .engagement-option:nth-child(-n+3){border-bottom:1px solid var(--line)}
-  .engagement-option:nth-child(3){grid-column:1 / -1;border-right:0}
-}
-@media(max-width:420px){
-  .engagement-map-row{grid-template-columns:1fr}
-  .engagement-map-label{padding:12px 12px 0}
-  .engagement-map-flow{padding-top:7px}
-}
-</style>
 </style>
 <style id="global-typography-v2">
 /* Global typography hierarchy — applied after page-specific styles */
@@ -466,69 +420,88 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 
     <div class="service-engagement">
         <p class="section-label">HOW ORGANIZATIONS CAN ENGAGE ME</p>
-        <div class="engagement-map" aria-label="Engagement can expand from individual and project-level work toward organizational business value">
-          <div class="engagement-map-row">
-            <span class="engagement-map-label">PEOPLE</span>
-            <div class="engagement-map-flow" role="tablist" aria-label="People scope">
-              <button class="engagement-map-point is-active" type="button" data-map="individual" aria-selected="true">Individual</button>
-              <span class="engagement-map-arrow" aria-hidden="true">→</span>
-              <button class="engagement-map-point" type="button" data-map="team" aria-selected="false">Team</button>
-              <span class="engagement-map-arrow" aria-hidden="true">→</span>
-              <button class="engagement-map-point" type="button" data-map="organization" aria-selected="false">Organization</button>
-            </div>
-          </div>
-          <div class="engagement-map-row">
-            <span class="engagement-map-label">WORK</span>
-            <div class="engagement-map-flow" aria-hidden="true">
-              <span>Project</span><span class="engagement-map-arrow">→</span><span>Product</span><span class="engagement-map-arrow">→</span><span>Portfolio</span>
-            </div>
-          </div>
-          <div class="engagement-map-row">
-            <span class="engagement-map-label">VALUE</span>
-            <div class="engagement-map-flow" aria-hidden="true">
-              <span>Output</span><span class="engagement-map-arrow">→</span><span>Outcome</span><span class="engagement-map-arrow">→</span><span>Business Value</span>
-            </div>
-          </div>
+      <div class="organization-evolution" aria-label="How organizational work can expand from individuals and projects toward organizational outcomes">
+        <div class="organization-evolution-item">
+          <span class="organization-evolution-label">PEOPLE</span>
+          <span class="organization-evolution-flow"><span>Individual</span><i><b></b></i><span>Team</span><i><b></b></i><span>Organization</span></span>
+        </div>
+        <div class="organization-evolution-item">
+          <span class="organization-evolution-label">WORK</span>
+          <span class="organization-evolution-flow"><span>Project</span><i><b></b></i><span>Product</span><i><b></b></i><span>Portfolio</span></span>
+        </div>
+        <div class="organization-evolution-item">
+          <span class="organization-evolution-label">VALUE</span>
+          <span class="organization-evolution-flow"><span>Output</span><i><b></b></i><span>Outcome</span><i><b></b></i><span>Business Value</span></span>
+        </div>
+      </div>
+      <div class="engagement-journey" aria-label="How organizations can engage me over time">
+        <div class="engagement-track" role="tablist" aria-label="Engagement duration">
+          <button class="engagement-node is-active" type="button" role="tab" aria-selected="true" aria-controls="engagement-detail-1" data-engagement="1">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">A FEW HOURS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-2" data-engagement="2">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">SEVERAL SESSIONS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-3" data-engagement="3">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">~3 MONTHS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-4" data-engagement="4">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">6–12 MONTHS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-5" data-engagement="5">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">FULL-TIME</span>
+          </button>
         </div>
 
-        <div class="engagement-map-connector" aria-hidden="true"><span></span></div>
-
-        <div class="engagement-options" aria-label="Engagement options">
-          <div class="engagement-options-head">
-            <span class="section-label">WAYS TO ENGAGE</span>
-            <span class="engagement-scope-label" id="engagement-scope-label">INDIVIDUAL / PROJECT / OUTPUT</span>
-          </div>
-          <div class="engagement-option-list" role="tablist" aria-label="Engagement types">
-            <button class="engagement-option is-active" type="button" data-option="workshop" aria-selected="true">
-              <span class="engagement-option-duration">A FEW HOURS</span>
-              <span class="engagement-option-title">Workshop / Facilitation</span>
-            </button>
-            <button class="engagement-option" type="button" data-option="teaching" aria-selected="false">
-              <span class="engagement-option-duration">SEVERAL SESSIONS</span>
-              <span class="engagement-option-title">Teaching</span>
-            </button>
-            <button class="engagement-option" type="button" data-option="coaching" aria-selected="false">
-              <span class="engagement-option-duration">~3 MONTHS</span>
-              <span class="engagement-option-title">Coaching / Advisory</span>
-            </button>
-            <button class="engagement-option" type="button" data-option="partnership" aria-selected="false">
-              <span class="engagement-option-duration">6–12 MONTHS</span>
-              <span class="engagement-option-title">Part-time Partnership</span>
-            </button>
-            <button class="engagement-option" type="button" data-option="embedded" aria-selected="false">
-              <span class="engagement-option-duration">FULL-TIME</span>
-              <span class="engagement-option-title">Embedded Engagement</span>
-            </button>
-          </div>
-          <div class="engagement-option-detail" id="engagement-option-detail" aria-live="polite">
+        <div class="engagement-details">
+          <article class="engagement-detail is-active" id="engagement-detail-1" role="tabpanel">
+            <span class="engagement-detail-index">01</span>
             <div>
               <h4>Workshop / Facilitation</h4>
               <p>Focused, collaborative work to address a specific challenge, create alignment, or make an important decision.</p>
               <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">OKR workshop or team retrospective.</span></div>
             </div>
-          </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-2" role="tabpanel" hidden>
+            <span class="engagement-detail-index">02</span>
+            <div>
+              <h4>Teaching</h4>
+              <p>Practical learning and capability development tailored to the needs of a team or organization.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Agile, Scrum, Product Management, or IT management training.</span></div>
+            </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-3" role="tabpanel" hidden>
+            <span class="engagement-detail-index">03</span>
+            <div>
+              <h4>Coaching / Advisory</h4>
+              <p>Ongoing guidance for individuals, teams, managers, or leaders, combined with practical advice on a specific challenge.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Coach a Scrum Master, Product Manager, or team.</span></div>
+            </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-4" role="tabpanel" hidden>
+            <span class="engagement-detail-index">04</span>
+            <div>
+              <h4>Part-time Partnership</h4>
+              <p>Work alongside an organization over an extended period to address a significant challenge or build a capability.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Support an organizational change or improvement initiative.</span></div>
+            </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-5" role="tabpanel" hidden>
+            <span class="engagement-detail-index">05</span>
+            <div>
+              <h4>Embedded Engagement</h4>
+              <p>Become part of the organization to lead or support a significant product, engineering, technology, portfolio, or organizational challenge.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Work with leadership and teams across technology, product, people, and business value.</span></div>
+            </div>
+          </article>
         </div>
       </div>
+
       <div class="services-cta">
         <h3>Have a specific challenge?</h3>
         <p>If you are looking for a workshop, coaching, teaching, facilitation, advisory support, or help with a broader transformation, let's talk.</p>
