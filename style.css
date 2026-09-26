@@ -2356,3 +2356,10 @@ footer{font-size:11px;line-height:1.5}
 .engagement-spaceship svg{width:164px!important;height:102px!important;filter:drop-shadow(0 0 7px rgba(37,99,235,.16))!important}
 .engagement-spaceship:after{left:5px!important;bottom:5px!important;width:52px!important;height:12px!important;filter:blur(6px)!important}
 @media(max-width:700px){.engagement-spaceship{width:132px!important;height:82px!important}.engagement-spaceship svg{width:132px!important;height:82px!important}.engagement-spaceship:after{width:40px!important;height:10px!important}}
+
+/* Engagement journey — spacecraft motion and flame detail */
+.engagement-spaceship{transform:translateY(-4px) rotate(-2deg);transition:transform .35s ease}
+.engagement-spaceship .rocket-body{transform-origin:92px 58px;animation:rocketFloat 2.8s ease-in-out infinite}
+.engagement-spaceship .rocket-flame{transform-origin:39px 78px;animation:rocketFlame .45s ease-in-out infinite alternate}
+@keyframes rocketFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes rocketFlame{from{transform:scaleX(.82);opacity:.28}to{transform:scaleX(1.12);opacity:.62}}
