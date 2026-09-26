@@ -852,6 +852,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const train=document.querySelector('.engagement-train');
     if(!train)return;
     manualTrainHold=true;
+    nodes.forEach(n=>n.classList.remove('is-active'));
     train.style.animation='none';
     if(window.matchMedia('(max-width:700px)').matches){
       train.style.left='6px';
