@@ -853,7 +853,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if(!train)return;
     manualTrainHold=true;
     train.style.animation='none';
-    train.style.left=(stagePositions[id]||5)+'%';
+    if(window.matchMedia('(max-width:700px)').matches){
+      train.style.left='6px';
+      train.style.top=(({1:0,2:25,3:50,4:75,5:100})[id]||0)+'%';
+    }else{
+      train.style.left=(stagePositions[id]||5)+'%';
+      train.style.top='3px';
+    }
     train.style.opacity='1';
   }
   nodes.forEach(node=>{
