@@ -266,8 +266,9 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 .engagement-journey{margin:34px 0 8px}
 .engagement-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0 2px}
 .engagement-track:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:1px;background:var(--line);z-index:0}
-.engagement-train{position:absolute;z-index:4;left:5%;top:-6px;width:56px;height:40px;transform:translateX(-50%);pointer-events:none;animation:engagementTrainRun 12s ease-in-out infinite}
-.engagement-train svg{display:block;width:100%;height:100%;filter:drop-shadow(0 3px 5px rgba(0,0,0,.1))}
+.engagement-train{position:absolute;z-index:4;left:5%;top:-14px;width:78px;height:48px;transform:translateX(-50%);pointer-events:none;animation:engagementTrainRun 12s ease-in-out infinite}
+.engagement-train svg{display:block;width:100%;height:100%;filter:drop-shadow(0 5px 8px rgba(0,0,0,.14))}
+.engagement-spaceship{color:var(--accent);filter:drop-shadow(0 5px 10px rgba(37,99,235,.14))}
 .engagement-journey.is-paused .engagement-train{animation-play-state:paused}
 .engagement-train.is-stopped svg rect,.engagement-train.is-stopped svg path,.engagement-train.is-stopped svg circle{stroke:#2563eb}
 .engagement-train.is-stopped svg rect:first-child{fill:#2563eb}.engagement-train.is-stopped svg path[fill="var(--paper)"]{fill:#2563eb}
@@ -290,7 +291,7 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 @media(max-width:700px){
   .engagement-track{grid-template-columns:1fr;gap:0;padding:0}
   .engagement-track:before{left:6px;right:auto;top:8px;bottom:8px;width:1px;height:auto}
-  .engagement-train{left:6px;top:-5px;width:42px;height:30px;animation:engagementTrainRunMobile 12s ease-in-out infinite}
+  .engagement-train{left:6px;top:-7px;width:58px;height:36px;animation:engagementTrainRunMobile 12s ease-in-out infinite}
   @keyframes engagementTrainRunMobile{0%{top:-8%;opacity:0}6%{top:0;opacity:1}18%{top:0;opacity:1}30%{top:25%;opacity:1}42%{top:25%;opacity:1}54%{top:50%;opacity:1}66%{top:50%;opacity:1}78%{top:75%;opacity:1}90%{top:75%;opacity:1}97%{top:100%;opacity:1}99%{top:112%;opacity:0}100%{top:-8%;opacity:0}}
   .engagement-node{display:grid;grid-template-columns:26px 1fr;align-items:center;text-align:left;padding:7px 0;gap:10px}
   .engagement-node-dot{margin:0;width:10px;height:10px}
@@ -432,16 +433,15 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
       <p class="engagement-journey-intro">I can engage at different levels depending on the challenge — from a focused workshop or training session to ongoing coaching, organizational partnership, or a full-time embedded role. The journey below shows how that engagement can evolve over time.</p><div class="engagement-journey" aria-label="How organizations can engage me over time">
         <div class="engagement-track" role="tablist" aria-label="Engagement duration">
 <div class="engagement-train engagement-spaceship" aria-hidden="true">
-  <svg viewBox="0 0 120 72" role="presentation">
-    <path d="M60 8c-17 0-31 8-39 21-3 5-5 10-6 15 18 8 50 10 90 0-1-5-3-10-6-15C91 16 77 8 60 8Z" fill="currentColor"/>
-    <path d="M8 44c12 18 29 23 52 23s40-5 52-23c-20 5-40 7-52 7S28 49 8 44Z" fill="currentColor"/>
-    <circle cx="30" cy="40" r="5" fill="var(--paper)"/>
-    <circle cx="48" cy="45" r="5" fill="var(--paper)"/>
-    <circle cx="72" cy="45" r="5" fill="var(--paper)"/>
-    <circle cx="90" cy="40" r="5" fill="var(--paper)"/>
-    <circle cx="60" cy="7" r="4" fill="currentColor"/>
-    <rect x="58" y="4" width="4" height="7" rx="2" fill="currentColor"/>
-    <path d="M34 64c3 3 6 5 9 6M50 68c2 2 4 3 6 3M70 68c-2 2-4 3-6 3M86 64c-3 3-6 5-9 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <svg viewBox="0 0 140 84" role="presentation">
+    <path d="M70 7C45 7 25 21 17 43c13 7 31 11 53 11s40-4 53-11C115 21 95 7 70 7Z" fill="currentColor"/>
+    <path d="M17 43c-7 3-12 8-15 14 12 0 25-2 37-6 9 3 20 5 31 5s22-2 31-5c12 4 25 6 37 6-3-6-8-11-15-14-19 7-38 10-53 10s-34-3-53-10Z" fill="currentColor" opacity=".72"/>
+    <circle cx="39" cy="43" r="6" fill="var(--paper)"/>
+    <circle cx="57" cy="48" r="6" fill="var(--paper)"/>
+    <circle cx="83" cy="48" r="6" fill="var(--paper)"/>
+    <circle cx="101" cy="43" r="6" fill="var(--paper)"/>
+    <path d="M70 1l4 9h-8l4-9Z" fill="currentColor"/>
+    <path d="M31 61c-4 7-6 12-6 17M49 65c-2 7-2 12-1 17M91 65c2 7 2 12 1 17M109 61c4 7 6 12 6 17" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
   </svg>
 </div>
           <button class="engagement-node is-active" type="button" role="tab" aria-selected="true" aria-controls="engagement-detail-1" data-engagement="1">
