@@ -268,7 +268,7 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 .engagement-track:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:1px;background:var(--line);z-index:0}
 .engagement-train{position:absolute;z-index:2;left:5%;top:3px;width:30px;height:30px;transform:translateX(-50%);pointer-events:none;animation:engagementTrainRun 10s ease-in-out infinite}
 .engagement-train svg{display:block;width:100%;height:100%;filter:drop-shadow(0 2px 3px rgba(0,0,0,.08))}
-@keyframes engagementTrainRun{0%{left:5%;opacity:0}6%{opacity:1}22%{left:27.5%}40%{left:50%}58%{left:72.5%}76%{left:95%}88%{left:95%;opacity:1}100%{left:5%;opacity:0}}
+@keyframes engagementTrainRun{0%{left:-8%;opacity:0}6%{left:5%;opacity:1}22%{left:27.5%}40%{left:50%}58%{left:72.5%}76%{left:95%}86%{left:108%;opacity:1}90%{left:112%;opacity:0}91%{left:-8%;opacity:0}97%{left:5%;opacity:1}100%{left:5%;opacity:1}}
 .engagement-node{position:relative;z-index:3;border:0;background:transparent;padding:0 8px;min-width:0;color:var(--muted);cursor:pointer;text-align:center;font:inherit}
 .engagement-node-dot{display:block;width:11px;height:11px;margin:13px auto 15px;border:2px solid var(--line);border-radius:50%;background:var(--paper);transition:transform .2s ease,background .2s ease,border-color .2s ease}
 .engagement-node-duration{display:block;font-family:"DM Mono",monospace;font-size:10px;line-height:1.35;letter-spacing:.1em;font-weight:600}
@@ -287,7 +287,7 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   .engagement-track{grid-template-columns:1fr;gap:0;padding:0}
   .engagement-track:before{left:6px;right:auto;top:8px;bottom:8px;width:1px;height:auto}
   .engagement-train{left:6px;top:0;width:26px;height:26px;animation:engagementTrainRunMobile 10s ease-in-out infinite}
-  @keyframes engagementTrainRunMobile{0%{top:0;opacity:0}6%{opacity:1}22%{top:25%}40%{top:50%}58%{top:75%}76%{top:100%;opacity:1}88%{top:100%;opacity:1}100%{top:0;opacity:0}}
+  @keyframes engagementTrainRunMobile{0%{top:-8%;opacity:0}6%{top:0;opacity:1}22%{top:25%}40%{top:50%}58%{top:75%}76%{top:100%;opacity:1}86%{top:108%;opacity:1}90%{top:112%;opacity:0}91%{top:-8%;opacity:0}97%{top:0;opacity:1}100%{top:0;opacity:1}}
   .engagement-node{display:grid;grid-template-columns:26px 1fr;align-items:center;text-align:left;padding:7px 0;gap:10px}
   .engagement-node-dot{margin:0;width:10px;height:10px}
   .engagement-node-duration{font-size:10px}
