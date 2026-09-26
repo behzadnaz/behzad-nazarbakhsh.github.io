@@ -839,10 +839,10 @@ document.addEventListener('DOMContentLoaded', function () {
       select(String(stage+1),false);
     }
   }
-  function startTrainSync(){
+  function startTrainSync(resetClock=true){
     if(reducedMotion.matches) return;
     if(autoTimer) cancelAnimationFrame(autoTimer);
-    autoStart=performance.now();
+    if(resetClock) autoStart=performance.now();
     function tick(now){
       syncWithTrain(now);
       autoTimer=requestAnimationFrame(tick);
@@ -911,7 +911,7 @@ document.addEventListener('DOMContentLoaded', function () {
         journeyPauseStarted=null;
       }
       root.classList.remove('is-paused');
-      if(!reducedMotion.matches && !manualTrainHold) startTrainSync();
+      if(!reducedMotion.matches && !manualTrainHold) startTrainSync(false);
     }else{
       journeyPauseStarted=performance.now();
       root.classList.add('is-paused');
