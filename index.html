@@ -663,4 +663,21 @@ document.addEventListener('DOMContentLoaded', function () {
 </html>
 <style id="contribution-heading-spacing">.service-engagement-head .section-label{margin-bottom:12px!important}.service-engagement-head h3{margin-top:0!important}</style>
 <style id="global-reading-width">.section-head,.service-engagement-head,.services-intro,.services-intro-secondary{max-width:760px}.section-head h2,.service-engagement-head h3{max-width:760px}.service-engagement-head>p:not(.section-label){max-width:720px}.section-head>p:not(.section-label){max-width:720px}.article-card p,.work-item small,.service-format p,.services-challenge p{max-width:100%}.about-copy,.contact-copy{max-width:720px}@media(max-width:760px){.section-head,.service-engagement-head,.services-intro,.services-intro-secondary,.section-head h2,.service-engagement-head h3,.service-engagement-head>p:not(.section-label),.section-head>p:not(.section-label),.about-copy,.contact-copy{max-width:100%}}</style>
-<style id="full-width-reading">.section-head,.service-engagement-head,.services-intro,.services-intro-secondary,.section-head h2,.service-engagement-head h3,.service-engagement-head>p:not(.section-label),.section-head>p:not(.section-label),.about-copy,.contact-copy{max-width:none!important;width:100%}</style>
+<style id="full-width-reading">.section-head,.service-engagement-head,.services-intro,.services-intro-secondary,.section-head h2,.service-engagement-head h3,.service-engagement-head>p:not(.section-label),.section-head>p:not(.section-label),.about-copy,.contact-copy{max-width:none!important;width:100%}</style><style id="engagement-spectrum-v1">
+.engagement-spectrum{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin:42px 0 8px;padding:0 0 8px}
+.engagement-spectrum:before{content:"";position:absolute;left:5%;right:5%;top:66px;height:1px;background:var(--line);z-index:0}
+.engagement-spectrum:after{content:"";position:absolute;left:5%;top:66px;width:90%;height:1px;background:linear-gradient(90deg,#2563eb,var(--line));opacity:.55;z-index:0}
+.engagement-stage{position:relative;z-index:1;min-width:0;padding:0 9px}
+.engagement-duration{text-align:center;font-family:"DM Mono",monospace;font-size:10px;line-height:1.3;letter-spacing:.12em;font-weight:600;color:var(--muted)}
+.engagement-card{margin-top:39px;min-height:246px;padding:22px 19px 20px;border:1px solid var(--line);background:rgba(255,255,255,.58);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.engagement-card:before{content:"";display:block;width:10px;height:10px;margin:-28px auto 18px;border:2px solid var(--paper,#fff);border-radius:50%;background:#2563eb;box-shadow:0 0 0 1px var(--line)}
+.engagement-card:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.35);box-shadow:0 12px 28px rgba(20,30,25,.07)}
+.engagement-number{display:block;margin-bottom:12px;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;color:#2563eb}
+.engagement-card h4{margin:0 0 10px;font-size:1.04rem;line-height:1.25}
+.engagement-card p{margin:0;color:var(--muted);font-size:14px!important;line-height:1.55!important}
+.engagement-example{margin-top:17px;padding-top:13px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;line-height:1.5}
+.engagement-example strong{display:block;margin-bottom:3px;color:var(--ink);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-family:"DM Mono",monospace}
+@media(max-width:1050px){.engagement-spectrum{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}.engagement-spectrum:before,.engagement-spectrum:after{display:none}}
+@media(max-width:800px){.engagement-spectrum{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.engagement-card{min-height:0}}
+@media(max-width:560px){.engagement-spectrum{grid-template-columns:1fr;gap:14px;margin-top:30px}.engagement-stage{padding:0}.engagement-duration{text-align:left}.engagement-card{margin-top:9px;min-height:0;padding:21px}.engagement-card:before{display:none}}
+</style>
