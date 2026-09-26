@@ -266,10 +266,13 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 .engagement-journey{margin:34px 0 8px}
 .engagement-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0 2px}
 .engagement-track:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:1px;background:var(--line);z-index:0}
-.engagement-train{position:absolute;z-index:2;left:5%;top:3px;width:30px;height:30px;transform:translateX(-50%);pointer-events:none;animation:engagementTrainRun 12s ease-in-out infinite}
+.engagement-train{position:absolute;z-index:4;left:5%;top:3px;width:30px;height:30px;transform:translateX(-50%);pointer-events:none;animation:engagementTrainRun 12s ease-in-out infinite}
 .engagement-train svg{display:block;width:100%;height:100%;filter:drop-shadow(0 2px 3px rgba(0,0,0,.08))}
+.engagement-train.is-stopped svg rect,.engagement-train.is-stopped svg path,.engagement-train.is-stopped svg circle{stroke:#2563eb}
+.engagement-train.is-stopped svg rect:first-child{fill:#2563eb}
+.engagement-train.is-stopped svg path[fill="none"]{stroke:#fff}
 @keyframes engagementTrainRun{0%{left:-8%;opacity:0}6%{left:10%;opacity:1}18%{left:10%;opacity:1}30%{left:30%;opacity:1}42%{left:30%;opacity:1}54%{left:50%;opacity:1}66%{left:50%;opacity:1}78%{left:70%;opacity:1}90%{left:70%;opacity:1}97%{left:90%;opacity:1}99%{left:112%;opacity:0}100%{left:-8%;opacity:0}}
-.engagement-node{position:relative;z-index:3;border:0;background:transparent;padding:0 8px;min-width:0;color:var(--muted);cursor:pointer;text-align:center;font:inherit}
+.engagement-node{position:relative;z-index:2;border:0;background:transparent;padding:0 8px;min-width:0;color:var(--muted);cursor:pointer;text-align:center;font:inherit}
 .engagement-node-dot{display:block;width:11px;height:11px;margin:13px auto 15px;border:2px solid var(--line);border-radius:50%;background:var(--paper);transition:transform .2s ease,background .2s ease,border-color .2s ease}
 .engagement-node-duration{display:block;font-family:"DM Mono",monospace;font-size:10px;line-height:1.35;letter-spacing:.1em;font-weight:600}
 .engagement-node:hover .engagement-node-dot,.engagement-node:focus-visible .engagement-node-dot{border-color:#2563eb;transform:scale(1.18)}
@@ -821,6 +824,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if(station){
       select(String(station.stage+1),false);
       nodes.forEach(n=>n.classList.remove('is-active'));
+    train.classList.toggle('is-stopped',!!station);
       nodes[station.stage].classList.add('is-active');
     }else{
       nodes.forEach(n=>n.classList.remove('is-active'));
@@ -872,6 +876,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const dot=node?.querySelector('.engagement-node-dot');
     if(!train||!track||!dot)return;
     manualTrainHold=true;
+    train.classList.add('is-stopped');
     nodes.forEach(n=>n.blur());
     node.classList.add('is-active');
     train.style.animation='none';
