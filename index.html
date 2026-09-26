@@ -828,7 +828,6 @@ document.addEventListener('DOMContentLoaded', function () {
       select(String(station.stage+1),false);
       nodes.forEach(n=>n.classList.remove('is-active'));
     train.classList.toggle('is-stopped',!!station);
-      nodes[station.stage].classList.add('is-active');
     }else{
       if(train) train.classList.remove('is-stopped');
       nodes.forEach(n=>n.classList.remove('is-active'));
