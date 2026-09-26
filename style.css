@@ -2363,3 +2363,10 @@ footer{font-size:11px;line-height:1.5}
 .engagement-spaceship .rocket-flame{transform-origin:39px 78px;animation:rocketFlame .45s ease-in-out infinite alternate}
 @keyframes rocketFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-5px) rotate(1deg)}}
 @keyframes rocketFlame{from{transform:scaleX(.82);opacity:.28}to{transform:scaleX(1.12);opacity:.62}}
+
+/* Final spaceship scale — smaller, cleaner proportion */
+.engagement-spaceship{width:112px!important;height:67px!important}
+.engagement-spaceship svg{width:112px!important;height:67px!important}
+.engagement-spaceship:after{width:34px!important;height:8px!important}
+@media(max-width:700px){.engagement-spaceship{width:92px!important;height:55px!important}.engagement-spaceship svg{width:92px!important;height:55px!important}.engagement-spaceship:after{width:28px!important;height:7px!important}}
+@media(max-width:480px){.engagement-spaceship{width:82px!important;height:49px!important}.engagement-spaceship svg{width:82px!important;height:49px!important}.engagement-spaceship:after{width:24px!important;height:6px!important}}
