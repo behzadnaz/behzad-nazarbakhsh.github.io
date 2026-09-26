@@ -52,7 +52,7 @@ nav a,.dlink,.pill,.button,.btn{font-size:13px!important;line-height:1.4!importa
 <div id="status">Loading IT Portfolio Management report…</div>
 <script>
 (async function(){
-  const chunks=["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28"].map(n=>"report-parts/"+n+".html");
+  const chunks=["report-00-07.html","report-08-15.html","report-16-23.html","report-24-28.html"].map(n=>"report-bundles/"+n);
   try{
     const html=(await Promise.all(chunks.map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error("Failed to load "+u);return r.text()})))).join("");
     const doc=new DOMParser().parseFromString(html,"text/html");
