@@ -2429,3 +2429,12 @@ footer{font-size:11px;line-height:1.5}
 .engagement-plane .plane-trail{animation:planeTrail .9s ease-in-out infinite alternate;opacity:.5}
 @media(max-width:700px){.engagement-spaceship{width:220px!important;height:105px!important}.engagement-plane{width:220px!important;height:105px!important}}
 @media(max-width:480px){.engagement-spaceship{width:175px!important;height:84px!important}.engagement-plane{width:175px!important;height:84px!important}}
+
+/* Final engagement spaceship treatment */
+.engagement-spaceship{width:156px!important;height:94px!important;position:absolute!important;display:flex!important;align-items:center!important;justify-content:center!important;z-index:6!important;transform:translateY(-6px) rotate(-3deg)!important;filter:drop-shadow(0 9px 14px rgba(15,23,42,.18))!important}
+.engagement-spaceship svg{width:156px!important;height:94px!important;display:block!important;overflow:visible!important}
+.engagement-spaceship .spaceship-body{animation:spaceshipFloat 2.8s ease-in-out infinite}
+.engagement-spaceship .spaceship-flame{transform-origin:19px 39px;animation:spaceshipFlame .42s ease-in-out infinite alternate}
+@keyframes spaceshipFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes spaceshipFlame{from{transform:scaleX(.78);opacity:.3}to{transform:scaleX(1.16);opacity:.75}}
+@media(max-width:700px){.engagement-spaceship{width:126px!important;height:76px!important}.engagement-spaceship svg{width:126px!important;height:76px!important}}
