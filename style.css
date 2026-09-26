@@ -2421,3 +2421,11 @@ footer{font-size:11px;line-height:1.5}
   .engagement-spaceship{width:140px!important;height:70px!important}
   .engagement-plane{width:140px!important;height:70px!important}
 }
+
+/* Final engagement spaceship — larger and more prominent */
+.engagement-spaceship{width:300px!important;height:140px!important;transform:translateY(-10px)!important;filter:drop-shadow(0 10px 16px rgba(15,23,42,.16))!important}
+.engagement-plane{width:300px!important;height:140px!important}
+.engagement-plane .plane-body{animation:planeFloat 3s ease-in-out infinite}
+.engagement-plane .plane-trail{animation:planeTrail .9s ease-in-out infinite alternate;opacity:.5}
+@media(max-width:700px){.engagement-spaceship{width:220px!important;height:105px!important}.engagement-plane{width:220px!important;height:105px!important}}
+@media(max-width:480px){.engagement-spaceship{width:175px!important;height:84px!important}.engagement-plane{width:175px!important;height:84px!important}}
