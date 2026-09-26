@@ -266,14 +266,14 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 .engagement-journey{margin:34px 0 8px}
 .engagement-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0 2px}
 .engagement-track:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:1px;background:var(--line);z-index:0}
-.engagement-train{position:absolute;z-index:4;left:5%;top:-14px;width:78px;height:48px;transform:translateX(-50%);pointer-events:none;animation:engagementTrainRun 12s ease-in-out infinite}
-.engagement-train svg{display:block;width:100%;height:100%;filter:drop-shadow(0 5px 8px rgba(0,0,0,.14))}
-.engagement-spaceship{color:var(--accent);filter:drop-shadow(0 5px 10px rgba(37,99,235,.14))}
-.engagement-journey.is-paused .engagement-train{animation-play-state:paused}
-.engagement-train.is-stopped svg rect,.engagement-train.is-stopped svg path,.engagement-train.is-stopped svg circle{stroke:#2563eb}
-.engagement-train.is-stopped svg rect:first-child{fill:#2563eb}.engagement-train.is-stopped svg path[fill="var(--paper)"]{fill:#2563eb}
-.engagement-train.is-stopped svg path[fill="none"]{stroke:#fff}
-@keyframes engagementTrainRun{0%{left:-8%;opacity:0}6%{left:10%;opacity:1}18%{left:10%;opacity:1}30%{left:30%;opacity:1}42%{left:30%;opacity:1}54%{left:50%;opacity:1}66%{left:50%;opacity:1}78%{left:70%;opacity:1}90%{left:70%;opacity:1}97%{left:90%;opacity:1}99%{left:112%;opacity:0}100%{left:-8%;opacity:0}}
+.engagement-spaceship{position:absolute;z-index:4;left:5%;top:-32px;width:120px;height:64px;transform:translateX(-50%);pointer-events:none;color:var(--accent);filter:drop-shadow(0 7px 12px rgba(37,99,235,.16));animation:engagementSpaceshipRun 12s ease-in-out infinite}
+.engagement-spaceship svg{display:block;width:100%;height:100%;overflow:visible}
+.engagement-spaceship .spaceship-body{transform-origin:50% 50%;animation:spaceshipFloat 1.8s ease-in-out infinite}
+.engagement-spaceship .spaceship-flame{animation:spaceshipFlame .35s ease-in-out infinite alternate}
+.engagement-journey.is-paused .engagement-spaceship{animation-play-state:paused}
+@keyframes engagementSpaceshipRun{0%{left:-8%;opacity:0}6%{left:10%;opacity:1}18%{left:10%;opacity:1}30%{left:30%;opacity:1}42%{left:30%;opacity:1}54%{left:50%;opacity:1}66%{left:50%;opacity:1}78%{left:70%;opacity:1}90%{left:70%;opacity:1}97%{left:90%;opacity:1}99%{left:112%;opacity:0}100%{left:-8%;opacity:0}}
+@keyframes spaceshipFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-3px) rotate(1deg)}}
+@keyframes spaceshipFlame{from{opacity:.45;transform:scaleX(.8)}to{opacity:1;transform:scaleX(1.15)}}
 .engagement-node{position:relative;z-index:2;border:0;background:transparent;padding:0 8px;min-width:0;color:var(--muted);cursor:pointer;text-align:center;font:inherit}
 .engagement-node-dot{display:block;width:11px;height:11px;margin:13px auto 15px;border:2px solid var(--line);border-radius:50%;background:var(--paper);transition:transform .2s ease,background .2s ease,border-color .2s ease}
 .engagement-node-duration{display:block;font-family:"DM Mono",monospace;font-size:10px;line-height:1.35;letter-spacing:.1em;font-weight:600}
