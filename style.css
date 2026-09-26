@@ -2264,3 +2264,46 @@ footer{font-size:11px;line-height:1.5}
 .connect-links a:hover .connect-icon,.connect-links a:hover .connect-arrow{color:var(--accent)!important}
 @media(max-width:900px){.connect-links{grid-template-columns:repeat(2,minmax(0,1fr))!important}.connect-links a,.connect-links a:nth-child(2),.connect-links a:nth-child(3),.connect-links a:last-child{padding:0 16px!important}.connect-links a:nth-child(2),.connect-links a:nth-child(4){border-right:0!important}.connect-links a:nth-child(3),.connect-links a:nth-child(4){border-top:1px solid var(--line)!important}.connect-links a:nth-child(3){padding-left:0!important}}
 @media(max-width:560px){.connect-links{grid-template-columns:1fr!important}.connect-links a,.connect-links a:nth-child(2),.connect-links a:nth-child(3),.connect-links a:last-child{height:68px!important;padding:0!important;border-right:0!important;border-top:1px solid var(--line)!important}.connect-links a:first-child{border-top:0!important}}
+
+
+/* Final section/navigation icon alignment */
+.section-label.section-label-icon{
+  display:inline-flex!important;
+  align-items:center!important;
+  vertical-align:middle!important;
+  gap:7px!important;
+}
+.section-label.section-label-icon .section-label-icon-mark{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:14px!important;
+  height:14px!important;
+  flex:0 0 14px!important;
+  margin:0!important;
+  position:relative!important;
+  top:-1px!important;
+}
+.section-label.section-label-icon .section-label-icon-mark svg{
+  display:block!important;
+  width:14px!important;
+  height:14px!important;
+  margin:0!important;
+}
+.nav-links .nav-metaphor{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  line-height:1.2!important;
+  vertical-align:middle!important;
+}
+.nav-links .nav-metaphor svg{
+  display:block!important;
+  width:14px!important;
+  height:14px!important;
+  flex:0 0 14px!important;
+  margin:0!important;
+  position:relative!important;
+  top:-1px!important;
+}
