@@ -2386,3 +2386,33 @@ footer{font-size:11px;line-height:1.5}
   #about-contact .contact-block .connect-links{column-gap:0!important}
   #about-contact .contact-block .connect-links>a{padding-left:4px!important;padding-right:4px!important}
 }
+
+/* About / Contact — restore the same section rhythm as the rest of the site */
+#about-contact .section-body{
+  max-width:680px!important;
+  margin-left:auto!important;
+  margin-right:0!important;
+}
+#about-contact .about-details{
+  width:100%!important;
+  margin-top:72px!important;
+  padding-top:48px!important;
+  border-top:1px solid var(--line)!important;
+  display:block!important;
+}
+#about-contact .contact-block{
+  width:100%!important;
+  max-width:none!important;
+}
+#about-contact .contact-block>p:not(.section-label){
+  max-width:760px!important;
+  margin-left:0!important;
+  color:var(--muted)!important;
+}
+#about-contact .contact-block .connect-links{
+  margin-top:38px!important;
+}
+@media(max-width:800px){
+  #about-contact .section-body{max-width:none!important;margin-left:0!important}
+  #about-contact .about-details{margin-top:58px!important;padding-top:38px!important}
+}
