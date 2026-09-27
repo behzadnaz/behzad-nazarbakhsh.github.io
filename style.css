@@ -2810,3 +2810,13 @@ footer{font-size:11px;line-height:1.5}
   color:#2563eb!important;
   transform:translate(2px,-2px)!important;
 }
+
+/* Force Calendly selection icon to inherit the same hover blue as the other Contact arrows. */
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-main,
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow,
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow::before,
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow::after{
+  color:#2563eb!important;
+  fill:#2563eb!important;
+  stroke:#2563eb!important;
+}
