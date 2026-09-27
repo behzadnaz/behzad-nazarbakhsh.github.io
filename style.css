@@ -2441,3 +2441,6 @@ footer{font-size:11px;line-height:1.5}
 
 /* Engagement UFO cleanup: no pseudo-element behind the craft */
 .engagement-spaceship:before,.engagement-spaceship:after{content:none!important;display:none!important;background:none!important;box-shadow:none!important;filter:none!important}
+
+/* Contact hover text color */
+.connect-links a:hover .connect-name{color:#2563eb!important}
