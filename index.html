@@ -266,8 +266,8 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 .engagement-journey{margin:34px 0 8px}
 .engagement-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0 2px}
 .engagement-track:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:1px;background:var(--line);z-index:0}
-.engagement-spaceship{position:absolute;z-index:4;left:5%;top:-41.5px;width:110px;height:60px;transform:translateX(-50%);pointer-events:none;color:var(--accent);filter:drop-shadow(0 7px 12px rgba(37,99,235,.16));animation:engagementSpaceshipRun 12s ease-in-out infinite}
-.engagement-spaceship svg{display:block;width:100%;height:100%;overflow:visible}.engagement-spaceship img{display:block;width:100%;height:100%;object-fit:contain;filter:grayscale(1) brightness(.72)}.engagement-spaceship.is-stopped img{filter:brightness(0) saturate(100%) invert(36%) sepia(93%) saturate(1800%) hue-rotate(210deg) brightness(93%) contrast(96%)}
+.engagement-spaceship{position:absolute;z-index:4;left:5%;top:0;width:110px;height:60px;transform:translate(-50%,-50%);pointer-events:none;color:#9aa3ad;filter:drop-shadow(0 7px 12px rgba(37,99,235,.10));animation:engagementSpaceshipRun 12s ease-in-out infinite;transition:color .25s ease}
+.engagement-spaceship svg{display:block;width:100%;height:100%;overflow:visible}.engagement-spaceship svg path{fill:currentColor!important}.engagement-spaceship img{display:block;width:100%;height:100%;object-fit:contain;filter:grayscale(1) brightness(.72)}.engagement-spaceship.is-stopped{color:#2563eb}.engagement-spaceship.is-stopped img{filter:brightness(0) saturate(100%) invert(36%) sepia(93%) saturate(1800%) hue-rotate(210deg) brightness(93%) contrast(96%)}
 .engagement-spaceship .spaceship-body{transform-origin:50% 50%;animation:spaceshipFloat 1.8s ease-in-out infinite}
 .engagement-spaceship .spaceship-flame{animation:spaceshipFlame .35s ease-in-out infinite alternate}
 .engagement-journey.is-paused .engagement-spaceship{animation-play-state:paused}
@@ -858,8 +858,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const placeAt=(x,y)=>{
       train.style.animation='none';
       train.style.left=x+'px';
-      train.style.top=(y-train.offsetHeight*0.75)+'px';
-      train.style.transform='translateX(-50%)';
+      train.style.top=y+'px';
+      train.style.transform='translate(-50%,-50%)';
       train.style.opacity='1';
     };
 
@@ -874,7 +874,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const dotRect=dot.getBoundingClientRect();
         placeAt(
           dotRect.left+dotRect.width/2-trackRect.left,
-          dotRect.top-trackRect.top
+          dotRect.top+dotRect.height/2-trackRect.top
         );
       }
       train.classList.add('is-stopped');
@@ -899,8 +899,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const ax=a.left+a.width/2-trackRect.left;
         const bx=b.left+b.width/2-trackRect.left;
-        const ay=a.top-trackRect.top;
-        const by=b.top-trackRect.top;
+        const ay=a.top+a.height/2-trackRect.top;
+        const by=b.top+b.height/2-trackRect.top;
 
         placeAt(
           ax+(bx-ax)*eased,
@@ -962,8 +962,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const trackRect=track.getBoundingClientRect();
     const dotRect=dot.getBoundingClientRect();
     train.style.left=(dotRect.left+dotRect.width/2-trackRect.left)+'px';
-    train.style.top=(dotRect.top-trackRect.top-train.getBoundingClientRect().height)+'px';
-    train.style.transform='translateX(-50%)';
+    train.style.top=(dotRect.top+dotRect.height/2-trackRect.top)+'px';
+    train.style.transform='translate(-50%,-50%)';
     train.style.opacity='1';
   }
   nodes.forEach(node=>{
