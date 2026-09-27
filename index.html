@@ -974,14 +974,12 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   }
 
   function setup(){
-    var cards=document.querySelectorAll('.article-card');
-
-    cards.forEach(function(card){
+    document.querySelectorAll('.article-card').forEach(function(card){
       var link=card.querySelector('h3 a');
       if(!link) return;
 
       var title=link.textContent.trim();
-      var path='article-click/'+slugify(title);
+      var eventName='article-click-'+slugify(title);
       var counter=card.querySelector('.article-view-count');
 
       if(!counter){
@@ -995,42 +993,33 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 
       if(card.dataset.goatcounterBound!=='1'){
         card.dataset.goatcounterBound='1';
+        var readMore=card.querySelector('.article-read-more');
 
         function recordClick(){
-          if(window.goatcounter && typeof window.goatcounter.count==='function'){
-            window.goatcounter.count({
-              path:path,
-              title:title,
-              event:true,
-              no_session:true
-            });
+          var send=function(){
+            if(window.goatcounter && typeof window.goatcounter.count==='function'){
+              window.goatcounter.count({
+                path:eventName,
+                title:title,
+                event:true,
+                no_session:true
+              });
+              return true;
+            }
+            return false;
+          };
+          if(!send()){
+            var attempts=0;
+            var timer=setInterval(function(){
+              attempts++;
+              if(send() || attempts>30) clearInterval(timer);
+            },100);
           }
         }
 
         link.addEventListener('click',recordClick);
-
-        var readMore=card.querySelector('.article-read-more');
         if(readMore) readMore.addEventListener('click',recordClick);
       }
-
-      function loadCount(){
-        if(window.goatcounter && typeof window.goatcounter.visit_count==='function'){
-          var number=counter.querySelector('.article-view-number');
-          if(number){
-            window.goatcounter.visit_count({
-              path:path,
-              append:number,
-              type:'html',
-              no_branding:true,
-              attr:{'aria-hidden':'true'}
-            });
-          }
-        }else{
-          setTimeout(loadCount,250);
-        }
-      }
-
-      loadCount();
     });
   }
 
