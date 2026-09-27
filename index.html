@@ -1650,7 +1650,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <style id="knowledge-base-grid-redesign-v1">
-/* Knowledge Base: clean, responsive editorial grid. */
+/* Knowledge Base — restore a consistent card structure. */
 .article-all-grid{
   display:grid!important;
   grid-template-columns:repeat(3,minmax(0,1fr))!important;
@@ -1658,57 +1658,62 @@ document.addEventListener('DOMContentLoaded', function () {
   align-items:stretch!important;
 }
 .article-all-grid .article-card.external-article-card{
+  position:relative!important;
+  box-sizing:border-box!important;
   min-width:0!important;
-  height:100%!important;
   min-height:300px!important;
+  height:auto!important;
+  padding:22px 22px 58px!important;
   border:1px solid var(--line)!important;
   border-radius:14px!important;
   background:var(--paper)!important;
   box-shadow:none!important;
-  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important;
+  overflow:hidden!important;
+}
+.article-all-grid .article-card.external-article-card h3{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:8px!important;
+  min-height:3.25em!important;
+  margin:14px 0 12px!important;
+}
+.article-all-grid .article-card.external-article-card h3 .article-source-icon{
+  flex:0 0 17px!important;
+  width:17px!important;
+  height:17px!important;
+  margin-top:2px!important;
+}
+.article-all-grid .article-card.external-article-card .article-summary{
+  min-height:4.65em!important;
+  margin:0!important;
+}
+.article-all-grid .article-card.external-article-card .article-view-count{
+  position:absolute!important;
+  left:22px!important;
+  bottom:20px!important;
+  margin:0!important;
+}
+.article-all-grid .article-card.external-article-card .article-read-more{
+  position:absolute!important;
+  left:65px!important;
+  bottom:11px!important;
+  margin:0!important;
 }
 .article-all-grid .article-card.external-article-card:hover{
   transform:translateY(-3px)!important;
   box-shadow:0 10px 24px rgba(20,30,45,.07)!important;
   border-color:rgba(37,99,235,.28)!important;
 }
-.article-all-grid .article-card.external-article-card h3{
-  min-height:3.25em!important;
-}
-.article-all-grid .article-card.external-article-card .article-summary{
-  min-height:4.65em!important;
-}
-.article-all-grid .article-card.external-article-card .article-view-count{
-  align-self:center!important;
-  justify-self:start!important;
-  margin-top:20px!important;
-  margin-bottom:20px!important;
-}
-.article-all-grid .article-card.external-article-card .article-read-more{
-  margin-top:13px!important;
-  margin-bottom:20px!important;
-}
-.article-all-grid .article-card.linkedin-card h3{
-  display:flex!important;
-  align-items:flex-start!important;
-  gap:9px!important;
-}
-.article-all-grid .article-card.linkedin-card h3 .article-source-icon{
-  position:static!important;
-  flex:0 0 18px!important;
-  margin-top:3px!important;
-}
-.article-all-grid .article-card.linkedin-card h3 .article-view-count{
-  display:none!important;
-}
 @media(max-width:1000px){
   .article-all-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important}
 }
 @media(max-width:680px){
   .article-all-grid{grid-template-columns:1fr!important;gap:16px!important}
-  .article-all-grid .article-card.external-article-card{min-height:0!important}
+  .article-all-grid .article-card.external-article-card{min-height:0!important;padding:19px 19px 56px!important}
   .article-all-grid .article-card.external-article-card h3,
   .article-all-grid .article-card.external-article-card .article-summary{min-height:0!important}
+  .article-all-grid .article-card.external-article-card .article-view-count{left:19px!important}
+  .article-all-grid .article-card.external-article-card .article-read-more{left:62px!important}
 }
 </style>
 <!-- pages rebuild: 1790490667803 -->
