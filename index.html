@@ -830,6 +830,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function syncWithTrain(now){
     if(reducedMotion.matches || manualTrainHold) return;
+
     const elapsed=(now-autoStart)%12000;
     const stations=[
       {start:720,end:2160,stage:0},
@@ -838,46 +839,80 @@ document.addEventListener('DOMContentLoaded', function () {
       {start:9360,end:10800,stage:3},
       {start:11640,end:11880,stage:4}
     ];
+    const movements=[
+      {start:0,end:720,from:0,to:0},
+      {start:2160,end:3600,from:0,to:1},
+      {start:5040,end:6480,from:1,to:2},
+      {start:7920,end:9360,from:2,to:3},
+      {start:10800,end:11640,from:3,to:4},
+      {start:11880,end:12000,from:4,to:0}
+    ];
+
+    if(!train) return;
+
+    const track=document.querySelector('.engagement-track');
+    if(!track) return;
+
+    const trackRect=track.getBoundingClientRect();
+
+    const placeAt=(x,y)=>{
+      train.style.animation='none';
+      train.style.left=x+'px';
+      train.style.top=(y-train.offsetHeight+2)+'px';
+      train.style.transform='translateX(-50%)';
+      train.style.opacity='1';
+    };
+
     let station=null;
     for(const item of stations){
       if(elapsed>=item.start && elapsed<item.end){station=item;break;}
     }
 
     if(station){
+      const dot=nodes[station.stage]?.querySelector('.engagement-node-dot');
+      if(dot){
+        const dotRect=dot.getBoundingClientRect();
+        placeAt(
+          dotRect.left+dotRect.width/2-trackRect.left,
+          dotRect.top-trackRect.top
+        );
+      }
+      train.classList.add('is-stopped');
       select(String(station.stage+1),false);
-      if(train){
-        const node=nodes[station.stage];
-        const dot=node?.querySelector('.engagement-node-dot');
-        const track=document.querySelector('.engagement-track');
-        if(dot&&track){
-          const trackRect=track.getBoundingClientRect();
-          const dotRect=dot.getBoundingClientRect();
-          train.style.animation='none';
-          train.style.left=(dotRect.left+dotRect.width/2-trackRect.left)+'px';
-          train.style.top=(dotRect.top-trackRect.top-train.offsetHeight+2)+'px';
-          train.style.transform='translateX(-50%)';
-          train.style.opacity='1';
-        }
-        train.classList.add('is-stopped');
+      return;
+    }
+
+    let movement=null;
+    for(const item of movements){
+      if(elapsed>=item.start && elapsed<item.end){movement=item;break;}
+    }
+
+    if(movement){
+      const fromDot=nodes[movement.from]?.querySelector('.engagement-node-dot');
+      const toDot=nodes[movement.to]?.querySelector('.engagement-node-dot');
+
+      if(fromDot&&toDot){
+        const a=fromDot.getBoundingClientRect();
+        const b=toDot.getBoundingClientRect();
+        const p=(elapsed-movement.start)/(movement.end-movement.start);
+        const eased=p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2;
+
+        const ax=a.left+a.width/2-trackRect.left;
+        const bx=b.left+b.width/2-trackRect.left;
+        const ay=a.top-trackRect.top;
+        const by=b.top-trackRect.top;
+
+        placeAt(
+          ax+(bx-ax)*eased,
+          ay+(by-ay)*eased
+        );
       }
-    }else{
-      if(train){
-        train.classList.remove('is-stopped');
-        train.style.animation='';
-        train.style.left='';
-        train.style.top='';
-        train.style.transform='';
-        train.style.opacity='';
-      }
-      
-      let stage=0;
-      for(let i=stageTimes.length-1;i>=0;i--){
-        if(elapsed>=stageTimes[i]){stage=i;break;}
-      }
+      train.classList.remove('is-stopped');
+
+      const stage=movement.to;
       select(String(stage+1),false);
     }
-  }
-  function startTrainSync(resetClock=true){
+  }  function startTrainSync(resetClock=true){
     if(reducedMotion.matches) return;
     if(autoTimer) cancelAnimationFrame(autoTimer);
     if(resetClock) autoStart=performance.now();
