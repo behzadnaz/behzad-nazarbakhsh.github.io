@@ -3348,3 +3348,102 @@ footer{font-size:11px;line-height:1.5}
     border-bottom:0!important;
   }
 }
+
+
+/* Contact cards — vertical information hierarchy */
+#about-contact .contact-block .connect-links{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:0!important;
+  border-top:1px solid var(--line)!important;
+  border-bottom:1px solid var(--line)!important;
+}
+#about-contact .contact-block .connect-links a,
+#about-contact .contact-block .connect-links a:first-child,
+#about-contact .contact-block .connect-links a:last-child{
+  display:grid!important;
+  grid-template-columns:1fr 28px!important;
+  grid-template-rows:auto 1px auto 1px auto!important;
+  column-gap:18px!important;
+  row-gap:0!important;
+  min-height:190px!important;
+  padding:22px 24px!important;
+  border:0!important;
+  border-right:1px solid var(--line)!important;
+  border-bottom:1px solid var(--line)!important;
+}
+#about-contact .contact-block .connect-links a:nth-child(2),
+#about-contact .contact-block .connect-links a:nth-child(4){
+  border-right:0!important;
+}
+#about-contact .contact-block .connect-links a:nth-child(3),
+#about-contact .contact-block .connect-links a:nth-child(4){
+  border-bottom:0!important;
+}
+#about-contact .contact-block .connect-icon{
+  grid-column:1!important;
+  grid-row:1!important;
+  width:38px!important;
+  height:38px!important;
+  align-self:start!important;
+  justify-self:start!important;
+  margin:0 0 8px 0!important;
+  transform:none!important;
+}
+#about-contact .contact-block .connect-name{
+  grid-column:1!important;
+  grid-row:1!important;
+  align-self:end!important;
+  justify-self:start!important;
+  margin:0!important;
+  padding-left:50px!important;
+  transform:none!important;
+  line-height:1.2!important;
+}
+#about-contact .contact-block .connect-name:after{
+  content:""!important;
+}
+#about-contact .contact-block .connect-arrow{
+  grid-column:2!important;
+  grid-row:1!important;
+  align-self:center!important;
+  justify-self:end!important;
+  margin:0!important;
+  transform:none!important;
+}
+#about-contact .contact-block .connect-links a:after{
+  content:""!important;
+  grid-column:1 / -1!important;
+  grid-row:2!important;
+  width:100%!important;
+  height:1px!important;
+  background:var(--line)!important;
+}
+#about-contact .contact-block .connect-click-count{
+  grid-column:1!important;
+  grid-row:5!important;
+  align-self:center!important;
+  justify-self:start!important;
+  position:static!important;
+  margin:0!important;
+  padding:0!important;
+  transform:none!important;
+}
+#about-contact .contact-block .connect-click-count:before{
+  content:"Eye  "!important;
+  font-family:inherit!important;
+}
+@media(max-width:560px){
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:1fr!important;
+  }
+  #about-contact .contact-block .connect-links a,
+  #about-contact .contact-block .connect-links a:first-child,
+  #about-contact .contact-block .connect-links a:last-child{
+    min-height:170px!important;
+    border-right:0!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+  #about-contact .contact-block .connect-links a:last-child{
+    border-bottom:0!important;
+  }
+}
