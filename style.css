@@ -2653,3 +2653,20 @@ footer{font-size:11px;line-height:1.5}
   margin:0!important;
   max-width:none!important;
 }
+
+/* Contact intro uses the same readable body measure and flow as the site's section text. */
+#about-contact .contact-block .contact-intro{
+  max-width:680px!important;
+  margin:0!important;
+  color:var(--muted)!important;
+}
+#about-contact .contact-block .contact-intro p{
+  margin:0!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:.62rem!important;
+  line-height:1.9!important;
+  letter-spacing:.12em!important;
+  font-weight:400!important;
+  color:var(--muted)!important;
+}
+#about-contact .contact-block .connect-links{margin-top:28px!important}
