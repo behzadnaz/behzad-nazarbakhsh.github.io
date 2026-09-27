@@ -970,34 +970,24 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 <script id="article-click-tracking">(function(){
   function slugify(t){return t.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);}
   function init(){
-    if(!window.goatcounter||typeof window.goatcounter.visit_count!=='function'){
-      setTimeout(init,100);return;
-    }
+    if(!window.goatcounter||typeof window.goatcounter.count!=='function'){setTimeout(init,100);return;}
     document.querySelectorAll('.article-card').forEach(function(card){
       var link=card.querySelector('h3 a'),number=card.querySelector('.article-view-number');
       if(!link||!number)return;
-      var target='article-view-'+slugify(link.textContent);
-      var host=card.querySelector('.article-view-counter-host');
-      if(!host){
-        host=document.createElement('span');
-        host.className='article-view-counter-host';
-        host.style.display='contents';
-        number.textContent='';
-        number.appendChild(host);
-      }
-      window.goatcounter.visit_count({
-        path:'/'+target,
-        append:host,
-        type:'html',
-        no_branding:true,
-        attr:{'aria-hidden':'true'}
-      });
+      var key='bn_article_seen_'+slugify(link.textContent), path='/article-view/'+slugify(link.textContent);
+      var count=parseInt(number.textContent,10);
+      if(!isFinite(count))count=0;
       if(card.dataset.articleCounterBound==='1')return;
       card.dataset.articleCounterBound='1';
       card.addEventListener('click',function(e){
-        if(e.target.closest('h3 a,.article-read-more')){
-          window.goatcounter.count({path:'/'+target,title:link.textContent.trim()});
-        }
+        if(!e.target.closest('h3 a,.article-read-more'))return;
+        var seen=false;
+        try{seen=sessionStorage.getItem(key)==='1';}catch(_){}
+        if(seen)return;
+        try{sessionStorage.setItem(key,'1');}catch(_){}
+        number.textContent=String(count+1);
+        count++;
+        window.goatcounter.count({path:path,title:link.textContent.trim()});
       },true);
     });
   }
@@ -1332,22 +1322,19 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script id="cv-view-count-script">(function(){
   function init(){
-    if(!window.goatcounter||typeof window.goatcounter.visit_count!=='function'){
-      setTimeout(init,100);return;
-    }
+    if(!window.goatcounter||typeof window.goatcounter.count!=='function'){setTimeout(init,100);return;}
     var b=document.querySelector('.cv-button'),n=document.getElementById('cv-view-number');
-    if(!b||!n)return;
-    n.textContent='';
-    window.goatcounter.visit_count({
-      path:'/cv',
-      append:n,
-      type:'html',
-      no_branding:true,
-      attr:{'aria-hidden':'true'}
-    });
-    if(b.dataset.cvCounterBound==='1')return;
+    if(!b||!n||b.dataset.cvCounterBound==='1')return;
     b.dataset.cvCounterBound='1';
+    var key='bn_cv_seen',count=parseInt(n.textContent,10);
+    if(!isFinite(count))count=0;
     b.addEventListener('click',function(){
+      var seen=false;
+      try{seen=sessionStorage.getItem(key)==='1';}catch(_){}
+      if(seen)return;
+      try{sessionStorage.setItem(key,'1');}catch(_){}
+      n.textContent=String(count+1);
+      count++;
       window.goatcounter.count({path:'/cv',title:'CV View'});
     });
   }
