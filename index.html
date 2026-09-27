@@ -1386,7 +1386,19 @@ document.addEventListener('DOMContentLoaded', function () {
     var name=calendly.querySelector('.connect-name');
     if(!icon || !name) return;
     var on=false;
+    var timer=null;
+    var stopped=false;
+    function resetBlack(){
+      stopped=true;
+      if(timer){window.clearInterval(timer);timer=null;}
+      icon.style.setProperty('background','transparent','important');
+      icon.style.setProperty('color','#111827','important');
+      icon.style.setProperty('box-shadow','none','important');
+      icon.style.setProperty('transform','scale(1)','important');
+      name.style.setProperty('color','#111827','important');
+    }
     function apply(){
+      if(stopped)return;
       on=!on;
       if(on){
         icon.style.setProperty('background','transparent','important');
@@ -1403,7 +1415,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
     apply();
-    window.setInterval(apply,700);
+    timer=window.setInterval(apply,700);
+    window.addEventListener('scroll',resetBlack,{passive:true,once:true});
   }
   function init(){
     document.querySelectorAll('a[href="#about-contact"]').forEach(function(link){
