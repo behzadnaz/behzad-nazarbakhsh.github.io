@@ -26,7 +26,12 @@ html,body{margin:0;width:100%;min-height:100%;background:#fff}
   async function readChunk(url){
     const res=await fetch(url,{cache:"no-store"});
     if(!res.ok)throw new Error("Failed to load "+url+" ("+res.status+")");
-    return decodeChunk(await res.text());
+    const bytes=new Uint8Array(await res.arrayBuffer());
+    const head=new TextDecoder("utf-8").decode(bytes.slice(0,64));
+    if(/^\s*</.test(head))return new TextDecoder("utf-8").decode(bytes);
+    if(typeof DecompressionStream==="undefined")throw new Error("This browser does not support the report compression format");
+    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+    return await new Response(stream).text();
   }
   try{
     const html=(await Promise.all(chunks.map(readChunk))).join("");
