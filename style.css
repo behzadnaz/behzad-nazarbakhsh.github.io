@@ -3191,3 +3191,76 @@ footer{font-size:11px;line-height:1.5}
     grid-template-rows:22px 15px!important;
   }
 }
+
+
+/* Final Contact alignment — icon | name + metric | arrow */
+#about-contact .contact-block .connect-links a,
+#about-contact .contact-block .connect-links a:first-child,
+#about-contact .contact-block .connect-links a:last-child{
+  display:grid!important;
+  grid-template-columns:38px minmax(0,1fr) 24px!important;
+  grid-template-rows:22px 14px!important;
+  column-gap:10px!important;
+  row-gap:2px!important;
+  align-items:center!important;
+  justify-content:initial!important;
+  min-height:78px!important;
+}
+#about-contact .contact-block .connect-icon{
+  grid-column:1!important;
+  grid-row:1 / 3!important;
+  align-self:center!important;
+  justify-self:start!important;
+  margin:0!important;
+}
+#about-contact .contact-block .connect-name{
+  grid-column:2!important;
+  grid-row:1!important;
+  align-self:end!important;
+  justify-self:start!important;
+  margin:0!important;
+  line-height:1.15!important;
+}
+#about-contact .contact-block .connect-click-count{
+  grid-column:2!important;
+  grid-row:2!important;
+  align-self:start!important;
+  justify-self:start!important;
+  position:static!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:3px!important;
+  line-height:1!important;
+  font-size:8px!important;
+}
+#about-contact .contact-block .connect-click-count svg{
+  width:10px!important;
+  height:10px!important;
+  margin:0!important;
+}
+#about-contact .contact-block .connect-arrow{
+  grid-column:3!important;
+  grid-row:1 / 3!important;
+  align-self:center!important;
+  justify-self:end!important;
+  margin:0!important;
+}
+@media(max-width:1050px){
+  #about-contact .contact-block .connect-links a,
+  #about-contact .contact-block .connect-links a:first-child,
+  #about-contact .contact-block .connect-links a:last-child{
+    min-height:78px!important;
+  }
+}
+@media(max-width:560px){
+  #about-contact .contact-block .connect-links a,
+  #about-contact .contact-block .connect-links a:first-child,
+  #about-contact .contact-block .connect-links a:last-child{
+    min-height:70px!important;
+  }
+}
