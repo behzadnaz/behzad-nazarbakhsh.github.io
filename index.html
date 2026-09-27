@@ -968,38 +968,34 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 @media(max-width:560px){.article-view-count{left:19px!important;bottom:0!important}.article-card{padding-bottom:0!important}}
 </style>
 <script id="article-click-tracking">(function(){
-  var endpoint='https://account-bvehzad.goatcounter.com/counter/';
   function slugify(text){return text.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);}
-  function pathFor(link){return '/unique-article-view/'+slugify(link.textContent);}
-  function update(link,number){
-    var path=pathFor(link);
-    fetch(endpoint+encodeURIComponent(path)+'.json?x='+Date.now(),{cache:'no-store'})
-      .then(function(r){return r.ok?r.json():null;})
-      .then(function(data){if(data&&data.count!=null)number.textContent=String(data.count);})
-      .catch(function(){});
-  }
-  function refresh(){
-    document.querySelectorAll('.article-card').forEach(function(card){
-      var link=card.querySelector('h3 a'),number=card.querySelector('.article-view-number');
-      if(link&&number)update(link,number);
-    });
-  }
-  function countClick(card){
-    var link=card.querySelector('h3 a'),number=card.querySelector('.article-view-number');
-    if(!link||!number||!window.goatcounter||typeof window.goatcounter.count!=='function')return;
-    window.goatcounter.count({path:pathFor(link),title:link.textContent.trim()});
-    setTimeout(function(){update(link,number);},1800);
+  function refresh(link,number){
+    if(!window.goatcounter||typeof window.goatcounter.visit_count!=='function')return;
+    window.goatcounter.visit_count({path:'/article-view/'+slugify(link.textContent),type:'html',append:null,no_branding:true});
   }
   function init(){
-    refresh();
     document.querySelectorAll('.article-card').forEach(function(card){
+      var link=card.querySelector('h3 a'),number=card.querySelector('.article-view-number');
+      if(!link||!number)return;
+      var path='/article-view/'+slugify(link.textContent);
+      if(window.goatcounter&&typeof window.goatcounter.visit_count==='function'){
+        var holder=document.createElement('span');
+        holder.style.display='none';
+        holder.setAttribute('aria-hidden','true');
+        card.appendChild(holder);
+        window.goatcounter.visit_count({path:path,type:'html',append:holder,no_branding:true});
+        setTimeout(function(){
+          var gc=holder.querySelector('#gcvc-views');
+          if(gc)number.textContent=gc.textContent.trim();
+        },250);
+      }
       if(card.dataset.articleCounterBound==='1')return;
       card.dataset.articleCounterBound='1';
       card.addEventListener('click',function(e){
-        if(e.target.closest('h3 a, .article-read-more'))countClick(card);
+        if(e.target.closest('h3 a, .article-read-more')&&window.goatcounter&&typeof window.goatcounter.count==='function')
+          window.goatcounter.count({path:path,title:link.textContent.trim()});
       },true);
     });
-    setTimeout(refresh,4000);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();</script>
@@ -1331,28 +1327,25 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 </script>
 <script id="cv-view-count-script">(function(){
-  var endpoint='https://account-bvehzad.goatcounter.com/counter/%2Funique-cv-view.json';
-  function refresh(){
-    var n=document.getElementById('cv-view-number');
-    if(!n)return;
-    fetch(endpoint+'?x='+Date.now(),{cache:'no-store'})
-      .then(function(r){return r.ok?r.json():null;})
-      .then(function(data){if(data&&data.count!=null)n.textContent=String(data.count);})
-      .catch(function(){});
-  }
   function init(){
     var b=document.querySelector('.cv-button'),n=document.getElementById('cv-view-number');
-    if(!b||!n)return;
-    refresh();
+    if(!b||!n||!window.goatcounter||typeof window.goatcounter.visit_count!=='function')return;
+    var holder=document.createElement('span');
+    holder.style.display='none';
+    holder.setAttribute('aria-hidden','true');
+    n.setAttribute('aria-live','polite');
+    document.body.appendChild(holder);
+    window.goatcounter.visit_count({path:'/cv',type:'html',append:holder,no_branding:true});
+    setTimeout(function(){
+      var gc=holder.querySelector('#gcvc-views');
+      if(gc)n.textContent=gc.textContent.trim();
+    },250);
     if(b.dataset.cvCounterBound==='1')return;
     b.dataset.cvCounterBound='1';
     b.addEventListener('click',function(){
-      if(window.goatcounter&&typeof window.goatcounter.count==='function'){
-        window.goatcounter.count({path:'/unique-cv-view',title:'CV View'});
-        setTimeout(refresh,1800);
-      }
+      if(window.goatcounter&&typeof window.goatcounter.count==='function')
+        window.goatcounter.count({path:'/cv',title:'CV View'});
     });
-    setTimeout(refresh,4000);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();</script></body>
