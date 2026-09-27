@@ -1348,6 +1348,46 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 </script>
 <script id="cv-view-count-script">(function(){function init(){var b=document.querySelector('.cv-button');var n=document.getElementById('cv-view-number');if(!b||!n)return;if(window.goatcounter&&typeof window.goatcounter.visit_count==='function'){window.goatcounter.visit_count({path:'/cv',append:n,type:'html',no_branding:true,attr:{'aria-hidden':'true'}})}b.addEventListener('click',function(){if(window.goatcounter&&typeof window.goatcounter.count==='function')window.goatcounter.count({path:'/cv',title:'CV View'})})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();</script></body>
+
+<style id="knowledge-card-read-icon-consistency">
+/* Knowledge Base — every card uses the same blue selection/read icon treatment. */
+.article-all-grid .article-card .article-read-more{
+  position:absolute!important;
+  right:22px!important;
+  bottom:20px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:30px!important;
+  height:30px!important;
+  margin:0!important;
+  padding:0!important;
+  color:#2563eb!important;
+  opacity:1!important;
+  text-decoration:none!important;
+  transform:none!important;
+}
+.article-all-grid .article-card .article-read-more svg{
+  width:22px!important;
+  height:22px!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.6!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+.article-all-grid .article-card .article-read-more:hover{
+  color:#2563eb!important;
+  opacity:1!important;
+  transform:translateY(-2px)!important;
+}
+@media(max-width:560px){
+  .article-all-grid .article-card .article-read-more{
+    right:19px!important;
+    bottom:19.5px!important;
+  }
+}
+</style>
 </html>
 <style id="contribution-heading-spacing">.service-engagement-head .section-label{margin-bottom:12px!important}.service-engagement-head h3{margin-top:0!important}</style>
 <style id="global-reading-width">.section-head,.service-engagement-head,.services-intro,.services-intro-secondary{max-width:760px}.section-head h2,.service-engagement-head h3{max-width:760px}.service-engagement-head>p:not(.section-label){max-width:720px}.section-head>p:not(.section-label){max-width:720px}.article-card p,.work-item small,.service-format p,.services-challenge p{max-width:100%}.about-copy,.contact-copy{max-width:720px}@media(max-width:760px){.section-head,.service-engagement-head,.services-intro,.services-intro-secondary,.section-head h2,.service-engagement-head h3,.service-engagement-head>p:not(.section-label),.section-head>p:not(.section-label),.about-copy,.contact-copy{max-width:100%}}</style>
