@@ -1392,10 +1392,32 @@ document.addEventListener('DOMContentLoaded', function () {
   function blinkCalendly(){
     var el=document.querySelector('#contact-section .connect-calendly');
     if(!el)return;
-    el.classList.remove('calendly-attention');
-    void el.offsetWidth;
-    el.classList.add('calendly-attention');
-    window.setTimeout(function(){el.classList.remove('calendly-attention');},7000);
+    var name=el.querySelector('.connect-name');
+    var cal=el.querySelector('.connect-icon-calendar');
+    var arrow=el.querySelector('.connect-arrow');
+    var items=[name,cal,arrow].filter(Boolean);
+    var on=false,cycles=0;
+    items.forEach(function(x){x.style.setProperty('transition','color .18s ease, transform .18s ease','important');});
+    var timer=window.setInterval(function(){
+      on=!on;
+      var color=on?'#2563eb':'#111827';
+      items.forEach(function(x){
+        x.style.setProperty('color',color,'important');
+        if(x===cal||x===arrow)x.style.setProperty('transform',on?'scale(1.08)':'scale(1)','important');
+        var svg=x.querySelector('svg');
+        if(svg)svg.style.setProperty('stroke',color,'important');
+      });
+      cycles++;
+      if(cycles>=14){
+        window.clearInterval(timer);
+        items.forEach(function(x){
+          x.style.removeProperty('color');
+          x.style.removeProperty('transform');
+          var svg=x.querySelector('svg');
+          if(svg)svg.style.removeProperty('stroke');
+        });
+      }
+    },450);
   }
   function focusContact(e){
     var target=document.getElementById('contact-section');
@@ -1403,10 +1425,12 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     history.pushState(null,'','#contact-section');
     target.scrollIntoView({behavior:'smooth',block:'start'});
-    window.setTimeout(blinkCalendly,500);
+    window.setTimeout(blinkCalendly,650);
   }
   function init(){
     document.querySelectorAll('.js-contact-cta').forEach(function(link){
+      if(link.dataset.contactCtaBound==='1')return;
+      link.dataset.contactCtaBound='1';
       link.addEventListener('click',focusContact);
     });
   }
