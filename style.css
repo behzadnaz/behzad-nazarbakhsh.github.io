@@ -3264,3 +3264,26 @@ footer{font-size:11px;line-height:1.5}
     min-height:70px!important;
   }
 }
+
+
+/* Final Y-alignment — LinkedIn icon matches GitHub icon center */
+#about-contact .contact-block .connect-links a{
+  position:relative!important;
+  align-items:center!important;
+}
+#about-contact .contact-block .connect-icon{
+  align-self:center!important;
+  transform:translateY(0)!important;
+}
+#about-contact .contact-block .connect-name{
+  align-self:center!important;
+  transform:translateY(-5px)!important;
+}
+#about-contact .contact-block .connect-click-count{
+  align-self:start!important;
+  transform:translateY(5px)!important;
+}
+#about-contact .contact-block .connect-arrow{
+  align-self:center!important;
+  transform:translateY(0)!important;
+}
