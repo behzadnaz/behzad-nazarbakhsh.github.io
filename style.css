@@ -2774,3 +2774,11 @@ footer{font-size:11px;line-height:1.5}
 #about-contact .contact-block .connect-calendly:hover .connect-icon{
   color:#2563eb!important;
 }
+
+/* Ensure Calendly selection arrow itself turns blue on hover. */
+#about-contact .contact-block .connect-calendly:hover .connect-arrow,
+#about-contact .contact-block .connect-calendly:hover .connect-arrow *{
+  color:#2563eb!important;
+  fill:#2563eb!important;
+  stroke:#2563eb!important;
+}
