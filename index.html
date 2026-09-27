@@ -870,7 +870,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const placeAt=(x,y,stopped)=>{
       train.style.animation='none';
       train.style.left=x+'px';
-      train.style.top=y+'px';
+      train.style.top=(y-2)+'px';
       train.style.transform='translate(-50%,-50%)';
       train.style.opacity='1';
       train.classList.toggle('is-stopped',stopped);
