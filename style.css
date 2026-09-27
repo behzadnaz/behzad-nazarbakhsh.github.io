@@ -2618,3 +2618,15 @@ footer{font-size:11px;line-height:1.5}
   line-height:1.7!important;
   letter-spacing:normal!important;
 }
+
+/* Final Contact paragraph override: use the exact same body paragraph rules as the main About text. */
+#about-contact .contact-block > p:not(.section-label){
+  font-family:Inter,Arial,sans-serif!important;
+  font-size:16px!important;
+  font-weight:400!important;
+  line-height:1.7!important;
+  color:var(--muted)!important;
+  letter-spacing:0!important;
+  margin:18px 0 0!important;
+  max-width:760px!important;
+}
