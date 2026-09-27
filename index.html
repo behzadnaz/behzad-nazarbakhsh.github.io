@@ -1716,6 +1716,20 @@ document.addEventListener('DOMContentLoaded', function () {
   .article-all-grid .article-card.external-article-card .article-read-more{left:62px!important}
 }
 </style>
+
+<style id="knowledge-card-action-row-final">
+.article-all-grid .article-card{position:relative!important;box-sizing:border-box!important;padding-bottom:68px!important}
+.article-all-grid .article-card .article-view-count{position:absolute!important;left:22px!important;right:auto!important;bottom:22px!important;display:inline-flex!important;align-items:center!important;gap:5px!important;width:auto!important;height:20px!important;margin:0!important;padding:0!important;color:#8b9199!important;font-family:"DM Mono",monospace!important;font-size:10px!important;line-height:1!important;white-space:nowrap!important;z-index:3!important}
+.article-all-grid .article-card .article-view-count .article-view-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:15px!important;height:15px!important;flex:0 0 15px!important;margin:0!important;padding:0!important}
+.article-all-grid .article-card .article-view-count svg{width:15px!important;height:15px!important;margin:0!important;display:block!important;fill:none!important;stroke:currentColor!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-all-grid .article-card .article-view-count svg circle{fill:currentColor!important;stroke:none!important}
+.article-all-grid .article-card .article-view-number{display:inline-block!important;margin:0!important;padding:0!important;line-height:1!important;font-variant-numeric:tabular-nums!important}
+.article-all-grid .article-card .article-read-more{position:absolute!important;right:20px!important;left:auto!important;bottom:17px!important;display:flex!important;align-items:center!important;justify-content:center!important;width:30px!important;height:30px!important;margin:0!important;padding:0!important;color:#2563eb!important;opacity:1!important;transform:none!important;z-index:3!important}
+.article-all-grid .article-card .article-read-more svg{width:21px!important;height:21px!important;display:block!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-all-grid .article-card .article-read-more:hover{color:#2563eb!important;transform:translateY(-2px)!important}
+@media(max-width:560px){.article-all-grid .article-card{padding-bottom:62px!important}.article-all-grid .article-card .article-view-count{left:19px!important;bottom:19px!important}.article-all-grid .article-card .article-read-more{right:17px!important;bottom:14px!important}}
+</style>
+<script id="knowledge-card-action-normalizer">(function(){function normalize(){document.querySelectorAll('.article-all-grid .article-card').forEach(function(card){var view=card.querySelector(':scope > .article-view-count');var read=card.querySelector(':scope > .article-read-more');if(!read){read=card.querySelector('.article-read-more');if(read&&read.parentElement!==card)card.appendChild(read)}if(view&&read&&read.parentElement===view)card.appendChild(read);if(view&&!view.querySelector('.article-view-number')){var n=document.createElement('span');n.className='article-view-number';n.textContent='0';view.appendChild(n)}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',normalize,{once:true});else normalize()})();</script>
 <!-- pages rebuild: 1790490667803 -->
 <script id="linkedin-contact-click-counter">
 (function(){
