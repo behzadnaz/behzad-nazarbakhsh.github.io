@@ -2904,3 +2904,14 @@ footer{font-size:11px;line-height:1.5}
   margin-top:0!important;
   margin-bottom:0!important;
 }
+
+/* Contact selection icons: black by default, blue on hover. */
+#about-contact .contact-block .connect-links>a .connect-arrow{
+  color:#111!important;
+}
+#about-contact .contact-block .connect-links>a:hover .connect-arrow{
+  color:#2563eb!important;
+}
+#about-contact .contact-block .connect-links>a .connect-arrow svg{
+  stroke:currentColor!important;
+}
