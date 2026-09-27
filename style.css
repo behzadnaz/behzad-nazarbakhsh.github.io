@@ -2927,3 +2927,6 @@ footer{font-size:11px;line-height:1.5}
   color:#2563eb!important;
   stroke:currentColor!important;
 }
+
+/* Ensure the hero “Let's talk” CTA lands cleanly on the Contact section. */
+#about-contact{scroll-margin-top:90px!important}
