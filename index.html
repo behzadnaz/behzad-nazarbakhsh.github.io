@@ -1385,7 +1385,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var icon=calendly.querySelector('.connect-icon-calendar');
     var name=calendly.querySelector('.connect-name');
     if(!icon || !name) return;
-    var on=true;
+    var on=false;
     function apply(){
       on=!on;
       if(on){
@@ -1411,9 +1411,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.setTimeout(startCalendlyAttention,300);
       });
     });
-    if(window.location.hash==='#about-contact'){
-      window.setTimeout(startCalendlyAttention,300);
-    }
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
   else init();
