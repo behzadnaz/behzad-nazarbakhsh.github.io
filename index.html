@@ -822,97 +822,89 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  const stageTimes=[720,3600,6480,9360,11640];
+  const cycleDuration=12800;
   const train=document.querySelector('.engagement-spaceship');
   let autoTimer=null;
   let autoStart=performance.now();
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function syncWithTrain(now){
-    if(manualTrainHold) return;
+    if(manualTrainHold || !train) return;
 
-    const elapsed=(now-autoStart)%12000;
-    const stations=[
-      {start:720,end:2160,stage:0},
-      {start:3600,end:5040,stage:1},
-      {start:6480,end:7920,stage:2},
-      {start:9360,end:10800,stage:3},
-      {start:11640,end:11880,stage:4}
-    ];
-    const movements=[
-      {start:0,end:720,from:0,to:0},
-      {start:2160,end:3600,from:0,to:1},
-      {start:5040,end:6480,from:1,to:2},
-      {start:7920,end:9360,from:2,to:3},
-      {start:10800,end:11640,from:3,to:4},
-      {start:11880,end:12000,from:4,to:0}
-    ];
-
-    if(!train) return;
-
+    const elapsed=(now-autoStart)%cycleDuration;
     const track=document.querySelector('.engagement-track');
     if(!track) return;
 
     const trackRect=track.getBoundingClientRect();
+    const dots=nodes.map(node=>node.querySelector('.engagement-node-dot')).filter(Boolean);
+    if(dots.length<2) return;
 
-    const placeAt=(x,y)=>{
+    const rects=dots.map(dot=>dot.getBoundingClientRect());
+    const centers=rects.map(r=>({
+      x:r.left+r.width/2-trackRect.left,
+      y:r.top+r.height/2-trackRect.top
+    }));
+    const horizontal=trackRect.width>trackRect.height*2;
+
+    const phases=[
+      {start:0,end:1200,type:'move',from:'entry',to:0},
+      {start:1200,end:2600,type:'stop',stage:0},
+      {start:2600,end:4200,type:'move',from:0,to:1},
+      {start:4200,end:5600,type:'stop',stage:1},
+      {start:5600,end:7200,type:'move',from:1,to:2},
+      {start:7200,end:8600,type:'stop',stage:2},
+      {start:8600,end:10200,type:'move',from:2,to:3},
+      {start:10200,end:11600,type:'stop',stage:3},
+      {start:11600,end:12800,type:'exit',from:3,to:'exit'}
+    ];
+
+    const halfW=(train.getBoundingClientRect().width||58)/2;
+    const halfH=(train.getBoundingClientRect().height||32)/2;
+    const entry=horizontal
+      ? {x:-halfW-8,y:centers[0].y}
+      : {x:centers[0].x,y:-halfH-8};
+    const exit=horizontal
+      ? {x:trackRect.width+halfW+8,y:centers[centers.length-1].y}
+      : {x:centers[centers.length-1].x,y:trackRect.height+halfH+8};
+
+    const placeAt=(x,y,stopped)=>{
       train.style.animation='none';
       train.style.left=x+'px';
-      train.style.top='18px';
+      train.style.top=y+'px';
       train.style.transform='translate(-50%,-50%)';
       train.style.opacity='1';
+      train.classList.toggle('is-stopped',stopped);
     };
 
-    let station=null;
-    for(const item of stations){
-      if(elapsed>=item.start && elapsed<item.end){station=item;break;}
-    }
+    const ease=p=>p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2;
 
-    if(station){
-      const dot=nodes[station.stage]?.querySelector('.engagement-node-dot');
-      if(dot){
-        const dotRect=dot.getBoundingClientRect();
-        placeAt(
-          dotRect.left+dotRect.width/2-trackRect.left,
-          dotRect.top+dotRect.height/2-trackRect.top
-        );
-      }
-      train.classList.add('is-stopped');
-      select(String(station.stage+1),false);
+    let phase=phases.find(item=>elapsed>=item.start && elapsed<item.end);
+    if(!phase) phase=phases[phases.length-1];
+
+    if(phase.type==='stop'){
+      const point=centers[phase.stage];
+      placeAt(point.x,point.y,true);
+      select(String(phase.stage+1),false);
       return;
     }
 
-    let movement=null;
-    for(const item of movements){
-      if(elapsed>=item.start && elapsed<item.end){movement=item;break;}
+    if(phase.type==='move'){
+      const target=centers[phase.to];
+      const source=phase.from==='entry' ? entry : centers[phase.from];
+      const p=ease((elapsed-phase.start)/(phase.end-phase.start));
+      placeAt(source.x+(target.x-source.x)*p,source.y+(target.y-source.y)*p,false);
+      select(String(phase.to+1),false);
+      return;
     }
 
-    if(movement){
-      const fromDot=nodes[movement.from]?.querySelector('.engagement-node-dot');
-      const toDot=nodes[movement.to]?.querySelector('.engagement-node-dot');
-
-      if(fromDot&&toDot){
-        const a=fromDot.getBoundingClientRect();
-        const b=toDot.getBoundingClientRect();
-        const p=(elapsed-movement.start)/(movement.end-movement.start);
-        const eased=p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2;
-
-        const ax=a.left+a.width/2-trackRect.left;
-        const bx=b.left+b.width/2-trackRect.left;
-        const ay=a.top+a.height/2-trackRect.top;
-        const by=b.top+b.height/2-trackRect.top;
-
-        placeAt(
-          ax+(bx-ax)*eased,
-          ay+(by-ay)*eased
-        );
-      }
-      train.classList.remove('is-stopped');
-
-      const stage=movement.to;
-      select(String(stage+1),false);
+    if(phase.type==='exit'){
+      const source=centers[phase.from];
+      const p=ease((elapsed-phase.start)/(phase.end-phase.start));
+      placeAt(source.x+(exit.x-source.x)*p,source.y+(exit.y-source.y)*p,false);
     }
-  }  function startTrainSync(resetClock=true){
+  }
+
+  function startTrainSync(resetClock=true){
     if(autoTimer) cancelAnimationFrame(autoTimer);
     if(resetClock) autoStart=performance.now();
     function tick(now){
