@@ -2510,3 +2510,13 @@ footer{font-size:11px;line-height:1.5}
     top:50px!important;
   }
 }
+
+
+/* Contact — keep LinkedIn eye/count close to the selection arrow */
+#about-contact .contact-block .connect-links>a.connect-linkedin .connect-metric{
+  right:0!important;
+  top:42px!important;
+  width:auto!important;
+  transform:translateY(2px)!important;
+  justify-content:flex-end!important;
+}
