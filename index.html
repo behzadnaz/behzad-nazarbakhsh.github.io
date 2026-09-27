@@ -1389,6 +1389,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(bind,1500);
 })();</script><script id="contact-cta-focus">
 (function(){
+  var blinkTimer=null;
   function blinkCalendly(){
     var el=document.querySelector('#contact-section .connect-calendly');
     if(!el)return;
@@ -1396,9 +1397,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var cal=el.querySelector('.connect-icon-calendar');
     var arrow=el.querySelector('.connect-arrow');
     var items=[name,cal,arrow].filter(Boolean);
+    if(blinkTimer)window.clearInterval(blinkTimer);
     var on=false,cycles=0;
     items.forEach(function(x){x.style.setProperty('transition','color .18s ease, transform .18s ease','important');});
-    var timer=window.setInterval(function(){
+    blinkTimer=window.setInterval(function(){
       on=!on;
       var color=on?'#2563eb':'#111827';
       items.forEach(function(x){
@@ -1409,12 +1411,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       cycles++;
       if(cycles>=14){
-        window.clearInterval(timer);
+        window.clearInterval(blinkTimer);
+        blinkTimer=null;
         items.forEach(function(x){
-          x.style.removeProperty('color');
+          x.style.setProperty('color','#111827','important');
           x.style.removeProperty('transform');
           var svg=x.querySelector('svg');
-          if(svg)svg.style.removeProperty('stroke');
+          if(svg)svg.style.setProperty('stroke','#111827','important');
         });
       }
     },450);
@@ -1433,6 +1436,17 @@ document.addEventListener('DOMContentLoaded', function () {
       link.dataset.contactCtaBound='1';
       link.addEventListener('click',focusContact);
     });
+    var contact=document.getElementById('contact-section');
+    if(contact&&'IntersectionObserver' in window){
+      var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting&&entry.intersectionRatio>=0.2){
+            blinkCalendly();
+          }
+        });
+      },{threshold:[0.2]});
+      observer.observe(contact);
+    }
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
