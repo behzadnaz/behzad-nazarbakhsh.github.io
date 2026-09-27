@@ -2915,3 +2915,15 @@ footer{font-size:11px;line-height:1.5}
 #about-contact .contact-block .connect-links>a .connect-arrow svg{
   stroke:currentColor!important;
 }
+
+/* Calendly selection icon: explicitly black by default, blue only on Calendly hover. */
+#about-contact .contact-block .connect-links>a.connect-calendly .connect-arrow,
+#about-contact .contact-block .connect-links>a.connect-calendly .connect-arrow svg{
+  color:#111!important;
+  stroke:currentColor!important;
+}
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow,
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow svg{
+  color:#2563eb!important;
+  stroke:currentColor!important;
+}
