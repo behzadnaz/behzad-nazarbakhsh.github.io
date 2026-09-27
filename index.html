@@ -940,6 +940,35 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 })();
 </script>
+<script id="contribution-report-prefetch">
+(function(){
+  const links=document.querySelectorAll('.work-item[href="IT-Portfolio-Management.html"],.work-item[href="Organization-Change-Management.html"]');
+  const files=["report-bundles/report-00-07.html","report-bundles/report-08-15.html","report-bundles/report-16-23.html","report-bundles/report-24-28.html"];
+  let started=false;
+  function prefetchReports(){
+    if(started)return;
+    started=true;
+    files.forEach(function(file){
+      fetch(file,{cache:"force-cache",credentials:"same-origin"}).catch(function(){});
+    });
+  }
+  links.forEach(function(link){
+    link.addEventListener("mouseenter",prefetchReports,{once:true,passive:true});
+    link.addEventListener("focus",prefetchReports,{once:true,passive:true});
+    link.addEventListener("touchstart",prefetchReports,{once:true,passive:true});
+  });
+  const section=document.getElementById("work");
+  if(section&&"IntersectionObserver" in window){
+    const observer=new IntersectionObserver(function(entries){
+      if(entries.some(function(entry){return entry.isIntersecting})){
+        prefetchReports();
+        observer.disconnect();
+      }
+    },{rootMargin:"500px 0px"});
+    observer.observe(section);
+  }
+})();
+</script>
 </body>
 </html>
 <style id="contribution-heading-spacing">.service-engagement-head .section-label{margin-bottom:12px!important}.service-engagement-head h3{margin-top:0!important}</style>
