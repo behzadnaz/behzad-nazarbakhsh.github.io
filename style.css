@@ -2585,3 +2585,25 @@ footer{font-size:11px;line-height:1.5}
 /* Contact arrows: keep every selection icon immediately after its label. */
 #about-contact .contact-block .connect-main{width:max-content!important;}
 #about-contact .contact-block .connect-arrow{margin-left:6px!important;}
+
+/* Compact Contact links: reduce the excessive spacing between LinkedIn, GitHub, Email and Calendly. */
+#about-contact .contact-block .connect-links{
+  width:max-content!important;
+  max-width:100%!important;
+  grid-template-columns:repeat(4,max-content)!important;
+}
+#about-contact .contact-block .connect-links>a{
+  width:auto!important;
+  min-width:150px!important;
+  padding-left:18px!important;
+  padding-right:18px!important;
+}
+#about-contact .contact-block .connect-links>a:first-child{padding-left:0!important}
+#about-contact .contact-block .connect-links>a:last-child{padding-right:0!important}
+@media(max-width:1050px){
+  #about-contact .contact-block .connect-links{width:100%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #about-contact .contact-block .connect-links>a{min-width:0!important}
+  #about-contact .contact-block .connect-links>a:first-child{padding-left:18px!important}
+  #about-contact .contact-block .connect-links>a:last-child{padding-right:18px!important}
+}
+@media(max-width:560px){#about-contact .contact-block .connect-links{grid-template-columns:1fr!important}}
