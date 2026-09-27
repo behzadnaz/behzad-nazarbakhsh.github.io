@@ -2529,3 +2529,10 @@ footer{font-size:11px;line-height:1.5}
     min-height:70px!important;
   }
 }
+
+
+/* LinkedIn contact click counter */
+#about-contact .connect-linkedin .connect-click-count{display:inline-flex!important;align-items:center!important;gap:4px!important;flex:0 0 auto!important;white-space:nowrap!important;color:var(--muted,#667085)!important;font-family:"DM Mono",monospace!important;font-size:10px!important;font-weight:500!important;line-height:1!important;opacity:.82!important}
+#about-contact .connect-linkedin .connect-click-count svg{display:block!important;width:13px!important;height:13px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+#about-contact .connect-linkedin #linkedin-contact-count{min-width:1ch!important}
+@media(max-width:560px){#about-contact .connect-linkedin .connect-click-count{font-size:9px!important}#about-contact .connect-linkedin .connect-click-count svg{width:12px!important;height:12px!important}}
