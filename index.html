@@ -972,37 +972,44 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   function slugify(text){
     return text.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,90);
   }
-  function update(card){
-    var link=card.querySelector('h3 a');
-    var number=card.querySelector('.article-view-number');
-    if(!link||!number) return;
-    var key='article-click-count:/article-click/'+slugify(link.textContent);
-    var value=0;
-    try{value=parseInt(localStorage.getItem(key)||'0',10)||0;}catch(e){}
-    number.textContent=String(value);
+  function keyFor(link){ return 'article-click-count:/article-click/'+slugify(link.textContent); }
+  function getCount(key){
+    try{
+      var v=parseInt(localStorage.getItem(key)||'',10);
+      if(!isNaN(v)) return v;
+    }catch(e){}
+    var cookies=document.cookie.split(';');
+    var target=encodeURIComponent(key)+'=';
+    for(var i=0;i<cookies.length;i++){
+      var part=cookies[i].trim();
+      if(part.indexOf(target)===0) return parseInt(part.slice(target.length),10)||0;
+    }
+    return 0;
+  }
+  function saveCount(key,value){
+    try{localStorage.setItem(key,String(value));}catch(e){}
+    document.cookie=encodeURIComponent(key)+'='+value+'; path=/; max-age=31536000; SameSite=Lax';
   }
   function setup(){
     document.querySelectorAll('.article-card').forEach(function(card){
       var link=card.querySelector('h3 a');
-      if(!link) return;
       var number=card.querySelector('.article-view-number');
-      if(!number) return;
-      update(card);
+      if(!link||!number) return;
+      number.textContent=String(getCount(keyFor(link)));
     });
   }
   document.addEventListener('click',function(e){
     var link=e.target.closest('.article-card h3 a, .article-card .article-read-more');
     if(!link) return;
     var card=link.closest('.article-card');
-    if(!card) return;
-    var titleLink=card.querySelector('h3 a');
+    var titleLink=card&&card.querySelector('h3 a');
     if(!titleLink) return;
-    var path='/article-click/'+slugify(titleLink.textContent);
-    var key='article-click-count:'+path;
-    var next=0;
-    try{next=(parseInt(localStorage.getItem(key)||'0',10)||0)+1;localStorage.setItem(key,String(next));}catch(err){next=1;}
+    var key=keyFor(titleLink);
+    var next=getCount(key)+1;
+    saveCount(key,next);
     var number=card.querySelector('.article-view-number');
     if(number) number.textContent=String(next);
+    var path='/article-click/'+slugify(titleLink.textContent);
     if(window.goatcounter&&typeof window.goatcounter.count==='function'){
       window.goatcounter.count({path:path,title:titleLink.textContent.trim(),no_session:true});
     }
