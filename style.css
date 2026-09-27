@@ -2536,3 +2536,144 @@ footer{font-size:11px;line-height:1.5}
 #about-contact .connect-linkedin .connect-click-count svg{display:block!important;width:13px!important;height:13px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
 #about-contact .connect-linkedin #linkedin-contact-count{min-width:1ch!important}
 @media(max-width:560px){#about-contact .connect-linkedin .connect-click-count{font-size:9px!important}#about-contact .connect-linkedin .connect-click-count svg{width:12px!important;height:12px!important}}
+
+
+/* Contact grid — redesigned as a clean editorial link grid */
+#about-contact .contact-block .connect-links{
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:0!important;
+  margin-top:42px!important;
+  padding:0!important;
+  border-top:1px solid var(--line)!important;
+  border-bottom:1px solid var(--line)!important;
+}
+#about-contact .contact-block .connect-links a{
+  position:relative!important;
+  min-width:0!important;
+  min-height:104px!important;
+  box-sizing:border-box!important;
+  padding:22px 24px 20px 0!important;
+  border:0!important;
+  border-right:1px solid var(--line)!important;
+  display:grid!important;
+  grid-template-columns:42px minmax(0,1fr) 24px!important;
+  grid-template-rows:auto auto!important;
+  align-items:center!important;
+  column-gap:13px!important;
+  row-gap:3px!important;
+  text-decoration:none!important;
+  background:transparent!important;
+  transition:padding .2s ease,background .2s ease,color .2s ease!important;
+}
+#about-contact .contact-block .connect-links a:first-child{padding-left:0!important}
+#about-contact .contact-block .connect-links a:last-child{
+  border-right:0!important;
+  padding-right:0!important;
+}
+#about-contact .contact-block .connect-links a:hover{
+  padding-left:8px!important;
+  padding-right:16px!important;
+  background:rgba(37,99,235,.035)!important;
+}
+#about-contact .contact-block .connect-links a:first-child:hover{padding-left:8px!important}
+#about-contact .contact-block .connect-links a:last-child:hover{padding-right:8px!important}
+#about-contact .contact-block .connect-icon{
+  grid-column:1!important;
+  grid-row:1 / span 2!important;
+  width:42px!important;
+  height:42px!important;
+  flex:0 0 42px!important;
+  border:1px solid var(--line)!important;
+  border-radius:50%!important;
+  background:var(--paper,#fff)!important;
+  color:#111!important;
+  display:grid!important;
+  place-items:center!important;
+  position:relative!important;
+  z-index:3!important;
+}
+#about-contact .contact-block .connect-name{
+  grid-column:2!important;
+  grid-row:1!important;
+  min-width:0!important;
+  font-size:14px!important;
+  line-height:1.25!important;
+  font-weight:650!important;
+  color:var(--ink,#111)!important;
+}
+#about-contact .contact-block .connect-arrow{
+  grid-column:3!important;
+  grid-row:1!important;
+  width:24px!important;
+  height:24px!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1px solid var(--line)!important;
+  border-radius:50%!important;
+  font-size:13px!important;
+  color:var(--muted,#667085)!important;
+  transition:transform .2s ease,color .2s ease,border-color .2s ease!important;
+}
+#about-contact .contact-block .connect-links a:hover .connect-arrow{
+  transform:translate(2px,-2px)!important;
+  color:#2563eb!important;
+  border-color:rgba(37,99,235,.35)!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-click-count{
+  position:absolute!important;
+  left:31px!important;
+  top:48px!important;
+  z-index:2!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:3px!important;
+  color:#8a8f98!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:8px!important;
+  font-weight:500!important;
+  line-height:1!important;
+  opacity:.9!important;
+  pointer-events:none!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-click-count svg{
+  width:10px!important;
+  height:10px!important;
+  stroke:#8a8f98!important;
+  fill:none!important;
+  stroke-width:1.6!important;
+}
+@media(max-width:1000px){
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  #about-contact .contact-block .connect-links a:nth-child(2){
+    border-right:0!important;
+  }
+  #about-contact .contact-block .connect-links a:nth-child(-n+2){
+    border-bottom:1px solid var(--line)!important;
+  }
+  #about-contact .contact-block .connect-links a:nth-child(3),
+  #about-contact .contact-block .connect-links a:nth-child(4){
+    border-bottom:0!important;
+  }
+}
+@media(max-width:560px){
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:1fr!important;
+  }
+  #about-contact .contact-block .connect-links a,
+  #about-contact .contact-block .connect-links a:first-child,
+  #about-contact .contact-block .connect-links a:last-child{
+    min-height:82px!important;
+    padding:18px 0!important;
+    border-right:0!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+  #about-contact .contact-block .connect-links a:last-child{border-bottom:0!important}
+  #about-contact .contact-block .connect-linkedin .connect-click-count{
+    left:31px!important;
+    top:39px!important;
+  }
+}
