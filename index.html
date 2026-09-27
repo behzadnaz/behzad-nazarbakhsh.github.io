@@ -1005,82 +1005,40 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
       @media(max-width:700px){.footer-role-visitor{gap:10px;flex-wrap:wrap}.site-visitor-count{min-height:27px}}
       @media(max-width:520px){.footer-role-visitor{display:flex;align-items:flex-start;flex-direction:column;gap:8px}.footer-role{max-width:100%}}
       @media(prefers-reduced-motion:reduce){.site-visitor-count{transition:none}}
-    </style>
-    <script id="site-visitor-counter">
-    (function(){
-      var script=document.createElement('script');
-      script.setAttribute('data-goatcounter','https://account-bvehzad.goatcounter.com/count');
-      script.async=true;
-      script.src='https://gc.zgo.at/count.js';
-      document.head.appendChild(script);
-      function render(){
-        if(!window.goatcounter || !window.goatcounter.visit_count){
-          setTimeout(render,100);
-          return;
-        }
-        window.goatcounter.visit_count({
-          path:'TOTAL',
-          append:'#site-visitor-count',
-          type:'html',
-          no_branding:true,
-          attr:{'aria-hidden':'true'}
-        });
-      }
-      render();
-    })();
-    </script>
+    </style><script id="site-visitor-counter">
+(function(){
+  function init(){
+    var el=document.getElementById('site-visitor-count');
+    if(!el||el.dataset.counted==='1')return;
+    var key='bn_site_open_count',count=0;
+    try{count=parseInt(localStorage.getItem(key)||'0',10)||0;}catch(_){}
+    count++;
+    el.textContent=String(count);
+    el.dataset.counted='1';
+    try{localStorage.setItem(key,String(count));}catch(_){}
+    if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+      window.goatcounter.count({path:'/page-open',title:document.title});
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+  setTimeout(init,500);
+})();
+</script>
+    
 <style id="site-visitor-count-style">
 .footer-role-visitor{display:inline-flex;align-items:center;justify-content:flex-start;gap:10px;text-align:left}.site-visitor-count{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;color:var(--muted,#667085)}
 .site-visitor-count svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .site-visitor-count #site-visitor-count{min-width:1.5ch}
 @media(max-width:600px){.site-visitor-count{margin-left:5px}}
 </style>
-<script id="site-visitor-counter">
-(function(){
-  var script=document.createElement('script');
-  script.setAttribute('data-goatcounter','https://account-bvehzad.goatcounter.com/count');
-  script.async=true;
-  script.src='https://gc.zgo.at/count.js';
-  document.head.appendChild(script);
-  function render(){
-    if(!window.goatcounter || !window.goatcounter.visit_count){
-      setTimeout(render,100);
-      return;
-    }
-    window.goatcounter.visit_count({path:'TOTAL',append:'#site-visitor-count',type:'html',no_branding:true,attr:{'aria-hidden':'true'}});
-  }
-  render();
-})();
-</script>
+
 <style id="site-visitor-count-style">
 .site-visitor-count{display:inline-flex;align-items:center;gap:5px;margin-left:8px;white-space:nowrap;color:var(--muted,#667085)}
 .site-visitor-count svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .site-visitor-count #site-visitor-count{min-width:1.5ch}
 @media(max-width:600px){.site-visitor-count{margin-left:5px}}
 </style>
-<script id="site-visitor-counter">
-(function(){
-  var script=document.createElement('script');
-  script.setAttribute('data-goatcounter','https://account-bvehzad.goatcounter.com/count');
-  script.async=true;
-  script.src='https://gc.zgo.at/count.js';
-  document.head.appendChild(script);
-  function render(){
-    if(!window.goatcounter || !window.goatcounter.visit_count){
-      setTimeout(render,100);
-      return;
-    }
-    window.goatcounter.visit_count({
-      path:'TOTAL',
-      append:'#site-visitor-count',
-      type:'html',
-      no_branding:true,
-      attr:{'aria-hidden':'true'}
-    });
-  }
-  render();
-})();
-</script>
+
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
