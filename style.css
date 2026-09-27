@@ -2359,3 +2359,30 @@ footer{font-size:11px;line-height:1.5}
   }
   #about-contact .contact-block .connect-links>a:last-child{border-bottom:0!important}
 }
+
+/* Contact — refined spacing between actions */
+#about-contact .contact-block .connect-links{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  column-gap:18px!important;
+  border-top:1px solid var(--line)!important;
+  border-bottom:1px solid var(--line)!important;
+}
+#about-contact .contact-block .connect-links>a{
+  height:132px!important;
+  padding:20px 8px 16px!important;
+  border-right:0!important;
+}
+#about-contact .contact-block .connect-main{
+  padding-left:2px!important;
+  padding-right:2px!important;
+}
+#about-contact .contact-block .connect-metric{margin-left:2px!important}
+@media(max-width:1050px){
+  #about-contact .contact-block .connect-links{column-gap:16px!important;row-gap:0!important}
+  #about-contact .contact-block .connect-links>a{border-right:0!important}
+  #about-contact .contact-block .connect-links>a:nth-child(n+3){border-top:1px solid var(--line)!important}
+}
+@media(max-width:560px){
+  #about-contact .contact-block .connect-links{column-gap:0!important}
+  #about-contact .contact-block .connect-links>a{padding-left:4px!important;padding-right:4px!important}
+}
