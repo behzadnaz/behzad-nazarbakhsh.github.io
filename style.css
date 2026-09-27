@@ -2573,3 +2573,8 @@ footer{font-size:11px;line-height:1.5}
   stroke:none!important;
 }
 #about-contact .contact-block .connect-links>a.connect-linkedin:hover .connect-metric{color:#2563eb!important}
+
+/* Keep Contact selection arrows directly beside their labels. */
+#about-contact .contact-block .connect-arrow{
+  margin-left:6px!important;
+}
