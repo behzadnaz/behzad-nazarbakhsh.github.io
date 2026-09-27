@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="prefetch" href="report-bundles/report-00-07.html" as="fetch" crossorigin>
+<link rel="prefetch" href="report-bundles/report-08-15.html" as="fetch" crossorigin>
+<link rel="prefetch" href="report-bundles/report-16-23.html" as="fetch" crossorigin>
+<link rel="prefetch" href="report-bundles/report-24-28.html" as="fetch" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Behzad Nazarbakhsh — Software Craftsmanship, Product Coaching, Agile and IT Management.">
+  <title>Behzad Nazarbakhsh | Professional Hub</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+<style>
+/* Homepage hero — consolidated final layout */
+.hero{min-height:94vh;padding-top:96px;padding-bottom:70px;background:radial-gradient(circle at 82% 42%,rgba(218,228,220,.72) 0,transparent 31%),linear-gradient(135deg,#fafbf8 0%,#eef2ed 100%)}
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(500px,.9fr);gap:34px;min-height:76vh;align-items:center}
+.hero-copy{max-width:690px;padding-bottom:10px}
+.hero-identity{margin:0 0 22px;font-family:"DM Mono",monospace;font-size:.70rem;font-weight:500;letter-spacing:.09em;color:var(--ink);text-transform:uppercase}
+.hero-identity span{display:block;margin-top:6px;color:var(--muted);font-size:.68rem;letter-spacing:.015em;text-transform:none}
+.hero-copy h1{max-width:570px;font-size:clamp(2.55rem,3.55vw,3.9rem);line-height:1.06;letter-spacing:-.032em}
+.hero-copy h1 em{display:inline-block;color:var(--ink)}
+.hero-copy .intro{max-width:540px;margin-top:22px;margin-bottom:26px;font-size:.96rem;line-height:1.72}
+.hero-copy .actions{margin-top:4px}
+.hero-copy .button{padding:10px 16px;font-size:.73rem}
+.hero-mark{justify-self:center;width:100%;transform:translateY(0)}
+.hero-thinking-map{margin:auto}
+@media(max-width:1050px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(430px,.85fr);gap:12px}.hero-copy h1{font-size:clamp(2.45rem,4vw,3.55rem)}}
+@media(max-width:800px){.hero{min-height:auto;padding-top:90px;padding-bottom:65px}.hero-grid{grid-template-columns:1fr;gap:15px;min-height:auto}.hero-copy{max-width:700px}.hero-copy h1{font-size:clamp(2.35rem,8vw,3.35rem)}.hero-copy .intro{font-size:.95rem}.hero-mark{justify-self:center;margin-top:24px}}
+@media(max-width:560px){.hero{padding-top:82px}.hero-copy h1{font-size:clamp(2.2rem,9.5vw,3rem)}.hero-identity{font-size:.65rem}.hero-identity span{font-size:.63rem}.hero-copy .intro{font-size:.92rem}.hero-mark{margin-top:12px}}
+</style>
+<style id="global-typography-v2">
+/* Global typography hierarchy — applied after page-specific styles */
+:root{--fs-body:16px;--fs-small:13px;--fs-label:11px;--fs-h1:clamp(3rem,5vw,4.25rem);--fs-h2:clamp(2rem,3.2vw,3rem);--fs-h3:1.3rem;--fs-h4:1.08rem}
+html{font-size:16px!important}
+body{font-size:16px!important;line-height:1.65!important}
+p,li,dd,td{font-size:16px!important;line-height:1.65!important}
+small{font-size:13px!important;line-height:1.5!important}
+h1{font-size:var(--fs-h1)!important;line-height:1.08!important}
+h2{font-size:var(--fs-h2)!important;line-height:1.15!important}
+h3{font-size:1.3rem!important;line-height:1.25!important}
+h4{font-size:1.08rem!important;line-height:1.3!important}
+.nav-links,nav a,.button,.btn,.dlink,.pill{font-size:13px!important;line-height:1.4!important}
+.section-label,.eyebrow,.hero-identity,.hero-badge,.hero-cap,.hero-meta,.report-number,.report-date,.report-link,.article-card span,footer{font-size:11px!important;line-height:1.4!important}
+.article-card h3,.work-item strong,.expertise-grid h3,.report-card h2{font-size:1.3rem!important;line-height:1.25!important}
+.article-card p,.expertise-grid p,.work-item small,.report-card p,.report-note{font-size:16px!important;line-height:1.65!important}
+.hero-copy h1,.hero h1,.report-intro h1{font-size:var(--fs-h1)!important;line-height:1.08!important}
+.hero-copy .intro,.hero .sub,.report-intro p{font-size:16px!important;line-height:1.7!important}
+@media(max-width:800px){h1,.hero-copy h1,.hero h1,.report-intro h1{font-size:clamp(2.6rem,9vw,3.5rem)!important}h2{font-size:clamp(2rem,7vw,2.8rem)!important}h3{font-size:1.2rem!important}}
+@media(max-width:560px){h1,.hero-copy h1,.hero h1,.report-intro h1{font-size:clamp(2.35rem,10vw,3rem)!important}h2{font-size:clamp(1.9rem,8.5vw,2.5rem)!important}}
+</style><style id="section-label-metaphor-icons">
+.section-label.section-label-icon{display:inline-flex;align-items:center;gap:7px;color:#2563eb!important}
+.section-label.section-label-icon .section-label-icon-mark{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;flex:0 0 14px;color:#2563eb!important}
+.section-label.section-label-icon .section-label-icon-mark svg{width:14px;height:14px;display:block;color:#2563eb!important}
+.section-label.section-label-icon .section-label-icon-mark svg *{vector-effect:non-scaling-stroke}
+.section-label.section-label-icon .section-label-text{color:#2563eb!important}
+</style><style id="knowledge-base-label-icon">
+.section-label.knowledge-base-label{display:inline-flex;align-items:center;gap:7px}
+.section-label.knowledge-base-label svg{width:13px;height:13px;display:block;flex:0 0 auto;opacity:.78}
+</style><style id="nav-knowledge-base-icon">
+.nav-links .nav-knowledge-base{display:inline-flex;align-items:center;gap:6px}
+.nav-links .nav-knowledge-base svg{width:14px;height:14px;display:block;flex:0 0 auto}
+</style><style id="article-filter-metaphor-before-title">
+.article-filter{display:inline-flex;align-items:center;gap:7px}
+.article-filter .article-count-icon{order:0;flex:0 0 auto}
+.article-filter .article-filter-title{order:1}
+.article-filter .article-count{order:2;margin-left:2px}
+</style><style id="knowledge-topic-labels">
+.article-card .topic-metaphor{display:inline-flex!important;align-items:baseline!important;gap:7px!important;margin:0 0 18px!important;color:var(--accent)!important;font-size:.66rem!important;font-weight:700!important;line-height:1.35!important;letter-spacing:.08em!important;text-transform:uppercase!important;vertical-align:baseline!important}
+.article-card .topic-metaphor .topic-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:15px!important;height:15px!important;margin:0!important;flex:0 0 15px!important;opacity:.9!important;vertical-align:baseline!important;position:relative!important;top:2px!important}
+.article-card .topic-metaphor .topic-icon svg{display:block!important;width:13px!important;height:13px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-card .topic-metaphor .topic-icon + span{display:inline!important;line-height:1.35!important}
+</style>
+<style id="article-summary-and-read-icon">
+.article-card.linkedin-card{position:relative}
+.article-card .article-summary{margin:0!important;max-width:100%!important;font-size:13px!important;line-height:1.55!important;color:var(--muted)!important}
+.article-card .article-read-more{display:flex!important;align-items:center!important;justify-content:center!important;width:30px!important;height:30px!important;margin:16px 0 0 auto!important;color:var(--accent)!important;text-decoration:none!important;opacity:.82!important;transition:transform .18s ease,opacity .18s ease!important}
+.article-card .article-read-more svg{display:block!important;width:22px!important;height:22px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-card .article-read-more:hover{opacity:1!important;transform:translateY(-2px)!important}
+@media(max-width:560px){.article-card .article-summary{font-size:13px!important;line-height:1.5!important}.article-card .article-read-more{margin-top:13px!important}}
+</style>
+<style id="academic-card-consistency">.academic-card{position:relative}.academic-card .scholar-metaphor{top:auto!important;right:auto!important;left:22px!important;bottom:20px!important;width:42px!important;height:42px!important}</style>
+<style id="academic-card-clean-layout">
+/* Google Scholar cards use the exact same layout model as LinkedIn cards */
+.article-card.academic-card{
+  position:relative!important;
+  box-sizing:border-box!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:28px 28px 0!important;
+  display:block!important;
+  text-align:left!important;
+  overflow:visible!important;
+}
+.article-card.academic-card .topic-metaphor{
+  position:static!important;
+  display:inline-flex!important;
+  align-items:baseline!important;
+  gap:7px!important;
+  width:auto!important;
+  margin:0 0 18px!important;
+  padding:0!important;
+  transform:none!important;
+  text-align:left!important;
+}
+.article-card.academic-card h3{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:9px!important;
+  width:100%!important;
+  margin:0 0 14px!important;
+  padding:0!important;
+  text-align:left!important;
+  overflow:visible!important;
+}
+.article-card.academic-card h3 .article-source-icon{
+  flex:0 0 18px!important;
+  width:18px!important;
+  height:18px!important;
+  margin-top:3px!important;
+}
+.article-card.academic-card h3>a{
+  display:block!important;
+  flex:1 1 auto!important;
+  min-width:0!important;
+  width:auto!important;
+  color:inherit!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  white-space:normal!important;
+}
+.article-card.academic-card .article-summary{
+  display:block!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  color:var(--muted)!important;
+  font-size:13px!important;
+  line-height:1.55!important;
+  text-align:left!important;
+  overflow:visible!important;
+}
+.article-card.academic-card .article-read-more{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:30px!important;
+  height:30px!important;
+  margin:16px 0 0 auto!important;
+  color:var(--accent)!important;
+}
+.article-card.academic-card .article-view-count{
+  position:absolute!important;
+  left:22px!important;
+  bottom:0!important;
+  display:inline-flex!important;
+}
+@media(max-width:560px){
+  .article-card.academic-card{
+    height:auto!important;
+    min-height:0!important;
+    padding:22px 22px 0!important;
+  }
+  .article-card.academic-card h3{gap:8px!important}
+  .article-card.academic-card h3 .article-source-icon{
+    flex-basis:17px!important;
+    width:17px!important;
+    height:17px!important;
+    margin-top:2px!important;
+  }
+  .article-card.academic-card .article-summary{
+    font-size:13px!important;
+    line-height:1.5!important;
+  }
+  .article-card.academic-card .article-view-count{
+    left:19px!important;
+    bottom:0!important;
+  }
+}
+@media(max-width:420px){
+  .article-card.academic-card{padding:19px 19px 0!important}
+}
+</style>
+<style id="article-source-icons">
+.article-card h3{display:flex!important;align-items:flex-start!important;gap:9px!important}
+.article-card h3 .article-source-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 18px!important;width:18px!important;height:18px!important;margin-top:3px!important;color:var(--accent)!important}
+.article-card h3 .article-source-icon svg{display:block!important;width:18px!important;height:18px!important;fill:currentColor!important;stroke:none!important}
+.article-card h3 .article-source-icon.article-source-scholar svg{fill:none!important;stroke:currentColor!important;stroke-width:1.45!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-card h3>a{display:block!important;flex:1!important;min-width:0!important}
+@media(max-width:560px){
+  .article-card h3 .article-source-icon{flex-basis:17px!important;width:17px!important;height:17px!important;margin-top:2px!important}
+  .article-card h3 .article-source-icon svg{width:17px!important;height:17px!important}
+  .article-card h3{gap:8px!important}
+}
+</style><style id="nav-metaphor-icons">
+.nav-links .nav-metaphor{display:inline-flex;align-items:center;gap:6px;line-height:1}
+.nav-links .nav-metaphor svg{width:14px;height:14px;display:block;flex:0 0 14px;margin:0;padding:0;color:currentColor}
+.nav-links .nav-metaphor.nav-knowledge-base svg{width:14px;height:14px;flex:0 0 14px}
+</style>
+<style id="services-section-v4">
+.services-intro{max-width:760px;margin:18px 0 0;color:var(--muted)}
+.services-career-story{margin-top:42px}
+.services-journey-explanation{margin-top:34px}
+.services-journey-explanation .career-item p{margin:8px 0 0}
+.services-offerings{margin-top:62px;padding-top:2px}
+.services-offerings-head{max-width:780px;margin-bottom:28px}
+.services-offerings-head .section-label{margin-bottom:10px}
+.services-offerings-head h3{margin:0}
+.services-offerings-intro{max-width:720px;margin:12px 0 0;color:var(--muted)}
+.services-needs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+.service-need{position:relative;padding:26px 26px 24px;border:1px solid var(--line);background:rgba(255,255,255,.42);min-height:150px}
+.service-need:before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:#2563eb;opacity:.72}
+.service-need h4{margin:0 0 9px;font-size:1.12rem}
+.service-need p{margin:0;color:var(--muted);font-size:15px!important;line-height:1.58!important}
+.service-engagement{margin-top:58px;padding-top:38px;border-top:1px solid var(--line)}
+.service-engagement-head{max-width:760px;margin-bottom:26px}
+.service-engagement-head h3{margin:0}
+.service-engagement-head p{margin:12px 0 0;color:var(--muted)}
+.service-formats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.service-format{padding:23px 20px 24px;background:var(--paper,#fff)}
+.service-format h4{margin:0 0 8px;font-size:1rem}
+.service-format p{margin:0;color:var(--muted);font-size:14px!important;line-height:1.55!important}
+.services-cta{margin-top:54px;padding:30px 0;border-top:1px solid var(--line)}
+.services-cta h3{margin:0 0 8px}
+@media(max-width:1000px){
+ .service-formats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:800px){
+ .services-needs{grid-template-columns:1fr}
+ .service-formats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .services-offerings{margin-top:48px}
+ .service-need{padding:22px 21px 21px}
+ .service-formats{grid-template-columns:1fr}
+ .service-format{padding:21px}
+ .services-career-story{margin-top:30px}
+}
+</style>
+<style id="services-career-layout">
+.services-career-story{display:block}.services-career-story .career-journey{width:100%;max-width:1180px;margin:0 auto}.services-career-story .services-journey-explanation{width:100%;max-width:900px;margin:34px auto 0}
+.services-career-story .career-journey{min-width:0}
+@media(max-width:900px){
+  .services-career-story{grid-template-columns:1fr;gap:30px}
+  .services-career-story .services-journey-explanation{grid-column:auto}
+}
+</style>
+<style id="organization-evolution-visual">
+.organization-evolution{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:28px;margin:30px 0 30px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.organization-evolution-item{min-width:0;text-align:center;display:flex;flex-direction:column;align-items:center}
+.organization-evolution-label{font-family:"DM Mono",monospace;font-size:10px;line-height:1.3;letter-spacing:.14em;font-weight:600;color:var(--muted);margin-bottom:13px}
+.organization-evolution-flow{width:100%;display:flex;align-items:center;justify-content:center;gap:0;font-size:14px;line-height:1.3;color:var(--ink);white-space:nowrap}
+.organization-evolution-flow>span{display:inline-block}
+.organization-evolution-flow>span:last-child{font-weight:600}
+.organization-evolution-flow i{position:relative;display:block;height:1px;background:var(--line);flex:1;min-width:22px;max-width:55px;margin:0 9px;font-style:normal}
+.organization-evolution-flow i:after{content:"›";position:absolute;right:-3px;top:50%;transform:translateY(-55%);font-size:15px;color:var(--muted)}
+.organization-evolution-flow b{position:absolute;top:50%;left:0;width:5px;height:5px;border-radius:50%;background:#2563eb;transform:translate(-50%,-50%);animation:organizationEvolutionFlow 2.7s ease-in-out infinite}
+.organization-evolution-item:nth-child(2) b{animation-delay:.45s}
+.organization-evolution-item:nth-child(3) b{animation-delay:.9s}
+@keyframes organizationEvolutionFlow{0%{left:0;opacity:0}12%{opacity:1}82%{opacity:1}100%{left:100%;opacity:0}}
+@media(max-width:800px){.organization-evolution{gap:16px}.organization-evolution-flow{font-size:12px}.organization-evolution-flow i{min-width:12px;margin:0 5px}}
+@media(max-width:600px){.organization-evolution{grid-template-columns:1fr;gap:20px}.organization-evolution-item{padding-bottom:18px;border-bottom:1px solid var(--line)}.organization-evolution-item:last-child{padding-bottom:0;border-bottom:0}.organization-evolution-flow{font-size:14px}.organization-evolution-flow i{min-width:30px;margin:0 8px}}
+@media(prefers-reduced-motion:reduce){.organization-evolution-flow b{animation:none;left:50%;opacity:1}}
+</style><style id="career-journey-hover-info">
+.journey-stage{position:relative;cursor:default}
+.journey-stage .journey-hover-info{position:absolute;left:50%;bottom:calc(100% + 14px);width:270px;padding:15px 17px;background:var(--paper,#fff);border:1px solid var(--line);box-shadow:0 12px 30px rgba(20,30,25,.12);color:var(--muted);font-size:13px!important;line-height:1.5!important;text-align:left;opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;z-index:20;pointer-events:none}
+.journey-stage .journey-hover-info:after{content:"";position:absolute;left:50%;bottom:-6px;width:10px;height:10px;background:var(--paper,#fff);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:translateX(-50%) rotate(45deg)}
+.journey-stage:hover .journey-hover-info,.journey-stage:focus .journey-hover-info,.journey-stage:focus-within .journey-hover-info{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(max-width:600px){.journey-stage .journey-hover-info{left:0;transform:translate(0,6px);width:min(270px,78vw)}.journey-stage:hover .journey-hover-info,.journey-stage:focus .journey-hover-info,.journey-stage:focus-within .journey-hover-info{transform:translate(0,0)}.journey-stage .journey-hover-info:after{left:32px}}
+@media(prefers-reduced-motion:reduce){.journey-stage .journey-hover-info{transition:none}}
+</style><style id="journey-interaction">.career-journey{position:relative}.career-journey:after{content:"";position:absolute;left:12%;right:12%;top:50%;height:1px;background:linear-gradient(90deg,transparent,var(--line),var(--line),transparent);pointer-events:none;z-index:0}.journey-stage{z-index:1;transition:transform .18s ease}.journey-stage:after{content:"↗";position:absolute;top:-9px;right:8px;font-size:10px;color:var(--muted);opacity:0;transform:translateY(4px);transition:opacity .18s ease,transform .18s ease}.journey-stage:hover,.journey-stage:focus{transform:translateY(-3px)}.journey-stage:hover:after,.journey-stage:focus:after,.journey-stage:focus-within:after{opacity:.8;transform:translateY(0)}.journey-line{z-index:0}.journey-stage .journey-hover-info{z-index:30}@media(prefers-reduced-motion:reduce){.journey-stage{transition:none}.journey-stage:after{transition:none}}</style>
+<style id="journey-icon-hover">.journey-stage:hover .journey-icon,.journey-stage:focus .journey-icon,.journey-stage:focus-within .journey-icon{color:#2563eb}.journey-stage:hover .journey-icon svg,.journey-stage:focus .journey-icon svg,.journey-stage:focus-within .journey-icon svg{color:#2563eb;stroke:#2563eb;fill:none;transition:color .18s ease,stroke .18s ease}.journey-stage:hover strong,.journey-stage:focus strong,.journey-stage:focus-within strong{color:#2563eb;transition:color .18s ease}</style>
+<style id="journey-tooltip-list">.journey-hover-info ul{margin:0;padding-left:18px}.journey-hover-info li{margin:0 0 7px}.journey-hover-info li:last-child{margin-bottom:0}</style>
+<style id="services-section-v5">
+.services-intro-secondary{margin-top:8px!important}
+.services-challenges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;margin:48px 0 56px}
+.services-challenge{position:relative;padding:23px 24px 22px;border:1px solid var(--line);background:rgba(255,255,255,.42);min-height:126px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.services-challenge:hover{transform:translateY(-2px);border-color:#b9c4bd;box-shadow:0 10px 24px rgba(20,30,25,.07)}
+.services-challenge-number{display:block;font-family:"DM Mono",monospace;font-size:10px!important;letter-spacing:.12em;color:#2563eb;margin-bottom:12px}
+.services-challenge h3{margin:0 0 7px!important;font-size:1.08rem!important}
+.services-challenge p{margin:0;color:var(--muted);font-size:14px!important;line-height:1.55!important;max-width:580px}
+.services-offerings{margin-top:58px!important}
+.organization-evolution{grid-template-columns:1fr 1.2fr 1.35fr!important;margin:34px 0 34px!important;padding:26px 0!important}
+.organization-evolution-flow{font-size:13px!important}
+.organization-evolution-flow i{max-width:42px!important;min-width:16px!important;margin:0 7px!important}
+.service-engagement{margin-top:52px!important;padding-top:36px!important}
+.service-engagement-head{margin-bottom:24px!important}
+.service-formats{grid-template-columns:repeat(5,minmax(0,1fr));border:0!important;background:transparent!important;gap:12px!important}
+.service-format{padding:21px 19px 22px!important;border:1px solid var(--line)!important;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease!important}
+.service-format:hover{transform:translateY(-2px);border-color:#b9c4bd!important;box-shadow:0 10px 24px rgba(20,30,25,.07)}
+.service-format h4{font-size:1rem!important}
+.services-cta{margin-top:48px!important;padding:28px 0 8px!important}
+@media(max-width:1000px){.service-formats{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:800px){.services-challenges{grid-template-columns:1fr;margin-top:38px}.service-formats{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){.services-challenges{margin-bottom:44px}.service-formats{grid-template-columns:1fr!important}.organization-evolution{grid-template-columns:1fr!important}.organization-evolution-flow{font-size:14px!important}}
+</style>\n<style id="cv-button-metaphor">.hero-copy .cv-button{display:inline-flex!important;align-items:center!important;gap:8px!important}.hero-copy .cv-button-icon{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;flex:0 0 15px;color:currentColor}.hero-copy .cv-button-icon svg{display:block;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.hero-copy .cv-button:hover .cv-button-icon{transform:translateY(-1px)}\n</style>\n\n<style id="work-button-metaphor">.hero-copy .work-button{display:inline-flex!important;align-items:center!important;gap:8px!important}.hero-copy .work-button-icon{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;flex:0 0 15px;color:currentColor}.hero-copy .work-button-icon svg{display:block;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.hero-copy .work-button-arrow{margin-left:1px}.hero-copy .work-button:hover .work-button-icon{transform:translateY(-1px)}\n</style>\n<style id="engagement-journey-v2">
+.engagement-journey{margin:34px 0 8px}
+.engagement-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0 2px}
+.engagement-track:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:1px;background:var(--line);z-index:0}
+.engagement-spaceship{position:absolute;z-index:4;left:5%;top:0;width:110px;height:60px;transform:translate(-50%,-50%);pointer-events:none;color:#9aa3ad;filter:drop-shadow(0 7px 12px rgba(37,99,235,.10));animation:engagementSpaceshipRun 12s ease-in-out infinite;transition:color .25s ease}
+.engagement-spaceship svg{display:block;width:100%;height:100%;overflow:visible}.engagement-spaceship svg path{fill:currentColor!important}
+.engagement-spaceship:before{content:"";position:absolute;left:50%;top:50%;width:62px;height:34px;transform:translate(-50%,-50%);border-radius:50%;background:var(--paper,#fff);z-index:0;pointer-events:none}.engagement-spaceship img{display:block;width:100%;height:100%;object-fit:contain;filter:grayscale(1) brightness(.72)}.engagement-spaceship.is-stopped{color:#2563eb}.engagement-spaceship.is-stopped img{filter:brightness(0) saturate(100%) invert(36%) sepia(93%) saturate(1800%) hue-rotate(210deg) brightness(93%) contrast(96%)}
+.engagement-spaceship .spaceship-body{transform-origin:50% 50%;animation:spaceshipFloat 1.8s ease-in-out infinite}
+.engagement-spaceship .spaceship-flame{animation:spaceshipFlame .35s ease-in-out infinite alternate}
+.engagement-journey.is-paused .engagement-spaceship{animation-play-state:paused}
+@keyframes engagementSpaceshipRun{0%{left:-8%;opacity:0}6%{left:10%;opacity:1}18%{left:10%;opacity:1}30%{left:30%;opacity:1}42%{left:30%;opacity:1}54%{left:50%;opacity:1}66%{left:50%;opacity:1}78%{left:70%;opacity:1}90%{left:70%;opacity:1}97%{left:90%;opacity:1}99%{left:112%;opacity:0}100%{left:-8%;opacity:0}}
+@keyframes spaceshipFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-3px) rotate(1deg)}}
+@keyframes spaceshipFlame{from{opacity:.45;transform:scaleX(.8)}to{opacity:1;transform:scaleX(1.15)}}
+.engagement-node{position:relative;z-index:2;border:0;background:transparent;padding:0 8px;min-width:0;color:var(--muted);cursor:pointer;text-align:center;font:inherit}
+.engagement-node-dot{display:block;width:11px;height:11px;margin:13px auto 15px;border:2px solid var(--line);border-radius:50%;background:var(--paper);transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.engagement-node-duration{display:block;font-family:"DM Mono",monospace;font-size:10px;line-height:1.35;letter-spacing:.1em;font-weight:600}
+.engagement-node:hover .engagement-node-dot,.engagement-node:focus-visible .engagement-node-dot{border-color:#2563eb;transform:scale(1.18)}
+.engagement-node.is-active{color:var(--ink)}
+.engagement-details{margin-top:28px}
+.engagement-detail[hidden]{display:none!important}
+.engagement-detail{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;border-top:1px solid var(--line);padding:25px 0 6px}
+.engagement-detail-index{font-family:"DM Mono",monospace;font-size:11px;color:var(--muted);padding-top:5px}
+.engagement-detail h4{margin:0 0 8px;font-size:20px;line-height:1.25}
+.engagement-detail p{margin:0;max-width:760px;color:var(--muted);font-size:14px;line-height:1.65}
+.engagement-detail .engagement-example{margin-top:10px;font-size:13px}
+.engagement-detail .engagement-example strong{color:var(--ink);font-weight:600}
+@media(max-width:700px){
+  .engagement-track{grid-template-columns:1fr;gap:0;padding:0}
+  .engagement-track:before{left:6px;right:auto;top:8px;bottom:8px;width:1px;height:auto}
+  .engagement-spaceship{left:6px;top:-29.5px;width:88px;height:48px;animation:engagementSpaceshipRunMobile 12s ease-in-out infinite}
+  @keyframes engagementSpaceshipRunMobile{0%{top:-8%;opacity:0}6%{top:0;opacity:1}18%{top:0;opacity:1}30%{top:25%;opacity:1}42%{top:25%;opacity:1}54%{top:50%;opacity:1}66%{top:50%;opacity:1}78%{top:75%;opacity:1}90%{top:75%;opacity:1}97%{top:100%;opacity:1}99%{top:112%;opacity:0}100%{top:-8%;opacity:0}}
+  .engagement-node{display:grid;grid-template-columns:26px 1fr;align-items:center;text-align:left;padding:7px 0;gap:10px}
+  .engagement-node-dot{margin:0;width:10px;height:10px}
+  .engagement-node-duration{font-size:10px}
+  .engagement-details{margin-top:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .engagement-node-dot{transition:none}
+}
+</style>\n<style id="engagement-example-visual">
+.engagement-example{display:flex;align-items:stretch;gap:0;margin-top:18px!important;max-width:760px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--paper)}
+.engagement-example-icon{width:15px;height:15px;flex:0 0 15px}.engagement-example-label{display:flex;align-items:center;justify-content:center;padding:11px 14px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.12em;font-weight:700;color:var(--ink);background:var(--soft);white-space:nowrap;border-right:1px solid var(--line)} .engagement-example-label .engagement-example-icon{display:block;margin-top:0;vertical-align:middle}
+.engagement-example-text{display:flex;align-items:center;padding:11px 15px;font-size:13px;line-height:1.5;color:var(--ink)}
+@media(max-width:700px){
+  .engagement-example{display:block}
+  .engagement-example-label{padding:9px 12px;border-right:0;border-bottom:1px solid var(--line)}
+  .engagement-example-text{padding:11px 12px}
+}
+</style>
+<style id="all-article-card-view-count-alignment">
+/* All article cards: align view counter with the left source/selection icon and remove bottom slack */
+.article-card{
+  position:relative!important;
+  min-height:0!important;
+  height:auto!important;
+  padding-bottom:0!important;
+}
+.article-card .article-view-count{
+  position:absolute!important;
+  left:22px!important;
+  right:auto!important;
+  bottom:0!important;
+  color:var(--muted,#667085)!important;
+  margin:0!important;
+  padding:0!important;
+}
+.article-card .article-view-count .article-view-icon,
+.article-card .article-view-count .article-view-number{
+  color:var(--muted,#667085)!important;
+}
+.article-card .article-view-count svg{
+  color:var(--muted,#667085)!important;
+  stroke:currentColor!important;
+}
+.article-card.linkedin-card,
+.article-card.academic-card{
+  min-height:0!important;
+  height:auto!important;
+}
+@media(max-width:560px){
+  .article-card{
+    min-height:0!important;
+    height:auto!important;
+    padding-bottom:0!important;
+  }
+  .article-card .article-view-count{
+    left:19px!important;
+    bottom:0!important;
+  }
+}
+@media(max-width:420px){
+  .article-card .article-view-count{left:19px!important}
+}
+</style>
+<style id="article-view-count-exact-source-alignment">
+/* Eye/count: same left edge as the existing source/selection icon. Source icon itself is untouched. */
+.article-card{
+  min-height:0!important;
+  padding-bottom:8px!important;
+}
+.article-card .article-view-count{
+  position:static!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  align-self:flex-start!important;
+  width:max-content!important;
+  margin:10px 0 0!important;
+  padding:0!important;
+  transform:none!important;
+  color:var(--muted,#667085)!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:10px!important;
+  line-height:16px!important;
+  white-space:nowrap!important;
+  margin-left:0!important;
+}
+.article-card .article-view-count .article-view-icon{
+  width:18px!important;
+  height:18px!important;
+}
+.article-card .article-view-count svg{
+  width:15px!important;
+  height:15px!important;
+  color:var(--muted,#667085)!important;
+}
+.article-card .article-view-count .article-view-number{
+  color:var(--muted,#667085)!important;
+}
+@media(max-width:560px){
+  .article-card{padding-bottom:8px!important}
+  .article-card .article-view-count{margin-top:8px!important;margin-left:0!important}
+}
+@media(max-width:420px){
+  .article-card{padding-bottom:7px!important}
+  .article-card .article-view-count{margin-left:0!important}
+}
+</style>
+
+<style id="article-view-row-spacing-v4">
+/* LinkedIn + Scholar: exactly 3 summary-text lines before the eye/count row, then exactly 1 summary-text line before the card edge. */
+.article-card.linkedin-card .article-view-count,
+.article-card.academic-card .article-view-count{
+  position:static!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  align-self:flex-start!important;
+  width:max-content!important;
+  margin-top:39px!important;   /* 3 x (13px text x 1.0 line unit) */
+  margin-left:0!important;
+  margin-bottom:20px!important; /* 1 text line */
+  padding:0!important;
+  color:var(--muted,#667085)!important;
+  line-height:1!important;
+}
+.article-card.linkedin-card,
+.article-card.academic-card{
+  padding-bottom:0!important;
+}
+.article-card.linkedin-card .article-view-count svg,
+.article-card.linkedin-card .article-view-count .article-view-number,
+.article-card.academic-card .article-view-count svg,
+.article-card.academic-card .article-view-count .article-view-number{
+  color:var(--muted,#667085)!important;
+}
+</style>
+<style id="shared-external-card-layout-v8">
+/* Shared layout: .external-article-card. Identity: .linkedin-card or .scholar-card. */
+.article-card.external-article-card{position:relative!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto auto auto!important;align-items:start!important;box-sizing:border-box!important;width:100%!important;height:auto!important;min-height:0!important;padding:28px 28px 0!important;overflow:visible!important}
+.article-card.external-article-card .topic-metaphor{grid-column:1 / -1!important;grid-row:1!important}
+.article-card.external-article-card h3{grid-column:1 / -1!important;grid-row:2!important;display:flex!important;align-items:flex-start!important;gap:9px!important;width:100%!important;margin:0 0 14px!important;padding:0!important}
+.article-card.external-article-card h3 .article-source-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 18px!important;width:18px!important;height:18px!important;margin-top:3px!important}
+.article-card.external-article-card h3>a{display:block!important;flex:1 1 auto!important;min-width:0!important;width:auto!important;overflow-wrap:anywhere!important;word-break:normal!important;white-space:normal!important}
+.article-card.external-article-card .article-summary{grid-column:1 / -1!important;grid-row:3!important;display:block!important;width:100%!important;margin:0!important;padding:0!important;font-size:13px!important;line-height:1.55!important;color:var(--muted)!important}
+.article-card.external-article-card .article-view-count{grid-column:1!important;grid-row:4!important;position:static!important;align-self:center!important;justify-self:start!important;display:inline-flex!important;align-items:center!important;gap:5px!important;width:max-content!important;height:16px!important;margin:60.45px 0 20.15px!important;padding:0!important;color:var(--muted,#667085)!important;font-family:"DM Mono",monospace!important;font-size:10px!important;line-height:1!important;letter-spacing:.02em!important;white-space:nowrap!important}
+.article-card.external-article-card .article-read-more{grid-column:2!important;grid-row:4!important;align-self:center!important;justify-self:end!important;display:flex!important;align-items:center!important;justify-content:center!important;width:30px!important;height:30px!important;margin:53.5px 0 20.15px!important;padding:0!important}
+.article-card.external-article-card .article-view-count svg,.article-card.external-article-card .article-view-count .article-view-number{color:var(--muted,#667085)!important}
+@media(max-width:560px){.article-card.external-article-card{grid-template-columns:minmax(0,1fr) auto!important;padding:22px 22px 0!important}.article-card.external-article-card h3{gap:8px!important}.article-card.external-article-card h3 .article-source-icon{flex-basis:17px!important;width:17px!important;height:17px!important;margin-top:2px!important}.article-card.external-article-card .article-summary{font-size:13px!important;line-height:1.5!important}.article-card.external-article-card .article-view-count{margin-top:58.5px!important;margin-bottom:19.5px!important}.article-card.external-article-card .article-read-more{margin-top:51px!important;margin-bottom:19.5px!important}}
+@media(max-width:420px){.article-card.external-article-card{padding:19px 19px 0!important}}
+</style></head>
+<body>
+  <header id="home" class="hero">
+    <nav class="nav">
+      <a class="brand" href="#">BN</a>
+      <div class="nav-links">
+        <a class="nav-metaphor nav-home" href="#home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 10 8-6 8 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Home</span></a><a class="nav-metaphor nav-services" href="#services"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.2 4.5h5.6l1 2.1 2.2.8.2 2.3 1.7 1.5-1.1 2 1.1 2-1.7 1.5-.2 2.3-2.2.8-1 2.1H9.2l-1-2.1-2.2-.8-.2-2.3-1.7-1.5 1.1-2-1.1-2 1.7-1.5.2-2.3 2.2-.8 1-2.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Services</span></a><a class="nav-metaphor nav-contribution" href="#work"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="7" width="16" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M4 12h16M10 12v2h4v-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Contribution</span></a><a class="nav-metaphor nav-knowledge-base" href="#articles"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20M8 7h8M8 10h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Knowledge Base</span></a><a class="nav-metaphor nav-about" href="#about-contact"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c.7-3.4 3.1-5.2 7-5.2s6.3 1.8 7 5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>About</span></a>
+      </div>
+    </nav>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-identity">BEHZAD NAZARBAKHSH <span>Software Craftsmanship · Product · Agile · IT Management</span></p>
+        <h1>Connecting<br><em>Strategy, Product &amp; Engineering.</em></h1>
+        <p class="intro">I help software organizations turn strategy into coordinated product, engineering, portfolio, and organizational change — with a focus on sustainable business value.</p>
+        <div class="actions">
+          <a class="button primary work-button" href="#work"><span class="work-button-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7.5h6l2 2h8v9H4z"/><path d="M4 7.5V5h6l2 2.5"/></svg></span><span>Explore My Work</span><span class="work-button-arrow">↗</span></a>
+          <a class="button cv-button" href="CV-2025.pdf" target="_blank" rel="noopener"><span class="cv-button-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4"/><path d="M9 12h6M9 15.5h5"/></svg></span><span>View My CV</span></a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <div class="hero-thinking-map" aria-label="Professional ecosystem map">
+  <div class="thinking-ring">
+    <div class="orbit orbit-outer" aria-hidden="true"></div>
+    <div class="orbit orbit-middle" aria-hidden="true"></div>
+    <div class="orbit orbit-inner" aria-hidden="true"></div>
+    <!-- Business direction: satellites -->
+    <div class="thinking-satellite satellite-product">
+      <span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 32 20"><path d="M3 6h10v8H3zM19 6h10v8H19z" fill="currentColor" opacity=".22"/><path d="M13 10h6M16 3v14M5 4v12M27 4v12"/></svg></span><span>Product</span>
+    </div>
+    <div class="thinking-satellite satellite-business">
+      <span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 32 20"><path d="M3 6h10v8H3zM19 6h10v8H19z" fill="currentColor" opacity=".22"/><path d="M13 10h6M16 3v14M5 4v12M27 4v12"/></svg></span><span>Business Value</span>
+    </div>
+    <!-- Professional capabilities: planets -->
+    <div class="thinking-node thinking-ai">
+      <span class="thinking-icon"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4M10 10h4v4h-4z"/></svg></span><span>AI Engineering</span>
+    </div>
+    <div class="thinking-node thinking-organization">
+      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="M5 18V8m0 0 4 4m-4-4 4-4M19 6v10m0 0-4-4m4 4-4 4M8 18h8M8 6h8"/></svg></span><span>Organizational Change</span>
+    </div>
+    <div class="thinking-node thinking-software">
+      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span><span>Software Engineering</span>
+    </div>
+    <div class="thinking-node thinking-agile">
+      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="M6 7h8a4 4 0 1 1-4 4H6M18 17h-8a4 4 0 1 1 4-4h4"/></svg></span><span>Agile</span>
+    </div>
+    <div class="thinking-node thinking-lean">
+      <span class="thinking-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16M7 10h10M10 15h4M12 15v5"/></svg></span><span>Lean</span>
+    </div>
+    <div class="thinking-node thinking-stakeholder">
+      <span class="thinking-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/><path d="M12 7v5M12 12 6 15M12 12l6 3"/></svg></span><span>Stakeholders</span>
+    </div>
+    <div class="thinking-core thinking-photo"><img src="https://github.com/user-attachments/assets/7e5f0cd4-5647-442e-8af4-11ac255010eb" alt="Behzad Nazarbakhsh"></div>
+  </div>
+</div>
+  </header>
+  <main>
+    <section id="services" class="section">
+      <div class="section-head">
+        <p class="section-label section-label-icon services-label">
+          <span class="section-label-icon-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 4.5h5.6l1 2.1 2.2.8.2 2.3-1.1 2 1.1 2-1.7 1.5-.2 2.3-2.2.8-1 2.1H9.2l-1-2.1-2.2-.8-.2-2.3-1.7-1.5 1.1-2-1.1-2 1.7-1.5.2-2.3 2.2-.8 1-2.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          SERVICES
+        </p>
+        <h2>How I help organizations</h2>
+        <p class="services-intro">I help software organizations apply Agile, Lean, and engineering practices to build software iteratively and incrementally, make better product and technology decisions, manage delivery across products, projects, portfolios, and services, and evolve their organizations for stronger collaboration and business value.</p>
+      </div>
+      <div class="career-story services-career-story">
+        <div class="career-journey" aria-label="Career journey from software engineering to organizational change">
+          <div class="journey-line" aria-hidden="true"></div>
+          <div class="journey-stage" tabindex="0">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M38 10l16 16-8 8-16-16z"/><path d="M31 17L12 36l-3 14 14-3 19-19"/><path d="M19 45l-8 8"/></svg></span>
+            <strong>Build</strong>
+          <div class="journey-hover-info" role="tooltip"><ul><li>Agile Practices</li><li>Software Craftsmanship</li><li>Product Management</li></ul></div></div>
+          <div class="journey-stage" tabindex="0">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"/><path d="M42 22L35 37l-15 7 7-15z"/><circle cx="32" cy="32" r="3"/></svg></span>
+            <strong>Enable</strong>
+          <div class="journey-hover-info" role="tooltip"><ul><li>Lean Thinking &amp; Flow</li><li>Team Collaboration</li><li>Stakeholder Engagement</li></ul></div></div>
+          <div class="journey-stage" tabindex="0">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M25 54V22h14v32"/><path d="M20 22h24l-4-8H24z"/><path d="M18 54h28"/><path d="M29 29h6M29 37h6M29 45h6"/><path d="M32 14V7M45 16l7-7M19 16l-7-7"/></svg></span>
+            <strong>Manage</strong>
+          <div class="journey-hover-info" role="tooltip"><ul><li>IT Management</li><li>IT Portfolio Management</li><li>Project &amp; Program Management</li><li>Service Management</li><li>Governance &amp; Business Value</li></ul></div></div>
+          <div class="journey-stage" tabindex="0">
+            <span class="journey-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 46h46"/><path d="M14 46V31c0-13 8-20 18-20s18 7 18 20v15"/><path d="M23 46V32c0-7 4-11 9-11s9 4 9 11v14"/><path d="M9 54h46"/></svg></span>
+            <strong>Transform</strong>
+          <div class="journey-hover-info" role="tooltip"><ul><li>Organizational Change Management</li><li>Leadership</li><li>Team Topology</li><li>Sustainable Transformation</li></ul></div></div>
+        </div>
+    </div>
+      <div class="services-challenges">
+        <div class="services-challenge">
+          <span class="services-challenge-number">01</span>
+          <h3>Improve Delivery Effectiveness</h3>
+          <p>Help teams reduce friction, improve flow, strengthen engineering practices, and deliver software more reliably.</p>
+        </div>
+        <div class="services-challenge">
+          <span class="services-challenge-number">02</span>
+          <h3>Connect Technology With Product Value</h3>
+          <p>Bring product thinking, customer needs, technical decisions, and business objectives together so teams build the right things.</p>
+        </div>
+        <div class="services-challenge">
+          <span class="services-challenge-number">03</span>
+          <h3>Make Better IT Decisions</h3>
+          <p>Create clearer portfolio, project, and service decisions through governance, prioritization, planning, and transparent business-value alignment.</p>
+        </div>
+        <div class="services-challenge">
+          <span class="services-challenge-number">04</span>
+          <h3>Transform Organizations Sustainably</h3>
+          <p>Help leaders and teams navigate change through organizational alignment, communication, new ways of working, and sustained adoption.</p>
+        </div>
+      </div>
+    <div class="service-engagement">
+        <p class="section-label">HOW ORGANIZATIONS CAN ENGAGE ME</p>
+      <p class="engagement-journey-intro">I can engage at different levels depending on the challenge — from a focused workshop or training session to ongoing coaching, organizational partnership, or a full-time embedded role. The journey below shows how that engagement can evolve over time.</p><div class="engagement-journey" aria-label="How organizations can engage me over time">
+        <div class="engagement-track" role="tablist" aria-label="Engagement duration">
+<div class="engagement-spaceship" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><path d="M17 10.54C16.78 7.44 14.63 5 12 5S7.22 7.44 7 10.54C4 11.23 2 12.5 2 14C2 16.21 6.5 18 12 18S22 16.21 22 14C22 12.5 20.77 11.23 17 10.54M14.93 11.84C13.03 12.05 10.97 12.05 9.07 11.84C9.03 11.56 9 11.28 9 11C9 8.8 10.35 7 12 7S15 8.8 15 11C15 11.28 14.97 11.56 14.93 11.84Z" fill="currentColor"/></svg></div>
+          <button class="engagement-node is-active" type="button" role="tab" aria-selected="true" aria-controls="engagement-detail-1" data-engagement="1">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">A FEW HOURS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-2" data-engagement="2">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">SEVERAL SESSIONS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-3" data-engagement="3">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">~3 MONTHS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-4" data-engagement="4">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">6–12 MONTHS</span>
+          </button>
+          <button class="engagement-node" type="button" role="tab" aria-selected="false" aria-controls="engagement-detail-5" data-engagement="5">
+            <span class="engagement-node-dot" aria-hidden="true"></span>
+            <span class="engagement-node-duration">FULL-TIME</span>
+          </button>
+        </div>
+        <div class="engagement-details">
+          <article class="engagement-detail is-active" id="engagement-detail-1" role="tabpanel">
+            <span class="engagement-detail-index">01</span>
+            <div>
+              <h4>Workshop / Facilitation</h4>
+              <p>Focused, collaborative work to address a specific challenge, create alignment, or make an important decision.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">OKR workshop or team retrospective.</span></div>
+            </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-2" role="tabpanel" hidden>
+            <span class="engagement-detail-index">02</span>
+            <div>
+              <h4>Teaching</h4>
+              <p>Practical learning and capability development tailored to the needs of a team or organization.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Agile, Scrum, Product Management, or IT management training.</span></div>
+            </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-3" role="tabpanel" hidden>
+            <span class="engagement-detail-index">03</span>
+            <div>
+              <h4>Coaching / Advisory</h4>
+              <p>Ongoing guidance for individuals, teams, managers, or leaders, combined with practical advice on a specific challenge.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Coach a Scrum Master, Product Manager, or team.</span></div>
+            </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-4" role="tabpanel" hidden>
+            <span class="engagement-detail-index">04</span>
+            <div>
+              <h4>Part-time Partnership</h4>
+              <p>Work alongside an organization over an extended period to address a significant challenge or build a capability.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Support an organizational change or improvement initiative.</span></div>
+            </div>
+          </article>
+          <article class="engagement-detail" id="engagement-detail-5" role="tabpanel" hidden>
+            <span class="engagement-detail-index">05</span>
+            <div>
+              <h4>Embedded Engagement</h4>
+              <p>Become part of the organization to lead or support a significant product, engineering, technology, portfolio, or organizational challenge.</p>
+              <div class="engagement-example"><span class="engagement-example-label"><svg class="engagement-example-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.2 14.8A6 6 0 1 1 15.8 14.8c-.9.8-1.5 1.6-1.7 3.2H9.9c-.2-1.6-.8-2.4-1.7-3.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IN PRACTICE</span></span><span class="engagement-example-text">Work with leadership and teams across technology, product, people, and business value.</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="services-cta">
+        <span class="services-cta-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10.5h22a5 5 0 0 1 5 5v11a5 5 0 0 1-5 5H18l-8 6v-6H8a5 5 0 0 1-5-5v-11a5 5 0 0 1 5-5Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M26 20h14a5 5 0 0 1 5 5v7a5 5 0 0 1-5 5h-2v4l-6-4H26a5 5 0 0 1-5-5v-2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></span><h3>Have a specific challenge?</h3>
+        <p>Whether you need a focused workshop, coaching or teaching, advisory support, or a partner for a broader transformation, let&#39;s talk about what you&#39;re trying to achieve and how I can help.</p>
+        <a class="button primary" href="#contact">Let's talk <span>↗</span></a>
+      </div>
+    </section>
+<section id="work" class="section work">
+      <div class="section-head"><p class="section-label section-label-icon contribution-label"><span class="section-label-icon-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M4 12h16M10 12v2h4v-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>CONTRIBUTION</p><h2>Contributions Across Organizations</h2></div>
+      <div class="work-list">
+        <a class="work-item" href="IT-Portfolio-Management.html"><span>01</span><strong>IT Portfolio Management</strong><small>Portfolio governance, prioritization, value and stakeholder visibility</small><b>↗</b></a>
+        <a class="work-item" href="Organization-Change-Management.html"><span>02</span><strong>Organizational Change Management</strong><small>Adoption, stakeholder engagement and measurable business value</small><b>↗</b></a>
+      </div>
+    </section>
+    <section id="articles" class="section articles">
+      <div class="section-head"><p class="section-label knowledge-base-label section-label-icon"><span class="section-label-icon-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20M8 7h8M8 10h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>KNOWLEDGE BASE</p><h2>Writing and perspectives</h2></div>
+      <p class="articles-intro">Explore ideas and insights by professional domain. Choose a topic to focus on the thinking most relevant to your work.</p>
+      <div class="article-filter-wrap">
+        <button class="article-filter-nav article-filter-prev" type="button" aria-label="Scroll article categories left">←</button>
+        <div class="article-filters" role="tablist" aria-label="Filter writing by professional domain">
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="ai">
+            <span class="article-filter-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M18 9h4M2 15h4M18 15h4"/></svg></span>
+            <span class="article-filter-title">AI Software Engineering</span><span class="article-count"><b>0</b></span>
+          </button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="change">
+            <span class="article-filter-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M12 7v5M10.5 13.5 7.5 16M13.5 13.5 16.5 16"/></svg></span>
+            <span class="article-filter-title">Organizational Change</span><span class="article-count"><b>0</b></span>
+          </button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="product">
+            <span class="article-filter-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m17.5 6.5-3 3"/></svg></span>
+            <span class="article-filter-title">Product Management</span><span class="article-count"><b>0</b></span>
+          </button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="engineering">
+            <span class="article-filter-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span>
+            <span class="article-filter-title">Software Engineering</span><span class="article-count"><b>0</b></span>
+          </button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="agile-teams">
+            <span class="article-filter-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2.2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span>
+            <span class="article-filter-title">Agile Teams</span><span class="article-count"><b>0</b></span>
+          </button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="stakeholder">
+            <span class="article-filter-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20c.7-4 2.9-6 7-6s6.3 2 7 6M4 7h3M17 7h3"/></svg></span>
+            <span class="article-filter-title">Stakeholder Management</span><span class="article-count"><b>0</b></span>
+          </button>
+          <button class="article-filter" type="button" role="tab" aria-selected="false" data-filter="lean">
+            <span class="article-filter-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h10M5 12h14M5 17h10"/><path d="m15 4 3 3-3 3M9 14l-3 3 3 3"/></svg></span>
+            <span class="article-filter-title">Lean</span><span class="article-count"><b>0</b></span>
+          </button>
+        </div>
+        <button class="article-filter-nav article-filter-next" type="button" aria-label="Scroll article categories right">→</button>
+      </div>
+      <div class="article-selected-domain" aria-live="polite"></div>
+      <div class="article-grid article-all-grid">
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="product">
+          <div class="topic-metaphor"><span class="topic-icon strategy-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18 18 5"/><path d="m12 5 6 0v6"/><circle cx="5" cy="18" r="2"/></svg></span><span>Product Strategy</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/visualizing-path-smarter-product-development-strategy-nazarbakhsh-sellf/" target="_blank" rel="noopener">Visualizing the Path to Smarter Product Development Strategy</a></h3>
+          <p class="article-summary">How Wardley Mapping helps product managers see the landscape, understand evolution, and make better build, buy, and investment decisions.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/visualizing-path-smarter-product-development-strategy-nazarbakhsh-sellf/" target="_blank" rel="noopener" aria-label="Read Visualizing the Path to Smarter Product Development Strategy on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="change">
+          <div class="topic-metaphor"><span class="topic-icon governance-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M12 7.2v4M12 11.2 6 15.8M12 11.2l6 4.6"/></svg></span><span>Organizational Change</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/how-make-change-matters-behzad-nazarbakhsh-fa9mf/" target="_blank" rel="noopener">How to Make Change That Matters</a></h3>
+          <p class="article-summary">Meaningful change starts by understanding the real problem, listening to people, and improving the organization through small, evidence-based steps.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/how-make-change-matters-behzad-nazarbakhsh-fa9mf/" target="_blank" rel="noopener" aria-label="Read How to Make Change That Matters on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="change">
+          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>People & Cognition</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/overcoming-cognitive-limitations-software-development-nazarbakhsh-cfgof/" target="_blank" rel="noopener">Overcoming Cognitive Limitations</a></h3>
+          <p class="article-summary">Explores how human cognitive limits affect software development and how better practices can reduce overload and improve decision-making.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/overcoming-cognitive-limitations-software-development-nazarbakhsh-cfgof/" target="_blank" rel="noopener" aria-label="Read Overcoming Cognitive Limitations on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
+          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>Psychological Safety</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/why-ignoring-psychological-safety-sabotages-team-behzad-nazarbakhsh-inxse/" target="_blank" rel="noopener">Why Ignoring Psychological Safety Sabotages Team Productivity</a></h3>
+          <p class="article-summary">Shows how individual needs, psychological safety, and the SCARF model shape collaboration, learning, and sustainable team performance.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/why-ignoring-psychological-safety-sabotages-team-behzad-nazarbakhsh-inxse/" target="_blank" rel="noopener" aria-label="Read Why Ignoring Psychological Safety Sabotages Team Productivity on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="change">
+          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>People & Organization</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/people-first-dimension-organizational-health-behzad-nazarbakhsh-75vzf/" target="_blank" rel="noopener">Putting People First to Build a Healthy Software Organization</a></h3>
+          <p class="article-summary">Examines people as a foundation of organizational health and connects healthy teams, culture, and engineering practices to sustainable performance.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/people-first-dimension-organizational-health-behzad-nazarbakhsh-75vzf/" target="_blank" rel="noopener" aria-label="Read Putting People First to Build a Healthy Software Organization on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Agile Testing</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/building-software-gets-better-over-time-behzad-nazarbakhsh-md29f/" target="_blank" rel="noopener">Building Software That Gets Better Over Time</a></h3>
+          <p class="article-summary">Explores internal quality, hidden waste, and the cycle of software decay that gradually reduces a team's capacity to deliver value.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/building-software-gets-better-over-time-behzad-nazarbakhsh-md29f/" target="_blank" rel="noopener" aria-label="Read Building Software That Gets Better Over Time on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="product">
+          <div class="topic-metaphor"><span class="topic-icon governance-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M12 7.2v4M12 11.2 6 15.8M12 11.2l6 4.6"/></svg></span><span>Software Governance</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/embedding-lovability-software-governance-behzad-nazarbakhsh-xxcyf/" target="_blank" rel="noopener">Embedding Lovability in Software Governance</a></h3>
+          <p class="article-summary">Explores why meeting scope, schedule, and budget is not enough, and how governance can keep customer value and software lovability in view.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/embedding-lovability-software-governance-behzad-nazarbakhsh-xxcyf/" target="_blank" rel="noopener" aria-label="Read Embedding Lovability in Software Governance on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="ai">
+          <div class="topic-metaphor"><span class="topic-icon ai-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M18 9h4M2 15h4M18 15h4"/></svg></span><span>AI Software Engineering</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/rethinking-software-engineering-age-ai-behzad-nazarbakhsh-bir0e/" target="_blank" rel="noopener">Rethinking Software Engineering in the Age of AI</a></h3>
+          <p class="article-summary">As AI coding agents become part of development, engineering must strengthen problem framing, guidelines, guardrails, and human judgment—not just coding speed.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/rethinking-software-engineering-age-ai-behzad-nazarbakhsh-bir0e/" target="_blank" rel="noopener" aria-label="Read Rethinking Software Engineering in the Age of AI on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
+          <div class="topic-metaphor"><span class="topic-icon stakeholder-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20c.7-4 2.9-6 7-6s6.3 2 7 6"/><path d="M4 7h3M17 7h3"/></svg></span><span>Stakeholder Engagement</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/how-plan-stakeholder-engamenet-behzad-nazarbakhsh--uylkf/" target="_blank" rel="noopener">How to Plan Stakeholder Engagement</a></h3>
+          <p class="article-summary">A practical approach to planning stakeholder engagement around product vision, objectives, stakeholder needs, suitable formats, and an adaptable implementation plan.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/how-plan-stakeholder-engamenet-behzad-nazarbakhsh--uylkf/" target="_blank" rel="noopener" aria-label="Read How to Plan Stakeholder Engagement on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
+          <div class="topic-metaphor"><span class="topic-icon stakeholder-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20c.7-4 2.9-6 7-6s6.3 2 7 6"/><path d="M4 7h3M17 7h3"/></svg></span><span>Stakeholder Communication</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/engaging-stakeholders-communication-collaboration-nazarbakhsh--yuzcf/" target="_blank" rel="noopener">Engaging Stakeholders: Communication and Collaboration Before, During, and After Engagement</a></h3>
+          <p class="article-summary">A step-by-step guide to preparing, communicating with, facilitating, and following up with stakeholders so engagement leads to clearer outcomes.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/engaging-stakeholders-communication-collaboration-nazarbakhsh--yuzcf/" target="_blank" rel="noopener" aria-label="Read Engaging Stakeholders: Communication and Collaboration Before, During, and After Engagement on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
+          <div class="topic-metaphor"><span class="topic-icon stakeholder-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20c.7-4 2.9-6 7-6s6.3 2 7 6"/><path d="M4 7h3M17 7h3"/></svg></span><span>Stakeholder Engagement</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/ineffective-stakeholder-engagement-serious-danger-nazarbakhsh--r6l7f/" target="_blank" rel="noopener">Ineffective Stakeholder Engagement: A Serious Danger for Agility</a></h3>
+          <p class="article-summary">Explains how weak stakeholder engagement can undermine trust, relevance, and product impact even when the development team delivers technically well.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/ineffective-stakeholder-engagement-serious-danger-nazarbakhsh--r6l7f/" target="_blank" rel="noopener" aria-label="Read Ineffective Stakeholder Engagement: A Serious Danger for Agility on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="product">
+          <div class="topic-metaphor"><span class="topic-icon strategy-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18 18 5"/><path d="m12 5 6 0v6"/><circle cx="5" cy="18" r="2"/></svg></span><span>Requirement Engineering</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/requirement-modeling-language-agile-development-nazarbakhsh--2d80f/" target="_blank" rel="noopener">Requirement Modeling Language in Agile Development</a></h3>
+          <p class="article-summary">Shows how requirement modeling can organize complex information, expose missing or conflicting requirements, and give Agile teams better context for delivery.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/requirement-modeling-language-agile-development-nazarbakhsh--2d80f/" target="_blank" rel="noopener" aria-label="Read Requirement Modeling Language in Agile Development on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
+          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>Team Design</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/agility-modern-software-organizations-behzad-nazarbakhsh-si3gf/" target="_blank" rel="noopener">How Team Design Drives Real Agility</a></h3>
+          <p class="article-summary">Explores how team structure and communication shape software architecture, and how value-oriented team design can reduce handoffs and scaling bottlenecks.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/agility-modern-software-organizations-behzad-nazarbakhsh-si3gf/" target="_blank" rel="noopener" aria-label="Read How Team Design Drives Real Agility on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="change">
+          <div class="topic-metaphor"><span class="topic-icon governance-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M12 7.2v4M12 11.2 6 15.8M12 11.2l6 4.6"/></svg></span><span>Governance & Visibility</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/visibility-behzad-nazarbakhsh-ytcof/" target="_blank" rel="noopener">Building True Visibility Through Governance</a></h3>
+          <p class="article-summary">Reframes visibility as a strategic capability: give each organizational layer the right signals, connect them to governance, and focus on outcomes rather than activity.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/visibility-behzad-nazarbakhsh-ytcof/" target="_blank" rel="noopener" aria-label="Read Building True Visibility Through Governance on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
+          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>Team Productivity</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/stop-measuring-software-development-team-productivity-nazarbakhsh-yx5of/" target="_blank" rel="noopener">Stop Measuring Software Development Team Productivity</a></h3>
+          <p class="article-summary">Challenges simplistic productivity metrics and shifts the conversation toward organizational health, outcomes, trust, quality, and sustainable business impact.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/stop-measuring-software-development-team-productivity-nazarbakhsh-yx5of/" target="_blank" rel="noopener" aria-label="Read Stop Measuring Software Development Team Productivity on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="ai">
+          <div class="topic-metaphor"><span class="topic-icon ai-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M18 9h4M2 15h4M18 15h4"/></svg></span><span>Human–AI Collaboration</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/human-collaboration-age-ai-driven-development-behzad-nazarbakhsh-k9xwf/" target="_blank" rel="noopener">Human Collaboration in the Age of AI-Driven Development</a></h3>
+          <p class="article-summary">Examines how AI can increase individual productivity while weakening collaboration, and why human teamwork remains essential for solving complex software problems.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/human-collaboration-age-ai-driven-development-behzad-nazarbakhsh-k9xwf/" target="_blank" rel="noopener" aria-label="Read Human Collaboration in the Age of AI-Driven Development on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Quality Assurance</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/streamlining-atdd-essential-practices-clearer-test-case-nazarbakhsh-9mzfe/" target="_blank" rel="noopener">Streamlining ATDD: Essential Practices for Clearer Test Case Structuring</a></h3>
+          <p class="article-summary">Explores practical ways to make ATDD scenarios clearer and easier to maintain by focusing on meaningful behavior instead of unnecessary test complexity.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/streamlining-atdd-essential-practices-clearer-test-case-nazarbakhsh-9mzfe/" target="_blank" rel="noopener" aria-label="Read Streamlining ATDD: Essential Practices for Clearer Test Case Structuring on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Quality Assurance</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/enhancing-software-testing-through-proactive-behzad-nazarbakhsh--qaggf/" target="_blank" rel="noopener">Enhancing Software Testing Through Proactive Practices</a></h3>
+          <p class="article-summary">Advocates a testing-first approach that brings collaboration, testability, risk thinking, and user-focused test ideas earlier into development.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/enhancing-software-testing-through-proactive-behzad-nazarbakhsh--qaggf/" target="_blank" rel="noopener" aria-label="Read Enhancing Software Testing Through Proactive Practices on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Quality Assurance</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/evolving-approach-software-quality-assurance-modern-behzad-oncbf/" target="_blank" rel="noopener">The Evolving Approach to Software Quality Assurance in Modern Development</a></h3>
+          <p class="article-summary">Shows how QA is moving from a final testing phase to a continuous practice embedded throughout development, with shared ownership of quality.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/evolving-approach-software-quality-assurance-modern-behzad-oncbf/" target="_blank" rel="noopener" aria-label="Read The Evolving Approach to Software Quality Assurance in Modern Development on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="product">
+          <div class="topic-metaphor"><span class="topic-icon strategy-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18 18 5"/><path d="m12 5 6 0v6"/><circle cx="5" cy="18" r="2"/></svg></span><span>Requirement Engineering</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/enhancing-user-stories-through-business-data-diagrams-behzad-i7qof/" target="_blank" rel="noopener">Enhancing User Stories Through Business Data Diagrams: A Guide for Bridging Business and Technical Needs</a></h3>
+          <p class="article-summary">Shows how business data diagrams can connect business rules and user stories, giving teams a clearer shared view of requirements and behavior.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/enhancing-user-stories-through-business-data-diagrams-behzad-i7qof/" target="_blank" rel="noopener" aria-label="Read Enhancing User Stories Through Business Data Diagrams: A Guide for Bridging Business and Technical Needs on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="lean">
+          <div class="topic-metaphor"><span class="topic-icon lean-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l4 4 6-8"/><path d="M16 8h4v4"/></svg></span><span>Lean Startup</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/usingcustomer-development-startups-behzad-nazarbakhsh/" target="_blank" rel="noopener">Using Customer Development Methodology for Startups</a></h3>
+          <p class="article-summary">Explores Customer Development as a way for startups to test assumptions, learn from customers, and validate a repeatable business model before scaling investment.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/usingcustomer-development-startups-behzad-nazarbakhsh/" target="_blank" rel="noopener" aria-label="Read Using Customer Development Methodology for Startups on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Agile Testing</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/spreading-work-evenly-across-scrumsprint-behzad-nazarbakhsh/" target="_blank" rel="noopener">How Early-Stage Scrum Teams Can Avoid Last-Minute Testing Bottlenecks</a></h3>
+          <p class="article-summary">Explores how early testing involvement and collaborative practices can prevent testing from becoming a late-stage bottleneck in Scrum delivery.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/spreading-work-evenly-across-scrumsprint-behzad-nazarbakhsh/" target="_blank" rel="noopener" aria-label="Read How Early-Stage Scrum Teams Can Avoid Last-Minute Testing Bottlenecks on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
+          <div class="topic-metaphor"><span class="topic-icon stakeholder-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20c.7-4 2.9-6 7-6s6.3 2 7 6"/><path d="M4 7h3M17 7h3"/></svg></span><span>Stakeholder Engagement</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/learn-scrum-from-subway-behzad-nazarbakhsh/" target="_blank" rel="noopener">How to Manage Stakeholder Expectations: Lesson from a Subway Sandwich</a></h3>
+          <p class="article-summary">Uses a simple Subway analogy to show how clarifying expectations, options, and constraints can improve stakeholder conversations and outcomes.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/learn-scrum-from-subway-behzad-nazarbakhsh/" target="_blank" rel="noopener" aria-label="Read How to Manage Stakeholder Expectations: Lesson from a Subway Sandwich on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="agile-teams">
+          <div class="topic-metaphor"><span class="topic-icon people-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.5-3.5 2.2-5.5 5.5-5.5s5 2 5.5 5.5M14 14c2.8-.2 5 1.4 5.5 5"/></svg></span><span>Agile Leadership</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/scrum-master-influence-without-authority-behzad-nazarbakhsh/" target="_blank" rel="noopener">The Role of the Scrum Master: A Guide to Effective Agile Leadership</a></h3>
+          <p class="article-summary">Explores the Scrum Master as an Agile leader who enables collaboration, removes impediments, and helps teams grow rather than simply managing Scrum events.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/scrum-master-influence-without-authority-behzad-nazarbakhsh/" target="_blank" rel="noopener" aria-label="Read The Role of the Scrum Master: A Guide to Effective Agile Leadership on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="product">
+          <div class="topic-metaphor"><span class="topic-icon strategy-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18 18 5"/><path d="m12 5 6 0v6"/><circle cx="5" cy="18" r="2"/></svg></span><span>Product Economics</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/how-map-your-software-domain-profit-behzad-nazarbakhsh-acije/" target="_blank" rel="noopener">Connecting Product Decisions to Profitability</a></h3>
+          <p class="article-summary">Connects product goals, domain decisions, capabilities, and investment choices to the financial outcomes that ultimately determine profitability.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/how-map-your-software-domain-profit-behzad-nazarbakhsh-acije/" target="_blank" rel="noopener" aria-label="Read Connecting Product Decisions to Profitability on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Quality Assurance</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/designing-effective-test-cases-five-key-methods-behzad-nazarbakhsh-euybf/" target="_blank" rel="noopener">Five Key Techniques for Designing Effective Test Cases in ATDD</a></h3>
+          <p class="article-summary">Five practical techniques make acceptance criteria clearer and more adaptable by simplifying examples, using counter-examples, and focusing on what—not how—to test.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/designing-effective-test-cases-five-key-methods-behzad-nazarbakhsh-euybf/" target="_blank" rel="noopener" aria-label="Read Five Key Techniques for Designing Effective Test Cases in ATDD on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card linkedin-card" data-source="linkedin" data-domain="stakeholder">
+          <div class="topic-metaphor"><span class="topic-icon stakeholder-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 20c.7-4 2.9-6 7-6s6.3 2 7 6"/><path d="M4 7h3M17 7h3"/></svg></span><span>Quality Assurance</span></div>
+          <h3><span class="article-source-icon article-source-linkedin" aria-hidden="true" title="LinkedIn"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><a href="https://www.linkedin.com/pulse/reviewing-stakeholder-engagement-behzad-nazarbakhsh--6rgmf/" target="_blank" rel="noopener">Reviewing Stakeholder Engagement</a></h3>
+          <p class="article-summary">Shows how feedback, engagement indicators, and reflection can reveal what is working, where relationships need adjustment, and how to improve the next engagement.</p><a class="article-read-more" href="https://www.linkedin.com/pulse/reviewing-stakeholder-engagement-behzad-nazarbakhsh--6rgmf/" target="_blank" rel="noopener" aria-label="Read Reviewing Stakeholder Engagement on LinkedIn" title="Open article on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card scholar-card academic-card" data-source="academic" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon ai-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4M10 10h4v4h-4z"/></svg></span><span>Computer Vision</span></div>
+          <h3><span class="article-source-icon article-source-scholar" aria-hidden="true" title="Google Scholar"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 9.2 12 4l9 5.2-9 5.2L3 9.2Z"/><path d="M7 11.5v4.2c2.8 2 7.2 2 10 0v-4.2"/><path d="M21 9.2v6"/></svg></span><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener">Image Pre-processing Techniques for Enhancing the Performance of Real-Time Face Recognition System Using PCA</a></h3>
+          <p class="article-summary">Research on image preprocessing techniques for improving the performance of real-time face recognition systems using Principal Component Analysis (PCA).</p>
+          <a class="article-read-more" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener" aria-label="Open Image Pre-processing Techniques for Enhancing the Performance of Real-Time Face Recognition System Using PCA on Google Scholar" title="Open article on Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card scholar-card academic-card" data-source="academic" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Ubiquitous Computing</span></div>
+          <h3><span class="article-source-icon article-source-scholar" aria-hidden="true" title="Google Scholar"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 9.2 12 4l9 5.2-9 5.2L3 9.2Z"/><path d="M7 11.5v4.2c2.8 2 7.2 2 10 0v-4.2"/><path d="M21 9.2v6"/></svg></span><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">Ubiquitous Computing for Security Enhancement of Vehicles</a></h3>
+          <p class="article-summary">Explores how ubiquitous computing can be applied to enhance vehicle security through connected and context-aware technologies.</p>
+          <a class="article-read-more" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener" aria-label="Open Ubiquitous Computing for Security Enhancement of Vehicles on Google Scholar" title="Open article on Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        <article class="article-card external-article-card scholar-card academic-card" data-source="academic" data-domain="engineering">
+          <div class="topic-metaphor"><span class="topic-icon qa-metaphor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.1 7 10 4.1-1.9 7-5.6 7-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><span>Risk-Based Testing</span></div>
+          <h3><span class="article-source-icon article-source-scholar" aria-hidden="true" title="Google Scholar"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 9.2 12 4l9 5.2-9 5.2L3 9.2Z"/><path d="M7 11.5v4.2c2.8 2 7.2 2 10 0v-4.2"/><path d="M21 9.2v6"/></svg></span><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:9yKSN-GCB0IC" target="_blank" rel="noopener">What Techniques Can Be Used for GUI Risk-based Testing?</a></h3>
+          <p class="article-summary">Examines techniques for identifying and addressing risks in graphical user interface testing, with a focus on risk-based testing approaches.</p>
+          <a class="article-read-more" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PfzbthcAAAAJ&citation_for_view=PfzbthcAAAAJ:9yKSN-GCB0IC" target="_blank" rel="noopener" aria-label="Open What Techniques Can Be Used for GUI Risk-based Testing? on Google Scholar" title="Open article on Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 5h5v5"/><path d="M19 5 11 13"/><path d="M19 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></svg></a>
+        <span class="article-view-count" aria-label="Article clicks" title="Article clicks"><span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span></span></article>
+        
+      </div>
+      <div class="article-more" hidden><a href="#">See more in Knowledge Base →</a></div>
+    </section>
+    <section id="about-contact" class="section about">
+      <div class="section-head">
+        <p class="section-label section-label-icon about-label"><span class="section-label-icon-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c.7-3.4 3.1-5.2 7-5.2s6.3 1.8 7 5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>ABOUT</p>
+        <h2>How I work across people, work, and value.</h2>
+      </div>
+      <div class="section-body">
+        <p>My work focuses on helping software organizations grow their ability to create value — connecting <strong>People, Work, and Value</strong> from the individual and team level to the wider organization.</p>
+      </div>
+      <div class="organization-evolution" aria-label="How organizational work can expand from individuals and projects toward organizational outcomes">
+        <div class="organization-evolution-item">
+          <span class="organization-evolution-label">PEOPLE</span>
+          <span class="organization-evolution-flow"><span>Individual</span><i><b></b></i><span>Team</span><i><b></b></i><span>Organization</span></span>
+        </div>
+        <div class="organization-evolution-item">
+          <span class="organization-evolution-label">WORK</span>
+          <span class="organization-evolution-flow"><span>Project</span><i><b></b></i><span>Product</span><i><b></b></i><span>Portfolio</span></span>
+        </div>
+        <div class="organization-evolution-item">
+          <span class="organization-evolution-label">VALUE</span>
+          <span class="organization-evolution-flow"><span>Output</span><i><b></b></i><span>Outcome</span><i><b></b></i><span>Business Value</span></span>
+        </div>
+      </div>
+      <div class="about-details">
+        <div class="about-block contact-block">
+          <p class="section-label">CONTACT</p><h3>Let's connect.</h3>
+          <p>Interested in software organizations, product development, Agile, IT management, or organizational improvement? I'd be happy to connect and discuss ideas, opportunities, or potential collaboration.</p>
+          <div class="connect-links">
+            <a href="https://www.linkedin.com/in/behzad-nazarbakhsh/" target="_blank" rel="noopener"><span class="connect-icon connect-icon-linkedin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.26ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.54 9H7.1v11.45H3.54V9Z"/></svg></span><span class="connect-name">LinkedIn</span><span class="connect-arrow">↗</span></a>
+            <a href="https://github.com/behzadnaz" target="_blank" rel="noopener"><span class="connect-icon connect-icon-github" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8a9.2 9.2 0 0 0-2.91 17.93c.46.09.63-.2.63-.44v-1.55c-2.56.56-3.1-1.1-3.1-1.1-.42-1.07-1.02-1.35-1.02-1.35-.84-.57.06-.56.06-.56.93.07 1.42.96 1.42.96.83 1.42 2.17 1.01 2.7.77.08-.6.32-1.01.59-1.24-2.05-.23-4.2-1.03-4.2-4.58 0-1.01.36-1.83.95-2.47-.1-.23-.41-1.17-.09-2.44 0 0 .77-.25 2.52.94a8.7 8.7 0 0 1 4.59 0c1.75-1.19 2.52-.94 2.52-.94.5 1.27.19 2.21.09 2.44.33-.29.63.86.63 1.73v2.57c0 .25.17.53.64.44A9.2 9.2 0 0 0 12 2.8Z"/></svg></span><span class="connect-name">GitHub</span><span class="connect-arrow">↗</span></a>
+            <a href="mailto:bmbvm5@gmail.com,bmbvm5@live.com.my"><span class="connect-icon connect-icon-email" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5.5h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1Zm1 2v.51l8 5.33 8-5.33V7.5H4Zm16 9V9.4l-7.45 4.97a1 1 0 0 1-1.1 0L4 9.4v7.1h16Z"/></svg></span><span class="connect-name">Email</span><span class="connect-arrow">↗</span></a>
+            <a href="https://calendly.com/bmbvm5" target="_blank" rel="noopener"><span class="connect-icon connect-icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm3 8h3m2 0h3m-8 4h3m2 0h3"/></svg></span><span class="connect-name">Calendly</span><span class="connect-arrow">↗</span></a>
+          </div>
+        </div></div>
+      </div>
+</section>
+    <footer>
+      <span>© 2026 Behzad Nazarbakhsh</span>
+      <span class="footer-role-visitor">
+        <span class="footer-role">Software Craftsmanship · Product Coach · Agile Expert</span>
+        <span class="site-visitor-count" aria-label="Site visitors" title="Site visitors">
+          <span class="visitor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+          </span>
+          <span id="site-visitor-count" class="visitor-number">0</span>
+          <span class="visitor-label">visitors</span>
+        </span>
+      </span>
+    <style id="article-view-count-style">
+.article-card{position:relative!important;padding-bottom:42px!important}
+.article-view-count{position:absolute!important;left:22px!important;bottom:0!important;display:inline-flex!important;align-items:center!important;gap:5px!important;color:var(--muted,#667085)!important;font-family:"DM Mono",monospace!important;font-size:10px!important;line-height:1!important;letter-spacing:.02em!important;white-space:nowrap!important}
+.article-view-count .article-view-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:16px!important;height:16px!important}
+.article-view-count svg{display:block!important;width:15px!important;height:15px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-view-number{min-width:1ch!important}
+@media(max-width:560px){.article-view-count{left:19px!important;bottom:0!important}.article-card{padding-bottom:0!important}}
+</style>
+<script id="article-click-tracking">
+(function(){
+  function slugify(text){
+    return text.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,90);
+  }
+  function setup(){
+    var cards=document.querySelectorAll('.article-card');
+    cards.forEach(function(card){
+      if(!card.querySelector('.article-view-count')){
+      var link=card.querySelector('h3 a');
+      if(!link) return;
+      var title=link.textContent.trim();
+      var path='article-click/'+slugify(title);
+      var counter=card.querySelector('.article-view-count');
+      if(!counter){
+        counter=document.createElement('span');
+        counter.className='article-view-count';
+        counter.setAttribute('aria-label','Article clicks');
+        counter.title='Article clicks';
+        counter.innerHTML='<span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span>';
+        card.appendChild(counter);
+      }
+
+      function recordClick(){
+        if(window.goatcounter && typeof window.goatcounter.count==='function'){
+          window.goatcounter.count({path:path,title:title});
+        }
+      }
+      link.addEventListener('click',recordClick);
+      var readMore=card.querySelector('.article-read-more');
+      if(readMore) readMore.addEventListener('click',recordClick);
+
+      function loadCount(){
+        if(window.goatcounter && typeof window.goatcounter.visit_count==='function'){
+          window.goatcounter.visit_count({
+            path:path,
+            append:counter.querySelector('.article-view-number'),
+            type:'html',
+            no_branding:true,
+            attr:{'aria-hidden':'true'}
+          });
+        }
+      }
+      loadCount();
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',setup,{once:true});
+  }else{
+    setup();
+  }
+})();
+</script>
+</footer>
+    <style id="site-visitor-count-style">
+      .footer-role-visitor{display:inline-flex;align-items:center;justify-content:flex-start;gap:14px;text-align:left;min-width:0}
+      .footer-role{color:var(--muted,#667085)}
+      .site-visitor-count{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:4px 9px;border:1px solid var(--line,#dfe4df);border-radius:999px;background:rgba(255,255,255,.48);white-space:nowrap;color:var(--ink,#1f2933);transition:border-color .18s ease,background .18s ease,transform .18s ease}
+      .site-visitor-count:hover{border-color:rgba(37,99,235,.28);background:rgba(255,255,255,.8);transform:translateY(-1px)}
+      .visitor-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;color:var(--muted,#667085)}
+      .visitor-icon svg{display:block;width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      .visitor-number{font-family:"DM Mono",monospace;font-size:11px;font-weight:700;line-height:1;color:var(--ink,#1f2933);min-width:1.5ch;text-align:right}
+      .visitor-label{font-size:10px;line-height:1;color:var(--muted,#667085);letter-spacing:.02em}
+      @media(max-width:700px){.footer-role-visitor{gap:10px;flex-wrap:wrap}.site-visitor-count{min-height:27px}}
+      @media(max-width:520px){.footer-role-visitor{display:flex;align-items:flex-start;flex-direction:column;gap:8px}.footer-role{max-width:100%}}
+      @media(prefers-reduced-motion:reduce){.site-visitor-count{transition:none}}
+    </style>
+    <script id="site-visitor-counter">
+    (function(){
+      var script=document.createElement('script');
+      script.setAttribute('data-goatcounter','https://YOURCODE.goatcounter.com/count');
+      script.async=true;
+      script.src='https://gc.zgo.at/count.js';
+      document.head.appendChild(script);
+      function render(){
+        if(!window.goatcounter || !window.goatcounter.visit_count){
+          setTimeout(render,100);
+          return;
+        }
+        window.goatcounter.visit_count({
+          path:'TOTAL',
+          append:'#site-visitor-count',
+          type:'html',
+          no_branding:true,
+          attr:{'aria-hidden':'true'}
+        });
+      }
+      render();
+    })();
+    </script>
+<style id="site-visitor-count-style">
+.footer-role-visitor{display:inline-flex;align-items:center;justify-content:flex-start;gap:10px;text-align:left}.site-visitor-count{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;color:var(--muted,#667085)}
+.site-visitor-count svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.site-visitor-count #site-visitor-count{min-width:1.5ch}
+@media(max-width:600px){.site-visitor-count{margin-left:5px}}
+</style>
+<script id="site-visitor-counter">
+(function(){
+  var script=document.createElement('script');
+  script.setAttribute('data-goatcounter','https://YOURCODE.goatcounter.com/count');
+  script.async=true;
+  script.src='https://gc.zgo.at/count.js';
+  document.head.appendChild(script);
+  function render(){
+    if(!window.goatcounter || !window.goatcounter.visit_count){
+      setTimeout(render,100);
+      return;
+    }
+    window.goatcounter.visit_count({path:'TOTAL',append:'#site-visitor-count',type:'html',no_branding:true,attr:{'aria-hidden':'true'}});
+  }
+  render();
+})();
+</script>
+<style id="site-visitor-count-style">
+.site-visitor-count{display:inline-flex;align-items:center;gap:5px;margin-left:8px;white-space:nowrap;color:var(--muted,#667085)}
+.site-visitor-count svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.site-visitor-count #site-visitor-count{min-width:1.5ch}
+@media(max-width:600px){.site-visitor-count{margin-left:5px}}
+</style>
+<script id="site-visitor-counter">
+(function(){
+  var script=document.createElement('script');
+  script.setAttribute('data-goatcounter','https://YOURCODE.goatcounter.com/count');
+  script.async=true;
+  script.src='https://gc.zgo.at/count.js';
+  document.head.appendChild(script);
+  function render(){
+    if(!window.goatcounter || !window.goatcounter.visit_count){
+      setTimeout(render,100);
+      return;
+    }
+    window.goatcounter.visit_count({
+      path:'TOTAL',
+      append:'#site-visitor-count',
+      type:'html',
+      no_branding:true,
+      attr:{'aria-hidden':'true'}
+    });
+  }
+  render();
+})();
+</script>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var filterScroller = document.querySelector('.article-filters');
+  var prevFilter = document.querySelector('.article-filter-prev');
+  var nextFilter = document.querySelector('.article-filter-next');
+  function updateFilterNav(){if(!filterScroller||!prevFilter||!nextFilter)return;var maxScroll=filterScroller.scrollWidth-filterScroller.clientWidth;prevFilter.disabled=filterScroller.scrollLeft<=2;nextFilter.disabled=filterScroller.scrollLeft>=maxScroll-2}
+  function scrollFilters(direction){if(!filterScroller)return;filterScroller.scrollBy({left:direction*Math.max(260,filterScroller.clientWidth*.8),behavior:'smooth'})}
+  function centerFilter(button){if(!filterScroller||!button)return;var targetLeft=button.offsetLeft-(filterScroller.clientWidth-button.offsetWidth)/2;filterScroller.scrollTo({left:Math.max(0,targetLeft),behavior:'smooth'})}
+  if(prevFilter)prevFilter.addEventListener('click',function(){scrollFilters(-1)});if(nextFilter)nextFilter.addEventListener('click',function(){scrollFilters(1)});
+  if(filterScroller){filterScroller.addEventListener('scroll',updateFilterNav,{passive:true});window.addEventListener('resize',updateFilterNav);setTimeout(updateFilterNav,50)}
+  var filters=document.querySelectorAll('.article-filter'),grid=document.querySelector('.article-all-grid'),cards=grid?grid.querySelectorAll('.article-card'):[],title=document.querySelector('.article-selected-domain'),more=document.querySelector('.article-more'),moreLink=more?more.querySelector('a'):null,current='ai',expanded=false;
+  var names={"product":"Product Management","change":"Organizational Change","agile-teams":"Agile Teams","engineering":"Software Engineering","ai":"AI Software Engineering","stakeholder":"Stakeholder Management","lean":"Lean"};
+  function countFor(domain){var count=0;for(var i=0;i<cards.length;i++)if(cards[i].getAttribute('data-domain')===domain)count++;return count}
+  function filterName(domain){return names[domain]||'articles'}
+  function moreText(domain){var remaining=countFor(domain)-4;var name=filterName(domain);return 'View '+remaining+' more '+name+' article'+(remaining===1?'':'s')+' →'}
+  function updateCounts(){for(var i=0;i<filters.length;i++){var domain=filters[i].getAttribute('data-filter'),number=filters[i].querySelector('.article-count b');if(number)number.textContent=countFor(domain)}}
+  function show(domain){current=domain;expanded=false;for(var i=0;i<filters.length;i++){var active=filters[i].getAttribute('data-filter')===domain;filters[i].classList.toggle('active',active);filters[i].setAttribute('aria-selected',active?'true':'false')}var visibleIndex=0,total=countFor(domain);for(var j=0;j<cards.length;j++){var matches=cards[j].getAttribute('data-domain')===domain;if(!matches)cards[j].hidden=true;else{cards[j].hidden=visibleIndex>=4;visibleIndex++}}title.textContent=names[domain]||'';title.hidden=false;if(more){more.hidden=total<=4;if(!more.hidden)moreLink.textContent=moreText(domain)}}
+  if(moreLink)moreLink.addEventListener('click',function(event){event.preventDefault();expanded=!expanded;var shown=0;for(var i=0;i<cards.length;i++){var matches=cards[i].getAttribute('data-domain')===current;if(matches){cards[i].hidden=!expanded&&shown>=4;shown++}}moreLink.textContent=expanded?'Show less ↑':moreText(current)});
+  for(var i=0;i<filters.length;i++)filters[i].addEventListener('click',function(){show(this.getAttribute('data-filter'));centerFilter(this);setTimeout(updateFilterNav,300)});
+  updateCounts();show('ai');
+});
+</script>
+<script>
+(function(){
+  const root=document.querySelector('.engagement-journey');
+  if(!root||root.dataset.ready==='1') return;
+  root.dataset.ready='1';
+  const nodes=[...root.querySelectorAll('.engagement-node')];
+  const details=[...root.querySelectorAll('.engagement-detail')];
+  function select(id, moveFocus){
+    nodes.forEach(node=>{
+      const active=node.dataset.engagement===id;
+      node.classList.remove('is-active');
+      node.setAttribute('aria-selected',String(active));
+      if(active && moveFocus) node.focus({preventScroll:true});
+    });
+    details.forEach(detail=>{
+      const active=detail.id==='engagement-detail-'+id;
+      detail.classList.toggle('is-active',active);
+      detail.hidden=!active;
+    });
+  }
+  const cycleDuration=15800;
+  const train=document.querySelector('.engagement-spaceship');
+  let autoTimer=null;
+  let autoStart=performance.now();
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  function syncWithTrain(now){
+    if(manualTrainHold || !train) return;
+    const elapsed=(now-autoStart)%cycleDuration;
+    const track=document.querySelector('.engagement-track');
+    if(!track) return;
+    const trackRect=track.getBoundingClientRect();
+    const dots=nodes.map(node=>node.querySelector('.engagement-node-dot')).filter(Boolean);
+    if(dots.length<2) return;
+    const rects=dots.map(dot=>dot.getBoundingClientRect());
+    const centers=rects.map(r=>({
+      x:r.left+r.width/2-trackRect.left,
+      y:r.top+r.height/2-trackRect.top
+    }));
+    const horizontal=trackRect.width>trackRect.height*2;
+    const phases=[
+      {start:0,end:1200,type:'move',from:'entry',to:0},
+      {start:1200,end:2600,type:'stop',stage:0},
+      {start:2600,end:4200,type:'move',from:0,to:1},
+      {start:4200,end:5600,type:'stop',stage:1},
+      {start:5600,end:7200,type:'move',from:1,to:2},
+      {start:7200,end:8600,type:'stop',stage:2},
+      {start:8600,end:10200,type:'move',from:2,to:3},
+      {start:10200,end:11600,type:'stop',stage:3},
+      {start:11600,end:13200,type:'move',from:3,to:4},
+      {start:13200,end:14600,type:'stop',stage:4},
+      {start:14600,end:15800,type:'exit',from:4,to:'exit'}
+    ];
+    const halfW=(train.getBoundingClientRect().width||58)/2;
+    const halfH=(train.getBoundingClientRect().height||32)/2;
+    const entry=horizontal
+      ? {x:-halfW-8,y:centers[0].y}
+      : {x:centers[0].x,y:-halfH-8};
+    const exit=horizontal
+      ? {x:trackRect.width+halfW+8,y:centers[centers.length-1].y}
+      : {x:centers[centers.length-1].x,y:trackRect.height+halfH+8};
+    const placeAt=(x,y,stopped)=>{
+      train.style.animation='none';
+      train.style.left=x+'px';
+      train.style.top=(y-(train.getBoundingClientRect().height||32)/2)+'px';
+      train.style.transform='translate(-50%,-50%)';
+      train.style.opacity='1';
+      train.classList.toggle('is-stopped',stopped);
+    };
+    const ease=p=>p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2;
+    let phase=phases.find(item=>elapsed>=item.start && elapsed<item.end);
+    if(!phase) phase=phases[phases.length-1];
+    if(phase.type==='stop'){
+      const point=centers[phase.stage];
+      placeAt(point.x,point.y,true);
+      select(String(phase.stage+1),false);
+      return;
+    }
+    if(phase.type==='move'){
+      const target=centers[phase.to];
+      const source=phase.from==='entry' ? entry : centers[phase.from];
+      const p=ease((elapsed-phase.start)/(phase.end-phase.start));
+      placeAt(source.x+(target.x-source.x)*p,source.y+(target.y-source.y)*p,false);
+      select(String(phase.to+1),false);
+      return;
+    }
+    if(phase.type==='exit'){
+      const source=centers[phase.from];
+      const p=ease((elapsed-phase.start)/(phase.end-phase.start));
+      placeAt(source.x+(exit.x-source.x)*p,source.y+(exit.y-source.y)*p,false);
+    }
+  }
+  function startTrainSync(resetClock=true){
+    if(autoTimer) cancelAnimationFrame(autoTimer);
+    if(resetClock) autoStart=performance.now();
+    function tick(now){
+      syncWithTrain(now);
+      autoTimer=requestAnimationFrame(tick);
+    }
+    autoTimer=requestAnimationFrame(tick);
+  }
+  nodes.forEach((node,index)=>{
+    node.addEventListener('click',function(){
+      select(node.dataset.engagement,false);
+    });
+    node.addEventListener('keydown',function(event){
+      let next=index;
+      if(event.key==='ArrowRight'||event.key==='ArrowDown'){
+        next=(index+1)%nodes.length;
+      }else if(event.key==='ArrowLeft'||event.key==='ArrowUp'){
+        next=(index-1+nodes.length)%nodes.length;
+      }else{
+        return;
+      }
+      event.preventDefault();
+      nodes[next].focus();
+      select(nodes[next].dataset.engagement,false);
+    });
+  });
+  let manualTrainHold=false;
+  function holdTrainAtStage(id){
+    const train=document.querySelector('.engagement-spaceship');
+    const track=document.querySelector('.engagement-track');
+    const node=nodes.find(n=>n.dataset.engagement===id);
+    const dot=node?.querySelector('.engagement-node-dot');
+    if(!train||!track||!dot)return;
+    manualTrainHold=true;
+    train.classList.add('is-stopped');
+    root.dataset.manualStop='1';
+    nodes.forEach(n=>n.blur());
+    
+    train.style.animation='none';
+    const trackRect=track.getBoundingClientRect();
+    const dotRect=dot.getBoundingClientRect();
+    train.style.left=(dotRect.left+dotRect.width/2-trackRect.left)+'px';
+    train.style.top=(dotRect.top+dotRect.height/2-trackRect.top-(train.getBoundingClientRect().height||32)/2)+'px';
+    train.style.transform='translate(-50%,-50%)';
+    train.style.opacity='1';
+  }
+  nodes.forEach(node=>{
+    node.addEventListener('click',function(){
+      holdTrainAtStage(this.dataset.engagement);
+    });
+  });
+  select('1',false);
+  startTrainSync();
+  let journeyPauseStarted=null;
+  const journeyObserver=new IntersectionObserver(entries=>{
+    const entry=entries[0];
+    if(!entry)return;
+    if(entry.isIntersecting){
+      if(journeyPauseStarted!==null){
+        autoStart+=performance.now()-journeyPauseStarted;
+        journeyPauseStarted=null;
+      }
+      root.classList.remove('is-paused');
+      if(manualTrainHold){
+        manualTrainHold=false;
+        root.dataset.manualStop='0';
+        if(train){
+          train.classList.remove('is-stopped');
+          train.style.animation='';
+          train.style.left='';
+          train.style.top='';
+          train.style.transform='';
+          train.style.opacity='';
+        }
+        autoStart=performance.now();
+        startTrainSync(false);
+      }else if(!reducedMotion.matches){
+        startTrainSync(false);
+      }
+    }else{
+      journeyPauseStarted=performance.now();
+      root.classList.add('is-paused');
+      if(autoTimer){
+        cancelAnimationFrame(autoTimer);
+        autoTimer=null;
+      }
+    }
+  },{threshold:0.05});
+  journeyObserver.observe(root);
+  reducedMotion.addEventListener?.('change',function(){
+    startTrainSync();
+  });
+})();
+</script>
+<script id="contribution-report-prefetch">
+(function(){
+  const links=document.querySelectorAll('.work-item[href="IT-Portfolio-Management.html"],.work-item[href="Organization-Change-Management.html"]');
+  const files=["report-bundles/report-00-07.html","report-bundles/report-08-15.html","report-bundles/report-16-23.html","report-bundles/report-24-28.html"];
+  let started=false;
+  function prefetchReports(){
+    if(started)return;
+    started=true;
+    files.forEach(function(file){
+      fetch(file,{cache:"force-cache",credentials:"same-origin"}).catch(function(){});
+    });
+  }
+  links.forEach(function(link){
+    link.addEventListener("mouseenter",prefetchReports,{once:true,passive:true});
+    link.addEventListener("focus",prefetchReports,{once:true,passive:true});
+    link.addEventListener("touchstart",prefetchReports,{once:true,passive:true});
+  });
+  const section=document.getElementById("work");
+  if(section&&"IntersectionObserver" in window){
+    const observer=new IntersectionObserver(function(entries){
+      if(entries.some(function(entry){return entry.isIntersecting})){
+        prefetchReports();
+        observer.disconnect();
+      }
+    },{rootMargin:"500px 0px"});
+    observer.observe(section);
+  }
+})();
+</script>
+</body>
+</html>
+<style id="contribution-heading-spacing">.service-engagement-head .section-label{margin-bottom:12px!important}.service-engagement-head h3{margin-top:0!important}</style>
+<style id="global-reading-width">.section-head,.service-engagement-head,.services-intro,.services-intro-secondary{max-width:760px}.section-head h2,.service-engagement-head h3{max-width:760px}.service-engagement-head>p:not(.section-label){max-width:720px}.section-head>p:not(.section-label){max-width:720px}.article-card p,.work-item small,.service-format p,.services-challenge p{max-width:100%}.about-copy,.contact-copy{max-width:720px}@media(max-width:760px){.section-head,.service-engagement-head,.services-intro,.services-intro-secondary,.section-head h2,.service-engagement-head h3,.service-engagement-head>p:not(.section-label),.section-head>p:not(.section-label),.about-copy,.contact-copy{max-width:100%}}</style>
+<style id="full-width-reading">.section-head,.service-engagement-head,.services-intro,.services-intro-secondary,.section-head h2,.service-engagement-head h3,.service-engagement-head>p:not(.section-label),.section-head>p:not(.section-label),.about-copy,.contact-copy{max-width:none!important;width:100%}</style><style id="engagement-spectrum-v1">
+.engagement-spectrum{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin:42px 0 8px;padding:0 0 8px}
+.engagement-spectrum:before{content:"";position:absolute;left:5%;right:5%;top:66px;height:1px;background:var(--line);z-index:0}
+.engagement-spectrum:after{content:"";position:absolute;left:5%;top:66px;width:90%;height:1px;background:linear-gradient(90deg,#2563eb,var(--line));opacity:.55;z-index:0}
+.engagement-stage{position:relative;z-index:1;min-width:0;padding:0 9px}
+.engagement-duration{text-align:center;font-family:"DM Mono",monospace;font-size:10px;line-height:1.3;letter-spacing:.12em;font-weight:600;color:var(--muted)}
+.engagement-card{margin-top:39px;min-height:246px;padding:22px 19px 20px;border:1px solid var(--line);background:rgba(255,255,255,.58);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.engagement-card:before{content:"";display:block;width:10px;height:10px;margin:-28px auto 18px;border:2px solid var(--paper,#fff);border-radius:50%;background:#2563eb;box-shadow:0 0 0 1px var(--line)}
+.engagement-card:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.35);box-shadow:0 12px 28px rgba(20,30,25,.07)}
+.engagement-number{display:block;margin-bottom:12px;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;color:#2563eb}
+.engagement-card h4{margin:0 0 10px;font-size:1.04rem;line-height:1.25}
+.engagement-card p{margin:0;color:var(--muted);font-size:14px!important;line-height:1.55!important}
+.engagement-example{margin-top:17px;padding-top:13px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;line-height:1.5}
+.engagement-example strong{display:block;margin-bottom:3px;color:var(--ink);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-family:"DM Mono",monospace}
+@media(max-width:1050px){.engagement-spectrum{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}.engagement-spectrum:before,.engagement-spectrum:after{display:none}}
+@media(max-width:800px){.engagement-spectrum{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.engagement-card{min-height:0}}
+@media(max-width:560px){.engagement-spectrum{grid-template-columns:1fr;gap:14px;margin-top:30px}.engagement-stage{padding:0}.engagement-duration{text-align:left}.engagement-card{margin-top:9px;min-height:0;padding:21px}.engagement-card:before{display:none}}
+</style><style id="engagement-journey-intro-style">.engagement-journey-intro{margin:0 0 24px;font-size:15px;line-height:1.65;color:var(--muted)}@media(max-width:700px){.engagement-journey-intro{font-size:14px;margin-bottom:20px}}</style><style id="services-cta-full-width">.services-cta p{max-width:none!important;width:100%!important}</style><style id="services-cta-icon-style">.services-cta{display:flex!important;flex-direction:row!important;align-items:center!important;flex-wrap:wrap!important;column-gap:10px!important;row-gap:10px!important;position:relative!important;isolation:isolate!important;margin-top:118px!important;padding-top:30px!important}.services-cta-icon{display:inline-flex!important;position:static!important;float:none!important;clear:none!important;order:1!important;width:30px!important;height:30px!important;margin:0!important;padding:0!important;flex:0 0 30px!important;color:var(--ink);z-index:2!important}.services-cta-icon svg{width:100%!important;height:100%!important;display:block!important}.services-cta h3{display:inline-block!important;position:static!important;float:none!important;clear:none!important;order:2!important;width:auto!important;margin:0!important;padding:0!important;line-height:1.25!important;z-index:2!important}.services-cta p{order:3!important;flex-basis:100%!important;width:100%!important;margin-top:6px!important}.services-cta .button{order:4!important}@media(max-width:600px){.services-cta{margin-top:90px!important;padding-top:24px!important;column-gap:9px!important}.services-cta-icon{width:27px!important;height:27px!important;flex-basis:27px!important}.services-cta p{margin-top:5px!important}}</style>
+<style id="engagement-ufo-clean">
+.engagement-spaceship{width:58px!important;height:32px!important;color:#9aa3ad!important;animation:none!important;z-index:20!important;position:absolute!important}
+.engagement-spaceship svg{display:block!important;width:100%!important;height:100%!important;transform:none!important;overflow:visible;position:relative;z-index:2}
+.engagement-spaceship svg path{fill:currentColor!important}
+.engagement-spaceship.is-stopped{color:#2563eb!important}
+@media(max-width:700px){.engagement-spaceship{width:50px!important;height:28px!important}}
+@media(max-width:480px){.engagement-spaceship{width:44px!important;height:24px!important}}
+.engagement-spaceship:after{display:none!important;content:none!important}
+</style>
+<!-- pages rebuild: 1790490667803 -->
