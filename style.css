@@ -2719,3 +2719,14 @@ footer{font-size:11px;line-height:1.5}
   font-weight:inherit!important;
   color:inherit!important;
 }
+
+/* Exact typography match with the About section body paragraph. */
+#about-contact .contact-block .contact-intro p{
+  font-family:"DM Mono",monospace!important;
+  font-size:.62rem!important;
+  line-height:1.9!important;
+  letter-spacing:.12em!important;
+  font-weight:400!important;
+  color:var(--muted)!important;
+  margin:0!important;
+}
