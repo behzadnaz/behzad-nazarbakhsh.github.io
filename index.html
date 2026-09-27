@@ -972,53 +972,41 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   function slugify(text){
     return text.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,90);
   }
+  function update(card){
+    var link=card.querySelector('h3 a');
+    var number=card.querySelector('.article-view-number');
+    if(!link||!number) return;
+    var key='article-click-count:/article-click/'+slugify(link.textContent);
+    var value=0;
+    try{value=parseInt(localStorage.getItem(key)||'0',10)||0;}catch(e){}
+    number.textContent=String(value);
+  }
   function setup(){
     document.querySelectorAll('.article-card').forEach(function(card){
       var link=card.querySelector('h3 a');
       if(!link) return;
-      var title=link.textContent.trim();
-      var path='/article-click/'+slugify(title);
-      var storageKey='article-click-count:'+path;
-      var counter=card.querySelector('.article-view-count');
-      if(!counter){
-        counter=document.createElement('span');
-        counter.className='article-view-count';
-        counter.setAttribute('aria-label','Article clicks');
-        counter.title='Article clicks';
-        counter.innerHTML='<span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span>';
-        card.appendChild(counter);
-      }
-      var number=counter.querySelector('.article-view-number');
-      function localCount(){
-        try{return parseInt(localStorage.getItem(storageKey)||'0',10)||0;}catch(e){return 0;}
-      }
-      function setNumber(value){if(number) number.textContent=String(value);}
-      function loadServerCount(){
-        fetch('https://account-bvehzad.goatcounter.com/counter/'+encodeURIComponent(path)+'.json?x='+Date.now(),{mode:'cors',cache:'no-store'})
-          .then(function(response){if(!response.ok) throw new Error('counter unavailable');return response.json();})
-          .then(function(data){
-            var server=parseInt(String(data.count||'0').replace(/,/g,''),10)||0;
-            setNumber(Math.max(server,localCount()));
-          }).catch(function(){setNumber(localCount());});
-      }
-      function recordClick(){
-        var next=localCount()+1;
-        try{localStorage.setItem(storageKey,String(next));}catch(e){}
-        setNumber(next);
-        if(window.goatcounter&&typeof window.goatcounter.count==='function'){
-          window.goatcounter.count({path:path,title:title,no_session:true});
-        }
-      }
-      if(card.dataset.goatcounterBound!=='1'){
-        card.dataset.goatcounterBound='1';
-        link.addEventListener('click',recordClick);
-        var readMore=card.querySelector('.article-read-more');
-        if(readMore) readMore.addEventListener('click',recordClick);
-      }
-      setNumber(localCount());
-      loadServerCount();
+      var number=card.querySelector('.article-view-number');
+      if(!number) return;
+      update(card);
     });
   }
+  document.addEventListener('click',function(e){
+    var link=e.target.closest('.article-card h3 a, .article-card .article-read-more');
+    if(!link) return;
+    var card=link.closest('.article-card');
+    if(!card) return;
+    var titleLink=card.querySelector('h3 a');
+    if(!titleLink) return;
+    var path='/article-click/'+slugify(titleLink.textContent);
+    var key='article-click-count:'+path;
+    var next=0;
+    try{next=(parseInt(localStorage.getItem(key)||'0',10)||0)+1;localStorage.setItem(key,String(next));}catch(err){next=1;}
+    var number=card.querySelector('.article-view-number');
+    if(number) number.textContent=String(next);
+    if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+      window.goatcounter.count({path:path,title:titleLink.textContent.trim(),no_session:true});
+    }
+  },true);
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setup,{once:true}); else setup();
 })();
 </script>
