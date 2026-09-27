@@ -968,45 +968,40 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 @media(max-width:560px){.article-view-count{left:19px!important;bottom:0!important}.article-card{padding-bottom:0!important}}
 </style>
 <script id="article-click-tracking">(function(){
-  var prefix='bn_article_seen_';
   var endpoint='https://account-bvehzad.goatcounter.com/counter/';
   function slugify(text){return text.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);}
-  function seenKey(link){return prefix+slugify(link.textContent);}
-  function hasSeen(key){try{return window.localStorage.getItem(key)==='1';}catch(e){return false;}}
-  function markSeen(key){try{window.localStorage.setItem(key,'1');}catch(e){}}
-  function updateFromGoat(link,number){
-    var path='/article-click/'+slugify(link.textContent);
-    fetch(endpoint+encodeURIComponent(path)+'.json?rnd='+Date.now(),{cache:'no-store'})
+  function pathFor(link){return '/unique-article-view/'+slugify(link.textContent);}
+  function update(link,number){
+    var path=pathFor(link);
+    fetch(endpoint+encodeURIComponent(path)+'.json?x='+Date.now(),{cache:'no-store'})
       .then(function(r){return r.ok?r.json():null;})
-      .then(function(data){if(data&&data.count!=null) number.textContent=String(data.count);})
+      .then(function(data){if(data&&data.count!=null)number.textContent=String(data.count);})
       .catch(function(){});
   }
   function refresh(){
     document.querySelectorAll('.article-card').forEach(function(card){
-      var link=card.querySelector('h3 a'), number=card.querySelector('.article-view-number');
-      if(link&&number) updateFromGoat(link,number);
+      var link=card.querySelector('h3 a'),number=card.querySelector('.article-view-number');
+      if(link&&number)update(link,number);
     });
   }
   function countClick(card){
-    var link=card.querySelector('h3 a'), number=card.querySelector('.article-view-number');
-    if(!link||!number) return;
-    var key=seenKey(link);
-    if(hasSeen(key)) return;
-    markSeen(key);
-    if(window.goatcounter&&typeof window.goatcounter.count==='function')
-      window.goatcounter.count({path:'/article-click/'+slugify(link.textContent),title:link.textContent.trim()});
-    setTimeout(function(){updateFromGoat(link,number);},1200);
+    var link=card.querySelector('h3 a'),number=card.querySelector('.article-view-number');
+    if(!link||!number||!window.goatcounter||typeof window.goatcounter.count!=='function')return;
+    window.goatcounter.count({path:pathFor(link),title:link.textContent.trim()});
+    setTimeout(function(){update(link,number);},1800);
   }
   function init(){
     refresh();
     document.querySelectorAll('.article-card').forEach(function(card){
-      if(card.dataset.articleCounterBound==='1') return;
+      if(card.dataset.articleCounterBound==='1')return;
       card.dataset.articleCounterBound='1';
-      card.addEventListener('click',function(e){if(e.target.closest('h3 a, .article-read-more')) countClick(card);},true);
+      card.addEventListener('click',function(e){
+        if(e.target.closest('h3 a, .article-read-more'))countClick(card);
+      },true);
     });
-    setTimeout(refresh,3000);
+    setTimeout(refresh,4000);
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true}); else init();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();</script>
 </footer>
     <style id="site-visitor-count-style">
@@ -1336,14 +1331,11 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 </script>
 <script id="cv-view-count-script">(function(){
-  var seenKey='bn_cv_seen';
-  var endpoint='https://account-bvehzad.goatcounter.com/counter//cv.json';
-  function hasSeen(){try{return window.localStorage.getItem(seenKey)==='1';}catch(e){return false;}}
-  function markSeen(){try{window.localStorage.setItem(seenKey,'1');}catch(e){}}
+  var endpoint='https://account-bvehzad.goatcounter.com/counter/%2Funique-cv-view.json';
   function refresh(){
     var n=document.getElementById('cv-view-number');
     if(!n)return;
-    fetch(endpoint+'?rnd='+Date.now(),{cache:'no-store'})
+    fetch(endpoint+'?x='+Date.now(),{cache:'no-store'})
       .then(function(r){return r.ok?r.json():null;})
       .then(function(data){if(data&&data.count!=null)n.textContent=String(data.count);})
       .catch(function(){});
@@ -1355,13 +1347,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if(b.dataset.cvCounterBound==='1')return;
     b.dataset.cvCounterBound='1';
     b.addEventListener('click',function(){
-      if(hasSeen())return;
-      markSeen();
-      if(window.goatcounter&&typeof window.goatcounter.count==='function')
-        window.goatcounter.count({path:'/cv',title:'CV View'});
-      setTimeout(refresh,1200);
+      if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+        window.goatcounter.count({path:'/unique-cv-view',title:'CV View'});
+        setTimeout(refresh,1800);
+      }
     });
-    setTimeout(refresh,3000);
+    setTimeout(refresh,4000);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();</script></body>
