@@ -2444,3 +2444,88 @@ footer{font-size:11px;line-height:1.5}
 
 /* Contact hover text color */
 .connect-links a:hover .connect-name{color:#2563eb!important}
+
+
+/* Contact section — full-width premium layout */
+#about-contact .about-details{
+  width:100%!important;
+  display:block!important;
+  margin-top:64px!important;
+  padding-top:48px!important;
+  border-top:1px solid var(--line)!important;
+}
+#about-contact .contact-block{
+  width:100%!important;
+  max-width:none!important;
+}
+#about-contact .contact-block>p:not(.section-label){
+  max-width:820px!important;
+  margin-bottom:0!important;
+  font-size:16px!important;
+  line-height:1.7!important;
+}
+#about-contact .contact-block h3{
+  font-size:clamp(1.8rem,2.7vw,2.35rem)!important;
+  margin-bottom:14px!important;
+}
+#about-contact .contact-block .connect-links{
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:0 28px!important;
+  margin-top:36px!important;
+  padding:0!important;
+  border-top:1px solid var(--line)!important;
+}
+#about-contact .contact-block .connect-links a{
+  min-width:0!important;
+  min-height:76px!important;
+  box-sizing:border-box!important;
+  padding:18px 0!important;
+  border-bottom:1px solid var(--line)!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:11px!important;
+}
+#about-contact .contact-block .connect-icon{
+  width:42px!important;
+  height:42px!important;
+  flex:0 0 42px!important;
+}
+#about-contact .contact-block .connect-name{
+  flex:1 1 auto!important;
+  min-width:0!important;
+  font-size:14px!important;
+  font-weight:600!important;
+}
+#about-contact .contact-block .connect-arrow{
+  width:26px!important;
+  height:26px!important;
+  flex:0 0 26px!important;
+}
+#about-contact .contact-block .connect-calendly{
+  color:#111!important;
+}
+#about-contact .contact-block .connect-calendly:hover{
+  color:#2563eb!important;
+}
+@media(max-width:900px){
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:0 24px!important;
+  }
+}
+@media(max-width:560px){
+  #about-contact .about-details{
+    margin-top:48px!important;
+    padding-top:38px!important;
+  }
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:1fr!important;
+    gap:0!important;
+    margin-top:28px!important;
+  }
+  #about-contact .contact-block .connect-links a{
+    min-height:70px!important;
+  }
+}
