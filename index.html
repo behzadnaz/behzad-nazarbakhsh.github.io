@@ -747,7 +747,61 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
           <span class="visitor-label">visitors</span>
         </span>
       </span>
-    </footer>
+    <style id="article-view-count-style">
+.article-card{position:relative!important;padding-bottom:58px!important}
+.article-view-count{position:absolute!important;left:22px!important;bottom:20px!important;display:inline-flex!important;align-items:center!important;gap:5px!important;color:var(--muted,#667085)!important;font-family:"DM Mono",monospace!important;font-size:10px!important;line-height:1!important;letter-spacing:.02em!important;white-space:nowrap!important}
+.article-view-count .article-view-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:16px!important;height:16px!important}
+.article-view-count svg{display:block!important;width:15px!important;height:15px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.article-view-number{min-width:1ch!important}
+@media(max-width:560px){.article-view-count{left:19px!important;bottom:18px!important}.article-card{padding-bottom:54px!important}}
+</style>
+<script id="article-click-tracking">
+(function(){
+  function slugify(text){
+    return text.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,90);
+  }
+  function setup(){
+    var cards=document.querySelectorAll('.article-card');
+    cards.forEach(function(card){
+      if(card.querySelector('.article-view-count')) return;
+      var link=card.querySelector('h3 a');
+      if(!link) return;
+      var title=link.textContent.trim();
+      var path='article-click/'+slugify(title);
+      var counter=document.createElement('span');
+      counter.className='article-view-count';
+      counter.setAttribute('aria-label','Article clicks');
+      counter.title='Article clicks';
+      counter.innerHTML='<span class="article-view-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg></span><span class="article-view-number">0</span>';
+      card.appendChild(counter);
+      var number=counter.querySelector('.article-view-number');
+      if(window.goatcounter && window.goatcounter.visit_count){
+        window.goatcounter.visit_count({path:path,append:counter,type:'html',no_branding:true,attr:{'aria-hidden':'true'}});
+      }
+      link.addEventListener('click',function(){
+        if(window.goatcounter && window.goatcounter.count){
+          window.goatcounter.count({path:path,title:title});
+        }
+      });
+      var readMore=card.querySelector('.article-read-more');
+      if(readMore){
+        readMore.addEventListener('click',function(){
+          if(window.goatcounter && window.goatcounter.count){
+            window.goatcounter.count({path:path,title:title});
+          }
+        });
+      }
+    });
+  }
+  var t=setInterval(function(){
+    if(window.goatcounter && window.goatcounter.visit_count && window.goatcounter.count){
+      clearInterval(t);
+      setup();
+    }
+  },100);
+})();
+</script>
+</footer>
     <style id="site-visitor-count-style">
       .footer-role-visitor{display:inline-flex;align-items:center;justify-content:flex-start;gap:14px;text-align:left;min-width:0}
       .footer-role{color:var(--muted,#667085)}
