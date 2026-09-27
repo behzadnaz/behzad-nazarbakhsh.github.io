@@ -2850,3 +2850,80 @@ footer{font-size:11px;line-height:1.5}
     grid-template-rows:40px 18px!important;
   }
 }
+
+
+/* Final Contact grid redesign — LinkedIn icon + label above, counter below */
+#about-contact .contact-block .connect-links{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:0!important;
+}
+#about-contact .contact-block .connect-linkedin{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:42px minmax(0,1fr) 24px!important;
+  grid-template-rows:42px 18px!important;
+  column-gap:13px!important;
+  row-gap:4px!important;
+  align-items:center!important;
+  min-height:112px!important;
+  padding:24px 28px 24px 0!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-icon-linkedin{
+  grid-column:1!important;
+  grid-row:1!important;
+  width:42px!important;
+  height:42px!important;
+  align-self:center!important;
+  z-index:2!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-name{
+  grid-column:2!important;
+  grid-row:1!important;
+  align-self:center!important;
+  font-size:15px!important;
+  font-weight:650!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-arrow{
+  grid-column:3!important;
+  grid-row:1!important;
+  align-self:center!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-click-count{
+  position:static!important;
+  grid-column:1!important;
+  grid-row:2!important;
+  justify-self:center!important;
+  align-self:start!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:3px!important;
+  margin:0!important;
+  padding:0!important;
+  color:#8a8f98!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:8px!important;
+  font-weight:500!important;
+  line-height:1!important;
+  opacity:.9!important;
+  pointer-events:none!important;
+  z-index:3!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-click-count svg{
+  display:block!important;
+  width:10px!important;
+  height:10px!important;
+  stroke:#8a8f98!important;
+  fill:none!important;
+  stroke-width:1.6!important;
+}
+@media(max-width:560px){
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:1fr!important;
+  }
+  #about-contact .contact-block .connect-linkedin{
+    min-height:88px!important;
+    grid-template-columns:42px minmax(0,1fr) 24px!important;
+    grid-template-rows:40px 18px!important;
+    padding:18px 0!important;
+  }
+}
