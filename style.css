@@ -2630,3 +2630,14 @@ footer{font-size:11px;line-height:1.5}
   margin:18px 0 0!important;
   max-width:760px!important;
 }
+
+/* Contact intro: inherit the site's standard section body paragraph styling. */
+#about-contact .contact-block > p:not(.section-label){
+  font-family:inherit!important;
+  font-size:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  font-weight:inherit!important;
+  color:var(--muted)!important;
+  margin:0!important;
+}
