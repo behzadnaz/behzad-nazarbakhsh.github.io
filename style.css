@@ -2607,3 +2607,14 @@ footer{font-size:11px;line-height:1.5}
   #about-contact .contact-block .connect-links>a:last-child{padding-right:18px!important}
 }
 @media(max-width:560px){#about-contact .contact-block .connect-links{grid-template-columns:1fr!important}}
+
+/* Match the Contact intro text to the standard body typography used across the page. */
+#about-contact .contact-block > p:not(.section-label){
+  margin:0!important;
+  color:var(--muted)!important;
+  font-family:inherit!important;
+  font-size:15px!important;
+  font-weight:400!important;
+  line-height:1.7!important;
+  letter-spacing:normal!important;
+}
