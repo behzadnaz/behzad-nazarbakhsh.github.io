@@ -1350,10 +1350,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <script id="cv-view-count-script">(function(){function init(){var b=document.querySelector('.cv-button');var n=document.getElementById('cv-view-number');if(!b||!n)return;if(window.goatcounter&&typeof window.goatcounter.visit_count==='function'){window.goatcounter.visit_count({path:'/cv',append:n,type:'html',no_branding:true,attr:{'aria-hidden':'true'}})}b.addEventListener('click',function(){if(window.goatcounter&&typeof window.goatcounter.count==='function')window.goatcounter.count({path:'/cv',title:'CV View'})})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();</script></body>
 
 <style id="knowledge-card-read-icon-consistency">
-/* Knowledge Base — one consistent footer treatment for every card. */
+/* Knowledge Base — consistent bottom action row on every card. */
 .article-all-grid .article-card{
   position:relative!important;
-  padding-bottom:68px!important;
+  padding-bottom:64px!important;
 }
 .article-all-grid .article-card .article-view-count{
   position:absolute!important;
@@ -1361,36 +1361,39 @@ document.addEventListener('DOMContentLoaded', function () {
   bottom:20px!important;
   display:inline-flex!important;
   align-items:center!important;
-  justify-content:flex-start!important;
-  gap:5px!important;
-  width:max-content!important;
-  height:16px!important;
+  gap:4px!important;
   margin:0!important;
   padding:0!important;
-  color:var(--muted,#667085)!important;
+  color:#8b9199!important;
   font-family:"DM Mono",monospace!important;
-  font-size:10px!important;
+  font-size:9px!important;
   line-height:1!important;
-  letter-spacing:.02em!important;
+  font-weight:500!important;
   white-space:nowrap!important;
 }
+.article-all-grid .article-card .article-view-count .article-view-icon{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
 .article-all-grid .article-card .article-view-count svg{
-  width:14px!important;
-  height:14px!important;
+  width:13px!important;
+  height:13px!important;
   fill:none!important;
   stroke:currentColor!important;
   stroke-width:1.55!important;
   stroke-linecap:round!important;
   stroke-linejoin:round!important;
 }
-.article-all-grid .article-card .article-view-count .article-view-number{
-  color:currentColor!important;
-  font-weight:400!important;
+.article-all-grid .article-card .article-view-count svg circle{
+  fill:currentColor!important;
+  stroke:none!important;
 }
 .article-all-grid .article-card .article-read-more{
   position:absolute!important;
-  right:22px!important;
-  bottom:20px!important;
+  left:58px!important;
+  bottom:11px!important;
+  right:auto!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
@@ -1419,15 +1422,15 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 @media(max-width:560px){
   .article-all-grid .article-card{
-    padding-bottom:64px!important;
+    padding-bottom:60px!important;
   }
   .article-all-grid .article-card .article-view-count{
     left:19px!important;
-    bottom:19.5px!important;
+    bottom:19px!important;
   }
   .article-all-grid .article-card .article-read-more{
-    right:19px!important;
-    bottom:19.5px!important;
+    left:55px!important;
+    bottom:10px!important;
   }
 }
 </style>
