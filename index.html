@@ -1350,35 +1350,27 @@ document.addEventListener('DOMContentLoaded', function () {
 <script id="cv-view-count-script">(function(){function init(){var b=document.querySelector('.cv-button');var n=document.getElementById('cv-view-number');if(!b||!n)return;if(window.goatcounter&&typeof window.goatcounter.visit_count==='function'){window.goatcounter.visit_count({path:'/cv',append:n,type:'html',no_branding:true,attr:{'aria-hidden':'true'}})}b.addEventListener('click',function(){if(window.goatcounter&&typeof window.goatcounter.count==='function')window.goatcounter.count({path:'/cv',title:'CV View'})})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();</script></body>
 
 <style id="knowledge-card-read-icon-consistency">
-/* Knowledge Base — consistent bottom action row on every card. */
-.article-all-grid .article-card{
-  position:relative!important;
-  padding-bottom:64px!important;
-}
+/* Knowledge Base — consistent eye + selection icon positioning on every card. */
+.article-all-grid .article-card{position:relative!important}
 .article-all-grid .article-card .article-view-count{
   position:absolute!important;
   left:22px!important;
   bottom:20px!important;
   display:inline-flex!important;
   align-items:center!important;
-  gap:4px!important;
+  gap:5px!important;
   margin:0!important;
   padding:0!important;
   color:#8b9199!important;
   font-family:"DM Mono",monospace!important;
-  font-size:9px!important;
+  font-size:10px!important;
   line-height:1!important;
-  font-weight:500!important;
   white-space:nowrap!important;
-}
-.article-all-grid .article-card .article-view-count .article-view-icon{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
 }
 .article-all-grid .article-card .article-view-count svg{
   width:13px!important;
   height:13px!important;
+  margin:0!important;
   fill:none!important;
   stroke:currentColor!important;
   stroke-width:1.55!important;
@@ -1391,9 +1383,9 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 .article-all-grid .article-card .article-read-more{
   position:absolute!important;
-  left:58px!important;
-  bottom:11px!important;
+  left:calc(22px + 43px)!important;
   right:auto!important;
+  bottom:11px!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
@@ -1404,7 +1396,6 @@ document.addEventListener('DOMContentLoaded', function () {
   color:#2563eb!important;
   opacity:1!important;
   text-decoration:none!important;
-  transform:none!important;
 }
 .article-all-grid .article-card .article-read-more svg{
   width:22px!important;
@@ -1421,17 +1412,8 @@ document.addEventListener('DOMContentLoaded', function () {
   transform:translateY(-2px)!important;
 }
 @media(max-width:560px){
-  .article-all-grid .article-card{
-    padding-bottom:60px!important;
-  }
-  .article-all-grid .article-card .article-view-count{
-    left:19px!important;
-    bottom:19px!important;
-  }
-  .article-all-grid .article-card .article-read-more{
-    left:55px!important;
-    bottom:10px!important;
-  }
+  .article-all-grid .article-card .article-view-count{left:19px!important;bottom:19.5px!important}
+  .article-all-grid .article-card .article-read-more{left:calc(19px + 43px)!important;bottom:10.5px!important}
 }
 </style>
 
