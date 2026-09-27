@@ -829,7 +829,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function syncWithTrain(now){
-    if(reducedMotion.matches || manualTrainHold) return;
+    if(manualTrainHold) return;
 
     const elapsed=(now-autoStart)%12000;
     const stations=[
@@ -913,7 +913,6 @@ document.addEventListener('DOMContentLoaded', function () {
       select(String(stage+1),false);
     }
   }  function startTrainSync(resetClock=true){
-    if(reducedMotion.matches) return;
     if(autoTimer) cancelAnimationFrame(autoTimer);
     if(resetClock) autoStart=performance.now();
     function tick(now){
@@ -1013,13 +1012,7 @@ document.addEventListener('DOMContentLoaded', function () {
   journeyObserver.observe(root);
 
   reducedMotion.addEventListener?.('change',function(){
-    if(reducedMotion.matches){
-      if(autoTimer) cancelAnimationFrame(autoTimer);
-      autoTimer=null;
-      select('1',false);
-    }else{
-      startTrainSync();
-    }
+    startTrainSync();
   });
 })();
 </script>
