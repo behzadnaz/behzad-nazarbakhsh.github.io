@@ -2709,3 +2709,13 @@ footer{font-size:11px;line-height:1.5}
   margin-right:0!important;
   box-sizing:border-box!important;
 }
+
+/* Match Contact intro typography to the About intro exactly. */
+#about-contact .contact-block .contact-intro p{
+  font-family:inherit!important;
+  font-size:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  font-weight:inherit!important;
+  color:inherit!important;
+}
