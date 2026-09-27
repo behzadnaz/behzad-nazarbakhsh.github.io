@@ -1039,4 +1039,37 @@ document.addEventListener('DOMContentLoaded', function () {
 @media(max-width:480px){.engagement-spaceship{width:72px!important;height:40px!important;top:-20px!important}}
 </style>
 
-<style id="engagement-ufo-asset-style">.engagement-spaceship img{display:block;width:100%;height:100%;object-fit:contain;animation:ufoAssetFloat 2.8s ease-in-out infinite;filter:drop-shadow(0 8px 12px rgba(15,23,42,.14))}@keyframes ufoAssetFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@media(prefers-reduced-motion:reduce){.engagement-spaceship img{animation:none}}</style>
+<style id="engagement-ufo-asset-style">.engagement-spaceship img{display:block;width:100%;height:100%;object-fit:contain;animation:ufoAssetFloat 2.8s ease-in-out infinite;filter:drop-shadow(0 8px 12px rgba(15,23,42,.14))}@keyframes ufoAssetFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@media(prefers-reduced-motion:reduce){.engagement-spaceship img{animation:none}}</style><style id="engagement-ufo-final-alignment">
+.engagement-spaceship.engagement-spaceship{
+  width:110px!important;
+  height:60px!important;
+  top:-42px!important;
+  left:5%;
+  transform:translateX(-50%)!important;
+  color:#2563eb!important;
+}
+.engagement-spaceship.engagement-spaceship img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  filter:grayscale(1) brightness(.72)!important;
+}
+.engagement-spaceship.engagement-spaceship.is-stopped img{
+  filter:brightness(0) saturate(100%) invert(36%) sepia(93%) saturate(1800%) hue-rotate(210deg) brightness(93%) contrast(96%)!important;
+}
+@media(max-width:700px){
+  .engagement-spaceship.engagement-spaceship{
+    width:88px!important;
+    height:48px!important;
+    top:-30px!important;
+  }
+}
+@media(max-width:480px){
+  .engagement-spaceship.engagement-spaceship{
+    width:72px!important;
+    height:40px!important;
+    top:-25px!important;
+  }
+}
+</style>
