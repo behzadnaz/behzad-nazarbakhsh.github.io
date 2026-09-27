@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 96"><path d="M18 49c8-20 30-31 62-31s54 11 62 31c-12 9-33 14-62 14S30 58 18 49Z" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Flying saucer">
+  <defs>
+    <linearGradient id="dome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="currentColor" stop-opacity=".18"/>
+      <stop offset="1" stop-color="currentColor" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="currentColor" stop-opacity=".22"/>
+      <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M72 78 L93 128 Q120 138 147 128 L168 78 Z" fill="url(#beam)" opacity=".7"/>
+  <ellipse cx="120" cy="76" rx="96" ry="27" fill="currentColor" opacity=".08" stroke="currentColor" stroke-width="3"/>
+  <path d="M42 72 Q55 102 120 104 Q185 102 198 72 Q185 91 120 93 Q55 91 42 72Z" fill="currentColor" opacity=".13" stroke="currentColor" stroke-width="3"/>
+  <path d="M76 68 Q81 35 120 30 Q159 35 164 68Z" fill="url(#dome)" stroke="currentColor" stroke-width="3"/>
+  <path d="M91 58 Q96 42 120 39 Q144 42 149 58" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"/>
+  <circle cx="62" cy="77" r="4" fill="currentColor"/>
+  <circle cx="92" cy="91" r="4" fill="currentColor"/>
+  <circle cx="120" cy="95" r="4" fill="currentColor"/>
+  <circle cx="148" cy="91" r="4" fill="currentColor"/>
+  <circle cx="178" cy="77" r="4" fill="currentColor"/>
+</svg>
