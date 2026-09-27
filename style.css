@@ -2670,3 +2670,15 @@ footer{font-size:11px;line-height:1.5}
   color:var(--muted)!important;
 }
 #about-contact .contact-block .connect-links{margin-top:28px!important}
+
+/* Align section copy with its headings. */
+#articles > .articles-intro{
+  max-width:680px!important;
+  margin-left:0!important;
+  margin-right:auto!important;
+}
+#about-contact > .section-body{
+  max-width:680px!important;
+  margin-left:0!important;
+  margin-right:auto!important;
+}
