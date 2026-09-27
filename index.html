@@ -1011,8 +1011,7 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
     if(window.goatcounter&&typeof window.goatcounter.count==='function'){
       window.goatcounter.count({
         path:'/article-click/'+slugify(link.textContent),
-        title:link.textContent.trim(),
-        no_session:true
+        title:link.textContent.trim()
       });
     }
   }
@@ -1393,7 +1392,7 @@ document.addEventListener('DOMContentLoaded', function () {
       writeCount(value);
       n.textContent=String(value);
       if(window.goatcounter&&typeof window.goatcounter.count==='function'){
-        window.goatcounter.count({path:'/cv',title:'CV View',no_session:true});
+        window.goatcounter.count({path:'/cv',title:'CV View'});
       }
     });
     setTimeout(refresh,500);
