@@ -1363,12 +1363,12 @@ document.addEventListener('DOMContentLoaded', function () {
   0%,100%{color:#111827;background:transparent;box-shadow:none;transform:scale(1)}
   50%{color:#fff;background:#2563eb;box-shadow:0 5px 14px rgba(37,99,235,.24);transform:scale(1.08)}
 }
-#about-contact:target .connect-links a.connect-calendly .connect-icon-calendar{
+.connect-links a.connect-calendly.calendly-attention .connect-icon-calendar{
   width:30px;height:30px;border-radius:50%;
   animation:calendlyIconBlink 1s ease-in-out infinite;
 }
-#about-contact:target .connect-links a.connect-calendly .connect-icon-calendar svg{width:18px;height:18px}
-#about-contact:target .connect-links a.connect-calendly .connect-name{
+.connect-links a.connect-calendly.calendly-attention .connect-icon-calendar svg{width:18px;height:18px}
+.connect-links a.connect-calendly.calendly-attention .connect-name{
   animation:calendlyBlinkBlueBlack 1s ease-in-out infinite;
 }
 @media(max-width:560px){
@@ -1376,4 +1376,25 @@ document.addEventListener('DOMContentLoaded', function () {
   #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar svg{width:17px;height:17px}
 }
 </style>
+<script id="calendly-attention-script">
+(function(){
+  function initCalendlyAttention(){
+    var talkLinks=document.querySelectorAll('a[href="#about-contact"]');
+    var calendly=document.querySelector('.connect-links a.connect-calendly');
+    if(!calendly)return;
+    talkLinks.forEach(function(link){
+      link.addEventListener('click',function(){
+        window.setTimeout(function(){
+          calendly.classList.add('calendly-attention');
+        },250);
+      });
+    });
+    if(window.location.hash==='#about-contact'){
+      calendly.classList.add('calendly-attention');
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initCalendlyAttention);
+  else initCalendlyAttention();
+})();
+</script>
 <!-- pages rebuild: 1790490667803 -->
