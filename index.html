@@ -1398,6 +1398,17 @@ document.addEventListener('DOMContentLoaded', function () {
  .cv-button-wrap>a.cv-button .cv-view-count svg{width:11px!important;height:11px!important}
 }
 </style>
+<style id="cv-spacing-override">
+.cv-button-wrap>a.cv-button .cv-view-count{
+  position:static!important;
+  margin-left:24px!important;
+  padding-left:0!important;
+  gap:5px!important;
+}
+.cv-button-wrap>a.cv-button .cv-view-count svg{
+  margin:0!important;
+}
+</style>
 <script id="calendly-attention-script">
 (function(){
   function startCalendlyAttention(){
