@@ -2791,3 +2791,22 @@ footer{font-size:11px;line-height:1.5}
   opacity:1!important;
   visibility:visible!important;
 }
+
+/* Calendly uses the same Contact selection-arrow CSS as LinkedIn, GitHub and Email. */
+#about-contact .contact-block .connect-links>a.connect-calendly .connect-arrow{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:18px!important;
+  height:18px!important;
+  flex:0 0 18px!important;
+  margin-left:6px!important;
+  color:var(--muted)!important;
+  font-size:16px!important;
+  line-height:1!important;
+  transition:transform .18s ease,color .18s ease!important;
+}
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow{
+  color:#2563eb!important;
+  transform:translate(2px,-2px)!important;
+}
