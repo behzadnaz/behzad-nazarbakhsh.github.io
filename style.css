@@ -3701,3 +3701,22 @@ footer{font-size:11px;line-height:1.5}
     border-bottom:0!important;
   }
 }
+
+
+/* Contact grid redesign — clean four-column structure */
+#about-contact .contact-block .connect-links{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;width:100%!important;margin-top:34px!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;background:transparent!important}
+#about-contact .contact-block .connect-links>a{display:flex!important;flex-direction:column!important;justify-content:flex-start!important;align-items:stretch!important;min-width:0!important;min-height:128px!important;margin:0!important;padding:20px 22px 16px!important;border:0!important;border-right:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;box-sizing:border-box!important;text-decoration:none!important;color:var(--ink)!important}
+#about-contact .contact-block .connect-links>a:last-child{border-right:0!important}
+#about-contact .contact-block .connect-top{display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;min-height:40px!important;margin:0!important;padding:0 0 15px!important;border-bottom:1px solid var(--line)!important;box-sizing:border-box!important;gap:10px!important}
+#about-contact .contact-block .connect-icon{width:38px!important;height:38px!important;flex:0 0 38px!important;margin:0!important;border:1px solid var(--line)!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:var(--paper)!important;color:var(--ink)!important}
+#about-contact .contact-block .connect-icon svg{width:18px!important;height:18px!important;display:block!important;fill:currentColor!important}
+#about-contact .contact-block .connect-icon-email svg,#about-contact .contact-block .connect-icon-calendar svg{fill:none!important;stroke:currentColor!important;stroke-width:1.5!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+#about-contact .contact-block .connect-name{margin:0!important;padding:0!important;white-space:nowrap!important;font-weight:600!important;line-height:1.2!important;color:var(--ink)!important}
+#about-contact .contact-block .connect-arrow{margin-left:auto!important;flex:0 0 auto!important;width:24px!important;height:24px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:var(--muted)!important;font-size:17px!important;line-height:1!important}
+#about-contact .contact-block .connect-click-count{display:inline-flex!important;align-items:center!important;gap:5px!important;width:max-content!important;margin:14px 0 0!important;padding:0!important;color:#8a8f98!important;font-family:"DM Mono",monospace!important;font-size:9px!important;line-height:1!important;letter-spacing:.02em!important}
+#about-contact .contact-block .connect-click-count svg{width:13px!important;height:13px!important;display:block!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+#about-contact .contact-block .connect-links>a:hover .connect-name{color:#2563eb!important}
+#about-contact .contact-block .connect-links>a:hover .connect-arrow{color:#2563eb!important;transform:translate(2px,-2px)!important}
+#about-contact .contact-block .connect-links>a:hover .connect-icon{border-color:#2563eb!important;color:#2563eb!important}
+@media(max-width:1050px){#about-contact .contact-block .connect-links{grid-template-columns:repeat(2,minmax(0,1fr))!important}#about-contact .contact-block .connect-links>a:nth-child(2){border-right:0!important}#about-contact .contact-block .connect-links>a:nth-child(n+3){border-top:1px solid var(--line)!important}#about-contact .contact-block .connect-links>a:nth-child(3){border-right:1px solid var(--line)!important}#about-contact .contact-block .connect-links>a:nth-child(4){border-right:0!important}}
+@media(max-width:560px){#about-contact .contact-block .connect-links{grid-template-columns:1fr!important}#about-contact .contact-block .connect-links>a,#about-contact .contact-block .connect-links>a:nth-child(3){min-height:112px!important;padding:16px 14px!important;border-right:0!important;border-top:0!important;border-bottom:1px solid var(--line)!important}#about-contact .contact-block .connect-links>a:last-child{border-bottom:0!important}}
