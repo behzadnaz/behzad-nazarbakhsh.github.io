@@ -1593,31 +1593,36 @@ document.addEventListener('DOMContentLoaded', function () {
 .article-card .article-view-count{margin-top:20.15px!important;margin-bottom:20.15px!important}
 @media(max-width:560px){.article-card .article-view-count{margin-top:19.5px!important;margin-bottom:19.5px!important}}
 <style id="airfocus-logo-icon">.article-card h3 .article-source-icon.article-source-airfocus svg{fill:none!important;stroke:none!important}.article-card h3 .article-source-icon.article-source-airfocus svg path{stroke:none!important}</style></style><style id="calendly-contact-emphasis">
-/* Calendly stays visually consistent with the other contact links by default.
-   Only the icon itself is highlighted when the user arrives here from "Let's talk". */
+/* Calendly attention after clicking “Let's talk”: text, calendar icon, and selection icon blink black/blue. */
 .connect-links a.connect-calendly{font-weight:inherit;position:relative;border-radius:0;background:transparent!important;box-shadow:none!important;transition:color .25s ease}
-.connect-links a.connect-calendly .connect-icon-calendar{transform:none;color:inherit;background:transparent!important;border:0!important;filter:none;animation:none;transition:background-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease}
+.connect-links a.connect-calendly .connect-icon-calendar{transform:none;color:inherit;background:transparent!important;border:0!important;filter:none;animation:none;transition:color .25s ease,transform .25s ease}
 .connect-links a.connect-calendly .connect-name{transition:color .25s ease}
+.connect-links a.connect-calendly .connect-arrow{border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;transition:color .25s ease,transform .25s ease!important}
 .connect-links a.connect-calendly:hover{color:inherit;background:transparent;box-shadow:none;transform:none}
-@keyframes calendlyBlinkBlueBlack{
+@keyframes calendlyBlinkText{
   0%,100%{color:#111827}
   50%{color:#2563eb}
 }
-@keyframes calendlyIconBlink{
-  0%,100%{color:#111827;background:transparent;box-shadow:none;transform:scale(1)}
-  50%{color:#fff;background:#2563eb;box-shadow:0 5px 14px rgba(37,99,235,.24);transform:scale(1.08)}
+@keyframes calendlyBlinkIcon{
+  0%,100%{color:#111827;transform:scale(1)}
+  50%{color:#2563eb;transform:scale(1.08)}
 }
 .connect-links a.connect-calendly.calendly-attention .connect-icon-calendar{
-  width:30px;height:30px;border-radius:50%;
-  animation:calendlyIconBlink 1s ease-in-out infinite;
+  animation:calendlyBlinkIcon 1s ease-in-out infinite!important;
 }
-.connect-links a.connect-calendly.calendly-attention .connect-icon-calendar svg{width:18px;height:18px}
 .connect-links a.connect-calendly.calendly-attention .connect-name{
-  animation:calendlyBlinkBlueBlack 1s ease-in-out infinite;
+  animation:calendlyBlinkText 1s ease-in-out infinite!important;
+}
+.connect-links a.connect-calendly.calendly-attention .connect-arrow{
+  animation:calendlyBlinkIcon 1s ease-in-out infinite!important;
+}
+.connect-links a.connect-calendly.calendly-attention .connect-icon-calendar svg,
+.connect-links a.connect-calendly.calendly-attention .connect-arrow svg{
+  stroke:currentColor!important;
 }
 @media(max-width:560px){
-  #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar{width:28px;height:28px}
-  #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar svg{width:17px;height:17px}
+  #contact-section .connect-links a.connect-calendly .connect-icon-calendar{width:28px;height:28px}
+  #contact-section .connect-links a.connect-calendly .connect-icon-calendar svg{width:17px;height:17px}
 }
 </style>
 <style id="cv-button-inside-final">
@@ -1649,59 +1654,18 @@ document.addEventListener('DOMContentLoaded', function () {
 (function(){
   function startCalendlyAttention(){
     var calendly=document.querySelector('.connect-links a.connect-calendly');
-    if(!calendly || calendly.dataset.attentionStarted==='1') return;
-    calendly.dataset.attentionStarted='1';
-    var icon=calendly.querySelector('.connect-icon-calendar');
-    var name=calendly.querySelector('.connect-name');
-    if(!icon || !name) return;
-    var on=false;
-    var timer=null;
-    var stopped=false;
-    function resetBlack(){
-      stopped=true;
-      if(timer){window.clearInterval(timer);timer=null;}
-      icon.style.setProperty('background','transparent','important');
-      icon.style.setProperty('color','#111827','important');
-      icon.style.setProperty('box-shadow','none','important');
-      icon.style.setProperty('transform','scale(1)','important');
-      name.style.setProperty('color','#111827','important');
-      calendly.dataset.attentionStarted='0';
-    }
-    function apply(){
-      if(stopped)return;
-      on=!on;
-      if(on){
-        icon.style.setProperty('background','transparent','important');
-        icon.style.setProperty('color','#2563eb','important');
-        icon.style.setProperty('box-shadow','none','important');
-        icon.style.setProperty('transform','scale(1.08)','important');
-        name.style.setProperty('color','#2563eb','important');
-      }else{
-        icon.style.setProperty('background','transparent','important');
-        icon.style.setProperty('color','#111827','important');
-        icon.style.setProperty('box-shadow','none','important');
-        icon.style.setProperty('transform','scale(1)','important');
-        name.style.setProperty('color','#111827','important');
-      }
-    }
-    apply();
-    timer=window.setInterval(apply,700);
-    /* Ignore the smooth-scroll caused by "Let's talk" itself. */
-    window.setTimeout(function(){
-      if(!stopped) window.addEventListener('scroll',resetBlack,{passive:true,once:true});
-    },900);
+    if(!calendly)return;
+    calendly.classList.remove('calendly-attention');
+    window.setTimeout(function(){calendly.classList.add('calendly-attention');},20);
   }
   function init(){
-    document.querySelectorAll('a[href="#about-contact"]').forEach(function(link){
+    document.querySelectorAll('.js-contact-cta').forEach(function(link){
       link.addEventListener('click',function(){
-        var calendly=document.querySelector('.connect-links a.connect-calendly');
-        if(calendly) calendly.dataset.attentionStarted='0';
-        window.setTimeout(startCalendlyAttention,700);
+        window.setTimeout(startCalendlyAttention,450);
       });
     });
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
-  else init();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
 
