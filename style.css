@@ -3447,3 +3447,134 @@ footer{font-size:11px;line-height:1.5}
     border-bottom:0!important;
   }
 }
+
+
+/* Contact final structure — four columns, top identity/action, bottom metric */
+#about-contact .contact-block .connect-links{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:0!important;
+  width:100%!important;
+  border-top:1px solid var(--line)!important;
+  border-bottom:1px solid var(--line)!important;
+}
+#about-contact .contact-block .connect-links a,
+#about-contact .contact-block .connect-links a:first-child,
+#about-contact .contact-block .connect-links a:last-child{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 28px!important;
+  grid-template-rows:auto 1px auto!important;
+  column-gap:12px!important;
+  row-gap:14px!important;
+  min-height:126px!important;
+  box-sizing:border-box!important;
+  padding:20px 20px 16px!important;
+  border:0!important;
+  border-right:1px solid var(--line)!important;
+  border-bottom:0!important;
+  text-decoration:none!important;
+}
+#about-contact .contact-block .connect-links a:last-child{
+  border-right:0!important;
+}
+#about-contact .contact-block .connect-top{
+  grid-column:1!important;
+  grid-row:1!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  min-width:0!important;
+}
+#about-contact .contact-block .connect-icon{
+  width:38px!important;
+  height:38px!important;
+  flex:0 0 38px!important;
+  margin:0!important;
+}
+#about-contact .contact-block .connect-name{
+  margin:0!important;
+  padding:0!important;
+  transform:none!important;
+  white-space:nowrap!important;
+  line-height:1.2!important;
+}
+#about-contact .contact-block .connect-arrow{
+  grid-column:2!important;
+  grid-row:1!important;
+  align-self:center!important;
+  justify-self:end!important;
+  margin:0!important;
+  transform:none!important;
+}
+#about-contact .contact-block .connect-links a:after{
+  content:""!important;
+  grid-column:1 / -1!important;
+  grid-row:2!important;
+  width:100%!important;
+  height:1px!important;
+  background:var(--line)!important;
+}
+#about-contact .contact-block .connect-click-count{
+  grid-column:1!important;
+  grid-row:3!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-self:start!important;
+  align-self:center!important;
+  gap:5px!important;
+  position:static!important;
+  width:auto!important;
+  height:auto!important;
+  margin:0!important;
+  padding:0!important;
+  color:#8a8f98!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:9px!important;
+  line-height:1!important;
+  opacity:.9!important;
+  transform:none!important;
+}
+#about-contact .contact-block .connect-click-count svg{
+  width:12px!important;
+  height:12px!important;
+  margin:0!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.6!important;
+}
+#about-contact .contact-block .connect-count-number{
+  min-width:1ch!important;
+}
+@media(max-width:1050px){
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  #about-contact .contact-block .connect-links a:nth-child(2){
+    border-right:0!important;
+  }
+  #about-contact .contact-block .connect-links a:nth-child(-n+2){
+    border-bottom:1px solid var(--line)!important;
+  }
+  #about-contact .contact-block .connect-links a:nth-child(3){
+    border-right:1px solid var(--line)!important;
+  }
+  #about-contact .contact-block .connect-links a:nth-child(4){
+    border-bottom:0!important;
+  }
+}
+@media(max-width:560px){
+  #about-contact .contact-block .connect-links{
+    grid-template-columns:1fr!important;
+  }
+  #about-contact .contact-block .connect-links a,
+  #about-contact .contact-block .connect-links a:first-child,
+  #about-contact .contact-block .connect-links a:last-child{
+    min-height:112px!important;
+    padding:16px 14px!important;
+    border-right:0!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+  #about-contact .contact-block .connect-links a:last-child{
+    border-bottom:0!important;
+  }
+}
