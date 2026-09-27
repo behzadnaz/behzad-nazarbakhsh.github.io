@@ -858,7 +858,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const placeAt=(x,y)=>{
       train.style.animation='none';
       train.style.left=x+'px';
-      train.style.top=(y-train.offsetHeight+2)+'px';
+      train.style.top=(y-train.offsetHeight*0.75)+'px';
       train.style.transform='translateX(-50%)';
       train.style.opacity='1';
     };
