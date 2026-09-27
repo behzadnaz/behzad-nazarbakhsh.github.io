@@ -873,7 +873,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const placeAt=(x,y,stopped)=>{
       train.style.animation='none';
       train.style.left=x+'px';
-      train.style.top=(y-(train.getBoundingClientRect().height||32)/4)+'px';
+      train.style.top=(y-(train.getBoundingClientRect().height||32)/2)+'px';
       train.style.transform='translate(-50%,-50%)';
       train.style.opacity='1';
       train.classList.toggle('is-stopped',stopped);
@@ -956,7 +956,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const trackRect=track.getBoundingClientRect();
     const dotRect=dot.getBoundingClientRect();
     train.style.left=(dotRect.left+dotRect.width/2-trackRect.left)+'px';
-    train.style.top=(dotRect.top+dotRect.height/2-trackRect.top-(train.getBoundingClientRect().height||32)/4)+'px';
+    train.style.top=(dotRect.top+dotRect.height/2-trackRect.top-(train.getBoundingClientRect().height||32)/2)+'px';
     train.style.transform='translate(-50%,-50%)';
     train.style.opacity='1';
   }
