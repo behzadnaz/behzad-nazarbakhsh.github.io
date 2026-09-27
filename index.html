@@ -431,8 +431,8 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 }
 </style>
 
-<style id="article-view-row-spacing-v3">
-/* LinkedIn + Scholar: 3-line gap after the last text line, then the eye/count row, then 1 line to the card edge. */
+<style id="article-view-row-spacing-v4">
+/* LinkedIn + Scholar: exactly 3 summary-text lines before the eye/count row, then exactly 1 summary-text line before the card edge. */
 .article-card.linkedin-card .article-view-count,
 .article-card.academic-card .article-view-count{
   position:static!important;
@@ -440,9 +440,9 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   align-items:center!important;
   align-self:flex-start!important;
   width:max-content!important;
-  margin-top:3em!important;
+  margin-top:39px!important;   /* 3 x (13px text x 1.0 line unit) */
   margin-left:0!important;
-  margin-bottom:1em!important;
+  margin-bottom:20px!important; /* 1 text line */
   padding:0!important;
   color:var(--muted,#667085)!important;
   line-height:1!important;
