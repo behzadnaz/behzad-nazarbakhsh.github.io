@@ -1389,15 +1389,26 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(bind,1500);
 })();</script><script id="contact-cta-focus">
 (function(){
+  function blinkCalendly(){
+    var el=document.querySelector('#contact-section .connect-calendly');
+    if(!el)return;
+    el.classList.remove('calendly-attention');
+    void el.offsetWidth;
+    el.classList.add('calendly-attention');
+    window.setTimeout(function(){el.classList.remove('calendly-attention');},7000);
+  }
   function focusContact(e){
     var target=document.getElementById('contact-section');
     if(!target)return;
     e.preventDefault();
     history.pushState(null,'','#contact-section');
-    window.setTimeout(function(){target.scrollIntoView({behavior:'smooth',block:'start'});},30);
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+    window.setTimeout(blinkCalendly,500);
   }
   function init(){
-    document.querySelectorAll('.js-contact-cta').forEach(function(link){link.addEventListener('click',focusContact);});
+    document.querySelectorAll('.js-contact-cta').forEach(function(link){
+      link.addEventListener('click',focusContact);
+    });
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
@@ -1650,24 +1661,7 @@ document.addEventListener('DOMContentLoaded', function () {
   margin:0!important;
 }
 </style>
-<script id="calendly-attention-script">
-(function(){
-  function startCalendlyAttention(){
-    var calendly=document.querySelector('.connect-links a.connect-calendly');
-    if(!calendly)return;
-    calendly.classList.remove('calendly-attention');
-    window.setTimeout(function(){calendly.classList.add('calendly-attention');},20);
-  }
-  function init(){
-    document.querySelectorAll('.js-contact-cta').forEach(function(link){
-      link.addEventListener('click',function(){
-        window.setTimeout(startCalendlyAttention,450);
-      });
-    });
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();
-</script>
+
 
 <style id="knowledge-base-grid-redesign-v1">
 /* Knowledge Base — restore a consistent card structure. */
