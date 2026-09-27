@@ -2730,3 +2730,8 @@ footer{font-size:11px;line-height:1.5}
   color:var(--muted)!important;
   margin:0!important;
 }
+
+/* Tighten the transition from the final Knowledge Base cards into About. */
+#articles{
+  padding-bottom:55px!important;
+}
