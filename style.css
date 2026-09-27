@@ -2476,3 +2476,37 @@ footer{font-size:11px;line-height:1.5}
 #about-contact .contact-block .connect-metric{margin:8px 0 0!important;gap:4px!important}
 @media(max-width:1050px){#about-contact .contact-block .connect-links{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px!important;row-gap:26px!important}}
 @media(max-width:560px){#about-contact .contact-block .connect-links{grid-template-columns:1fr;row-gap:22px!important}#about-contact .contact-block .connect-links>a{min-height:0!important}}
+
+
+/* Contact — place the LinkedIn view metric directly under the selection arrow */
+#about-contact .contact-block .connect-links>a.connect-linkedin{
+  position:relative!important;
+}
+#about-contact .contact-block .connect-links>a.connect-linkedin .connect-metric{
+  position:absolute!important;
+  right:0!important;
+  top:50px!important;
+  margin:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:4px!important;
+  width:18px!important;
+  color:#9297a0!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:9px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+#about-contact .contact-block .connect-links>a.connect-linkedin .connect-metric svg{
+  width:13px!important;
+  height:13px!important;
+  display:block!important;
+  flex:0 0 13px!important;
+}
+@media(max-width:560px){
+  #about-contact .contact-block .connect-links>a.connect-linkedin .connect-metric{
+    right:0!important;
+    top:50px!important;
+  }
+}
