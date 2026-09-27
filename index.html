@@ -854,7 +854,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const dotRect=dot.getBoundingClientRect();
           train.style.animation='none';
           train.style.left=(dotRect.left+dotRect.width/2-trackRect.left)+'px';
-          train.style.top=(dotRect.top-trackRect.top-train.getBoundingClientRect().height)+'px';
+          train.style.top=(dotRect.top-trackRect.top-train.offsetHeight+2)+'px';
           train.style.transform='translateX(-50%)';
           train.style.opacity='1';
         }
