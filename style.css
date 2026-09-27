@@ -2874,3 +2874,20 @@ footer{font-size:11px;line-height:1.5}
   opacity:1!important;
   transform:translateY(-2px)!important;
 }
+
+/* Calendly: keep the card-style selection icon, never add a circle around it. */
+#about-contact .contact-block .connect-links>a.connect-calendly .connect-arrow{
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  box-shadow:none!important;
+  width:30px!important;
+  height:30px!important;
+  flex:0 0 30px!important;
+  color:var(--accent)!important;
+}
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow{
+  border:0!important;
+  border-radius:0!important;
+  color:var(--accent)!important;
+}
