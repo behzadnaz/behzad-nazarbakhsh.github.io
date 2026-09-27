@@ -1348,5 +1348,19 @@ document.addEventListener('DOMContentLoaded', function () {
 /* All article cards: one text-line gap between the summary and eye/count row. */
 .article-card .article-view-count{margin-top:20.15px!important;margin-bottom:20.15px!important}
 @media(max-width:560px){.article-card .article-view-count{margin-top:19.5px!important;margin-bottom:19.5px!important}}
-<style id="airfocus-logo-icon">.article-card h3 .article-source-icon.article-source-airfocus svg{fill:none!important;stroke:none!important}.article-card h3 .article-source-icon.article-source-airfocus svg path{stroke:none!important}</style></style><style id="calendly-contact-emphasis">.connect-links a.connect-calendly{font-weight:700!important;position:relative;border-radius:10px;transition:color .25s ease,background-color .25s ease,box-shadow .25s ease,transform .25s ease}.connect-links a.connect-calendly .connect-icon-calendar{transform:scale(1.12);font-weight:700;color:#f5b800;filter:drop-shadow(0 0 5px rgba(245,184,0,.55));animation:calendlyBulb 1.8s ease-in-out infinite}.connect-links a.connect-calendly .connect-name{transition:color .25s ease}.connect-links a.connect-calendly:hover{color:#f5b800;background:rgba(245,184,0,.08);box-shadow:0 0 18px rgba(245,184,0,.18);transform:translateY(-1px)}@keyframes calendlyBulb{0%,100%{color:#9a7400;filter:drop-shadow(0 0 1px rgba(245,184,0,.2));opacity:.7}45%{color:#ffd54a;filter:drop-shadow(0 0 9px rgba(255,213,74,.9));opacity:1}60%{color:#f5b800;filter:drop-shadow(0 0 4px rgba(245,184,0,.55));opacity:.9}}</style>
+<style id="airfocus-logo-icon">.article-card h3 .article-source-icon.article-source-airfocus svg{fill:none!important;stroke:none!important}.article-card h3 .article-source-icon.article-source-airfocus svg path{stroke:none!important}</style></style><style id="calendly-contact-emphasis">
+/* Calendly stays visually consistent with the other contact links by default.
+   Only the icon itself is highlighted when the user arrives here from "Let's talk". */
+.connect-links a.connect-calendly{font-weight:inherit;position:relative;border-radius:0;transition:color .25s ease}
+.connect-links a.connect-calendly .connect-icon-calendar{transform:none;color:inherit;filter:none;animation:none;transition:background-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease}
+.connect-links a.connect-calendly .connect-name{transition:color .25s ease}
+.connect-links a.connect-calendly:hover{color:inherit;background:transparent;box-shadow:none;transform:none}
+#about-contact:target .connect-links a.connect-calendly .connect-icon-calendar{width:30px;height:30px;border-radius:50%;background:#2563eb;color:#fff;transform:scale(1.08);box-shadow:0 5px 14px rgba(37,99,235,.24)}
+#about-contact:target .connect-links a.connect-calendly .connect-icon-calendar svg{width:18px;height:18px}
+#about-contact:target .connect-links a.connect-calendly .connect-name{color:inherit}
+@media(max-width:560px){
+  #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar{width:28px;height:28px}
+  #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar svg{width:17px;height:17px}
+}
+</style>
 <!-- pages rebuild: 1790490667803 -->
