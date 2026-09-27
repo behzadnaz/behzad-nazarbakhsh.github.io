@@ -2536,3 +2536,12 @@ footer{font-size:11px;line-height:1.5}
 #about-contact .connect-linkedin .connect-click-count svg{display:block!important;width:13px!important;height:13px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
 #about-contact .connect-linkedin #linkedin-contact-count{min-width:1ch!important}
 @media(max-width:560px){#about-contact .connect-linkedin .connect-click-count{font-size:9px!important}#about-contact .connect-linkedin .connect-click-count svg{width:12px!important;height:12px!important}}
+
+
+/* LinkedIn contact counter — behind selection icon */
+#about-contact .connect-linkedin{position:relative!important}
+#about-contact .connect-linkedin .connect-icon-linkedin{position:relative!important;z-index:3!important;background:var(--paper,#fff)!important}
+#about-contact .connect-linkedin .connect-click-count{position:absolute!important;left:27px!important;top:31px!important;z-index:1!important;display:inline-flex!important;align-items:center!important;gap:3px!important;color:#8a8f98!important;opacity:.9!important;font-family:"DM Mono",monospace!important;font-size:8px!important;font-weight:500!important;line-height:1!important;pointer-events:none!important}
+#about-contact .connect-linkedin .connect-click-count svg{width:10px!important;height:10px!important;stroke:#8a8f98!important;fill:none!important;stroke-width:1.6!important}
+#about-contact .connect-linkedin #linkedin-contact-count{min-width:1ch!important}
+@media(max-width:560px){#about-contact .connect-linkedin .connect-click-count{left:25px!important;top:29px!important;font-size:7px!important}#about-contact .connect-linkedin .connect-click-count svg{width:9px!important;height:9px!important}}
