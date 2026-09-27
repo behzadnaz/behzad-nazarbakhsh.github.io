@@ -342,6 +342,51 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   .engagement-example-text{padding:11px 12px}
 }
 </style>
+<style id="all-article-card-view-count-alignment">
+/* All article cards: align view counter with the left source/selection icon and remove bottom slack */
+.article-card{
+  position:relative!important;
+  min-height:0!important;
+  height:auto!important;
+  padding-bottom:0!important;
+}
+.article-card .article-view-count{
+  position:absolute!important;
+  left:22px!important;
+  right:auto!important;
+  bottom:0!important;
+  color:var(--muted,#667085)!important;
+  margin:0!important;
+  padding:0!important;
+}
+.article-card .article-view-count .article-view-icon,
+.article-card .article-view-count .article-view-number{
+  color:var(--muted,#667085)!important;
+}
+.article-card .article-view-count svg{
+  color:var(--muted,#667085)!important;
+  stroke:currentColor!important;
+}
+.article-card.linkedin-card,
+.article-card.academic-card{
+  min-height:0!important;
+  height:auto!important;
+}
+@media(max-width:560px){
+  .article-card{
+    min-height:0!important;
+    height:auto!important;
+    padding-bottom:0!important;
+  }
+  .article-card .article-view-count{
+    left:19px!important;
+    bottom:0!important;
+  }
+}
+@media(max-width:420px){
+  .article-card .article-view-count{left:19px!important}
+}
+</style>
 </head>
 <body>
   <header id="home" class="hero">
