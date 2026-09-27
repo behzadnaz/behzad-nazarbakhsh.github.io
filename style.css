@@ -2927,3 +2927,36 @@ footer{font-size:11px;line-height:1.5}
     padding:18px 0!important;
   }
 }
+
+
+/* LinkedIn counter — tucked behind the selection icon */
+#about-contact .contact-block .connect-linkedin{
+  position:relative!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-icon-linkedin{
+  position:relative!important;
+  z-index:3!important;
+  background:var(--paper,#fff)!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-click-count{
+  position:absolute!important;
+  left:16px!important;
+  top:52px!important;
+  z-index:1!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:3px!important;
+  color:#8a8f98!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:8px!important;
+  line-height:1!important;
+  opacity:.9!important;
+  pointer-events:none!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-click-count svg{
+  width:10px!important;
+  height:10px!important;
+  stroke:#8a8f98!important;
+  fill:none!important;
+  stroke-width:1.6!important;
+}
