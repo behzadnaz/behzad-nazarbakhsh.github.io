@@ -2348,14 +2348,14 @@ footer{font-size:11px;line-height:1.5}
 /* Engagement journey — larger, clearer spaceship */
 .engagement-spaceship{width:128px!important;height:82px!important;display:flex!important;align-items:center!important;justify-content:center!important;z-index:4!important;filter:drop-shadow(0 6px 10px rgba(15,23,42,.14))}
 .engagement-spaceship svg{width:128px!important;height:82px!important;display:block!important;overflow:visible!important;filter:drop-shadow(0 0 5px rgba(37,99,235,.12))}
-.engagement-spaceship:after{content:"";position:absolute;left:8px;bottom:7px;width:40px;height:10px;border-radius:50%;background:linear-gradient(90deg,rgba(37,99,235,.42),rgba(37,99,235,0));filter:blur(5px);transform:rotate(-10deg);pointer-events:none}
-@media(max-width:700px){.engagement-spaceship{width:104px!important;height:66px!important}.engagement-spaceship svg{width:104px!important;height:66px!important}.engagement-spaceship:after{left:5px;bottom:5px;width:30px}}
+
+@media(max-width:700px){.engagement-spaceship{width:104px!important;height:66px!important}.engagement-spaceship svg{width:104px!important;height:66px!important}}
 
 /* Engagement spaceship — large flying-saucer anchor */
 .engagement-spaceship{width:180px!important;height:108px!important;filter:drop-shadow(0 10px 16px rgba(15,23,42,.18))!important}
 .engagement-spaceship svg{width:180px!important;height:108px!important;filter:drop-shadow(0 0 9px rgba(37,99,235,.18))!important}
-.engagement-spaceship:after{left:5px!important;bottom:4px!important;width:56px!important;height:12px!important;filter:blur(6px)!important}
-@media(max-width:700px){.engagement-spaceship{width:140px!important;height:84px!important}.engagement-spaceship svg{width:140px!important;height:84px!important}.engagement-spaceship:after{width:42px!important;height:10px!important}}
+
+@media(max-width:700px){.engagement-spaceship{width:140px!important;height:84px!important}.engagement-spaceship svg{width:140px!important;height:84px!important}}
 
 /* Engagement journey — spacecraft motion and flame detail */
 .engagement-spaceship{transform:translateY(-4px) rotate(-2deg);transition:transform .35s ease}
@@ -2367,9 +2367,9 @@ footer{font-size:11px;line-height:1.5}
 /* Final spaceship scale — smaller, cleaner proportion */
 .engagement-spaceship{width:112px!important;height:67px!important}
 .engagement-spaceship svg{width:112px!important;height:67px!important}
-.engagement-spaceship:after{width:34px!important;height:8px!important}
-@media(max-width:700px){.engagement-spaceship{width:92px!important;height:55px!important}.engagement-spaceship svg{width:92px!important;height:55px!important}.engagement-spaceship:after{width:28px!important;height:7px!important}}
-@media(max-width:480px){.engagement-spaceship{width:82px!important;height:49px!important}.engagement-spaceship svg{width:82px!important;height:49px!important}.engagement-spaceship:after{width:24px!important;height:6px!important}}
+
+@media(max-width:700px){.engagement-spaceship{width:92px!important;height:55px!important}.engagement-spaceship svg{width:92px!important;height:55px!important}}
+@media(max-width:480px){.engagement-spaceship{width:82px!important;height:49px!important}.engagement-spaceship svg{width:82px!important;height:49px!important}}
 
 /* Final spaceship presentation — larger, clearer, more cinematic */
 .engagement-spaceship{width:168px!important;height:100px!important;transform:translateY(-6px) rotate(-2deg)!important;filter:drop-shadow(0 8px 14px rgba(15,23,42,.14))!important;z-index:5!important}
@@ -2438,3 +2438,6 @@ footer{font-size:11px;line-height:1.5}
 @keyframes spaceshipFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-5px) rotate(1deg)}}
 @keyframes spaceshipFlame{from{transform:scaleX(.78);opacity:.3}to{transform:scaleX(1.16);opacity:.75}}
 @media(max-width:700px){.engagement-spaceship{width:126px!important;height:76px!important}.engagement-spaceship svg{width:126px!important;height:76px!important}}
+
+/* Engagement UFO cleanup: no pseudo-element behind the craft */
+.engagement-spaceship:before,.engagement-spaceship:after{content:none!important;display:none!important;background:none!important;box-shadow:none!important;filter:none!important}
