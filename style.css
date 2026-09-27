@@ -2766,3 +2766,11 @@ footer{font-size:11px;line-height:1.5}
   color:var(--muted)!important;
   margin:0!important;
 }
+
+/* Calendly hover matches the blue interaction state used by the other Contact links. */
+#about-contact .contact-block .connect-calendly:hover .connect-main,
+#about-contact .contact-block .connect-calendly:hover .connect-name,
+#about-contact .contact-block .connect-calendly:hover .connect-arrow,
+#about-contact .contact-block .connect-calendly:hover .connect-icon{
+  color:#2563eb!important;
+}
