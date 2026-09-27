@@ -2960,3 +2960,32 @@ footer{font-size:11px;line-height:1.5}
   fill:none!important;
   stroke-width:1.6!important;
 }
+
+
+/* Contact LinkedIn counter — directly below selection icon */
+#about-contact .contact-block .connect-linkedin .connect-click-count{
+  position:absolute!important;
+  left:0!important;
+  top:68px!important;
+  z-index:4!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:3px!important;
+  width:42px!important;
+  margin:0!important;
+  padding:0!important;
+  color:#8a8f98!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:8px!important;
+  line-height:1!important;
+  opacity:.9!important;
+  pointer-events:none!important;
+}
+#about-contact .contact-block .connect-linkedin .connect-click-count svg{
+  width:10px!important;
+  height:10px!important;
+  stroke:#8a8f98!important;
+  fill:none!important;
+  stroke-width:1.6!important;
+}
