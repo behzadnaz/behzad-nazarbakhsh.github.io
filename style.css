@@ -2891,3 +2891,16 @@ footer{font-size:11px;line-height:1.5}
   border-radius:0!important;
   color:var(--accent)!important;
 }
+
+/* Align all Contact selection icons vertically with their labels. */
+#about-contact .contact-block .connect-links>a{
+  align-items:center!important;
+}
+#about-contact .contact-block .connect-links>a .connect-main{
+  align-items:center!important;
+}
+#about-contact .contact-block .connect-links>a .connect-arrow{
+  align-self:center!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
