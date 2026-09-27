@@ -2782,3 +2782,12 @@ footer{font-size:11px;line-height:1.5}
   fill:#2563eb!important;
   stroke:#2563eb!important;
 }
+
+/* Calendly selection arrow: use exactly the same hover behavior as Email. */
+#about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow{
+  color:#2563eb!important;
+  transform:translate(2px,-2px)!important;
+  transition:transform .18s ease,color .18s ease!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
