@@ -2700,3 +2700,12 @@ footer{font-size:11px;line-height:1.5}
   margin-right:0!important;
   box-sizing:border-box!important;
 }
+
+/* Contact intro spans the full section width, matching the other section introductions. */
+#about-contact .contact-block .contact-intro{
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+}
