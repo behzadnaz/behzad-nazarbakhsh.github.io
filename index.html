@@ -388,55 +388,46 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 }
 </style>
 <style id="article-view-count-exact-source-alignment">
-/* ONLY change the eye/count. Source/selection icons are untouched. */
+/* Eye/count: same left edge as the existing source/selection icon. Source icon itself is untouched. */
 .article-card{
   min-height:0!important;
   padding-bottom:8px!important;
 }
 .article-card .article-view-count{
   position:static!important;
-  left:auto!important;
-  bottom:auto!important;
   display:inline-flex!important;
   align-items:center!important;
   align-self:flex-start!important;
   width:max-content!important;
   margin:10px 0 0!important;
   padding:0!important;
+  transform:none!important;
   color:var(--muted,#667085)!important;
   font-family:"DM Mono",monospace!important;
   font-size:10px!important;
   line-height:16px!important;
   white-space:nowrap!important;
-}
-.article-card .article-view-count .article-view-icon,
-.article-card .article-view-count .article-view-number,
-.article-card .article-view-count svg{
-  color:var(--muted,#667085)!important;
+  margin-left:0!important;
 }
 .article-card .article-view-count .article-view-icon{
-  width:16px!important;
-  height:16px!important;
+  width:18px!important;
+  height:18px!important;
 }
 .article-card .article-view-count svg{
   width:15px!important;
   height:15px!important;
+  color:var(--muted,#667085)!important;
+}
+.article-card .article-view-count .article-view-number{
+  color:var(--muted,#667085)!important;
 }
 @media(max-width:560px){
-  .article-card{
-    min-height:0!important;
-    padding-bottom:8px!important;
-  }
-  .article-card .article-view-count{
-    left:auto!important;
-    bottom:auto!important;
-    margin-top:8px!important;
-  }
+  .article-card{padding-bottom:8px!important}
+  .article-card .article-view-count{margin-top:8px!important;margin-left:0!important}
 }
 @media(max-width:420px){
-  .article-card{
-    padding-bottom:7px!important;
-  }
+  .article-card{padding-bottom:7px!important}
+  .article-card .article-view-count{margin-left:0!important}
 }
 </style>
 </head>
