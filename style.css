@@ -2546,3 +2546,30 @@ footer{font-size:11px;line-height:1.5}
   color:#2563eb!important;
   opacity:1!important;
 }
+
+
+/* Contact — polished LinkedIn view indicator */
+#about-contact .contact-block .connect-links>a.connect-linkedin .connect-metric{
+  top:44px!important;
+  right:0!important;
+  gap:4px!important;
+  color:#8b9199!important;
+  font-size:9px!important;
+  line-height:1!important;
+  font-weight:500!important;
+  letter-spacing:0!important;
+}
+#about-contact .contact-block .connect-links>a.connect-linkedin .connect-metric svg{
+  width:13px!important;
+  height:13px!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.55!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+#about-contact .contact-block .connect-links>a.connect-linkedin .connect-metric svg circle{
+  fill:currentColor!important;
+  stroke:none!important;
+}
+#about-contact .contact-block .connect-links>a.connect-linkedin:hover .connect-metric{color:#2563eb!important}
