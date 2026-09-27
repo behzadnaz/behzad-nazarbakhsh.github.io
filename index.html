@@ -735,7 +735,55 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
         </div></div>
       </div>
 </section>
-    <footer><span>© 2026 Behzad Nazarbakhsh</span><span class="footer-role-visitor"><span>Software Craftsmanship · Product Coach · Agile Expert</span><span class="site-visitor-count" aria-label="Site visitors"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg><span id="site-visitor-count">0</span></span></span></footer>
+    <footer>
+      <span>© 2026 Behzad Nazarbakhsh</span>
+      <span class="footer-role-visitor">
+        <span class="footer-role">Software Craftsmanship · Product Coach · Agile Expert</span>
+        <span class="site-visitor-count" aria-label="Site visitors" title="Site visitors">
+          <span class="visitor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+          </span>
+          <span id="site-visitor-count" class="visitor-number">0</span>
+          <span class="visitor-label">visitors</span>
+        </span>
+      </span>
+    </footer>
+    <style id="site-visitor-count-style">
+      .footer-role-visitor{display:inline-flex;align-items:center;justify-content:flex-start;gap:14px;text-align:left;min-width:0}
+      .footer-role{color:var(--muted,#667085)}
+      .site-visitor-count{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:4px 9px;border:1px solid var(--line,#dfe4df);border-radius:999px;background:rgba(255,255,255,.48);white-space:nowrap;color:var(--ink,#1f2933);transition:border-color .18s ease,background .18s ease,transform .18s ease}
+      .site-visitor-count:hover{border-color:rgba(37,99,235,.28);background:rgba(255,255,255,.8);transform:translateY(-1px)}
+      .visitor-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;color:var(--muted,#667085)}
+      .visitor-icon svg{display:block;width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      .visitor-number{font-family:"DM Mono",monospace;font-size:11px;font-weight:700;line-height:1;color:var(--ink,#1f2933);min-width:1.5ch;text-align:right}
+      .visitor-label{font-size:10px;line-height:1;color:var(--muted,#667085);letter-spacing:.02em}
+      @media(max-width:700px){.footer-role-visitor{gap:10px;flex-wrap:wrap}.site-visitor-count{min-height:27px}}
+      @media(max-width:520px){.footer-role-visitor{display:flex;align-items:flex-start;flex-direction:column;gap:8px}.footer-role{max-width:100%}}
+      @media(prefers-reduced-motion:reduce){.site-visitor-count{transition:none}}
+    </style>
+    <script id="site-visitor-counter">
+    (function(){
+      var script=document.createElement('script');
+      script.setAttribute('data-goatcounter','https://YOURCODE.goatcounter.com/count');
+      script.async=true;
+      script.src='https://gc.zgo.at/count.js';
+      document.head.appendChild(script);
+      function render(){
+        if(!window.goatcounter || !window.goatcounter.visit_count){
+          setTimeout(render,100);
+          return;
+        }
+        window.goatcounter.visit_count({
+          path:'TOTAL',
+          append:'#site-visitor-count',
+          type:'html',
+          no_branding:true,
+          attr:{'aria-hidden':'true'}
+        });
+      }
+      render();
+    })();
+    </script>
 <style id="site-visitor-count-style">
 .footer-role-visitor{display:inline-flex;align-items:center;justify-content:flex-start;gap:10px;text-align:left}.site-visitor-count{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;color:var(--muted,#667085)}
 .site-visitor-count svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
