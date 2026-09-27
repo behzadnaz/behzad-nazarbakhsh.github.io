@@ -1378,23 +1378,45 @@ document.addEventListener('DOMContentLoaded', function () {
 </style>
 <script id="calendly-attention-script">
 (function(){
-  function initCalendlyAttention(){
-    var talkLinks=document.querySelectorAll('a[href="#about-contact"]');
+  function startCalendlyAttention(){
     var calendly=document.querySelector('.connect-links a.connect-calendly');
-    if(!calendly)return;
-    talkLinks.forEach(function(link){
+    if(!calendly || calendly.dataset.attentionStarted==='1') return;
+    calendly.dataset.attentionStarted='1';
+    var icon=calendly.querySelector('.connect-icon-calendar');
+    var name=calendly.querySelector('.connect-name');
+    if(!icon || !name) return;
+    var on=true;
+    function apply(){
+      on=!on;
+      if(on){
+        icon.style.setProperty('background','#2563eb','important');
+        icon.style.setProperty('color','#fff','important');
+        icon.style.setProperty('box-shadow','0 5px 14px rgba(37,99,235,.24)','important');
+        icon.style.setProperty('transform','scale(1.08)','important');
+        name.style.setProperty('color','#2563eb','important');
+      }else{
+        icon.style.setProperty('background','transparent','important');
+        icon.style.setProperty('color','#111827','important');
+        icon.style.setProperty('box-shadow','none','important');
+        icon.style.setProperty('transform','scale(1)','important');
+        name.style.setProperty('color','#111827','important');
+      }
+    }
+    apply();
+    window.setInterval(apply,700);
+  }
+  function init(){
+    document.querySelectorAll('a[href="#about-contact"]').forEach(function(link){
       link.addEventListener('click',function(){
-        window.setTimeout(function(){
-          calendly.classList.add('calendly-attention');
-        },250);
+        window.setTimeout(startCalendlyAttention,300);
       });
     });
     if(window.location.hash==='#about-contact'){
-      calendly.classList.add('calendly-attention');
+      window.setTimeout(startCalendlyAttention,300);
     }
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initCalendlyAttention);
-  else initCalendlyAttention();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
 })();
 </script>
 <!-- pages rebuild: 1790490667803 -->
