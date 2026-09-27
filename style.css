@@ -2755,3 +2755,14 @@ footer{font-size:11px;line-height:1.5}
   color:var(--muted)!important;
   margin:0!important;
 }
+
+/* Final: let Contact intro inherit the exact same paragraph CSS as the About section. */
+#about-contact .contact-block .contact-intro p{
+  font-family:inherit!important;
+  font-size:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  font-weight:inherit!important;
+  color:var(--muted)!important;
+  margin:0!important;
+}
