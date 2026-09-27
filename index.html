@@ -1469,45 +1469,23 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 </script>
 
-<style id="linkedin-counter-behind-source-icon-v1">
-/* LinkedIn article click counter sits directly behind the LinkedIn source icon. */
+<style id="linkedin-counter-visible-v2">
+/* Keep LinkedIn click count clearly visible beside the LinkedIn source icon. */
+.article-card.linkedin-card{position:relative!important}
 .article-card.linkedin-card h3 .article-source-icon.article-source-linkedin{
-  position:relative!important;
-  z-index:2!important;
+  position:relative!important;z-index:2!important;flex:0 0 18px!important;width:18px!important;height:18px!important;
 }
 .article-card.linkedin-card .article-view-count{
-  position:absolute!important;
-  left:18px!important;
-  top:28px!important;
-  z-index:1!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  gap:3px!important;
-  width:auto!important;
-  height:auto!important;
-  margin:0!important;
-  padding:0!important;
-  color:var(--muted,#667085)!important;
-  font-family:"DM Mono",monospace!important;
-  font-size:8px!important;
-  line-height:1!important;
-  opacity:.72!important;
-  pointer-events:none!important;
-  transform:translateY(9px)!important;
+  position:static!important;display:inline-flex!important;align-items:center!important;gap:3px!important;
+  width:auto!important;height:14px!important;margin:5px 0 0 27px!important;padding:0!important;
+  color:var(--muted,#667085)!important;font-family:"DM Mono",monospace!important;font-size:8px!important;
+  line-height:1!important;opacity:.78!important;pointer-events:none!important;transform:none!important;z-index:3!important;
 }
-.article-card.linkedin-card .article-view-count .article-view-icon{
-  width:10px!important;height:10px!important;opacity:.72!important;
-}
-.article-card.linkedin-card .article-view-count svg{
-  width:10px!important;height:10px!important;
-  stroke:currentColor!important;fill:none!important;stroke-width:1.6!important;
-}
+.article-card.linkedin-card .article-view-count .article-view-icon{width:10px!important;height:10px!important;display:inline-flex!important}
+.article-card.linkedin-card .article-view-count svg{width:10px!important;height:10px!important;display:block!important;stroke:currentColor!important;fill:none!important;stroke-width:1.6!important}
 .article-card.linkedin-card .article-view-number{min-width:1ch!important}
 @media(max-width:560px){
-  .article-card.linkedin-card .article-view-count{
-    left:17px!important;top:24px!important;transform:translateY(8px)!important;
-    font-size:7px!important;
-  }
+ .article-card.linkedin-card .article-view-count{margin-left:25px!important;margin-top:4px!important;font-size:7px!important}
 }
 </style>
 <!-- pages rebuild: 1790490667803 -->
