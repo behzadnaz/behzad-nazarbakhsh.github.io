@@ -1469,13 +1469,83 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 </script>
 
-<style id="linkedin-counter-inline-v5">
-.article-card.linkedin-card h3{display:flex!important;align-items:flex-start!important;gap:9px!important}
-.article-card.linkedin-card h3 .article-source-icon.article-source-linkedin{position:static!important;flex:0 0 18px!important;width:18px!important;height:18px!important;margin-top:3px!important}
-.article-card.linkedin-card h3 .article-view-count{position:static!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:3px!important;flex:0 0 auto!important;width:auto!important;min-width:27px!important;height:16px!important;margin:2px 2px 0 -3px!important;padding:1px 4px!important;border:1px solid var(--line,#d9dee7)!important;border-radius:999px!important;background:var(--paper,#fff)!important;color:var(--ink,#1f2937)!important;font-family:"DM Mono",monospace!important;font-size:9px!important;font-weight:600!important;line-height:1!important;opacity:1!important;visibility:visible!important;pointer-events:none!important;z-index:5!important}
-.article-card.linkedin-card h3 .article-view-count .article-view-icon{display:inline-flex!important;width:11px!important;height:11px!important;align-items:center!important;justify-content:center!important}
-.article-card.linkedin-card h3 .article-view-count svg{display:block!important;width:11px!important;height:11px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important}
-.article-card.linkedin-card h3 .article-view-number{display:inline!important;min-width:1ch!important}
-@media(max-width:560px){.article-card.linkedin-card h3 .article-view-count{min-width:25px!important;height:15px!important;font-size:8px!important;padding:1px 3px!important}.article-card.linkedin-card h3 .article-view-count svg{width:10px!important;height:10px!important}}
+<style id="linkedin-counter-visible-v6">
+/* Keep the LinkedIn source icon and click counter in normal inline flow.
+   This avoids the article/card grid hiding or clipping the counter. */
+.article-card.linkedin-card{overflow:visible!important}
+.article-card.linkedin-card h3{
+  display:block!important;
+  overflow:visible!important;
+  white-space:normal!important;
+  line-height:1.35!important;
+}
+.article-card.linkedin-card h3 .article-source-icon.article-source-linkedin{
+  display:inline-flex!important;
+  vertical-align:middle!important;
+  width:18px!important;
+  height:18px!important;
+  margin:0 7px 2px 0!important;
+  position:static!important;
+}
+.article-card.linkedin-card h3 .article-view-count{
+  display:inline-flex!important;
+  vertical-align:middle!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:3px!important;
+  width:auto!important;
+  min-width:29px!important;
+  height:16px!important;
+  margin:0 8px 2px 0!important;
+  padding:1px 4px!important;
+  border:1px solid var(--line,#d9dee7)!important;
+  border-radius:999px!important;
+  background:var(--paper,#fff)!important;
+  color:var(--ink,#1f2937)!important;
+  font-family:"DM Mono",monospace!important;
+  font-size:9px!important;
+  font-weight:600!important;
+  line-height:1!important;
+  opacity:1!important;
+  visibility:visible!important;
+  position:static!important;
+  float:none!important;
+  z-index:10!important;
+}
+.article-card.linkedin-card h3 .article-view-count .article-view-icon{
+  display:inline-flex!important;
+  width:11px!important;
+  height:11px!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.article-card.linkedin-card h3 .article-view-count svg{
+  display:block!important;
+  width:11px!important;
+  height:11px!important;
+  stroke:currentColor!important;
+  fill:none!important;
+  stroke-width:1.7!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+.article-card.linkedin-card h3 .article-view-number{
+  display:inline!important;
+  min-width:1ch!important;
+}
+.article-card.linkedin-card h3>a{
+  display:inline!important;
+  vertical-align:middle!important;
+}
+@media(max-width:560px){
+  .article-card.linkedin-card h3 .article-view-count{
+    min-width:27px!important;
+    height:15px!important;
+    font-size:8px!important;
+    padding:1px 3px!important;
+    margin-right:6px!important;
+  }
+  .article-card.linkedin-card h3 .article-view-count svg{width:10px!important;height:10px!important}
+}
 </style>
 <!-- pages rebuild: 1790490667803 -->
