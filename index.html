@@ -1357,7 +1357,49 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })();
 </script>
-<script id="cv-view-count-script">(function(){function init(){var b=document.querySelector('.cv-button');var n=document.getElementById('cv-view-number');if(!b||!n)return;if(window.goatcounter&&typeof window.goatcounter.visit_count==='function'){window.goatcounter.visit_count({path:'/cv',append:n,type:'html',no_branding:true,attr:{'aria-hidden':'true'}})}b.addEventListener('click',function(){if(window.goatcounter&&typeof window.goatcounter.count==='function')window.goatcounter.count({path:'/cv',title:'CV View'})})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();</script></body>
+<script id="cv-view-count-script">(function(){
+  var key='bn_cv_views';
+  function readCount(){
+    var value=0;
+    try{ value=parseInt(window.localStorage.getItem(key)||'0',10)||0; }catch(e){}
+    if(value>0) return value;
+    var prefix=key+'=';
+    document.cookie.split(';').forEach(function(part){
+      part=part.trim();
+      if(part.indexOf(prefix)===0){
+        var cookieValue=parseInt(part.substring(prefix.length),10)||0;
+        if(cookieValue>value) value=cookieValue;
+      }
+    });
+    return value;
+  }
+  function writeCount(value){
+    try{window.localStorage.setItem(key,String(value));}catch(e){}
+    document.cookie=key+'='+value+'; Max-Age=31536000; Path=/; SameSite=Lax';
+  }
+  function refresh(){
+    var n=document.getElementById('cv-view-number');
+    if(n) n.textContent=String(readCount());
+  }
+  function init(){
+    var b=document.querySelector('.cv-button');
+    var n=document.getElementById('cv-view-number');
+    if(!b||!n) return;
+    refresh();
+    if(b.dataset.cvCounterBound==='1') return;
+    b.dataset.cvCounterBound='1';
+    b.addEventListener('click',function(){
+      var value=readCount()+1;
+      writeCount(value);
+      n.textContent=String(value);
+      if(window.goatcounter&&typeof window.goatcounter.count==='function'){
+        window.goatcounter.count({path:'/cv',title:'CV View',no_session:true});
+      }
+    });
+    setTimeout(refresh,500);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true}); else init();
+})();</script></body>
 
 <style id="knowledge-card-read-icon-consistency">
 /* Knowledge Base cards — unified footer alignment */
