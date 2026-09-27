@@ -2581,3 +2581,7 @@ footer{font-size:11px;line-height:1.5}
 
 /* Keep the Calendly selection arrow beside its label like the other Contact links. */
 #about-contact .contact-block .connect-calendly .connect-arrow{margin-left:6px!important}
+
+/* Contact arrows: keep every selection icon immediately after its label. */
+#about-contact .contact-block .connect-main{width:max-content!important;}
+#about-contact .contact-block .connect-arrow{margin-left:6px!important;}
