@@ -969,35 +969,36 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 </style>
 <script id="article-click-tracking">(function(){
   function slugify(text){return text.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);}
-  function refresh(link,number){
-    if(!window.goatcounter||typeof window.goatcounter.visit_count!=='function')return;
-    window.goatcounter.visit_count({path:'/article-view/'+slugify(link.textContent),type:'html',append:null,no_branding:true});
-  }
   function init(){
+    if(!window.goatcounter||typeof window.goatcounter.visit_count!=='function'){
+      setTimeout(init,200); return;
+    }
     document.querySelectorAll('.article-card').forEach(function(card){
       var link=card.querySelector('h3 a'),number=card.querySelector('.article-view-number');
       if(!link||!number)return;
       var path='/article-view/'+slugify(link.textContent);
-      if(window.goatcounter&&typeof window.goatcounter.visit_count==='function'){
-        var holder=document.createElement('span');
-        holder.style.display='none';
-        holder.setAttribute('aria-hidden','true');
+      var id='gc-article-'+slugify(link.textContent);
+      var holder=document.getElementById(id);
+      if(!holder){
+        holder=document.createElement('span');
+        holder.id=id; holder.style.display='none'; holder.setAttribute('aria-hidden','true');
         card.appendChild(holder);
-        window.goatcounter.visit_count({path:path,type:'html',append:holder,no_branding:true});
-        setTimeout(function(){
-          var gc=holder.querySelector('#gcvc-views');
-          if(gc)number.textContent=gc.textContent.trim();
-        },250);
       }
+      window.goatcounter.visit_count({path:path,type:'html',append:'#'+id,no_branding:true});
+      setTimeout(function(){
+        var gc=holder.querySelector('#gcvc-views');
+        if(gc)number.textContent=gc.textContent.trim();
+      },500);
       if(card.dataset.articleCounterBound==='1')return;
       card.dataset.articleCounterBound='1';
       card.addEventListener('click',function(e){
-        if(e.target.closest('h3 a, .article-read-more')&&window.goatcounter&&typeof window.goatcounter.count==='function')
+        if(e.target.closest('h3 a, .article-read-more')){
           window.goatcounter.count({path:path,title:link.textContent.trim()});
+        }
       },true);
     });
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+  init();
 })();</script>
 </footer>
     <style id="site-visitor-count-style">
@@ -1328,26 +1329,29 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script id="cv-view-count-script">(function(){
   function init(){
+    if(!window.goatcounter||typeof window.goatcounter.visit_count!=='function'){
+      setTimeout(init,200); return;
+    }
     var b=document.querySelector('.cv-button'),n=document.getElementById('cv-view-number');
-    if(!b||!n||!window.goatcounter||typeof window.goatcounter.visit_count!=='function')return;
-    var holder=document.createElement('span');
-    holder.style.display='none';
-    holder.setAttribute('aria-hidden','true');
-    n.setAttribute('aria-live','polite');
-    document.body.appendChild(holder);
-    window.goatcounter.visit_count({path:'/cv',type:'html',append:holder,no_branding:true});
+    if(!b||!n)return;
+    var holder=document.getElementById('gc-cv-count');
+    if(!holder){
+      holder=document.createElement('span');
+      holder.id='gc-cv-count'; holder.style.display='none'; holder.setAttribute('aria-hidden','true');
+      document.body.appendChild(holder);
+    }
+    window.goatcounter.visit_count({path:'/cv',type:'html',append:'#gc-cv-count',no_branding:true});
     setTimeout(function(){
       var gc=holder.querySelector('#gcvc-views');
       if(gc)n.textContent=gc.textContent.trim();
-    },250);
+    },500);
     if(b.dataset.cvCounterBound==='1')return;
     b.dataset.cvCounterBound='1';
     b.addEventListener('click',function(){
-      if(window.goatcounter&&typeof window.goatcounter.count==='function')
-        window.goatcounter.count({path:'/cv',title:'CV View'});
+      window.goatcounter.count({path:'/cv',title:'CV View'});
     });
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+  init();
 })();</script></body>
 
 <style id="knowledge-card-read-icon-consistency">
