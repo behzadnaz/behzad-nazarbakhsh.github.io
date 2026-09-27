@@ -2780,23 +2780,23 @@ footer{font-size:11px;line-height:1.5}
 
 
 
-/* Calendly selection icon follows the exact shared Contact-link arrow styling. */
+/* Calendly selection icon: exactly match the shared Contact selection icon. */
 #about-contact .contact-block .connect-links>a.connect-calendly .connect-arrow{
-  color:var(--muted)!important;
-  width:18px!important;
-  height:18px!important;
-  flex:0 0 18px!important;
+  color:#111!important;
+  width:28px!important;
+  height:28px!important;
+  flex:0 0 28px!important;
   margin-left:6px!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1.5px solid currentColor!important;
+  border-radius:50%!important;
   font-size:16px!important;
   line-height:1!important;
-  border:0!important;
-  border-radius:0!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  transition:transform .18s ease,color .18s ease!important;
+  transition:color .2s ease,border-color .2s ease,transform .18s ease!important;
 }
 #about-contact .contact-block .connect-links>a.connect-calendly:hover .connect-arrow{
   color:#2563eb!important;
+  border-color:#2563eb!important;
   transform:translate(2px,-2px)!important;
 }
