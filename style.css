@@ -2464,3 +2464,15 @@ footer{font-size:11px;line-height:1.5}
   #about-contact .contact-block .connect-links{grid-template-columns:1fr;row-gap:22px!important}
   #about-contact .contact-block .connect-links>a{min-height:0!important}
 }
+
+
+/* Contact — clean, open layout */
+#about-contact .contact-block .connect-links{grid-template-columns:repeat(4,minmax(0,1fr))!important;column-gap:32px!important;row-gap:0!important;border:0!important;margin-top:34px!important}
+#about-contact .contact-block .connect-links>a{height:auto!important;min-height:92px!important;padding:0!important;border:0!important;background:transparent!important}
+#about-contact .contact-block .connect-main{height:42px!important;padding:0 0 12px!important;border-bottom:0!important;display:flex!important;align-items:center!important}
+#about-contact .contact-block .connect-icon{width:32px!important;height:32px!important;flex:0 0 32px!important;margin-right:10px!important}
+#about-contact .contact-block .connect-icon svg{width:20px!important;height:20px!important}
+#about-contact .contact-block .connect-arrow{width:18px!important;height:18px!important;flex-basis:18px!important;margin-left:auto!important}
+#about-contact .contact-block .connect-metric{margin:8px 0 0!important;gap:4px!important}
+@media(max-width:1050px){#about-contact .contact-block .connect-links{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px!important;row-gap:26px!important}}
+@media(max-width:560px){#about-contact .contact-block .connect-links{grid-template-columns:1fr;row-gap:22px!important}#about-contact .contact-block .connect-links>a{min-height:0!important}}
