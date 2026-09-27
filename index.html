@@ -1355,9 +1355,22 @@ document.addEventListener('DOMContentLoaded', function () {
 .connect-links a.connect-calendly .connect-icon-calendar{transform:none;color:inherit;background:transparent!important;border:0!important;filter:none;animation:none;transition:background-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease}
 .connect-links a.connect-calendly .connect-name{transition:color .25s ease}
 .connect-links a.connect-calendly:hover{color:inherit;background:transparent;box-shadow:none;transform:none}
-#about-contact:target .connect-links a.connect-calendly .connect-icon-calendar{width:30px;height:30px;border-radius:50%;background:#2563eb;color:#fff;transform:scale(1.08);box-shadow:0 5px 14px rgba(37,99,235,.24)}
+@keyframes calendlyBlinkBlueBlack{
+  0%,100%{color:#111827}
+  50%{color:#2563eb}
+}
+@keyframes calendlyIconBlink{
+  0%,100%{color:#111827;background:transparent;box-shadow:none;transform:scale(1)}
+  50%{color:#fff;background:#2563eb;box-shadow:0 5px 14px rgba(37,99,235,.24);transform:scale(1.08)}
+}
+#about-contact:target .connect-links a.connect-calendly .connect-icon-calendar{
+  width:30px;height:30px;border-radius:50%;
+  animation:calendlyIconBlink 1s ease-in-out infinite;
+}
 #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar svg{width:18px;height:18px}
-#about-contact:target .connect-links a.connect-calendly .connect-name{color:inherit}
+#about-contact:target .connect-links a.connect-calendly .connect-name{
+  animation:calendlyBlinkBlueBlack 1s ease-in-out infinite;
+}
 @media(max-width:560px){
   #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar{width:28px;height:28px}
   #about-contact:target .connect-links a.connect-calendly .connect-icon-calendar svg{width:17px;height:17px}
