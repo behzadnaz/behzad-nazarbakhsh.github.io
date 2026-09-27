@@ -388,9 +388,15 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
 }
 </style>
 <style id="article-view-count-exact-source-alignment">
-/* Move ONLY the eye/count to the existing source-icon left edge. Do not alter source icons. */
+/* ONLY reposition the eye/count. Source/selection icons remain untouched. */
+.article-card{
+  padding-bottom:0!important;
+}
 .article-card .article-view-count{
+  position:absolute!important;
   left:28px!important;
+  bottom:0!important;
+  margin:0!important;
   color:var(--muted,#667085)!important;
 }
 .article-card .article-view-count .article-view-icon,
@@ -399,10 +405,11 @@ h4{font-size:1.08rem!important;line-height:1.3!important}
   color:var(--muted,#667085)!important;
 }
 @media(max-width:560px){
-  .article-card .article-view-count{left:22px!important}
+  .article-card{padding-bottom:0!important}
+  .article-card .article-view-count{left:22px!important;bottom:0!important}
 }
 @media(max-width:420px){
-  .article-card .article-view-count{left:19px!important}
+  .article-card .article-view-count{left:19px!important;bottom:0!important}
 }
 </style>
 </head>
