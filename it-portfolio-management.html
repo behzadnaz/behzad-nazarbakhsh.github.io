@@ -24,7 +24,13 @@ html,body{margin:0;width:100%;min-height:100%;background:#fff}
     return new TextDecoder("utf-8").decode(a);
   };
   async function readChunk(url){
-    const res=await fetch(url,{cache:"no-store"});
+    let res;
+    try {
+      res=await fetch(url,{cache:"no-store"});
+    } catch (firstError) {
+      const rawUrl="https://raw.githubusercontent.com/behzadnaz/behzad-nazarbakhsh.github.io/main/"+url;
+      res=await fetch(rawUrl,{cache:"no-store"});
+    }
     if(!res.ok)throw new Error("Failed to load "+url+" ("+res.status+")");
     const bytes=new Uint8Array(await res.arrayBuffer());
     const head=new TextDecoder("utf-8").decode(bytes.slice(0,64));
