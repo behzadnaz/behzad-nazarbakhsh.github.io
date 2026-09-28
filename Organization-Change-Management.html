@@ -7,17 +7,28 @@
 <style>body{margin:0;background:#fbfaf6;color:#12122b;font:16px/1.6 system-ui,sans-serif}#loading{min-height:100vh;display:grid;place-items:center}#loading div{padding:24px;text-align:center}</style>
 </head>
 <body>
-<div id="loading"><div><strong>Loading Organization Change Management report…</strong><br><small>Preparing the report.</small></div></div>
+<div id="loading"><div><strong>Loading Organization Change Management — Progress Report to the CIO…</strong><br><small>Preparing the report</small></div></div>
 <script>
 (async function(){
+  const base="report-bundles/";
+  const files=["report-00-07.html","report-08-15.html","report-16-23.html","report-24-28.html"];
   try{
-    const res=await fetch('report-pages/ocm/report.html.gz',{cache:'no-store'});
-    if(!res.ok) throw new Error('Report download failed ('+res.status+')');
-    const stream=res.body.pipeThrough(new DecompressionStream('gzip'));
-    const html=await new Response(stream).text();
-    document.open(); document.write(html); document.close();
+    const res=await Promise.all(files.map(f=>fetch(base+f,{cache:"force-cache"})));
+    if(res.some(r=>!r.ok)) throw new Error("Failed to fetch report bundle");
+    const html=(await Promise.all(res.map(r=>r.text()))).join("");
+    const doc=new DOMParser().parseFromString(html,"text/html");
+    const view=doc.querySelector("#view-ocm");
+    if(!view) throw new Error("Report content not found");
+    document.open();
+    document.write("<!doctype html>\n"+doc.documentElement.outerHTML);
+    document.close();
+    const active=document.querySelector("#view-ocm");
+    if(active){
+      document.querySelectorAll(".view,.rtabs").forEach(function(el){if(el!==active&&!active.contains(el))el.remove();});
+      active.style.display="";
+    }
   }catch(e){
-    document.getElementById('loading').innerHTML='<div><strong>Unable to load the report.</strong><br><small>'+String(e.message||e)+'</small></div>';
+    document.getElementById("loading").innerHTML="<div><strong>Unable to load the report</strong><br><small>"+e.message+"</small></div>";
   }
 })();
 </script>
