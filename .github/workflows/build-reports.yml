@@ -1,0 +1,83 @@
+name: Build complete report pages
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'report-bundles/**'
+      - '.github/workflows/build-reports.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-reports:
+    if: !contains(github.event.head_commit.message, '[skip report-build]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rebuild standalone reports
+        shell: python
+        run: |
+          from pathlib import Path
+
+          parts = [
+              'report-bundles/report-00-07.html',
+              'report-bundles/report-08-15.html',
+              'report-bundles/report-16-23.html',
+              'report-bundles/report-24-28.html',
+          ]
+          source = ''.join(Path(p).read_text(encoding='utf-8') for p in parts)
+
+          head_end = source.index('</head>') + len('</head>')
+          ppm_start = source.index('<div class="view active" id="view-ppm"')
+          ppm_end = source.index('</div><!-- /view-ppm -->', ppm_start) + len('</div><!-- /view-ppm -->')
+          ocm_start = source.index('<div class="view" id="view-ocm"')
+          ocm_end = source.index('</div>\n<!-- /view-ocm -->', ocm_start) + len('</div>\n<!-- /view-ocm -->')
+          common_start = ocm_end
+
+          prefix = source[:head_end] + '\n<body>\n'
+          common = source[common_start:]
+
+          css = '''<style id="standalone-report-mode">
+          .rtabs{display:none!important}
+          </style>
+          '''
+
+          def build(start, end, title, active_id):
+              extra = f'''<script id="standalone-report-view">
+          (function(){{
+            function force(){{
+              if(typeof showView==='function') showView({active_id!r},false);
+              document.title={title!r};
+            }}
+            if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',force,{{once:true}});
+            else force();
+            setTimeout(force,50);
+          }})();
+          </script>
+          '''
+              return prefix + css + source[start:end] + '\n' + common.replace('</body>', extra + '</body>', 1)
+
+          Path('IT-Portfolio-Management.html').write_text(
+              build(ppm_start, ppm_end, 'IT Portfolio Management — Progress Report to the CIO', 'view-ppm'),
+              encoding='utf-8'
+          )
+          Path('Organization-Change-Management.html').write_text(
+              build(ocm_start, ocm_end, 'Organization Change Management — Progress Report to the CIO', 'view-ocm'),
+              encoding='utf-8'
+          )
+
+      - name: Commit generated reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add IT-Portfolio-Management.html Organization-Change-Management.html
+          if git diff --cached --quiet; then
+            echo "No report changes."
+          else
+            git commit -m "build: publish complete standalone reports [skip report-build]"
+            git push
+          fi
