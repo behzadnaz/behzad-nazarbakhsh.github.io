@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Organization Change Management | Behzad Nazarbakhsh</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+html,body{margin:0;width:100%;min-height:100%;background:#fff}
+#status{font:14px Arial,sans-serif;padding:24px;color:#555}
+</style>
+</head>
+<body>
+<div id="status">Loading Organization Change Management report…</div>
+<script>
+(async function(){
+  const chunks=["report-parts/00.html","report-parts/01.html","report-parts/02.html","report-parts/03.html","report-parts/04.html","report-parts/05.html","report-parts/06.html","report-parts/07.html","report-parts/08.html","report-parts/09.html","report-parts/10.html","report-parts/11.html","report-parts/12.html","report-parts/13.html","report-parts/14.html","report-parts/15.html","report-parts/16.html","report-parts/17.html","report-parts/18.html","report-parts/19.html","report-parts/20.html","report-parts/21.html","report-parts/22.html","report-parts/23.html","report-parts/24.html","report-parts/25.html","report-parts/26.html","report-parts/27.html","report-parts/28.html"];
+  const typography="html{font-size:16px!important}\nbody{font-family:Inter,Arial,sans-serif!important;font-size:16px!important;line-height:1.65!important}\nh1{font-size:clamp(3rem,5.2vw,4.25rem)!important;line-height:1.08!important}\nh2,.sec-head h2{font-size:clamp(2rem,3.4vw,3rem)!important;line-height:1.15!important}\nh3,h3.sub{font-size:1.25rem!important;line-height:1.25!important}\nh4{font-size:1.05rem!important;line-height:1.3!important}\np,li,td,dd,.lead,.sec-head p,.ocard p,.step p,.checks li,.tbl td{font-size:1rem!important;line-height:1.65!important}\nsmall{font-size:13px!important;line-height:1.55!important}\n.eyebrow,.section-label,.hero-badge,.hero-cap,.hero-meta,.tbl th{font-size:11px!important;line-height:1.4!important;letter-spacing:.12em!important}\nnav.sticky a{font-size:13px!important}\n.dlink,.pill{font-size:13px!important;line-height:1.4!important}\n.hero h1{font-size:clamp(3rem,5.2vw,4.25rem)!important;line-height:1.08!important}\n.hero .sub{font-size:1rem!important;line-height:1.7!important}\n.hero-kpis .hk b{font-size:1.3rem!important}\n.hero-kpis .hk span{font-size:11px!important}\n.fig figcaption,.src,.donut .dh span{font-size:13px!important;line-height:1.55!important}\nfooter{font-size:11px!important;line-height:1.5!important}\n@media(max-width:800px){\n  .hero h1{font-size:clamp(2.6rem,10vw,3.5rem)!important}\n  .sec-head h2,h2{font-size:clamp(2rem,8vw,2.8rem)!important}\n}\n@media(max-width:560px){\n  .hero h1{font-size:clamp(2.35rem,11vw,3rem)!important}\n  .sec-head h2,h2{font-size:clamp(1.9rem,9vw,2.5rem)!important}\n}";
+  const decodeChunk=s=>{
+    if(/^\\s*</.test(s))return s;
+    const b=atob(s.replace(/\\s/g,""));
+    const a=new Uint8Array(b.length);
+    for(let i=0;i<b.length;i++)a[i]=b.charCodeAt(i);
+    return new TextDecoder("utf-8").decode(a);
+  };
+  async function readChunk(url){
+    const res=await fetch(url,{cache:"no-store"});
+    if(!res.ok)throw new Error("Failed to load "+url+" ("+res.status+")");
+    const bytes=new Uint8Array(await res.arrayBuffer());
+    const head=new TextDecoder("utf-8").decode(bytes.slice(0,64));
+    if(/^\s*</.test(head))return new TextDecoder("utf-8").decode(bytes);
+    if(typeof DecompressionStream==="undefined")throw new Error("This browser does not support the report compression format");
+    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+    return await new Response(stream).text();
+  }
+  try{
+    const html=(await Promise.all(chunks.map(readChunk))).join("");
+    const doc=new DOMParser().parseFromString(html,"text/html");
+    const target=doc.querySelector("#view-ocm");
+    if(!target)throw new Error("Organization Change Management report content was not found");
+    doc.querySelectorAll(".view").forEach(v=>{if(v!==target)v.remove()});
+    doc.querySelectorAll(".rtabs").forEach(e=>e.remove());
+    target.classList.add("active");
+    target.removeAttribute("data-title");
+    const typographyOverride=doc.createElement("style");
+    typographyOverride.id="site-typography-override";
+    typographyOverride.textContent=typography;
+    doc.head.appendChild(typographyOverride);
+    doc.title="Organization Change Management";
+    document.open();
+    document.write("<!DOCTYPE html>\n"+doc.documentElement.outerHTML);
+    document.close();
+  }catch(e){
+    document.getElementById("status").textContent="Unable to load the report: "+e.message;
+  }
+})();
+</script>
+</body>
+</html>
