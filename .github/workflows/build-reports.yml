@@ -35,7 +35,10 @@ jobs:
               if i in (0, 28):
                   piece = data.decode('utf-8')
               else:
-                  piece = zlib.decompress(data, -15).decode('utf-8')
+                  # The compressed parts are stored as UTF-8 text whose code points
+                  # represent the original byte values. Restore those bytes first.
+                  encoded = data.decode('utf-8').encode('latin-1')
+                  piece = zlib.decompress(encoded, -15).decode('utf-8')
               pieces.append(piece)
 
           source = ''.join(pieces)
