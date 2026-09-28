@@ -34,7 +34,8 @@ html,body{margin:0;width:100%;min-height:100%;background:#fff}
     return await new Response(stream).text();
   }
   try{
-    const html=(await Promise.all(chunks.map(readChunk))).join("");
+    let html="";
+    for(const url of chunks){ html += await readChunk(url); }
     const doc=new DOMParser().parseFromString(html,"text/html");
     const target=doc.querySelector("#view-ppm");
     if(!target)throw new Error("IT Portfolio Management report content was not found");
