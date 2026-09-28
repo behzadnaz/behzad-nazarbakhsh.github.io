@@ -28,20 +28,13 @@ jobs:
           root = Path('.')
           parts_dir = root / 'report-parts'
 
-          pieces = []
-          for i in range(29):
-              path = parts_dir / f'{i:02d}.html'
-              data = path.read_bytes()
-              if i in (0, 28):
-                  piece = data.decode('utf-8')
-              else:
-                  # The compressed parts are stored as UTF-8 text whose code points
-                  # represent the original byte values. Restore those bytes first.
-                  encoded = data.decode('utf-8').encode('latin-1')
-                  piece = zlib.decompress(encoded, -15).decode('utf-8')
-              pieces.append(piece)
-
-          source = ''.join(pieces)
+          parts = [
+              'report-bundles/report-00-07.html',
+              'report-bundles/report-08-15.html',
+              'report-bundles/report-16-23.html',
+              'report-bundles/report-24-28.html',
+          ]
+          source = ''.join(Path(p).read_text(encoding='utf-8') for p in parts)
 
           head_end = source.index('</head>') + len('</head>')
           ppm_start = source.index('<div class="view active" id="view-ppm"')
@@ -59,47 +52,27 @@ jobs:
           '''
 
           def build(start, end, title, active_id):
-              html = (
-                  prefix
-                  + standalone_css
-                  + source[start:end]
-                  + '\n'
-                  + common
-              )
-              marker = '</body>'
+              html = prefix + standalone_css + source[start:end] + '\n' + common
               script = f'''
           <script id="standalone-report-view">
           (function(){{
+            document.title = {title!r};
             function forceView(){{
               if(typeof showView === 'function') showView('{active_id}', false);
-              document.title = {title!r};
             }}
-            if(document.readyState === 'loading') {{
-              document.addEventListener('DOMContentLoaded', forceView, {{once:true}});
-            }} else {{
-              forceView();
-            }}
-            setTimeout(forceView, 50);
+            if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', forceView, {{once:true}});
+            else forceView();
           }})();
           </script>
           '''
-              return html.replace(marker, script + '\n' + marker, 1)
+              return html.replace('</body>', script + '\n</body>', 1)
 
-          ppm = build(
-              ppm_start, ppm_end,
-              'IT Portfolio Management — Progress Report to the CIO',
-              'view-ppm'
-          )
-          ocm = build(
-              ocm_start, ocm_end,
-              'Organization Change Management — Progress Report to the CIO',
-              'view-ocm'
-          )
+          ppm = build(ppm_start, ppm_end, 'IT Portfolio Management — Progress Report to the CIO', 'view-ppm')
+          ocm = build(ocm_start, ocm_end, 'Organization Change Management — Progress Report to the CIO', 'view-ocm')
 
           Path('IT-Portfolio-Management.html').write_text(ppm, encoding='utf-8')
           Path('Organization-Change-Management.html').write_text(ocm, encoding='utf-8')
 
-          print('IT report:', len(ppm), 'bytes')
           print('OCM report:', len(ocm), 'bytes')
 
       - name: Commit generated reports
