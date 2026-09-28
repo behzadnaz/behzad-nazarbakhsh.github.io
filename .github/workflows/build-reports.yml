@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'report-bundles/**'
+      - 'report-parts/**'
       - '.github/workflows/build-reports.yml'
 
 permissions:
@@ -18,104 +18,95 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Rebuild standalone reports
+      - name: Build standalone report pages
         shell: python
         run: |
           from pathlib import Path
-          import gzip
+          import re
+          import zlib
 
-          parts = [
-              'report-bundles/report-00-07.html',
-              'report-bundles/report-08-15.html',
-              'report-bundles/report-16-23.html',
-              'report-bundles/report-24-28.html',
-          ]
-          source = ''.join(Path(p).read_text(encoding='utf-8') for p in parts)
+          root = Path('.')
+          parts_dir = root / 'report-parts'
+
+          pieces = []
+          for i in range(29):
+              path = parts_dir / f'{i:02d}.html'
+              data = path.read_bytes()
+              if i in (0, 28):
+                  piece = data.decode('utf-8')
+              else:
+                  piece = zlib.decompress(data, -15).decode('utf-8')
+              pieces.append(piece)
+
+          source = ''.join(pieces)
 
           head_end = source.index('</head>') + len('</head>')
           ppm_start = source.index('<div class="view active" id="view-ppm"')
           ppm_end = source.index('</div><!-- /view-ppm -->', ppm_start) + len('</div><!-- /view-ppm -->')
           ocm_start = source.index('<div class="view" id="view-ocm"')
           ocm_end = source.index('</div>\n<!-- /view-ocm -->', ocm_start) + len('</div>\n<!-- /view-ocm -->')
-          common_start = ocm_end
 
           prefix = source[:head_end] + '\n<body>\n'
-          common = source[common_start:]
+          common = source[ocm_end:]
 
-          css = '''<style id="standalone-report-mode">
-          .rtabs{display:none!important}
+          standalone_css = '''
+          <style id="standalone-report-mode">
+            .rtabs{display:none!important}
           </style>
           '''
 
           def build(start, end, title, active_id):
-              extra = f'''<script id="standalone-report-view">
+              html = (
+                  prefix
+                  + standalone_css
+                  + source[start:end]
+                  + '\n'
+                  + common
+              )
+              marker = '</body>'
+              script = f'''
+          <script id="standalone-report-view">
           (function(){{
-            function force(){{
-              if(typeof showView==='function') showView({active_id!r},false);
-              document.title={title!r};
+            function forceView(){{
+              if(typeof showView === 'function') showView('{active_id}', false);
+              document.title = {title!r};
             }}
-            if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',force,{{once:true}});
-            else force();
-            setTimeout(force,50);
+            if(document.readyState === 'loading') {{
+              document.addEventListener('DOMContentLoaded', forceView, {{once:true}});
+            }} else {{
+              forceView();
+            }}
+            setTimeout(forceView, 50);
           }})();
           </script>
           '''
-              return prefix + css + source[start:end] + '\n' + common.replace('</body>', extra + '</body>', 1)
+              return html.replace(marker, script + '\n' + marker, 1)
 
-          Path('IT-Portfolio-Management.html').write_text(
-              build(ppm_start, ppm_end, 'IT Portfolio Management — Progress Report to the CIO', 'view-ppm'),
-              encoding='utf-8'
+          ppm = build(
+              ppm_start, ppm_end,
+              'IT Portfolio Management — Progress Report to the CIO',
+              'view-ppm'
           )
-          Path('Organization-Change-Management.html').write_text(
-              build(ocm_start, ocm_end, 'Organization Change Management — Progress Report to the CIO', 'view-ocm'),
-              encoding='utf-8'
+          ocm = build(
+              ocm_start, ocm_end,
+              'Organization Change Management — Progress Report to the CIO',
+              'view-ocm'
           )
 
-          ppm_html = build(ppm_start, ppm_end, 'IT Portfolio Management — Progress Report to the CIO', 'view-ppm')
-          ocm_html = build(ocm_start, ocm_end, 'Organization Change Management — Progress Report to the CIO', 'view-ocm')
+          Path('IT-Portfolio-Management.html').write_text(ppm, encoding='utf-8')
+          Path('Organization-Change-Management.html').write_text(ocm, encoding='utf-8')
 
-          for name, html in [('ppm', ppm_html), ('ocm', ocm_html)]:
-              gzip_path = Path(f'report-pages/{name}/report.html.gz')
-              gzip_path.parent.mkdir(parents=True, exist_ok=True)
-              with gzip.open(gzip_path, 'wb', compresslevel=9) as f:
-                  f.write(html.encode('utf-8'))
-
-          loader = """<!doctype html>
-          <html lang="en">
-          <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width,initial-scale=1">
-          <title>Organization Change Management — Progress Report to the CIO</title>
-          <style>body{margin:0;background:#fbfaf6;color:#12122b;font:16px/1.6 system-ui,sans-serif}#loading{min-height:100vh;display:grid;place-items:center}#loading div{padding:24px;text-align:center}</style>
-          </head>
-          <body>
-          <div id="loading"><div><strong>Loading Organization Change Management report…</strong><br><small>Preparing the report.</small></div></div>
-          <script>
-          (async function(){
-            try{
-              const res=await fetch('report-pages/ocm/report.html.gz',{cache:'no-store'});
-              if(!res.ok) throw new Error('Report download failed ('+res.status+')');
-              const stream=res.body.pipeThrough(new DecompressionStream('gzip'));
-              const html=await new Response(stream).text();
-              document.open(); document.write(html); document.close();
-            }catch(e){
-              document.getElementById('loading').innerHTML='<div><strong>Unable to load the report.</strong><br><small>'+String(e.message||e)+'</small></div>';
-            }
-          })();
-          </script>
-          </body>
-          </html>
-          """
-          Path('Organization-Change-Management.html').write_text(loader, encoding='utf-8')
+          print('IT report:', len(ppm), 'bytes')
+          print('OCM report:', len(ocm), 'bytes')
 
       - name: Commit generated reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add IT-Portfolio-Management.html Organization-Change-Management.html report-pages/ppm/report.html.gz report-pages/ocm/report.html.gz
+          git add IT-Portfolio-Management.html Organization-Change-Management.html
           if git diff --cached --quiet; then
             echo "No report changes."
           else
-            git commit -m "build: publish complete standalone reports [skip report-build]"
+            git commit -m "build: publish standalone report pages [skip report-build]"
             git push
           fi
