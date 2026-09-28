@@ -71,11 +71,14 @@ jobs:
               encoding='utf-8'
           )
 
+          ppm_html = build(ppm_start, ppm_end, 'IT Portfolio Management — Progress Report to the CIO', 'view-ppm')
           ocm_html = build(ocm_start, ocm_end, 'Organization Change Management — Progress Report to the CIO', 'view-ocm')
-          gzip_path = Path('report-pages/ocm/report.html.gz')
-          gzip_path.parent.mkdir(parents=True, exist_ok=True)
-          with gzip.open(gzip_path, 'wb', compresslevel=9) as f:
-              f.write(ocm_html.encode('utf-8'))
+
+          for name, html in [('ppm', ppm_html), ('ocm', ocm_html)]:
+              gzip_path = Path(f'report-pages/{name}/report.html.gz')
+              gzip_path.parent.mkdir(parents=True, exist_ok=True)
+              with gzip.open(gzip_path, 'wb', compresslevel=9) as f:
+                  f.write(html.encode('utf-8'))
 
           loader = """<!doctype html>
           <html lang="en">
@@ -109,7 +112,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add IT-Portfolio-Management.html Organization-Change-Management.html report-pages/ocm/report.html.gz
+          git add IT-Portfolio-Management.html Organization-Change-Management.html report-pages/ppm/report.html.gz report-pages/ocm/report.html.gz
           if git diff --cached --quiet; then
             echo "No report changes."
           else
