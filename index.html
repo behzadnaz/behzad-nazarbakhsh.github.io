@@ -2563,8 +2563,7 @@ label();show(0);start();
     }else setTimeout(loadAll,1200);
   }
   var started=false;
-  function start(){if(started||!consented())return;started=true;if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();}
-  window.addEventListener('bn-consent',start);
+  function start(){if(started)return;started=true;if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();}
   start();
 })();
 </script>
