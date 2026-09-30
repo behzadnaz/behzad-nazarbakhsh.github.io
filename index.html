@@ -2382,7 +2382,6 @@ label();show(0);start();
   }catch(e){}
   function consented(){try{return localStorage.getItem('bn_consent')==='granted'}catch(e){return false}}
   function tracking(){
-    if(!consented())return false;
     if(navigator.webdriver||location.protocol==='file:'||/^(localhost|127\.|\[::1\])/.test(location.hostname))return false;
     try{if(localStorage.getItem('bn_notrack')==='1')return false}catch(e){}
     return true;
