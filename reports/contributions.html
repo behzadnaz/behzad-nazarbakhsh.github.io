@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="preload" href="../assets/v1/fonts/inter-normal-100-900.woff2" as="font" type="font/woff2" crossorigin><style id="local-fonts">@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/v1/fonts/inter-normal-100-900.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 900;font-display:swap;src:url(../assets/v1/fonts/playfair-display-normal-400-900.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 900;font-display:swap;src:url(../assets/v1/fonts/playfair-display-italic-400-900.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url(../assets/v1/fonts/dm-mono-normal-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url(../assets/v1/fonts/dm-mono-normal-500.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contributions | Behzad Nazarbakhsh</title>
+<style>
+:root{--paper:#F6F7F3;--surface:#fff;--ink:#18221C;--muted:#59665E;--line:#D8E0D9;--accent:#B9653A;--accent-dark:#8F4829}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.6;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit;text-decoration:none}
+.nav{border-bottom:1px solid var(--line);background:rgba(255,255,255,.94)}
+.nav-in{max-width:1180px;margin:auto;padding:12px 7vw;display:flex;align-items:center;justify-content:space-between}
+.brand{width:42px;height:42px;border-radius:8px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-weight:700;font-size:13px;letter-spacing:.08em}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--accent-dark);padding:8px 0}.back:hover{color:var(--ink)}
+.nav-tag{font:500 11px "DM Mono",monospace;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+main{max-width:1180px;margin:auto;padding:72px 7vw 64px}
+.label{margin:0 0 12px;font:700 11px "DM Mono",monospace;letter-spacing:.13em;color:var(--accent-dark);text-transform:uppercase}
+h1{margin:0 0 14px;font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.08;letter-spacing:-.03em}
+.intro{max-width:none;width:100%;margin:0 0 40px;color:var(--muted);font-size:1.02rem}
+.list{display:grid;gap:12px}
+.entry{display:grid;grid-template-columns:56px 1fr 28px;gap:20px;align-items:center;padding:24px 26px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 2px rgba(23,33,27,.04),0 7px 20px rgba(23,33,27,.045);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.entry:hover{transform:translateY(-2px);border-color:rgba(185,101,58,.55);box-shadow:0 10px 24px rgba(23,33,27,.07)}
+.num{font:500 12px "DM Mono",monospace;letter-spacing:.08em;color:var(--accent-dark)}
+.entry strong{display:block;font-size:1.18rem;font-weight:600;line-height:1.3}
+.entry small{display:block;margin-top:4px;color:var(--muted);font-size:.95rem}
+.per{display:inline-block;margin-top:10px;font:500 11px "DM Mono",monospace;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.arrow{color:var(--accent);font-size:1.3rem;text-align:right}
+footer{max-width:1180px;margin:auto;padding:24px 7vw 40px;border-top:1px solid var(--line);color:var(--muted);font:11px "DM Mono",monospace}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:600px){main{padding-top:48px}.entry{grid-template-columns:1fr 24px;padding:20px 18px}.num{grid-column:1 / -1}}
+</style>
+<style id="sticky-home">.nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}</style></head>
+<body>
+<header class="nav"><div class="nav-in"><a class="back" href="#" data-go="home">&larr; Back to home</a><span class="nav-tag">Contributions</span></div></header>
+<main>
+  <p class="label">CONTRIBUTION</p>
+  <h1>Contributions Across Organizations</h1>
+  <p class="intro">My collaboration with organizations, from the foundation and methods to the tools used and the progress achieved. Select a contribution to read its full report.</p>
+  <div class="list">
+    <a class="entry" href="#" data-go="ppm">
+      <span class="num">01</span>
+      <span><strong>IT Portfolio Management</strong><small>Bringing portfolio thinking to an organization that had none. A pilot that shows how IT portfolio management took shape, from the method and principles that guided it to the tools that made it work, and the progress made so far.</small><span class="per">Feb – Aug 2026</span></span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="entry" href="#" data-go="ocm">
+      <span class="num">02</span>
+      <span><strong>Organizational Change Management</strong><small>A first step toward managing change deliberately. This pilot introduced organizational change management where it did not exist, and lays out the approach taken, the principles behind it, the tools applied and the results so far.</small><span class="per">Apr 2024 – Mar 2025</span></span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</main>
+<footer>© 2026 Behzad Nazarbakhsh</footer>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var g=a.getAttribute('data-go');if(g){e.preventDefault();if(parent===window){location.href=(g==='home')?'../':(g+'.html');return;}parent.postMessage({go:g},'*');return;}var h=a.getAttribute('href')||'';if(h.charAt(0)!=='#')return;e.preventDefault();var el=h.length>1&&document.getElementById(h.slice(1));if(el){var n=document.querySelector('nav.sticky'),hb=document.querySelector('.homebar'),o=(n?n.offsetHeight:0)+(hb?hb.offsetHeight:0);window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-o-8,behavior:'smooth'});}});(function(){var h=document.querySelector('.homebar'),r=document.documentElement;function f(){if(h)r.style.setProperty('--hb',h.offsetHeight+'px')}f();addEventListener('resize',f);addEventListener('load',f)})();</script></body>
+</html>

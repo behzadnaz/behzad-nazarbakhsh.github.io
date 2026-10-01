@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OCM Strategic Roadmap</title>
+<style>
+  :root{
+    --ink:#18221C;
+    --sub:#59665E;
+    --paper:#F6F7F3;
+    --line:#D8E0D9;
+
+    --g1:#657E6D;   /* stakeholder satisfaction - blue */
+    --g1-bg:#E7EDE8;
+    --g2:#B9653A;   /* user adoption - teal */
+    --g2-bg:#F3E4DA;
+    --g3:#806F67;   /* users enablement - light purple */
+    --g3-bg:#EFEAE7;
+    --g4:#B8892F;   /* business value - orange */
+    --g4-bg:#F6EDD8;
+
+    --phase-core:#4D6555;   /* exploration -> transition */
+    --phase-loop:#8F4829;   /* production / movement */
+
+    --grp1:#4D6555; --grp1-lt:#8FA596;   /* concept & initiation - indigo */
+    --grp2:#8F4829; --grp2-lt:#C98F6B;   /* delivery - teal */
+    --grp3:#806F67; --grp3-lt:#B3A69F;   /* operations - amber */
+    --grp4:#A96B3F; --grp4-lt:#D3A57F;   /* post-production - magenta */
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+  }
+
+  .wrap{max-width:1900px;margin:0 auto;padding:28px 32px 56px;}
+
+  header{margin-bottom:22px;}
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sub);font-weight:700;margin-bottom:6px;
+  }
+  h1{
+    margin:0 0 6px;font-size:34px;font-weight:800;letter-spacing:-.01em;
+  }
+  .lede{color:var(--sub);font-size:15px;max-width:900px;line-height:1.5;}
+
+  /* ---------- GOALS LEGEND ---------- */
+  .legend{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 30px;
+  }
+  .goal-card{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;border-top:4px solid var(--accent);
+  }
+  .goal-card.g1{--accent:var(--g1);}
+  .goal-card.g2{--accent:var(--g2);}
+  .goal-card.g3{--accent:var(--g3);}
+  .goal-card.g4{--accent:var(--g4);}
+  .goal-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+  .goal-dot{
+    width:26px;height:26px;border-radius:50%;background:var(--accent);
+    color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .goal-title{font-weight:800;font-size:14px;}
+  .goal-list{margin:0;padding-left:0;list-style:none;font-size:12px;color:var(--ink);line-height:1.65;}
+  .goal-list li{padding-left:16px;position:relative;}
+  .goal-list li::before{
+    content:attr(data-code);position:absolute;left:0;top:0;font-weight:700;color:var(--accent);font-size:10px;
+  }
+  .goal-list li{padding-left:30px;}
+
+  /* ---------- PHASE TIMELINE ---------- */
+  .timeline-label{
+    display:flex;align-items:center;gap:10px;margin:26px 0 10px;
+  }
+  .timeline-label .tag{
+    font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    color:#fff;background:var(--phase-core);padding:4px 10px;border-radius:20px;
+  }
+  .timeline-label .tag.loop{background:var(--phase-loop);}
+  .timeline-label .rule{flex:1;height:1px;background:var(--line);}
+
+  .board{
+    display:grid;
+    gap:14px;
+    margin-bottom:8px;
+  }
+  .board.core{grid-template-columns:repeat(7,1fr);grid-template-rows:auto auto;row-gap:8px;}
+  .board.loop{grid-template-columns:repeat(2,1fr);}
+
+  .group-header{
+    grid-row:1;
+    color:#fff;font-weight:800;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;padding:8px 10px;border-radius:8px;text-align:center;
+    display:flex;align-items:center;justify-content:center;white-space:nowrap;
+  }
+  .group-header.grp1{background:var(--grp1);}
+  .group-header.grp2{background:var(--grp2);}
+  .group-header.grp3{background:var(--grp3);}
+  .group-header.grp4{background:var(--grp4);}
+
+  .phase{
+    grid-row:2;
+    background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .phase-header{
+    background:var(--phase-core);color:#fff;font-weight:800;font-size:14.5px;
+    padding:11px 8px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .phase-header.grp1{background:var(--grp1-lt);}
+  .phase-header.grp2{background:var(--grp2-lt);}
+  .phase-header.grp3{background:var(--grp3-lt);}
+  .phase-header.grp4{background:var(--grp4-lt);}
+
+  .phase-body{padding:10px;display:flex;flex-direction:column;gap:7px;}
+  .item{
+    border-radius:8px;padding:9px 10px;font-size:11.6px;line-height:1.42;
+    background:var(--bg,#f2f4f7);border-left:3px solid var(--accent,#a9b6c4);
+  }
+  .item .code{
+    display:inline-block;margin-left:4px;font-weight:800;font-size:10px;
+    color:var(--accent,#66788e);
+  }
+  .item.g1{--bg:var(--g1-bg);--accent:var(--g1);}
+  .item.g2{--bg:var(--g2-bg);--accent:var(--g2);}
+  .item.g3{--bg:var(--g3-bg);--accent:var(--g3);}
+  .item.g4{--bg:var(--g4-bg);--accent:var(--g4);}
+
+  footer{margin-top:26px;color:var(--sub);font-size:11.5px;}
+  footer b{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- CORE LIFECYCLE -->
+  <div class="timeline-label"><span class="tag">End-to-End Software Lifecycle</span><span class="rule"></span></div>
+  <div class="board core">
+
+    <div class="group-header grp1" style="grid-column:1 / 3;">Concept &amp; Initiation</div>
+    <div class="group-header grp2" style="grid-column:3 / 6;">Delivery</div>
+    <div class="group-header grp3" style="grid-column:6 / 7;">Operations</div>
+    <div class="group-header grp4" style="grid-column:7 / 8;">Post-Production</div>
+
+    <div class="phase">
+      <div class="phase-header grp1">Exploration</div>
+      <div class="phase-body">
+        <div class="item g4">Knowing who the key stakeholders are in governing business value<span class="code">G4.1</span></div>
+        <div class="item g2">Collecting stakeholders' business problems, needs, strategies, policies, resources and constraints<span class="code">G2.1</span></div>
+        <div class="item g4">Agreement on what's important for the business<span class="code">G4.2</span></div>
+        <div class="item g1">Understanding the key stakeholders' personal perspectives and interests<span class="code">G1.4</span></div>
+        <div class="item g4">Being proactive and resilient in creating value for the stakeholders in the short and long term<span class="code">G4.1</span></div>
+        <div class="item g4">Ensuring all necessary stakeholders are well informed about the project business value<span class="code">G4.2</span></div>
+        <div class="item g1">Find out and analyze resistances &amp; promotion for project goals within key stakeholders<span class="code">G1.6</span></div>
+        <div class="item g2">Defining detailed description of the services<span class="code">G2.1</span></div>
+        <div class="item g1">Clarifying service packages, offerings and contracts<span class="code">G1.1</span></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header grp1">Inception</div>
+      <div class="phase-body">
+        <div class="item g2">Defining project objectives<span class="code">G2.2</span></div>
+        <div class="item g1">Defining communication channels with stakeholders<span class="code">G1.4</span></div>
+        <div class="item g1">Announcing the project initiation<span class="code">G1.2</span></div>
+        <div class="item g2">Identifying &amp; updating end user's profile<span class="code">G2.1</span></div>
+        <div class="item g3">Organizational training tactical plan<span class="code">G3.1</span></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header grp2">Elaboration</div>
+      <div class="phase-body">
+        <div class="item g1">Monitoring and analyzing the opportunities, and threats that affect the key stakeholders/users<span class="code">G1.1</span></div>
+        <div class="item g1">Monitoring &amp; evaluating the project progress and impact along the timeline<span class="code">G1.1 / EP</span></div>
+        <div class="item g1">Checking power stakeholders' feedback along the delivery timeline<span class="code">G1.4</span></div>
+        <div class="item g1">Discovering &amp; announcing issues, risks and uncertainties<span class="code">G1.3 / EP</span></div>
+        <div class="item g1">Announcing project status to stakeholders<span class="code">G1.2</span></div>
+        <div class="item g1">Involving users in decision-making processes<span class="code">G1.4</span></div>
+        <div class="item g2">Capture elicited requirements<span class="code">G2.2</span></div>
+        <div class="item g2">Analyzing requirements gaps to ensure that users' needs are met<span class="code">G2.3</span></div>
+        <div class="item g1">Measuring level of support of delivery team<span class="code">G1.5</span></div>
+        <div class="item g3">Defining the training goals<span class="code">G3.2</span></div>
+        <div class="item g1">Measuring the quantitative and qualitative aspects of stakeholder satisfactions<span class="code">G1.5</span></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header grp2">Dev &amp; Config</div>
+      <div class="phase-body">
+        <div class="item g1">Announcing project status to stakeholders<span class="code">G1.2</span></div>
+        <div class="item g1">Involving users in decision-making processes<span class="code">G1.4</span></div>
+        <div class="item g1">Monitoring &amp; evaluating the project progress and impact along the timeline<span class="code">G1.1 / EP</span></div>
+        <div class="item g1">Checking power stakeholders' feedback along the delivery timeline<span class="code">G1.4</span></div>
+        <div class="item g1">Discovering &amp; announcing issues, risks and uncertainties<span class="code">G1.3</span></div>
+        <div class="item g3">Aligning the training program with the system deployment plan and project delivery goals<span class="code">G3.3</span></div>
+        <div class="item g3">Proposing evaluation criteria for training<span class="code">G3.2</span></div>
+        <div class="item g3">Tailoring training strategy to suit the users needs and concerns<span class="code">G3.6</span></div>
+        <div class="item g2">Managing project scope change<span class="code">G2.2</span></div>
+        <div class="item g2">Establish operational concepts and test scenarios<span class="code">G2.3</span></div>
+        <div class="item g1">Measuring level of support of delivery team<span class="code">G1.5 / EP</span></div>
+        <div class="item g1">Reporting project status to key stakeholders<span class="code">G1.6</span></div>
+        <div class="item g1">Collecting &amp; responding to users' suggestions, questions, concerns and feedbacks<span class="code">G1.7</span></div>
+        <div class="item g3">Updating standard operating procedure (SOP) for creating learning material<span class="code">G3.2</span></div>
+        <div class="item g3">Evaluating trainers<span class="code">G3.6</span></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header grp2">Transition</div>
+      <div class="phase-body">
+        <div class="item g1">Announcing project status to stakeholders<span class="code">G1.2</span></div>
+        <div class="item g1">Involving users in decision-making processes<span class="code">G1.4</span></div>
+        <div class="item g1">Monitoring &amp; evaluating the project progress and impact along the timeline<span class="code">G1.1 / EP</span></div>
+        <div class="item g1">Checking power stakeholders' feedback along the delivery timeline<span class="code">G1.4</span></div>
+        <div class="item g1">Discovering &amp; announcing issues, risks and uncertainties<span class="code">G1.3 / EP</span></div>
+        <div class="item g1">Preparing for effective emergency response<span class="code">G1.3 / EP</span></div>
+        <div class="item g1">Reporting project status to the key stakeholders<span class="code">G1.6</span></div>
+        <div class="item g1">Measuring level of support of delivery team<span class="code">G1.5</span></div>
+        <div class="item g1">Collecting &amp; responding to users' suggestions, questions, concerns and feedbacks<span class="code">G1.7</span></div>
+        <div class="item g2">Establish operational concepts and test scenarios<span class="code">G2.3</span></div>
+        <div class="item g1">Identifying problems and making sure the project values are aligned with<span class="code">G1.1</span></div>
+        <div class="item g3">Identifying &amp; analyzing the training gaps<span class="code">G3.3</span></div>
+        <div class="item g3">Pre-deployment training before going live<span class="code">G3.5</span></div>
+        <div class="item g1">Reporting project status to key stakeholders<span class="code">G1.6</span></div>
+        <div class="item g1">Enrolling the key stakeholders (VIP) requests<span class="code">G1.6</span></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header grp3">Production</div>
+      <div class="phase-body">
+        <div class="item g1">Monitoring and analyzing the opportunities, and threats that affect the key stakeholders/users<span class="code">G1.1</span></div>
+        <div class="item g1">Announcing project status to stakeholders<span class="code">G1.2</span></div>
+        <div class="item g1">Preparing for effective emergency response<span class="code">G1.3</span></div>
+        <div class="item g4">Addressing the issues and opportunities identified<span class="code">G2.4</span></div>
+        <div class="item g4">Collecting user sentiment to product<span class="code">G2.4</span></div>
+        <div class="item g1">Independent survey of user satisfaction and attitude<span class="code">G1.7</span></div>
+        <div class="item g2">Evaluating objectives and needs are met<span class="code">G2.2</span></div>
+        <div class="item g1">Measuring the quantitative and qualitative aspects of stakeholder satisfactions<span class="code">G1.5</span></div>
+        <div class="item g1">Measuring the customer experience<span class="code">G1.5</span></div>
+        <div class="item g3">Ensuring training materials are available &amp; updated<span class="code">G3.7</span></div>
+        <div class="item g3">Evaluating trainees' knowledge, measuring their effectiveness and impact<span class="code">G3.5</span></div>
+        <div class="item g1">Reporting project status to key stakeholders<span class="code">G1.6</span></div>
+        <div class="item g1">Reviewing post-implementation outcome<span class="code">G1.7 / G2.4</span></div>
+        <div class="item g1">Collecting &amp; responding to users' suggestions, questions, concerns and feedbacks<span class="code">G1.7</span></div>
+        <div class="item g3">Identifying &amp; analyzing the training gaps<span class="code">G3.3</span></div>
+        <div class="item g4">Providing stakeholders tangible documentation on benefits realization<span class="code">G4.2</span></div>
+        <div class="item g3">Org-wide status communications<span class="code">G3.8</span></div>
+        <div class="item g1">Enrolling the key stakeholders (VIP) requests<span class="code">G1.6</span></div>
+        <div class="item g1">Announcing project closure<span class="code">G1.2</span></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header grp4">Movement</div>
+      <div class="phase-body">
+        <div class="item g1">Monitoring and analyzing the opportunities, and threats that affect the key stakeholders/users<span class="code">G1.1</span></div>
+        <div class="item g1">Ensuring that all service requests are fulfilled according to the agreed procedures<span class="code">G1.5 / EP</span></div>
+        <div class="item g2">Evaluating of customer satisfaction in compare with similar products provided<span class="code">G2.4</span></div>
+        <div class="item g3">Identifying the mandatory compliance training<span class="code">G3.2</span></div>
+        <div class="item g1">Ensuring registered request happens<span class="code">G1.5</span></div>
+        <div class="item g3">Ensuring training materials are available &amp; updated<span class="code">G3.7</span></div>
+        <div class="item g2">Identifying service fulfillment or service satisfaction problems<span class="code">G2.1</span></div>
+        <div class="item g3">Updating standard operating procedure (SOP) for creating learning material<span class="code">G3.2</span></div>
+        <div class="item g3">Post-deployment training after the system goes live to reinforce learning and address any questions<span class="code">G3.8</span></div>
+        <div class="item g1">Understanding the key stakeholders' personal perspectives and interests<span class="code">G1.4</span></div>
+        <div class="item g1">Enrolling the key stakeholders (VIP) requests<span class="code">G1.6</span></div>
+        <div class="item g4">Modifying rewards &amp; penalty mechanism<span class="code">G3.8 / EP</span></div>
+        <div class="item g3">Collecting, monitoring and tracking the system usage, issues, or feedback, and adjust or enhancements as needed<span class="code">G3.7</span></div>
+        <div class="item g1">Measuring the quantitative and qualitative aspects of stakeholder satisfactions<span class="code">G1.5</span></div>
+        <div class="item g1">Measuring the customer experience<span class="code">G1.5</span></div>
+        <div class="item g1">Collecting &amp; responding to users' suggestions, questions, concerns and feedbacks<span class="code">G1.7</span></div>
+        <div class="item g2">Identifying &amp; updating end user's profile<span class="code">G2.1</span></div>
+        <div class="item g4">Investigate all service &amp; component unavailability &amp; instigate remedial action<span class="code">G4.1</span></div>
+        <div class="item g4">Monitor, measure, analyze report &amp; review service &amp; component availability<span class="code">G4.1</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+</div>
+</body>
+</html>
