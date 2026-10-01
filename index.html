@@ -85,7 +85,7 @@
         <p class="intro">I help software organizations turn strategy into coordinated product, engineering, portfolio, and organizational change — with a focus on sustainable business value.</p>
         <div class="actions">
           <a class="button primary work-button" href="#work"><span class="work-button-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7.5h6l2 2h8v9H4z"/><path d="M4 7.5V5h6l2 2.5"/></svg></span><span>Explore My Work</span><span class="work-button-arrow">↗</span></a>
-          <span class="cv-button-wrap"><a class="button cv-button" href="/behzad-nazarbakhsh.github.io/CV-2025.pdf" target="_blank" rel="noopener"><span class="cv-button-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4"/><path d="M9 12h6M9 15.5h5"/></svg></span><span>View My CV</span><span class="cv-view-count" data-state="loading" aria-label="CV views" title="CV views"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg><span id="cv-view-number"></span></span></a></span>
+          <span class="cv-button-wrap"><button type="button" class="button cv-button"><span class="cv-button-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4"/><path d="M9 12h6M9 15.5h5"/></svg></span><span>View My CV</span><span class="cv-view-count" data-state="loading" aria-label="CV views" title="CV views"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg><span id="cv-view-number"></span></span></a></span>
         </div>
       </div>
       <div class="hero-mark">
@@ -1021,8 +1021,7 @@ html body .article-all-grid .article-card.external-article-card .article-read-mo
   var frame=document.getElementById('cv-viewer-frame');
   var closeBtn=document.getElementById('cv-viewer-close');
   var cvUrl='/behzad-nazarbakhsh.github.io/CV-2025.pdf';
-  var trigger=document.querySelector('.cv-button');
-  if(!modal||!frame||!closeBtn||!trigger)return;
+  if(!modal||!frame||!closeBtn)return;
   var lastFocus=null;
   function open(){
     lastFocus=document.activeElement;
@@ -1031,7 +1030,7 @@ html body .article-all-grid .article-card.external-article-card .article-read-mo
     document.documentElement.style.overflow='hidden';
     document.body.style.overflow='hidden';
     if(frame.getAttribute('src')!==cvUrl)frame.setAttribute('src',cvUrl);
-    requestAnimationFrame(function(){closeBtn.focus()});
+    closeBtn.focus();
   }
   function close(){
     modal.classList.remove('is-open');
@@ -1040,10 +1039,13 @@ html body .article-all-grid .article-card.external-article-card .article-read-mo
     document.body.style.overflow='';
     if(lastFocus&&lastFocus.focus)lastFocus.focus();
   }
-  trigger.addEventListener('click',function(e){
+  document.addEventListener('click',function(e){
+    var trigger=e.target.closest ? e.target.closest('.cv-button') : null;
+    if(!trigger)return;
     e.preventDefault();
+    e.stopPropagation();
     open();
-  });
+  },true);
   closeBtn.addEventListener('click',close);
   modal.addEventListener('click',function(e){if(e.target===modal)close()});
   dialog.addEventListener('click',function(e){e.stopPropagation()});
