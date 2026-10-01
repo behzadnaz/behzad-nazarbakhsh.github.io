@@ -1139,7 +1139,7 @@ label();show(0);start();
   }
 
   function tracking(){
-    if(!consented()||navigator.webdriver||location.protocol==='file:')return false;
+    if(navigator.webdriver||location.protocol==='file:')return false;
     if(/^(localhost|127\\.|\\[::1\\])/.test(location.hostname))return false;
     try{if(localStorage.getItem('bn_notrack')==='1')return false}catch(e){}
     return true;
