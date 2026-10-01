@@ -1044,6 +1044,7 @@ html body .article-all-grid .article-card.external-article-card .article-read-mo
     if(!trigger)return;
     e.preventDefault();
     e.stopPropagation();
+    if(window.bnRecordCvView)window.bnRecordCvView();
     open();
   },true);
   closeBtn.addEventListener('click',close);
@@ -1340,13 +1341,11 @@ label();show(0);start();
 
       loadNumber('cv_views',cvNum,cvChip,['view','views']);
 
-      /* Capture before the CV modal handler stops propagation. */
-      document.addEventListener('click',function(e){
-        var trigger=e.target.closest ? e.target.closest('.cv-button') : null;
-        if(!trigger)return;
-        /* Count the user action before the modal handler runs. */
+      /* Expose a direct callback so the CV modal can record the
+       click without depending on event-listener ordering. */
+      window.bnRecordCvView=function(){
         increment('cv_views',cvNum,cvChip,['view','views']);
-      },true);
+      };
     }
 
     /* 3. Knowledge Base: every article/card open. */
