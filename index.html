@@ -1207,14 +1207,17 @@ label();show(0);start();
     var seen=false;
 
     try{
+      /* Count once per browsing session, not once for the lifetime
+         of this browser. Refreshing the page keeps the same session,
+         while a new visit/session can be counted again. */
       seen=
-        localStorage.getItem(
-          'bn_visitor_counted_v3'
+        sessionStorage.getItem(
+          'bn_visitor_counted_v4'
         )==='1';
     }catch(e){}
 
-    /* One count per browser/device, while the actual total remains
-       global in Cloudflare KV. A different device gets its own count. */
+    /* One count per browsing session, while the actual total remains
+       global in Cloudflare KV. A new browser session can count again. */
     if(seen)return;
 
     writeConfirmed('page_visits').then(function(serverCount){
@@ -1223,8 +1226,8 @@ label();show(0);start();
       chipReady(vChip,serverCount,['visitor','visitors']);
 
       try{
-        localStorage.setItem(
-          'bn_visitor_counted_v3',
+        sessionStorage.setItem(
+          'bn_visitor_counted_v4',
           '1'
         );
       }catch(e){}
