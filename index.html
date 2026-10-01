@@ -1091,45 +1091,27 @@ label();show(0);start();
     });
   }
 
-  /* Send the event reliably. Normal fetch is preferred; if it is
-     interrupted by navigation, fall back to Beacon using text/plain,
-     which the Worker accepts without a CORS preflight. */
-  function write(key){
-    var payload=JSON.stringify({key:key});
-    try{
-      fetch(API,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:payload,
-        keepalive:true,
-        credentials:'omit'
-      }).catch(function(){
-        try{
-          if(navigator.sendBeacon){
-            navigator.sendBeacon(API,new Blob([payload],{type:'text/plain'}));
-          }
-        }catch(e){}
-      });
-    }catch(e){
-      try{
-        if(navigator.sendBeacon){
-          navigator.sendBeacon(API,new Blob([payload],{type:'text/plain'}));
-        }
-      }catch(e2){}
-    }
-  }
-
+  /* Send one counter event and confirm the server accepted it.
+     text/plain keeps the request CORS-simple, while keepalive lets the
+     browser finish the request even when a click navigates away. */
   function writeConfirmed(key){
     var payload=JSON.stringify({key:key});
+
     return fetch(API,{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers:{'Content-Type':'text/plain;charset=UTF-8'},
       body:payload,
       keepalive:true,
-      credentials:'omit'
+      credentials:'omit',
+      cache:'no-store'
     }).then(function(r){
       if(!r.ok)throw new Error('http '+r.status);
-      return r;
+      return r.json();
+    }).then(function(d){
+      if(!d||typeof d.count!=='number'){
+        throw new Error('bad counter response');
+      }
+      return d.count;
     });
   }
 
@@ -1161,6 +1143,7 @@ label();show(0);start();
 
   function loadNumber(key,num,chip,unit){
     var cached=cacheGet(key);
+
     if(cached!==null){
       show(num,cached);
       chipReady(chip,cached,unit);
@@ -1173,78 +1156,86 @@ label();show(0);start();
       return n;
     }).catch(function(){
       if(cached!==null)return cached;
+
       if(num){
         num.textContent='0';
         chipReady(chip,0,unit);
       }
+
       return 0;
     });
   }
 
+  /* Increment globally in Cloudflare KV, then display the ACTUAL
+     server total returned by the Worker. No optimistic +1 and no
+     Beacon fallback, so one user action cannot be displayed as a
+     count that the server did not confirm. */
   function increment(key,num,chip,unit){
     if(!tracking())return;
 
-    var current=Number(num&&num.getAttribute('data-n'));
-    if(!isFinite(current))current=cacheGet(key);
-    if(!isFinite(current))current=0;
+    var previous=Number(num&&num.getAttribute('data-n'));
 
-    var optimistic=current+1;
-    cacheSet(key,optimistic);
-    show(num,optimistic);
-    chipReady(chip,optimistic,unit);
+    if(!isFinite(previous)){
+      previous=cacheGet(key);
+    }
 
-    /* Clicks can immediately navigate to another page/tab. Use Beacon
-       first so the event is handed to the browser without a CORS
-       preflight or waiting for the navigation to finish. */
-    var payload=JSON.stringify({key:key});
-    var sent=false;
-    try{
-      if(navigator.sendBeacon){
-        sent=navigator.sendBeacon(
-          API,
-          new Blob([payload],{type:'text/plain'})
-        );
-      }
-    }catch(e){}
+    if(!isFinite(previous)){
+      previous=0;
+    }
 
-    if(!sent)write(key);
+    writeConfirmed(key).then(function(serverCount){
+      cacheSet(key,serverCount);
+      show(num,serverCount);
+      chipReady(chip,serverCount,unit);
+    }).catch(function(){
+      /* Do not invent a new total if the server did not confirm it.
+         Refresh the real total instead. */
+      read(key).then(function(serverCount){
+        cacheSet(key,serverCount);
+        show(num,serverCount);
+        chipReady(chip,serverCount,unit);
+      }).catch(function(){
+        show(num,previous);
+        chipReady(chip,previous,unit);
+      });
+    });
   }
 
   function countVisitor(vNum,vChip,n){
     if(!tracking())return;
+
     var seen=false;
-    try{seen=localStorage.getItem('bn_visitor_counted_v2')==='1'}catch(e){}
+
+    try{
+      seen=
+        localStorage.getItem(
+          'bn_visitor_counted_v2'
+        )==='1';
+    }catch(e){}
+
+    /* One count per browser/device, while the actual total remains
+       global in Cloudflare KV. A different device gets its own count. */
     if(seen)return;
 
-    var optimistic=n+1;
-    cacheSet('page_visits',optimistic);
-    show(vNum,optimistic);
-    chipReady(vChip,optimistic,['visitor','visitors']);
+    writeConfirmed('page_visits').then(function(serverCount){
+      cacheSet('page_visits',serverCount);
+      show(vNum,serverCount);
+      chipReady(vChip,serverCount,['visitor','visitors']);
 
-    /* Footer visitor count: confirm with fetch when possible, then
-       fall back to Beacon so the event is not lost during navigation
-       or when the browser blocks the JSON preflight. */
-    writeConfirmed('page_visits').then(function(){
-      try{localStorage.setItem('bn_visitor_counted_v2','1')}catch(e){}
-    }).catch(function(){
-      var payload=JSON.stringify({key:'page_visits'});
-      var sent=false;
       try{
-        if(navigator.sendBeacon){
-          sent=navigator.sendBeacon(
-            API,
-            new Blob([payload],{type:'text/plain'})
-          );
-        }
+        localStorage.setItem(
+          'bn_visitor_counted_v2',
+          '1'
+        );
       }catch(e){}
-      if(sent){
-        try{localStorage.setItem('bn_visitor_counted_v2','1')}catch(e){}
-      }else{
-        /* Keep it retryable if neither delivery method worked. */
-        cacheSet('page_visits',n);
-        show(vNum,n);
-        chipReady(vChip,n,['visitor','visitors']);
-      }
+    }).catch(function(){
+      /* The event was not confirmed, so do NOT mark this browser as
+         counted. It can retry on the next page load. */
+      read('page_visits').then(function(serverCount){
+        cacheSet('page_visits',serverCount);
+        show(vNum,serverCount);
+        chipReady(vChip,serverCount,['visitor','visitors']);
+      }).catch(function(){});
     });
   }
 
