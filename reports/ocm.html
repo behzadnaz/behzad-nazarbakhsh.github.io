@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><link rel="preload" href="../assets/v1/fonts/inter-normal-100-900.woff2" as="font" type="font/woff2" crossorigin><style id="local-fonts">@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/v1/fonts/inter-normal-100-900.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 900;font-display:swap;src:url(../assets/v1/fonts/playfair-display-normal-400-900.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 900;font-display:swap;src:url(../assets/v1/fonts/playfair-display-italic-400-900.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url(../assets/v1/fonts/dm-mono-normal-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url(../assets/v1/fonts/dm-mono-normal-500.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organization Change Management — Progress Report to the CIO</title>
+<style>
+:root{
+  --blue:#0005D0;--blue-600:#1A1FE0;--blue-400:#4B57F5;--blue-200:#B9BEFA;
+  --cream:#FFF5EC;--paper:#FBFAF6;--ink:#12122B;--muted:#6B6B80;--line:#E9E6DC;--card:#FFFFFF;
+  --teal:#0EA5A5;--amber:#F59E0B;--coral:#F31260;--green:#17C964;--violet:#7C4DFF;
+  --shadow:0 1px 3px rgba(18,18,43,.06),0 8px 24px rgba(18,18,43,.05);--radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;overflow-x:hidden;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+@media(max-width:480px){.wrap{padding:0 16px}}
+
+/* hero */
+header.hero{position:relative;overflow:hidden;color:var(--cream);
+  background:radial-gradient(1100px 500px at 82% -10%,#2b34ff33,transparent),
+             radial-gradient(900px 500px at 8% 110%,#7c4dff2e,transparent),
+             linear-gradient(135deg,#00033a 0%,#0005D0 55%,#1a24e6 100%)}
+.hero-inner{padding:40px 22px 46px;max-width:1140px;margin:0 auto;position:relative;z-index:2}
+@media(max-width:480px){.hero-inner{padding:26px 16px 32px}}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.brandmark{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.2px}
+.brandmark .bx{width:34px;height:34px;border-radius:9px;background:rgba(255,245,236,.14);border:1px solid rgba(255,245,236,.35);display:grid;place-items:center}
+.brandmark .bx svg{display:block}
+.hero-badge{font-size:12px;font-weight:700;letter-spacing:1.3px;border:1px solid rgba(255,245,236,.34);padding:7px 15px;border-radius:999px;opacity:.92}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:900;letter-spacing:-1px;margin:30px 0 8px;line-height:1.05}
+.hero .sub{font-size:clamp(16px,2.1vw,21px);font-weight:600;max-width:760px;color:#fff;opacity:.95;margin:0 0 4px}
+.hero-meta{display:flex;gap:10px 26px;flex-wrap:wrap;margin-top:22px;font-size:13.5px;opacity:.9}
+.hero-meta b{font-weight:700;opacity:1}
+.hero-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+@media(max-width:620px){.hero-kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.hero-kpis{grid-template-columns:1fr}}
+.hk{background:rgba(255,245,236,.09);border:1px solid rgba(255,245,236,.2);border-radius:15px;padding:16px 18px;backdrop-filter:blur(3px)}
+.hk b{display:block;font-size:34px;font-weight:900;line-height:1;letter-spacing:-1px}
+.hk span{display:block;font-size:12.5px;opacity:.85;margin-top:7px}
+.hk.accent{background:rgba(23,201,100,.16);border-color:rgba(23,201,100,.4)}
+
+/* nav */
+nav.sticky{position:sticky;top:0;z-index:50;background:rgba(251,250,246,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.sticky .wrap{display:flex;gap:5px;overflow-x:auto;padding:9px 22px;scrollbar-width:none}
+@media(max-width:480px){nav.sticky .wrap{padding:9px 16px}}
+nav.sticky .wrap::-webkit-scrollbar{display:none}
+nav.sticky a{font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 13px;border-radius:999px;white-space:nowrap;transition:.2s}
+nav.sticky a:hover{color:var(--blue);background:#fff}
+nav.sticky a.active{color:#fff;background:var(--blue)}
+
+section{padding:46px 0 6px;scroll-margin-top:58px}
+@media(max-width:480px){section{padding:30px 0 6px}}
+.sec-head{margin-bottom:20px}
+.eyebrow{color:var(--blue);font-weight:800;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:9px}
+.eyebrow .num{width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:13px}
+.sec-head h2{font-size:clamp(22px,2.7vw,30px);font-weight:800;margin:0 0 9px;letter-spacing:-.4px}
+.sec-head p,.lead{color:#41415a;margin:0;max-width:880px;font-size:15.5px}
+h3.sub{font-size:17px;font-weight:700;margin:26px 0 10px;color:var(--ink)}
+p{font-size:15px;color:#3a3a52}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.pad{padding:22px}
+@media(max-width:480px){.pad{padding:16px}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+@media(max-width:760px){.grid2,.grid3{grid-template-columns:1fr}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* objective / feature cards */
+.ocard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px;box-shadow:var(--shadow);border-top:3px solid var(--blue);transition:transform .16s,box-shadow .16s}
+@media(max-width:480px){.ocard{padding:14px}}
+.ocard:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(18,18,43,.12)}
+.ocard.t2{border-top-color:var(--teal)}.ocard.t3{border-top-color:var(--amber)}.ocard.t4{border-top-color:var(--coral)}
+.ocard h4{margin:0 0 6px;font-size:15px;font-weight:700}
+.ocard p{margin:0;font-size:13.5px;color:#54546a}
+.ocard .oq{font-size:12px;font-weight:800;letter-spacing:.4px;color:var(--blue);text-transform:uppercase;margin-bottom:7px}
+.ocard.t2 .oq{color:var(--teal)}.ocard.t3 .oq{color:#b26a00}.ocard.t4 .oq{color:var(--coral)}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:11px;margin:6px 0 0}
+.step{position:relative;padding:14px 16px 14px 56px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+@media(max-width:480px){.step{padding:12px 14px 12px 50px}}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800;font-size:14px;display:grid;place-items:center}
+.step b{font-size:14.5px}
+.step p{margin:3px 0 0;font-size:13.5px;color:#54546a}
+
+/* checklist */
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:11px 26px}
+@media(max-width:760px){.checks{grid-template-columns:1fr}}
+.checks li{position:relative;padding-left:30px;font-size:14px;color:#3a3a52;line-height:1.6}
+.checks li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:#e7f9ee;color:#0a8f43;font-size:12px;font-weight:800;display:grid;place-items:center}
+.checks.arrow li::before{content:"→";background:#eef0ff;color:var(--blue)}
+
+/* dashboards / demo links */
+.dlink{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--blue);background:#eef0ff;border-radius:999px;padding:6px 13px;margin-bottom:14px;transition:.15s}
+.dlink:hover{background:var(--blue);color:#fff}
+.dlink svg{width:12px;height:12px}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;padding:11px 12px;border-bottom:2px solid var(--line)}
+.tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;color:#3a3a52}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td b{color:var(--blue)}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;background:#eef0ff;color:var(--blue);border-radius:999px;padding:2px 9px;margin:2px 3px 2px 0}
+
+/* effort donut */
+.effort{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center}
+@media(max-width:620px){.effort{grid-template-columns:1fr;justify-items:center}}
+.donut{width:190px;height:190px;border-radius:50%;position:relative;
+  background:conic-gradient(var(--blue) 0 40%,var(--teal) 40% 60%,var(--amber) 60% 90%,var(--coral) 90% 95%,var(--violet) 95% 100%)}
+.donut::after{content:"";position:absolute;inset:26px;border-radius:50%;background:var(--card);box-shadow:inset 0 1px 4px rgba(0,0,0,.06)}
+.donut .dh{position:absolute;inset:0;display:grid;place-content:center;text-align:center;z-index:2}
+.donut .dh b{font-size:30px;font-weight:900;color:var(--blue);line-height:1}
+.donut .dh span{font-size:11.5px;color:var(--muted)}
+.elegend{display:grid;gap:9px}
+.elegend .el{display:grid;grid-template-columns:14px 1fr auto;gap:11px;align-items:center;font-size:14px}
+.elegend .el i{width:14px;height:14px;border-radius:4px;display:block}
+.elegend .el b{font-weight:800;font-feature-settings:"tnum"}
+.elegend .el small{display:block;color:var(--muted);font-size:12px}
+
+/* figures */
+.fig{margin:16px 0 0;cursor:zoom-in;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow);transition:transform .16s,box-shadow .16s}
+.fig:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(18,18,43,.14)}
+.fig img{display:block;width:100%;height:auto;background:#f4f2ec}
+.fig figcaption{font-size:13px;color:var(--muted);padding:11px 15px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px}
+.fig figcaption b{color:var(--ink)}
+.fig figcaption .zoom{margin-left:auto;color:var(--blue);font-size:15px;opacity:.7}
+.figrow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.figrow{grid-template-columns:1fr}}
+
+/* callout */
+.callout{background:var(--blue);color:#fff;border-radius:var(--radius);padding:22px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+@media(max-width:480px){.callout{padding:16px 18px}}
+.callout::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 200px at 90% -30%,rgba(255,255,255,.13),transparent)}
+.callout h3{margin:0 0 8px;font-size:18px;position:relative}
+.callout p{margin:0;color:rgba(255,255,255,.93);font-size:15px;position:relative}
+.callout.teal{background:linear-gradient(135deg,#0a7a7a,#0EA5A5)}
+
+.src{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(6,8,30,.9);display:none;z-index:200;padding:24px;cursor:zoom-out}
+.lb.on{display:flex;align-items:center;justify-content:center}
+.lb img{max-width:96%;max-height:92%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb .x{position:absolute;top:16px;right:20px;color:#fff;font-size:30px;font-weight:300;cursor:pointer;line-height:1}
+
+footer{margin-top:40px;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer b{color:var(--ink)}
+
+/* ══════════ REPORT SWITCHER (added) ══════════ */
+:root{--orange:#E8730C;--slate:#7A7F99}
+.view{display:none}
+.view.active{display:block}
+
+.rtabs{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
+.rtab{appearance:none;-webkit-appearance:none;font-family:inherit;cursor:pointer;text-align:left;
+  background:rgba(255,245,236,.09);border:1px solid rgba(255,245,236,.28);color:var(--cream);
+  border-radius:14px;padding:11px 18px;transition:background .18s,border-color .18s,transform .18s,box-shadow .18s;
+  backdrop-filter:blur(3px);min-width:0}
+.rtab:hover{background:rgba(255,245,236,.18);border-color:rgba(255,245,236,.5);transform:translateY(-1px)}
+.rtab .rt-name{display:block;font-size:14px;font-weight:800;letter-spacing:-.2px;line-height:1.25;white-space:nowrap}
+.rtab .rt-per{display:block;font-size:11px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;opacity:.72;margin-top:5px;white-space:nowrap}
+.rtab.active{background:var(--cream);border-color:var(--cream);color:var(--blue);box-shadow:0 8px 22px rgba(0,0,0,.22);transform:none}
+.rtab.active .rt-per{opacity:.66}
+.rtab:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:640px){.rtabs{flex-direction:column;gap:8px}.rtab{width:100%}
+  .rtab .rt-name,.rtab .rt-per{white-space:normal}}
+
+.hero-cap{margin-top:26px;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;opacity:.72}
+.hero-cap + h1{margin-top:8px}
+
+.hero-kpis.k5{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1000px){.hero-kpis.k5{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.hero-kpis.k5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.hero-kpis.k5{grid-template-columns:1fr}}
+.hero-kpis.k5 .hk b{font-size:30px}
+.hero-kpis.k5 .hk span{font-size:11.5px;letter-spacing:.2px}
+
+.dlink.static{cursor:default;letter-spacing:.6px}
+.dlink.static:hover{background:#eef0ff;color:var(--blue)}
+
+.donut.ocm{background:conic-gradient(
+  var(--blue)      0    10%,
+  var(--blue-400)  10%  25%,
+  var(--violet)    25%  30%,
+  var(--teal)      30%  50%,
+  var(--green)     50%  60%,
+  var(--amber)     60%  70%,
+  var(--orange)    70%  85%,
+  var(--coral)     85%  95%,
+  var(--slate)     95% 100%)}
+@media print{.rtabs{display:none}.view{display:block!important}}
+
+/* back to home */
+.homebar{background:var(--paper);border-bottom:1px solid var(--line)}
+.homebar .wrap{padding-top:0;padding-bottom:0}
+.homebar a{display:inline-flex;align-items:center;gap:8px;padding:11px 0;font-size:13.5px;font-weight:700;color:var(--blue);transition:color .15s}
+.homebar a:hover{color:var(--ink)}
+.homebar a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+/* ═══ Home-page design system (matches index.html) ═══ */
+:root{--paper:#F6F7F3;--cream:#F6F7F3;--ink:#18221C;--ink2:#2E3932;--muted:#59665E;--line:#D8E0D9;--card:#fff;
+--blue:#B9653A;--blue-600:#8F4829;--blue-400:#C97845;--blue-200:#F3E4DA;--teal:#657E6D;--green:#657E6D;--amber:#A96B3F;--coral:#A85E49;--violet:#806F67;--orange:#A95F38;--slate:#748078;
+--radius:12px;--shadow:0 1px 2px rgba(23,33,27,.04),0 7px 20px rgba(23,33,27,.045)}
+body{background:var(--paper);color:var(--ink);letter-spacing:-.006em}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;color:var(--ink);letter-spacing:-.025em}
+h4{font-family:Inter,system-ui,sans-serif}
+p,.sec-head p,.lead,.ocard p,.step p,.checks li,.tbl td{color:var(--muted)}
+.eyebrow,.hero-cap,.ocard .oq,.tbl th{font-family:"DM Mono",monospace}
+.eyebrow{color:var(--blue-600)}
+.ocard.t2 .oq{color:#4D6555}.ocard.t3 .oq{color:var(--amber)}
+h3.sub{font-size:19px}
+.card,.ocard,.step,.fig{border-radius:12px;box-shadow:var(--shadow)}
+.ocard:hover,.fig:hover{box-shadow:0 10px 24px rgba(23,33,27,.07)}
+.dlink,.pill{background:var(--blue-200);color:var(--blue-600)}
+.dlink:hover{background:var(--blue);color:#fff}.dlink.static:hover{background:var(--blue-200);color:var(--blue-600)}
+.checks.arrow li::before{background:var(--blue-200);color:var(--blue-600)}
+.checks li::before{background:#E7EDE8;color:#4D6555}
+.tbl th{background:#E7EDE8;color:var(--ink);border-bottom-color:var(--line)}
+.callout h3{color:#fff}.callout.teal{background:linear-gradient(135deg,#4D6555,#657E6D)}
+.lb{background:rgba(24,34,28,.92)}
+/* light hero, like the home page */
+header.hero{color:var(--ink);border-bottom:1px solid var(--line);
+background:radial-gradient(circle at 84% 36%,rgba(232,238,233,.95) 0,transparent 30%),linear-gradient(135deg,#fafbf8,#eef2ed)}
+.hero h1{color:var(--ink);font-weight:600;letter-spacing:-.035em}
+.hero .sub{color:var(--ink2);opacity:1}.hero-meta{color:var(--muted);opacity:1}.hero-meta b{color:var(--ink)}
+.hero-cap{color:var(--blue-600);opacity:1}
+.brandmark{color:var(--ink)}.brandmark .bx{background:var(--ink);border-color:var(--ink)}
+.hero-badge{background:#fff;color:var(--blue-600);border-color:var(--line);font-family:"DM Mono",monospace;opacity:1}
+.hk{background:#fff;border:1px solid var(--line);color:var(--ink);box-shadow:var(--shadow);backdrop-filter:none}
+.hk b{color:var(--ink)}.hk span{color:var(--muted);opacity:1}
+.hk.accent{background:rgba(185,101,58,.1);border-color:rgba(185,101,58,.3)}
+nav.sticky{background:rgba(255,255,255,.94);border-bottom-color:var(--line);box-shadow:0 2px 12px rgba(24,34,28,.055)}
+nav.sticky a:hover{background:#E7EDE8;color:var(--ink)}
+footer{border-top-color:var(--line)}
+</style>
+<style id="sticky-home">.homebar{position:sticky;top:0;z-index:60;background:rgba(246,247,243,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.sticky{top:var(--hb,44px)}section{scroll-margin-top:calc(var(--hb,44px) + 58px)}body{overflow-x:clip}.view{overflow:visible}nav.sticky{position:sticky;top:var(--hb,44px);z-index:55}nav.sticky a{flex:0 0 auto}@media(min-width:721px){nav.sticky .wrap{justify-content:center}}@media(max-width:720px){nav.sticky .wrap{flex-wrap:wrap;overflow:visible;justify-content:center;gap:4px;padding:7px 10px}nav.sticky a{padding:6px 11px;font-size:12.5px}}</style></head>
+<body>
+
+<div class="homebar"><div class="wrap"><a href="#" data-go="home">&larr; Back to home</a></div></div>
+
+<div class="view active" id="view-ocm" data-title="Organization Change Management — Progress Report to the CIO">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="brandmark"><span class="bx"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="8" rx="1" fill="#FFF5EC"/><rect x="10" y="7" width="4" height="13" rx="1" fill="#FFF5EC"/><rect x="17" y="3" width="4" height="17" rx="1" fill="#FFF5EC"/></svg></span>IT Project Portfolio Management Department - IT PPM</div>
+      <span class="hero-badge">PROGRESS REPORT OVERVIEW</span>
+    </div>
+    <div class="hero-cap">CAPABILITY</div>
+    <h1>Organization Change Management (OCM)</h1>
+    <p class="sub">Turning organizational change into successful adoption, sustainable outcomes, and measurable business value across IT and the business.</p>
+    <div class="hero-meta">
+      <div><b>Prepared for</b> · Chief Information Officer</div>
+      <div><b>Prepared by</b> · IT Portfolio Management – PO Team</div>
+      <div><b>Reporting Period</b> · 1 April 2024 – 1 March 2025</div>
+    </div>
+  </div>
+</header>
+
+<nav class="sticky"><div class="wrap">
+  <a href="#p1">Executive Summary</a>
+  <a href="#p2">Evidence &amp; Artifacts</a>
+  <a href="#p3">Methodology</a>
+  <a href="#p4">At a Glance</a>
+  <a href="#p5">Notes</a>
+</div></nav>
+
+<div class="wrap">
+
+<!-- 1: EXECUTIVE SUMMARY -->
+<section id="p1">
+  <div class="sec-head reveal">
+    <div class="eyebrow"><span class="num">1</span>Executive Summary</div>
+    <h2>Executive Summary</h2>
+  </div>
+
+  <h3 class="sub reveal" style="margin-top:0">Abstract</h3>
+  <div class="callout reveal">
+    <p>Organizational Change Management (OCM) provides a structured approach to embedding change across software delivery. It aligns people, processes, and technology by assessing readiness, managing adoption, and addressing impacts on users and stakeholders. OCM provides leaders with visibility into change progress and adoption risks, enabling timely action and helping ensure that solutions are adopted effectively and deliver the intended business value.</p>
+  </div>
+  <figure class="fig wide reveal" onclick="lb('g1')"><img decoding="async" width="1391" height="927" id="g1" src="../assets/v1/img/ocm-g1.webp" alt="OCM overview"><figcaption><span class="zoom">⤢</span></figcaption></figure>
+
+  <h3 class="sub reveal">Operationalization</h3>
+  <p class="reveal" style="margin-top:0">OCM was established as a new PPM Service, with no formal change management capability in place prior to this initiative. During the reporting period, the function progressed from zero formal standardization to an emerging operational service, supported by a common glossary, governance artifacts, aligned processes, and a Jira-based environment. The initiative achieved ~33% overall progress, with user profiling and training capabilities already operational, while stakeholder analysis, business value, communication, and user feedback remain in development.</p>
+  <p class="reveal">The service has expanded to cover change readiness, resistance management, sponsorship, change impact, cultural alignment, reinforcement, post-go-live engagement, behavioral adoption, and OCM success metrics across the project lifecycle. The focus is now shifting from establishing the foundation to embedding OCM into project delivery and measuring adoption and business value.</p>
+
+  <div class="hero-kpis k5 reveal" style="margin-top:6px">
+    <div class="hk" style="background:var(--card);border:1px solid var(--line);color:var(--ink);box-shadow:var(--shadow)"><b style="color:var(--blue)">6</b><span style="color:var(--muted)">PROJECTS</span></div>
+    <div class="hk" style="background:var(--card);border:1px solid var(--line);color:var(--ink);box-shadow:var(--shadow)"><b style="color:var(--blue)">7</b><span style="color:var(--muted)">OCM CAPABILITIES</span></div>
+    <div class="hk" style="background:var(--card);border:1px solid var(--line);color:var(--ink);box-shadow:var(--shadow)"><b style="color:var(--blue)">14</b><span style="color:var(--muted)">OCM SERVICES</span></div>
+    <div class="hk" style="background:var(--card);border:1px solid var(--line);color:var(--ink);box-shadow:var(--shadow)"><b style="color:var(--blue)">22</b><span style="color:var(--muted)">EXECUTING OCM ACTIVITIES</span></div>
+    <div class="hk accent" style="color:var(--ink)"><b style="color:#0a8f43">~33%</b><span style="color:var(--muted)">PROGRESS</span></div>
+  </div>
+
+  <h3 class="sub reveal">Table 1 — Workstream Effort Breakdown</h3>
+  <p class="reveal" style="margin-top:0">At a high level, the pilot effort is distributed across the following key workstreams:</p>
+  <div class="card pad reveal">
+    <div class="effort">
+      <div class="donut ocm"><div class="dh"><b>100%</b><span>effort</span></div></div>
+      <div class="elegend">
+        <div class="el"><i style="background:var(--blue)"></i><span>Change Management Foundation<small>Define the OCM framework, including governance, roles, capabilities, processes, standards, and guidelines.</small></span><b>10%</b></div>
+        <div class="el"><i style="background:var(--blue-400)"></i><span>Develop OCM Roadmap<small>Translate the executive-level OCM framework into a practical OCM Roadmap and implementation plan in Jira, aligned with software delivery activities and priorities.</small></span><b>15%</b></div>
+        <div class="el"><i style="background:var(--violet)"></i><span>Review of OCM Roadmap with Delivery Teams<small>Review and validate the OCM Roadmap with Delivery Teams to ensure alignment with delivery plans, timelines, priorities, and project-specific change management needs.</small></span><b>5%</b></div>
+        <div class="el"><i style="background:var(--teal)"></i><span>UAT &amp; Training<small>Support SVM project UAT and training preparation by providing business context, identifying impacted stakeholders and processes, and clarifying change impacts.</small></span><b>20%</b></div>
+        <div class="el"><i style="background:var(--green)"></i><span>Cutover<small>Support the Project Manager in preparing, maintaining, and following up on the ICO project cutover plan, including OCM readiness activities and stakeholder actions.</small></span><b>10%</b></div>
+        <div class="el"><i style="background:var(--amber)"></i><span>User Engagement &amp; Feedback Management<small>Interview business and process owners for third-party ICO and SVM software to assess adoption, identify issues, evaluate vendor performance, define post-delivery actions, and report findings to the Acquisition Projects General Manager.</small></span><b>10%</b></div>
+        <div class="el"><i style="background:var(--orange)"></i><span>OCM Workbooks<small>Create and maintain 30 standardized OCM workbooks, templates, and supporting project documents to enable consistent OCM execution and reporting.</small></span><b>15%</b></div>
+        <div class="el"><i style="background:var(--coral)"></i><span>OCM Reports<small>Provide quarterly OCM reports to General Managers, monitor project progress and risks, and track follow-up actions according to the OCM jobs planned for each specific project.</small></span><b>10%</b></div>
+        <div class="el"><i style="background:var(--slate)"></i><span>Change Impact Analysis<small>Assess organizational readiness and analyze the impact of changes on stakeholders, processes, roles, responsibilities, and ways of working; identify readiness gaps and required mitigation actions.</small></span><b>5%</b></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub reveal">Status Overview</h3>
+  <p class="reveal" style="margin-top:0">The image below provides a consolidated view of OCM progress over the four-month reporting period. The <b>Phase-Wise Progress</b> chart on the left illustrates completed and remaining activities across the four operationalization phases, with green representing completed work and gray indicating activities still in progress. The <b>Service Progress</b> charts on the right show the implementation status of individual OCM services across two projects, highlighting variations in progress and areas requiring further attention.</p>
+  <figure class="fig wide reveal" onclick="lb('g2')"><img decoding="async" width="1142" height="695" id="g2" src="../assets/v1/img/ocm-g2.webp" alt="OCM executive summary" loading="lazy"><figcaption><b>Figure 1</b> — OCM Executive Summary<span class="zoom">⤢</span></figcaption></figure>
+</section>
+
+<!-- 2: EVIDENCE & ARTIFACTS -->
+<section id="p2">
+  <div class="sec-head reveal">
+    <div class="eyebrow"><span class="num">2</span>Evidence &amp; Artifacts</div>
+    <h2>OCM Tools &amp; Artifacts Prepared</h2>
+    <p class="lead">Below are examples of tools taken directly from the live Jira environment, along with the dashboards developed to support portfolio management and reporting.</p>
+  </div>
+
+  <h3 class="sub reveal">OCM Framework Foundation</h3>
+  <p class="reveal" style="margin-top:0">The OCM-Framework defines an integrated operating framework for Organizational Change Management (OCM) across the software delivery lifecycle. It translates OCM strategic objectives into capabilities, services, and lifecycle-specific activities, from exploration and initiation through post-production and continuous improvement. The framework provides end-to-end traceability between OCM goals, capabilities, services, lifecycle milestones, activities, expected outcomes, and supporting artifacts. It also clarifies dependencies, governance and performance monitoring, stakeholder engagement, adoption, feedback, and operational support. By bringing these elements together within a single lifecycle-based model, the framework provides a consistent, scalable, and traceable approach to planning, executing, monitoring, and continuously improving OCM throughout software delivery.</p>
+  <figure class="fig wide reveal" onclick="lb('g3')"><img decoding="async" width="1768" height="765" id="g3" src="../assets/v1/img/ocm-g3.webp" alt="OCM Guideline" loading="lazy"><figcaption><b>Figure 2</b> — OCM-Framework Guideline<span class="zoom">⤢</span></figcaption></figure>
+
+  <h3 class="sub reveal">OCM Roadmap &amp; Iteration Plan <span class="dlink static reveal">DEMO</span></h3>
+  <p class="reveal" style="margin-top:0">This Jira-based roadmap enables project and product managers to plan and prioritize OCM activities across the software delivery lifecycle. It provides a long-term view of required activities, which can be refined and incorporated into each sprint for focused execution and tracking. The roadmap is regularly reviewed and adapted to reflect changing project needs, priorities, and progress.</p>
+
+  <h3 class="sub reveal">OCM Service Coverage Heatmap</h3>
+  <p class="reveal" style="margin-top:0">The OCM Service Completion Heatmap visualizes OCM service coverage across projects, with projects and OCM services shown as the two dimensions of the heatmap. It highlights which services are used and their completion status within each project, making it easy to identify coverage gaps, unused services, and patterns that can support decisions on whether services are needed, should be adopted, or can be deprioritized.</p>
+  <figure class="fig wide reveal" onclick="lb('g4')"><img decoding="async" width="1285" height="659" id="g4" src="../assets/v1/img/ocm-g4.webp" alt="OCM service map" loading="lazy"><figcaption><b>Figure 3</b> — OCM Service Map<span class="zoom">⤢</span></figcaption></figure>
+
+  <h3 class="sub reveal">Governance Artifacts <span class="dlink static reveal">DEMO</span></h3>
+  <p class="reveal" style="margin-top:0">The three standardized charter templates provide a consistent framework for defining and governing initiatives while addressing scope, ownership, approval, and stakeholder alignment. They give teams a clear and repeatable way to communicate the delivery plan and key considerations that matter to stakeholders and customers, creating a shared understanding of what is expected and how the initiative will be delivered.</p>
+  <figure class="fig wide reveal" onclick="lb('g5')"><img decoding="async" width="1418" height="624" id="g5" src="../assets/v1/img/ocm-g5.webp" alt="OCM workbook artifacts" loading="lazy"><figcaption><b>Figure 4</b> — Three Artifacts Examples out of 30 OCM Workbooks<span class="zoom">⤢</span></figcaption></figure>
+</section>
+
+<!-- 3: METHODOLOGY -->
+<section id="p3">
+  <div class="sec-head reveal">
+    <div class="eyebrow"><span class="num">3</span>Methodology</div>
+    <h2>Building Foundation</h2>
+    <p class="lead">This approach establishes OCM within the organization by moving from understanding change to designing and delivering targeted interventions, then learning from the results. It begins by clarifying the context, objectives, and key challenges, then identifies the areas requiring change and how they relate. These insights are translated into practical OCM services with clear responsibilities and guidance on who should apply them, when, and how. The framework is executed through a simple plan, deliver, review, and adapt cycle, enabling it to evolve with evidence, experience, and changing organizational needs.</p>
+  </div>
+  <figure class="fig wide reveal" onclick="lb('g6')"><img decoding="async" width="1536" height="1024" id="g6" src="../assets/v1/img/ocm-g6.webp" alt="Building foundation guideline" loading="lazy"><figcaption><b>Figure 5</b> — Building Foundation Guideline &amp; Execution Plan<span class="zoom">⤢</span></figcaption></figure>
+
+  <h3 class="sub reveal">Definition</h3>
+  <p class="reveal" style="margin-top:0">Organizational Change Management (OCM) constitutes the organization's structured approach to transitioning from the current state to a defined future state and facilitating the effective adoption of change across people, processes, services, and operations to achieve sustainable business value.</p>
+  <p class="reveal">This approach integrates strategy, services, projects, people, and operations, thereby ensuring that delivery teams apply change management practices as an ongoing process of value realization. It establishes a consistent method for understanding, planning, implementing, adopting, and sustaining change, informed by what must change, the rationale for the change, the affected stakeholders, and the anticipated outcomes and value.</p>
+  <p class="reveal">As illustrated below, the Organizational Change model comprises three horizons — <b>Pain Killer Change</b>, <b>Short-Term Change</b>, and <b>Long-Term Change</b> — each representing a distinct level of urgency, scope, and value realization.</p>
+  <figure class="fig wide reveal" onclick="lb('g7')"><img decoding="async" width="1142" height="623" id="g7" src="../assets/v1/img/ocm-g7.webp" alt="Organizational change horizon model" loading="lazy"><figcaption><b>Figure 6</b> — Organizational Change Horizon Model<span class="zoom">⤢</span></figcaption></figure>
+
+  <h3 class="sub reveal">OCM Goals &amp; Objectives</h3>
+  <p class="reveal" style="margin-top:0">The OCM Goals &amp; Objectives framework translates the Change Management practice's strategic direction into measurable outcomes. <b>True North</b> defines OCM's overarching purpose and long-term impact, which are expressed through broad, achievable <b>Goals [G #]</b>. Each Goal is then divided into specific, measurable <b>Subgoals [G #. #]</b> that defines the outcomes needed for success. <b>Management Metrics</b> track progress against these objectives, helping the organization assess performance, identify gaps, and determine whether the intended change outcomes have been achieved. Together, these elements connect OCM's purpose and strategy to clear objectives, expected outcomes, and measurable results.</p>
+  <figure class="fig wide reveal" onclick="lb('g8')"><img decoding="async" width="1536" height="1024" id="g8" src="../assets/v1/img/ocm-g8.webp" alt="OCM goals to metrics framework" loading="lazy"><figcaption><b>Figure 7</b> — OCM Goals-to-Metrics Framework<span class="zoom">⤢</span></figcaption></figure>
+
+  <h3 class="sub reveal">OCM Process Map</h3>
+  <p class="reveal" style="margin-top:0">The OCM Process Map illustrates how OCM Capabilities and their related Services are applied throughout the software delivery lifecycle. A <b>Capability</b> represents the essential skills and competencies required to achieve OCM objectives and sustain effective change, while a <b>Service</b> represents a structured set of collections of activities that operationalizes a capability and addresses specific Change Management needs during software delivery. The map shows the sequence of services across the delivery lifecycle, demonstrating how services enable and strengthen OCM capabilities to support effective change planning, execution, adoption, and sustainability.</p>
+  <figure class="fig wide reveal" onclick="lb('g9')"><img decoding="async" width="881" height="940" id="g9" src="../assets/v1/img/ocm-g9.webp" alt="OCM process map" loading="lazy"><figcaption><b>Figure 9</b> — OCM Process Map<span class="zoom">⤢</span></figcaption></figure>
+  <h3 class="sub reveal">OCM Strategic Roadmap</h3>
+  <p class="reveal" style="margin-top:0">The OCM Strategic Roadmap maps change-management activities across the full lifecycle &mdash; from Exploration through Transition, then into the recurring Production &amp; Movement operating loop &mdash; against the four OCM goals (Stakeholder Satisfaction, User Adoption, Users Enablement, and Business Value Realization).</p>
+  <div class="card pad reveal" style="overflow:hidden">
+                        <iframe title="OCM Strategic Roadmap" src="ocm-roadmap.html" style="width:100%;height:1400px;border:0;display:block;background:#f6f7f9" loading="lazy" sandbox=""></iframe>
+  </div>
+
+</section>
+
+<!-- 4: AT A GLANCE -->
+<section id="p4">
+  <div class="sec-head reveal">
+    <div class="eyebrow"><span class="num">4</span>At a Glance</div>
+    <h2>Summary</h2>
+    <p class="lead">The OCM framework is designed to establish a <b>consistent approach to Organizational Change Management within IT</b>, enabling teams to identify change needs early, apply targeted OCM interventions, and maximize adoption and business value.</p>
+  </div>
+
+  <h3 class="sub reveal" style="margin-top:0">Visions</h3>
+  <div class="card pad reveal">
+    <ul class="checks">
+      <li><b>Consistent OCM Approach:</b> Establish a common OCM framework, methodology, and standards across IT teams.</li>
+      <li><b>Early Identification &amp; Targeted Intervention:</b> Identify projects requiring OCM support based on change impact, complexity, and business needs, and focus effort where it can create the greatest value and reduce key risks.</li>
+      <li><b>Integrated OCM into Delivery:</b> Embed OCM activities, roles, and responsibilities into the project delivery lifecycle.</li>
+      <li><b>Improved Visibility &amp; Governance:</b> Establish consistent tracking and reporting of OCM activities, risks, actions, and outcomes in Jira.</li>
+      <li><b>Sustained Adoption &amp; Value:</b> Ensure changes are adopted effectively and OCM outcomes are reinforced beyond project delivery.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub reveal">Implementation Flow</h3>
+  <p class="reveal" style="margin-top:0">The OCM pilot follows an iterative approach to embed change management into software delivery: define guidelines, plan and implement, monitor and reinforce, and sustain and improve.</p>
+  <div class="steps reveal">
+    <div class="step"><b>Define OCM Guidelines</b><p>Define practical OCM practices that delivery teams can select and adapt to address their change needs.</p></div>
+    <div class="step"><b>Plan &amp; Implement</b><p>Assess project needs, define the OCM approach and responsibilities, engage key stakeholders and OCM Champions, and implement relevant OCM activities throughout the project lifecycle.</p></div>
+    <div class="step"><b>Monitor &amp; Reinforce</b><p>Track adoption, risks, and outcomes, review progress, and address gaps to strengthen adoption.</p></div>
+    <div class="step"><b>Sustain &amp; Improve</b><p>Capture lessons learned, support sustained adoption, and use insights to refine OCM practices and guidelines across the IT portfolio.</p></div>
+  </div>
+
+</section>
+
+<!-- 5: NOTES -->
+<section id="p5">
+  <div class="sec-head reveal">
+    <div class="eyebrow"><span class="num">5</span>Notes</div>
+    <h2>Key Points &amp; Actions</h2>
+    <p class="lead">This section captures key challenges, open points, planned actions, and other relevant notes.</p>
+  </div>
+  <h3 class="sub reveal">Remaining Open Activities</h3>
+  <p class="reveal" style="margin-top:0">The OCM pilot focuses on embedding practical, team-driven change management into the delivery lifecycle, with emphasis on ownership, targeted support, continuous adaptation, user adoption, and visibility.</p>
+  <div class="steps reveal">
+    <div class="step"><b>OCM Roadmap per Delivery Team</b><p>Product/Project Managers create an OCM roadmap aligned with the project lifecycle.</p></div>
+    <div class="step"><b>Targeted OCM Interventions</b><p>OCM Manager responds to Product/Project Manager requests with focused OCM interventions that address root causes and immediate project needs.</p></div>
+    <div class="step"><b>Post-Project OCM Support</b><p>OCM Manager works with customers after delivery to reinforce adoption and address remaining gaps.</p></div>
+    <div class="step"><b>Biweekly Review &amp; Adaptation</b><p>OCM Champions and OCM manager review progress and risks biweekly through an iterative approach.</p></div>
+    <div class="step"><b>OCM Jira Visibility</b><p>Integrate OCM activities into Jira Product Increment items to ensure visibility, traceability, and progress tracking while delivering project/product.</p></div>
+  </div>
+
+  <h3 class="sub reveal">Challenges</h3>
+  <p class="reveal" style="margin-top:0">The following are the main challenges identified:</p>
+  <div class="grid3 reveal">
+    <div class="ocard"><div class="oq">Challenge 1</div><h4>Weak OCM Integration</h4><p>OCM is not consistently embedded in project decision-making and delivery.</p></div>
+    <div class="ocard t2"><div class="oq">Challenge 2</div><h4>Unclear Roles &amp; Accountability</h4><p>OCM responsibilities, ownership, and governance are not consistently applied.</p></div>
+    <div class="ocard t3"><div class="oq">Challenge 3</div><h4>Limited OCM Capacity &amp; Focus</h4><p>High workload and competing priorities reduce OCM's ability to deliver maximum value.</p></div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap"><b>Prepared by IT Portfolio Management — PO Team.</b> Reporting period 1 April 2024 – 1 March 2025</div>
+</footer>
+
+</div>
+<!-- /view-ocm -->
+
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><span class="x">&times;</span><img loading="lazy" decoding="async" id="lbimg" src="" alt=""></div>
+
+<script>
+/* lightbox */
+function lb(id){var s=document.getElementById(id);if(!s)return;var l=document.getElementById('lb');document.getElementById('lbimg').src=s.src;l.classList.add('on');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').classList.remove('on');});
+
+/* scroll reveal */
+var ro=new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px'});
+function initReveals(root){
+  if(!root)return;
+  var els=[].slice.call(root.querySelectorAll('.reveal'));
+  els.forEach(function(el,i){if(el.classList.contains('in'))return;el.style.transitionDelay=((i%5)*40)+'ms';ro.observe(el);});
+  setTimeout(function(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<(window.innerHeight||0)&&r.bottom>0)el.classList.add('in');});},50);
+}
+/* safety sweep for lazy-loaded images shifting layout */
+function sweep(){
+  var v=document.querySelector('.view.active');if(!v)return;
+  var vh=window.innerHeight||document.documentElement.clientHeight;
+  var els=v.querySelectorAll('.reveal');
+  for(var i=0;i<els.length;i++){
+    if(els[i].classList.contains('in'))continue;
+    if(els[i].getBoundingClientRect().top<vh*0.94)els[i].classList.add('in');
+  }
+}
+var ticking=false;
+function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){sweep();ticking=false;});}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',onScroll);
+window.addEventListener('load',function(){setTimeout(sweep,150);});
+document.addEventListener('load',function(e){if(e.target&&e.target.tagName==='IMG')onScroll();},true);
+
+/* scrollspy for the report's own section nav */
+(function(){
+  var view=document.querySelector('.view');
+  var secs=[].slice.call(view.querySelectorAll('section')),
+      links=[].slice.call(view.querySelectorAll('nav.sticky a'));
+  if(secs.length&&links.length){
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id);});}
+    });},{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){so.observe(s);});
+  }
+  initReveals(view);
+})();
+</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var g=a.getAttribute('data-go');if(g){e.preventDefault();if(parent===window){location.href=(g==='home')?'../':(g+'.html');return;}parent.postMessage({go:g},'*');return;}var h=a.getAttribute('href')||'';if(h.charAt(0)!=='#')return;e.preventDefault();var el=h.length>1&&document.getElementById(h.slice(1));if(el){var n=document.querySelector('nav.sticky'),hb=document.querySelector('.homebar'),o=(n?n.offsetHeight:0)+(hb?hb.offsetHeight:0);window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-o-8,behavior:'smooth'});}});(function(){var h=document.querySelector('.homebar'),r=document.documentElement;function f(){if(h)r.style.setProperty('--hb',h.offsetHeight+'px')}f();addEventListener('resize',f);addEventListener('load',f)})();</script></body>
+</html>
