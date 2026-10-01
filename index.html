@@ -881,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var v=get();
   if(v===null&&navigator.globalPrivacyControl===true){try{localStorage.setItem(KEY,'denied')}catch(e){}v='denied'}
   apply(v);
-  /* Banner no longer opens automatically; visitors can still open it via "Privacy settings" in the footer. With no choice made, counting stays off. */
+  if(v===null){banner.hidden=false;}
   /* Email: assembled at load so the address is not sitting in the page source for scrapers */
   [].slice.call(document.querySelectorAll('a.js-email')).forEach(function(a){a.href='mailto:'+a.getAttribute('data-u')+'@'+a.getAttribute('data-d')});
 })();
