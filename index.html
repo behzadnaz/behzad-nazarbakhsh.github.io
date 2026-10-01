@@ -1065,12 +1065,16 @@ label();show(0);start();
   }
 
   function tracking(){
-    if(!consented()||navigator.webdriver||location.protocol==='file:')return false;
-    if(/^(localhost|127\.|\[::1\])/.test(location.hostname))return false;
+    /*
+     * Counters are independent of the consent banner.
+     * The counter system stores only aggregate event counts.
+     * Users can explicitly disable tracking with ?notrack.
+     */
+    if(navigator.webdriver||location.protocol==='file:')return false;
+    if(/^(localhost|127\\.|\\[::1\\])/.test(location.hostname))return false;
     try{if(localStorage.getItem('bn_notrack')==='1')return false}catch(e){}
     return true;
   }
-
   try{
     var q=location.search+location.hash;
     if(/[?&#]notrack\b/.test(q))localStorage.setItem('bn_notrack','1');
