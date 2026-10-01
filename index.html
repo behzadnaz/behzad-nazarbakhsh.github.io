@@ -1023,8 +1023,15 @@ html body .article-all-grid .article-card.external-article-card .article-read-mo
   var cvUrl='/behzad-nazarbakhsh.github.io/CV-2025.pdf';
   if(!modal||!frame||!closeBtn)return;
   var lastFocus=null;
+  function isMobilePdfBrowser(){
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||'');
+  }
   function open(){
     lastFocus=document.activeElement;
+    if(isMobilePdfBrowser()){
+      window.open(cvUrl,'_blank','noopener,noreferrer');
+      return;
+    }
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden','false');
     document.documentElement.style.overflow='hidden';
