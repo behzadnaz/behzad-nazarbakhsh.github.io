@@ -1221,16 +1221,30 @@ label();show(0);start();
     show(vNum,optimistic);
     chipReady(vChip,optimistic,['visitor','visitors']);
 
-    /* Mark this browser as counted only after Cloudflare confirms the
-       increment. A failed first request must remain retryable. */
+    /* Footer visitor count: confirm with fetch when possible, then
+       fall back to Beacon so the event is not lost during navigation
+       or when the browser blocks the JSON preflight. */
     writeConfirmed('page_visits').then(function(){
       try{localStorage.setItem('bn_visitor_counted_v2','1')}catch(e){}
     }).catch(function(){
-      /* Restore the server value so a later retry does not compound
-         a failed optimistic increment. */
-      cacheSet('page_visits',n);
-      show(vNum,n);
-      chipReady(vChip,n,['visitor','visitors']);
+      var payload=JSON.stringify({key:'page_visits'});
+      var sent=false;
+      try{
+        if(navigator.sendBeacon){
+          sent=navigator.sendBeacon(
+            API,
+            new Blob([payload],{type:'text/plain'})
+          );
+        }
+      }catch(e){}
+      if(sent){
+        try{localStorage.setItem('bn_visitor_counted_v2','1')}catch(e){}
+      }else{
+        /* Keep it retryable if neither delivery method worked. */
+        cacheSet('page_visits',n);
+        show(vNum,n);
+        chipReady(vChip,n,['visitor','visitors']);
+      }
     });
   }
 
