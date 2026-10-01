@@ -1046,209 +1046,171 @@ label();show(0);start();
 
 
 <script id="bn-counters">
-/* Unified visit counters (Cloudflare Worker: GET ?key= -> {count}, POST {key} -> {count}).
-   - Visitors: each device/browser counts ONCE, ever (refreshes and return visits add nothing). CV views and article reads count once per DEDUPE_HOURS.
-   - Your own visits: open the site once with ?notrack to stop counting yourself (?track undoes it).
-   - localhost / file:// / automated browsers are never counted.
-   - Counts are read lazily and cached for the tab session; on failure the counter hides instead of showing a false 0. */
+/* Simple Cloudflare counters
+   1. Visitors = one anonymous visitor per browser/device.
+   2. Knowledge Base = every article/card open.
+   3. CV = every "View My CV" click.
+   No artificial retry/wait/dedupe is used for #2 or #3.
+*/
 (function(){
   'use strict';
   var API='https://behzad-portfolio-counters.bmbvm5.workers.dev/counter';
-  var DEDUPE_HOURS=24, CACHE_MS=5*60*1000, TIMEOUT_MS=3500;
-  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TIMEOUT_MS=3500;
 
-  try{
-    var q=location.search+location.hash;
-    if(/[?&#]notrack\b/.test(q))localStorage.setItem('bn_notrack','1');
-    else if(/[?&#]track\b/.test(q))localStorage.removeItem('bn_notrack');
-  }catch(e){}
-  function consented(){try{return localStorage.getItem('bn_consent')==='granted'}catch(e){return false}}
+  function consented(){
+    try{return localStorage.getItem('bn_consent')==='granted'}catch(e){return false}
+  }
   function tracking(){
-    if(!consented())return false;
-    if(navigator.webdriver||location.protocol==='file:'||/^(localhost|127\.|\[::1\])/.test(location.hostname))return false;
+    if(!consented()||navigator.webdriver||location.protocol==='file:')return false;
+    if(/^(localhost|127\\.|\\[::1\\])/.test(location.hostname))return false;
     try{if(localStorage.getItem('bn_notrack')==='1')return false}catch(e){}
     return true;
   }
+  try{
+    var q=location.search+location.hash;
+    if(/[?&#]notrack\\b/.test(q))localStorage.setItem('bn_notrack','1');
+    else if(/[?&#]track\\b/.test(q))localStorage.removeItem('bn_notrack');
+  }catch(e){}
 
-  /* ====== GOATCOUNTER SETUP (one value) ======
-     Paste your GoatCounter code below: for https://behzad.goatcounter.com the code is  behzad
-     Also switch on, in GoatCounter > Settings > "Allow adding visitor counts on your website" (needed to READ the numbers).
-     What gets counted (each becomes its own "page" in your GoatCounter dashboard):
-       /              -> footer "visitors"      (once per browser session; shown as unique visits)
-       /cv-view       -> "View My CV" button    (once per device per DEDUPE_HOURS)
-       /read/<slug>   -> each Knowledge Base card (once per device per DEDUPE_HOURS)
-     While GOATCOUNTER_CODE is '' the previous Cloudflare Worker counters (API below) keep running unchanged. */
-  var GOATCOUNTER_CODE='';
-  var GC=/^[a-z0-9][a-z0-9-]*$/i.test(GOATCOUNTER_CODE)?'https://'+GOATCOUNTER_CODE+'.goatcounter.com':'';
-
-  /* Optional Cloudflare Web Analytics: paste the token from Cloudflare > Analytics & Logs > Web Analytics ('' = off). */
-  var CF_BEACON_TOKEN='';
-  (function(){
-    if(!tracking()||!CF_BEACON_TOKEN)return;
-    var el=document.createElement('script');el.src='https://static.cloudflareinsights.com/beacon.min.js';el.defer=true;
-    el.setAttribute('data-cf-beacon',JSON.stringify({token:CF_BEACON_TOKEN}));document.head.appendChild(el);
-  })();
-
-  /* ---- GoatCounter transport: hits are plain image requests, counts are read from its public counter JSON ---- */
-  var titles={};
-  function gcPath(k){return k==='page_visits'?'/':k==='cv_views'?'/cv-view':'/read/'+k.replace(/^article_/,'')}
-  function gcSend(k){
-    var q='p='+encodeURIComponent(gcPath(k))+'&t='+encodeURIComponent(titles[k]||(k==='cv_views'?'CV view':document.title))
-      +'&r='+encodeURIComponent(document.referrer||'')+'&s='+[screen.width,screen.height,window.devicePixelRatio||1].join(',')
-      +'&rnd='+Math.random().toString(36).slice(2,8);
-    (new Image()).src=GC+'/count?'+q;
-  }
-  function gcRead(k){
-    var ctl=window.AbortController?new AbortController():null,timer;
-    if(ctl)timer=setTimeout(function(){ctl.abort()},TIMEOUT_MS);
-    return fetch(GC+'/counter/'+encodeURIComponent(gcPath(k))+'.json',{cache:'no-store',signal:ctl?ctl.signal:undefined})
-      .then(function(r){clearTimeout(timer);if(r.status===404)return {count:'0'};if(!r.ok)throw new Error('http '+r.status);return r.json()},
-            function(e){clearTimeout(timer);throw e})
-      .then(function(d){
-        var raw=(k==='page_visits'&&d.count_unique!=null)?d.count_unique:d.count;
-        var n=parseInt(String(raw).replace(/\D/g,''),10);
-        if(isNaN(n))throw new Error('bad payload');return n;
-      });
-  }
-
-  function fmt(n){
-    if(n>=1e6)return (n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
-    if(n>=1e5)return Math.round(n/1e3)+'k';
-    if(n>=1e4)return (n/1e3).toFixed(1).replace(/\.0$/,'')+'k';
-    return n.toLocaleString('en-US');
-  }
-  function cget(k){try{var r=JSON.parse(sessionStorage.getItem('bn_c_'+k));if(r&&Date.now()-r.t<CACHE_MS)return r.v}catch(e){}return null}
-  function cset(k,v){try{sessionStorage.setItem('bn_c_'+k,JSON.stringify({v:v,t:Date.now()}));localStorage.setItem('bn_last_'+k,String(v))}catch(e){}}
-  function last(k){try{var v=localStorage.getItem('bn_last_'+k);return v===null?null:+v}catch(e){return null}}
+  function fmt(n){return Number(n).toLocaleString('en-US')}
   function request(url,opts){
-    opts=opts||{};var timer,ctl=window.AbortController?new AbortController():null;
-    if(ctl){opts.signal=ctl.signal;timer=setTimeout(function(){ctl.abort()},TIMEOUT_MS)}
-    return fetch(url,opts).then(function(r){clearTimeout(timer);if(!r.ok)throw new Error('http '+r.status);return r.json()})
-      .then(function(d){if(!d||typeof d.count!=='number')throw new Error('bad payload');return d.count},
-            function(e){clearTimeout(timer);throw e});
-  }
-  function read(k){
-    var c=cget(k);if(c!==null)return Promise.resolve(c);
-    var go=function(){return GC?gcRead(k):request(API+'?key='+encodeURIComponent(k),{cache:'no-store'})};
-    return go().then(function(n){cset(k,n);return n});
-  }
-  function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?m[1]:null}
-  function hit(k,forever){
-    if(!tracking())return Promise.resolve(null);
-    var lk=(forever?'bn_once_':'bn_hit_')+k,cn=lk.replace(/[^a-z_]/gi,'_');
-    if(GC&&k==='page_visits'){
-      try{if(sessionStorage.getItem(lk))return Promise.resolve(null);sessionStorage.setItem(lk,'1')}catch(e){}
-      gcSend(k);return Promise.resolve(null);
-    }
-    try{
-      var t=+localStorage.getItem(lk);
-      if(t&&(forever||(DEDUPE_HOURS&&Date.now()-t<DEDUPE_HOURS*36e5)))return Promise.resolve(null);
-      if(forever&&ck(cn))return Promise.resolve(null);
-      localStorage.setItem(lk,String(Date.now()));
-    }catch(e){if(forever&&ck(cn))return Promise.resolve(null)}
-    if(GC){
-      gcSend(k);
-      return read(k).then(function(n){cset(k,n+1);return n+1},function(){return null});
-    }
-    if(forever)document.cookie=cn+'=1; max-age=63072000; path=/; SameSite=Lax';
-    return request(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:k}),keepalive:true})
-      .then(function(n){cset(k,n);return n},function(e){
-        try{localStorage.removeItem(lk)}catch(_){}
-        if(forever)document.cookie=cn+'=; max-age=0; path=/';
-        throw e});
-  }
-  function bump(k,forever){return hit(k,forever).then(function(n){return n!==null?n:read(k)},function(){return read(k)})}
-
-  function animate(el,from,to,f){
-    f=f||fmt;
-    if(reduce||Math.abs(to-from)<2||!window.requestAnimationFrame){el.textContent=f(to);return}
-    var t0=performance.now(),D=700;
-    (function step(now){
-      var p=Math.min(1,(now-t0)/D),e=1-Math.pow(1-p,3);
-      el.textContent=f(Math.round(from+(to-from)*e));
-      if(p<1)requestAnimationFrame(step);else el.textContent=f(to);
-    })(t0);
-  }
-  function full(n){return n.toLocaleString('en-US')}
-  function Counter(chip,num,unit,label,f){
-    this.chip=chip;this.num=num;this.unit=unit;this.label=label;this.f=f;
-    num.textContent='';chip.setAttribute('data-state','loading');
-  }
-  Counter.prototype.set=function(n){
-    var first=!this.num.hasAttribute('data-n'),prev=+this.num.getAttribute('data-n')||0;
-    this.num.setAttribute('data-n',n);
-    if(first)this.num.textContent=(this.f||fmt)(n);else animate(this.num,prev,n,this.f);
-    this.chip.setAttribute('data-state','ready');
-    var txt=n.toLocaleString('en-US')+' '+(n===1?this.unit[0]:this.unit[1]);
-    this.chip.setAttribute('title',txt);this.chip.setAttribute('aria-label',txt);
-    if(this.label)this.label.textContent=n===1?this.unit[0]:this.unit[1];
-  };
-  Counter.prototype.fail=function(k){
-    var l=last(k);if(l!==null){this.set(l);return}
-    this.num.textContent='0';this.chip.setAttribute('data-state','ready');
-    if(this.label)this.label.textContent=this.unit[1];
-  };
-  Counter.prototype.load=function(k){var c=this,l=last(k);if(l!==null)c.set(l);return read(k).then(function(n){c.set(n)},function(){if(l===null)c.fail(k)})};
-  Counter.prototype.count=function(k){var c=this;return hit(k).then(function(n){if(n!==null)c.set(n)},function(){})};
-
-  var MOST_READ_MIN=10; /* an article needs at least this many reads to get the "Most read" badge */
-  function unit(num){var u=num.nextElementSibling;if(!u||!u.classList||!u.classList.contains('bn-unit')){u=document.createElement('span');u.className='bn-unit';num.parentNode.insertBefore(u,num.nextSibling)}return u}
-  function init(){
-    // 1) Footer: unique-ish visitors
-    var vs=[],vNum=document.getElementById('site-visitor-count');
-    if(vNum){var vChip=vNum.closest('.site-visitor-count')||vNum.parentNode;vs.push(new Counter(vChip,vNum,['visitor','visitors'],vChip.querySelector('.visitor-label')))}
-    if(vs.length)bump('page_visits',true).then(function(n){vs.forEach(function(c){c.set(n)})},function(){vs.forEach(function(c){c.fail('page_visits')})});
-    // 2) CV button
-    var btn=document.querySelector('.cv-button'),cNum=document.getElementById('cv-view-number');
-    if(btn&&cNum){
-      var cChip=cNum.closest('.cv-view-count')||cNum.parentNode;
-      var c=new Counter(cChip,cNum,['view','views'],unit(cNum));
-      c.load('cv_views');
-      var onCv=function(){c.count('cv_views')};
-      btn.addEventListener('click',onCv);btn.addEventListener('auxclick',onCv);
-    }
-    // 3) Article cards: counts load when the Knowledge Base nears the screen; the 3 most-read get a badge
-    var cards=[];
-    function slug(t){return t.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80)}
-    [].slice.call(document.querySelectorAll('.article-card')).forEach(function(card){
-      var link=card.querySelector('h3 a'),chip=card.querySelector('.article-view-count');
-      if(!link||!chip||card._bn)return;
-      var num=chip.querySelector('.article-view-number');
-      if(!num){num=document.createElement('span');num.className='article-view-number';chip.appendChild(num)}
-      var key='article_'+slug(link.textContent);titles[key]=link.textContent.trim();
-      card._bn={key:key,ctr:new Counter(chip,num,['read','reads'],unit(num))};
-      cards.push(card);
-      var open=function(e){if(e.target.closest('h3 a,.article-read-more'))card._bn.ctr.count(key)};
-      card.addEventListener('click',open,true);card.addEventListener('auxclick',open,true);
+    opts=opts||{};
+    var ctl=window.AbortController?new AbortController():null;
+    var timer=ctl?setTimeout(function(){ctl.abort()},TIMEOUT_MS):null;
+    if(ctl)opts.signal=ctl.signal;
+    return fetch(url,opts).then(function(r){
+      if(timer)clearTimeout(timer);
+      if(!r.ok)throw new Error('http '+r.status);
+      return r.json();
+    }).then(function(d){
+      if(!d||typeof d.count!=='number')throw new Error('bad counter response');
+      return d.count;
+    },function(e){
+      if(timer)clearTimeout(timer);
+      throw e;
     });
-    function rank(){
-      var top=cards.map(function(c,i){return{c:c,i:i,n:+c._bn.ctr.num.getAttribute('data-n')||0}})
-        .filter(function(x){return x.n>=MOST_READ_MIN})
-        .sort(function(a,b){return b.n-a.n||a.i-b.i}).slice(0,3);
-      top.forEach(function(x){
-        if(x.c.querySelector('.bn-most-read'))return;
-        var b=document.createElement('span');b.className='bn-most-read';b.textContent='Most read';x.c.appendChild(b);
+  }
+  function read(key){
+    return request(API+'?key='+encodeURIComponent(key),{cache:'no-store'});
+  }
+  function write(key){
+    return request(API,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({key:key}),
+      keepalive:true
+    });
+  }
+  function cacheSet(key,n){
+    try{localStorage.setItem('bn_last_'+key,String(n))}catch(e){}
+  }
+  function cacheGet(key){
+    try{
+      var n=Number(localStorage.getItem('bn_last_'+key));
+      return isFinite(n)&&n>=0?n:null;
+    }catch(e){return null}
+  }
+  function show(num,n){
+    if(num&&typeof n==='number'){
+      num.textContent=fmt(n);
+      num.setAttribute('data-n',n);
+    }
+  }
+  function chipReady(chip,n,unit){
+    if(!chip)return;
+    chip.setAttribute('data-state','ready');
+    var label=n===1?unit[0]:unit[1];
+    chip.setAttribute('title',fmt(n)+' '+label);
+    chip.setAttribute('aria-label',fmt(n)+' '+label);
+  }
+  function loadNumber(key,num,chip,unit){
+    var cached=cacheGet(key);
+    if(cached!==null){show(num,cached);chipReady(chip,cached,unit)}
+    return read(key).then(function(n){
+      cacheSet(key,n);show(num,n);chipReady(chip,n,unit);return n;
+    }).catch(function(){
+      if(cached!==null)return cached;
+      if(num){num.textContent='0';chipReady(chip,0,unit)}
+      return 0;
+    });
+  }
+  function increment(key,num,chip,unit){
+    if(!tracking())return;
+    var current=Number(num&&num.getAttribute('data-n'));
+    if(!isFinite(current))current=cacheGet(key);
+    if(!isFinite(current))current=0;
+    var optimistic=current+1;
+    cacheSet(key,optimistic);
+    show(num,optimistic);
+    chipReady(chip,optimistic,unit);
+    write(key).then(function(n){
+      cacheSet(key,n);show(num,n);chipReady(chip,n,unit);
+    }).catch(function(){});
+  }
+
+  function init(){
+    if(!tracking())return;
+
+    /* 1. Visitors: count this browser/device once, then never again. */
+    var vNum=document.getElementById('site-visitor-count');
+    if(vNum){
+      var vChip=vNum.closest('.site-visitor-count')||vNum.parentNode;
+      loadNumber('page_visits',vNum,vChip,['visitor','visitors']).then(function(n){
+        var seen=false;
+        try{seen=localStorage.getItem('bn_visitor_counted')==='1'}catch(e){}
+        if(seen)return;
+        try{localStorage.setItem('bn_visitor_counted','1')}catch(e){}
+        var optimistic=n+1;
+        cacheSet('page_visits',optimistic);
+        show(vNum,optimistic);
+        chipReady(vChip,optimistic,['visitor','visitors']);
+        write('page_visits').then(function(finalCount){
+          cacheSet('page_visits',finalCount);
+          show(vNum,finalCount);
+          chipReady(vChip,finalCount,['visitor','visitors']);
+        }).catch(function(){});
       });
     }
-    var loaded=false;
-    function loadAll(){
-      if(loaded||!cards.length)return;loaded=true;
-      var queue=cards.slice(),active=0;
-      (function pump(){
-        while(active<6&&queue.length){var c=queue.shift();active++;c._bn.ctr.load(c._bn.key).then(function(){active--;pump()})}
-        if(!queue.length&&active===0)rank();
-      })();
+
+    /* 2. CV: every click. */
+    var cvBtn=document.querySelector('.cv-button');
+    var cvNum=document.getElementById('cv-view-number');
+    if(cvBtn&&cvNum){
+      var cvChip=cvNum.closest('.cv-view-count')||cvNum.parentNode;
+      loadNumber('cv_views',cvNum,cvChip,['view','views']);
+      function cvHit(){increment('cv_views',cvNum,cvChip,['view','views'])}
+      cvBtn.addEventListener('click',cvHit,{passive:true});
+      cvBtn.addEventListener('auxclick',cvHit,{passive:true});
     }
-    var grid=document.querySelector('.article-all-grid')||document.getElementById('articles');
-    if(grid&&window.IntersectionObserver){
-      var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){io.disconnect();loadAll()}},{rootMargin:'600px'});
-      io.observe(grid);
-    }else setTimeout(loadAll,1200);
+
+    /* 3. Knowledge Base: every article/card open. */
+    [].slice.call(document.querySelectorAll('.article-card')).forEach(function(card){
+      var link=card.querySelector('h3 a');
+      var chip=card.querySelector('.article-view-count');
+      if(!link||!chip||card._bnCounter)return;
+      var num=chip.querySelector('.article-view-number');
+      if(!num){
+        num=document.createElement('span');
+        num.className='article-view-number';
+        chip.appendChild(num);
+      }
+      var key='article_'+link.textContent.toLowerCase().trim()
+        .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);
+      var unit=['read','reads'];
+      card._bnCounter={key:key,num:num,chip:chip,unit:unit};
+      loadNumber(key,num,chip,unit);
+      function articleHit(){increment(key,num,chip,unit)}
+      card.addEventListener('click',function(e){
+        if(e.target.closest('h3 a,.article-read-more'))articleHit();
+      },true);
+      card.addEventListener('auxclick',function(e){
+        if(e.target.closest('h3 a,.article-read-more'))articleHit();
+      },true);
+    });
   }
-  var started=false;
-  function start(){if(started||!consented())return;started=true;if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();}
-  window.addEventListener('bn-consent',start);
-  start();
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
 })();
 </script>
 
