@@ -1193,9 +1193,21 @@ label();show(0);start();
     show(num,optimistic);
     chipReady(chip,optimistic,unit);
 
-    /* Do not wait for the server and do not overwrite the optimistic
-       value with a potentially stale KV read. */
-    write(key);
+    /* Clicks can immediately navigate to another page/tab. Use Beacon
+       first so the event is handed to the browser without a CORS
+       preflight or waiting for the navigation to finish. */
+    var payload=JSON.stringify({key:key});
+    var sent=false;
+    try{
+      if(navigator.sendBeacon){
+        sent=navigator.sendBeacon(
+          API,
+          new Blob([payload],{type:'text/plain'})
+        );
+      }
+    }catch(e){}
+
+    if(!sent)write(key);
   }
 
   function countVisitor(vNum,vChip,n){
