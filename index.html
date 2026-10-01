@@ -1092,24 +1092,14 @@ label();show(0);start();
     });
   }
 
-  /*
-   * Fire-and-forget increment.
-   * text/plain is intentional: it avoids the JSON CORS preflight,
-   * and sendBeacon is designed to survive page navigation.
-   */
+  /* Send a normal JSON POST. The Worker accepts application/json,
+     and keepalive lets the request finish when an article opens. */
   function write(key){
     var payload=JSON.stringify({key:key});
     try{
-      if(navigator.sendBeacon){
-        var blob=new Blob([payload],{type:'text/plain;charset=UTF-8'});
-        if(navigator.sendBeacon(API,blob))return;
-      }
-    }catch(e){}
-
-    try{
       fetch(API,{
         method:'POST',
-        headers:{'Content-Type':'text/plain;charset=UTF-8'},
+        headers:{'Content-Type':'application/json'},
         body:payload,
         keepalive:true,
         credentials:'omit'
@@ -1235,6 +1225,7 @@ label();show(0);start();
       if(!num){
         num=document.createElement('span');
         num.className='article-view-number';
+        num.textContent='0';
         chip.appendChild(num);
       }
 
