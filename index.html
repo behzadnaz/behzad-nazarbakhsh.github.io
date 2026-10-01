@@ -1054,7 +1054,7 @@ label();show(0);start();
 (function(){
   'use strict';
   var API='https://behzad-portfolio-counters.bmbvm5.workers.dev/counter';
-  var DEDUPE_HOURS=24, CACHE_MS=5*60*1000, TIMEOUT_MS=8000;
+  var DEDUPE_HOURS=24, CACHE_MS=5*60*1000, TIMEOUT_MS=3500;
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   try{
@@ -1130,7 +1130,7 @@ label();show(0);start();
   function read(k){
     var c=cget(k);if(c!==null)return Promise.resolve(c);
     var go=function(){return GC?gcRead(k):request(API+'?key='+encodeURIComponent(k),{cache:'no-store'})};
-    return go().catch(function(){return new Promise(function(r){setTimeout(r,4000)}).then(go)}).then(function(n){cset(k,n);return n});
+    return go().then(function(n){cset(k,n);return n});
   }
   function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?m[1]:null}
   function hit(k,forever){
@@ -1151,7 +1151,7 @@ label();show(0);start();
       return read(k).then(function(n){cset(k,n+1);return n+1},function(){return null});
     }
     if(forever)document.cookie=cn+'=1; max-age=63072000; path=/; SameSite=Lax';
-    return request(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:k})})
+    return request(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:k}),keepalive:true})
       .then(function(n){cset(k,n);return n},function(e){
         try{localStorage.removeItem(lk)}catch(_){}
         if(forever)document.cookie=cn+'=; max-age=0; path=/';
