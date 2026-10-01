@@ -1209,7 +1209,7 @@ label();show(0);start();
     try{
       seen=
         localStorage.getItem(
-          'bn_visitor_counted_v2'
+          'bn_visitor_counted_v3'
         )==='1';
     }catch(e){}
 
@@ -1224,7 +1224,7 @@ label();show(0);start();
 
       try{
         localStorage.setItem(
-          'bn_visitor_counted_v2',
+          'bn_visitor_counted_v3',
           '1'
         );
       }catch(e){}
@@ -1307,6 +1307,12 @@ label();show(0);start();
   }else{
     init();
   }
+
+  /* Re-check after the page has fully loaded. This also covers the
+     hash-based portfolio route if the footer is mounted slightly later. */
+  window.addEventListener('load',function(){
+    setTimeout(init,0);
+  },{once:true});
 
   /* If the visitor accepts privacy after page load, activate counters
      immediately without requiring a refresh. */
